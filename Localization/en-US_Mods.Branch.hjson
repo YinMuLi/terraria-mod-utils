@@ -1,0 +1,28 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	PortableSundial: {
+		DisplayName: 便携式日晷
+		Tooltip: 加速一段时间
+	}
+}
+
+Configs: {
+	BranchConfigs: {
+		DisplayName: 模组配置
+
+		LuresAmount: {
+			Label: 鱼线数量
+			Tooltip: ""
+		}
+	}
+
+	Configs: {
+		DisplayName: Configs
+
+		LuresAmount: {
+			Label: Lures Amount
+			Tooltip: ""
+		}
+	}
+}

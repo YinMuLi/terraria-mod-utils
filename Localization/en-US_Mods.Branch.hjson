@@ -5,6 +5,11 @@ Items: {
 		DisplayName: 便携式日晷
 		Tooltip: 加速一段时间
 	}
+
+	FishingCombination: {
+		DisplayName: 钓鱼药水包
+		Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
+	}
 }
 
 Configs: {
@@ -24,5 +29,12 @@ Configs: {
 			Label: Lures Amount
 			Tooltip: ""
 		}
+	}
+}
+
+Buffs: {
+	FishingComb: {
+		Description: 包含以下Buff：声呐,钓鱼,宝匣
+		DisplayName: 钓鱼药水包
 	}
 }

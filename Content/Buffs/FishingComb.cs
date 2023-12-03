@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 namespace Branch.Content.Buffs
 {
     /// <summary>
-    /// 钓鱼药水包
+    /// 钓鱼药水包增益
     /// </summary>
     public class FishingComb : ModBuff
     {

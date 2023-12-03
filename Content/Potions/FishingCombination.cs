@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items
+namespace Branch.Content.Potions
 {
     public class FishingCombination : ModItem
     {
@@ -13,8 +13,8 @@ namespace Branch.Content.Items
 
         public override void SetDefaults()
         {
-            Item.UseSound = SoundID.Item44;
-            Item.useStyle = ItemUseStyleID.DrinkLiquid;
+            Item.UseSound = SoundID.Item3;
+            Item.useStyle = ItemUseStyleID.EatFood;
             Item.useTurn = true;
             Item.useAnimation = 17;
             Item.useTime = 17;
@@ -26,6 +26,7 @@ namespace Branch.Content.Items
             Item.rare = ItemRarityID.Master;
             Item.buffType = ModContent.BuffType<Buffs.FishingComb>();
             Item.buffTime = 52000;
+            return;
         }
 
         public override void AddRecipes()

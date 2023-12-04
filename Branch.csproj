@@ -21,6 +21,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Common\UI\" />
-    <Folder Include="Content\NPCS\" />
   </ItemGroup>
 </Project>

@@ -16,5 +16,28 @@ namespace Branch.Content.Buffs
             //debuff时不可被护士去除
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
         }
+
+        public override void Update(Player player, ref int buffIndex)
+        {
+            //再生
+            player.buffImmune[BuffID.Regeneration] = true;
+            player.lifeRegen += 2;
+            //生命力:每有100点生命值增加20点最大上限
+            player.buffImmune[BuffID.Lifeforce] = true;
+            player.lifeForce = true;
+            player.statLifeMax2 += (player.statLifeMax / 100) * 20;
+            //铁皮
+            player.buffImmune[BuffID.Ironskin] = true;
+            player.statDefense += 8;
+            //敏捷
+            player.buffImmune[BuffID.Swiftness] = true;
+            player.moveSpeed += 0.25f;
+            //耐力
+            player.buffImmune[BuffID.Endurance] = true;
+            player.endurance += 0.1f;
+            //荆棘
+            player.buffImmune[BuffID.Thorns] = true;
+            if ((double)player.thorns < 1.0) player.thorns = 0.34f;
+        }
     }
 }

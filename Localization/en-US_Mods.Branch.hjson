@@ -14,11 +14,16 @@ Items: {
 	AdvancedExplorerPotion: {
 		DisplayName: 高级探险者药水
 		Tooltip:
-		'''
-		获得你在探险时需要的Buff
-		(洞穴探险，夜猫子，挖矿，狩猎，
-		危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
-		'''
+			'''
+			获得你在探险时需要的Buff
+			(洞穴探险，夜猫子，挖矿，狩猎，
+			危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
+			'''
+	}
+
+	AdvancedDefensePotion: {
+		DisplayName: 高级防御药水
+		Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
 	}
 }
 
@@ -55,5 +60,10 @@ Buffs: {
 			包含以下Buff：洞穴探险，夜猫子，挖矿，狩猎，
 			危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤
 			'''
+	}
+
+	AdvancedDefense: {
+		DisplayName: 铜墙铁壁
+		Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷
 	}
 }

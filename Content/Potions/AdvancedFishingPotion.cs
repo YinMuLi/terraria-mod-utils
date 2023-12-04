@@ -4,7 +4,10 @@ using Terraria.ModLoader;
 
 namespace Branch.Content.Potions
 {
-    public class FishingCombination : ModItem
+    /// <summary>
+    /// 高级钓鱼药水
+    /// </summary>
+    public class AdvancedFishingPotion : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -14,7 +17,7 @@ namespace Branch.Content.Potions
         public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;
-            Item.useStyle = ItemUseStyleID.EatFood;
+            Item.useStyle = ItemUseStyleID.DrinkLiquid;
             Item.useTurn = true;
             Item.useAnimation = 17;
             Item.useTime = 17;
@@ -24,9 +27,8 @@ namespace Branch.Content.Potions
             Item.height = 32;
             Item.value = Item.buyPrice(0, 1, 0, 0);
             Item.rare = ItemRarityID.Master;
-            Item.buffType = ModContent.BuffType<Buffs.FishingComb>();
+            Item.buffType = ModContent.BuffType<Buffs.AdvancedFishing>();
             Item.buffTime = 52000;
-            return;
         }
 
         public override void AddRecipes()

@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 namespace Branch.Content.Buffs
 {
     /// <summary>
-    /// 钓鱼药水包增益
+    /// 高级钓鱼增益buff
     /// </summary>
-    public class FishingComb : ModBuff
+    public class AdvancedFishing : ModBuff
     {
         public override void SetStaticDefaults()
         {

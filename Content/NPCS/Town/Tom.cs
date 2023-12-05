@@ -21,8 +21,8 @@ namespace Branch.Content.NPCS.Town
     {
         /// <summary>
         /// 正在显示的商店编号
-        /// 0：待定
-        /// 1：渔夫商店
+        /// 0：渔夫商店
+        /// 1：待定
         /// </summary>
         public static int shopNum = 0;
 
@@ -34,7 +34,7 @@ namespace Branch.Content.NPCS.Town
         private const string UI_PREFIX = "Mods.UI.Tom";
 
         //渔夫商店
-        private string anglerShop = Language.GetTextValue($"{UI_PREFIX}.AnglerShop");
+        private string anglerShop => Language.GetTextValue($"{UI_PREFIX}.AnglerShop");
 
         #region 基础设置
 
@@ -182,9 +182,9 @@ namespace Branch.Content.NPCS.Town
             //打开NPC对话框，每帧刷新
             switch (shopNum)
             {
-                case 0: button = "1"; break;
+                case 0: button = anglerShop; break;
 
-                case 1: button = anglerShop; break;
+                case 1: button = "待定"; break;
                 default: button = "3"; break;
             };
             //设置第二个按钮，实际上是第三个按钮
@@ -199,8 +199,8 @@ namespace Branch.Content.NPCS.Town
             {
                 shopName = shopNum switch
                 {
-                    0 => "1",
-                    1 => anglerShop,
+                    0 => anglerShop,
+                    1 => "待定",
                     _ => "3",
                 };
             }
@@ -209,6 +209,51 @@ namespace Branch.Content.NPCS.Town
             {
                 shopNum = (shopNum + 1) % SHOP_COUNT;
             }
+        }
+
+        public override void AddShops()
+        {
+            AddAnglerShop();
+        }
+
+        private void AddAnglerShop()
+        {
+            NPCShop shop = new(Type, anglerShop);
+            var items = new short[]
+            {
+            //声呐药水
+            ItemID.SonarPotion,
+            //钓鱼药水
+            ItemID.FishingPotion,
+            //宝匣药水
+            ItemID.CratePotion,
+            //洞穴探险药水
+            ItemID.SpelunkerPotion,
+            //大师诱饵
+            ItemID.MasterBait,
+            //渔夫一套
+            ItemID.AnglerHat,
+            ItemID.AnglerVest,
+            ItemID.AnglerPants,
+            ItemID.GoldenFishingRod,
+            ItemID.GoldenBugNet,
+            ItemID.AnglerEarring,
+            ItemID.TackleBox,
+            ItemID.FishermansGuide,
+            ItemID.WeatherRadio,
+            ItemID.Sextant,
+            //防熔岩钓钩
+            ItemID.LavaFishingHook,
+            //优质钓鱼线
+            ItemID.HighTestFishingLine,
+            ItemID.SuperAbsorbantSponge,
+            ItemID.BottomlessBucket,
+            };
+            for (int i = 0; i < items.Length; i++)
+            {
+                shop.Add(new Item(items[i]));
+            }
+            shop.Register();
         }
 
         #endregion 对话与商店

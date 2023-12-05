@@ -1,5 +1,6 @@
 ﻿using System;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Events;
 using Terraria.GameContent.Personalities;
@@ -87,7 +88,7 @@ namespace Branch.Content.NPCS.Town
             //伤害，由于城镇NPC没有体术所以这里特指弹幕伤害（虽然弹幕伤害也是单独设置的所以理论上这个可以不写？）
             NPC.damage = 10;
             NPC.defense = 40;
-            NPC.lifeMax = 2600;
+            NPC.lifeMax = 260;
             NPC.HitSound = SoundID.NPCHit1;
             NPC.DeathSound = SoundID.NPCDeath1;
             //抗击退性，数据越小抗性越高
@@ -127,6 +128,14 @@ namespace Branch.Content.NPCS.Town
             return !toKingStatue;
         }
 
+        public override ITownNPCProfile TownNPCProfile()
+        {
+            //Profile的功能就是控制你的NPC被分配到的贴图以及小地图头像还有姓名。
+            //普通城镇NPC并不需要太复杂的Profile，如果你的NPC不需要换材质甚至可以不需要Profile
+            //但城镇宠物这种拥有随机外观的会很需要用到。
+            return new Profiles.DefaultNPCProfile(Texture, NPCHeadLoader.GetHeadSlot(HeadTexture));
+        }
+
         #endregion 基础设置
 
         #region 对话与商店
@@ -138,7 +147,9 @@ namespace Branch.Content.NPCS.Town
             //无家可归时
             if (NPC.homeless)
             {
-                chat.Add("如果能给我提供一个住处，你不会后悔的");
+                //chat.Add()
+                chat.Add(Language.GetTextValue("Mods.Tom.Chat1"));
+                //chat.Add("如果能给我提供一个住处，你不会后悔的");
             }
             //正在举行派对时
             if (BirthdayParty.PartyIsUp)
@@ -153,8 +164,8 @@ namespace Branch.Content.NPCS.Town
         {
             //直接引用原版的“商店”文本
             button = Language.GetTextValue("LegacyInterface.28");
-            //设置第二个按钮
-            button2 = "按钮2";
+            //设置第二个按钮，实际上是第三个按钮
+            button2 = "切换商店";
         }
 
         //设置当对话按钮被摁下时会发生什么
@@ -163,14 +174,12 @@ namespace Branch.Content.NPCS.Town
             //当第一个按钮被按下时
             if (firstButton)
             {
-                //打开商店
-                shopName = "Shop1";
+                shopName = "sdasdaad";
             }
             //如果是第二个按钮被按下时
             else
             {
-                //出现一句对话，使用这个属性可以直接设置NPC要说的话。
-                Main.npcChatText = "这是第二个按钮哦！";
+                shopName = "构思";
             }
         }
 

@@ -4,7 +4,7 @@ Mods: {
 			Configs: {
 				LuresAmount: {
 					Tooltip: ""
-					Label: 鱼线数量
+					Label: Lures Amount
 				}
 
 				DisplayName: Configs
@@ -30,46 +30,55 @@ Mods: {
 					Content: 我很满足。
 				}
 
-				DisplayName: Tom
+				DisplayName: 汤姆
 			}
 		}
 
 		Items: {
 			AdvancedFishingPotion: {
-				Tooltip: ""
-				DisplayName: Advanced Fishing Potion
+				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
+				DisplayName: 高级钓鱼药水
 			}
 
 			AdvancedExplorerPotion: {
-				Tooltip: ""
-				DisplayName: Advanced Explorer Potion
+				Tooltip:
+					'''
+					获得你在探险时需要的Buff
+					(洞穴探险，夜猫子，挖矿，狩猎，
+					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
+					'''
+				DisplayName: 高级探险者药水
 			}
 
 			AdvancedDefensePotion: {
-				Tooltip: ""
-				DisplayName: Advanced Defense Potion
+				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
+				DisplayName: 高级防御药水
 			}
 
 			PortableSundial: {
-				Tooltip: ""
-				DisplayName: Portable Sundial
+				Tooltip: 加速一段时间
+				DisplayName: 便携式日晷
 			}
 		}
 
 		Buffs: {
 			AdvancedFishing: {
-				Description: Mods.Branch.Buffs.AdvancedFishing.Description
-				DisplayName: Advanced Fishing
+				Description: 包含以下Buff：声呐,钓鱼,宝匣
+				DisplayName: 钓鱼高手
 			}
 
 			AdvancedExplorer: {
-				Description: Mods.Branch.Buffs.AdvancedExplorer.Description
-				DisplayName: Advanced Explorer
+				Description:
+					'''
+					包含以下Buff：洞穴探险，夜猫子，挖矿，狩猎，
+					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤
+					'''
+				DisplayName: 探索者
 			}
 
 			AdvancedDefense: {
-				Description: Mods.Branch.Buffs.AdvancedDefense.Description
-				DisplayName: Advanced Defense
+				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷
+				DisplayName: 铜墙铁壁
 			}
 		}
 	}

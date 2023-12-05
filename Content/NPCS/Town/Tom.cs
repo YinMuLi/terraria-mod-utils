@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Branch.Common;
+using Branch.Common.Utils;
+using System;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -17,6 +19,23 @@ namespace Branch.Content.NPCS.Town
     [AutoloadHead] //一小段代码就是自动加载一个NPC的小地图图标用的
     internal class Tom : ModNPC
     {
+        /// <summary>
+        /// 正在显示的商店编号
+        /// 0：待定
+        /// 1：渔夫商店
+        /// </summary>
+        public static int shopNum = 0;
+
+        /// <summary>
+        /// 商店的数量
+        /// </summary>
+        public const int SHOP_COUNT = 2;
+
+        private const string UI_PREFIX = "Mods.UI.Tom";
+
+        //渔夫商店
+        private string anglerShop = Language.GetTextValue($"{UI_PREFIX}.AnglerShop");
+
         #region 基础设置
 
         public override void SetStaticDefaults()
@@ -147,14 +166,12 @@ namespace Branch.Content.NPCS.Town
             //无家可归时
             if (NPC.homeless)
             {
-                //chat.Add()
-                chat.Add(Language.GetTextValue("Mods.Tom.Chat1"));
-                //chat.Add("如果能给我提供一个住处，你不会后悔的");
+                chat.Add(ModUtils.GetChatText("Tom", 1));
             }
             //正在举行派对时
             if (BirthdayParty.PartyIsUp)
             {
-                chat.Add("希望所有人都能快乐");
+                chat.Add(ModUtils.GetChatText("Tom", 2));
             }
             return chat;
         }
@@ -162,10 +179,16 @@ namespace Branch.Content.NPCS.Town
         //设置对话按钮的文本
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            //直接引用原版的“商店”文本
-            button = Language.GetTextValue("LegacyInterface.28");
+            //打开NPC对话框，每帧刷新
+            switch (shopNum)
+            {
+                case 0: button = "1"; break;
+
+                case 1: button = anglerShop; break;
+                default: button = "3"; break;
+            };
             //设置第二个按钮，实际上是第三个按钮
-            button2 = "切换商店";
+            button2 = Language.GetTextValue($"{UI_PREFIX}.ChangeButton");
         }
 
         //设置当对话按钮被摁下时会发生什么
@@ -174,12 +197,17 @@ namespace Branch.Content.NPCS.Town
             //当第一个按钮被按下时
             if (firstButton)
             {
-                shopName = "sdasdaad";
+                shopName = shopNum switch
+                {
+                    0 => "1",
+                    1 => anglerShop,
+                    _ => "3",
+                };
             }
             //如果是第二个按钮被按下时
             else
             {
-                shopName = "构思";
+                shopNum = (shopNum + 1) % SHOP_COUNT;
             }
         }
 

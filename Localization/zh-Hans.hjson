@@ -3,11 +3,11 @@ Mods: {
 		Configs: {
 			Configs: {
 				LuresAmount: {
-					Tooltip: ""
-					Label: Lures Amount
+					Tooltip: 修改所有鱼竿抛出的鱼线数量
+					Label: 鱼线数量
 				}
 
-				DisplayName: Configs
+				DisplayName: 配置
 			}
 		}
 

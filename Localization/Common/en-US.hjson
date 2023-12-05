@@ -1,0 +1,8 @@
+Mods: {
+	UI: {
+		Tom: {
+			ChangeButton: ""
+			AnglerShop: ""
+		}
+	}
+}

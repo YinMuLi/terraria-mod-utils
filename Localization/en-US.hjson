@@ -4,7 +4,7 @@ Mods: {
 			Configs: {
 				LuresAmount: {
 					Tooltip: ""
-					Label: 鱼线数量
+					Label: LuresAmount
 				}
 
 				DisplayName: Configs

@@ -1,0 +1,8 @@
+Mods: {
+	NPCs: {
+		Tom: {
+			Chat1: ""
+			chat2: ""
+		}
+	}
+}

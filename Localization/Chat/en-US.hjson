@@ -2,7 +2,8 @@ Mods: {
 	NPCs: {
 		Tom: {
 			Chat1: ""
-			chat2: ""
+			Chat2: ""
+			Chat3: ""
 		}
 	}
 }

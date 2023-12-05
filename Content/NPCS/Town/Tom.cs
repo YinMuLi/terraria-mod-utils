@@ -168,6 +168,10 @@ namespace Branch.Content.NPCS.Town
             {
                 chat.Add(ModUtils.GetChatText("Tom", 1));
             }
+            else
+            {
+                chat.Add(ModUtils.GetChatText("Tom", 3));
+            }
             //正在举行派对时
             if (BirthdayParty.PartyIsUp)
             {

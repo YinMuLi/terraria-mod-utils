@@ -285,13 +285,18 @@ namespace Branch.Content.NPCS.Town
                 ItemID.Shiverthorn,//寒颤棘
                 ItemID.Waterleaf,//幌菊
                 ItemID.Cactus,//仙人掌
+                ItemID.SharkFin,//鲨鱼鳍
                 ItemID.BottledWater//瓶装水
             };
             for (int i = 0; i < items.Length; i++)
             {
                 shop.Add(new Item(items[i]));
             }
-            //击败骷髅王，添加骨头
+            //腐肉,击败世界吞噬者
+            shop.Add(new Item(ItemID.RottenChunk), Condition.DownedEaterOfWorlds);
+            //椎骨，击败克苏鲁之脑
+            shop.Add(new Item(ItemID.Vertebrae), Condition.DownedBrainOfCthulhu);
+            //骨头，骷髅王
             shop.Add(new Item(ItemID.Bone), Condition.DownedSkeletron);
             shop.Register();
         }

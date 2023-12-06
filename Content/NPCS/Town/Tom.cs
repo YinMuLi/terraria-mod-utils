@@ -1,4 +1,4 @@
-﻿using Branch.Common.Utils;
+﻿using Branch.Common.Configs;
 using System;
 using Terraria;
 using Terraria.GameContent;
@@ -43,6 +43,11 @@ namespace Branch.Content.NPCS.Town
         private string herbsShop => Language.GetTextValue($"{UI_PREFIX}.HerbsShop");
 
         #region 基础设置
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return Configs.Instance.SpawnTom;
+        }
 
         public override void SetStaticDefaults()
         {
@@ -140,9 +145,8 @@ namespace Branch.Content.NPCS.Town
 
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
-            //设置入住条件
-            //返回条件为：拥有两个或以上的城镇居民
-            return numTownNPCs >= 2;
+            //返回条件为：拥有两个NPC
+            return numTownNPCs >= 2 && Configs.Instance.SpawnTom;
         }
 
         public override bool CanGoToStatue(bool toKingStatue)

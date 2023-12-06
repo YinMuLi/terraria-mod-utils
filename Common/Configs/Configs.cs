@@ -18,5 +18,8 @@ namespace Branch.Common.Configs
         [DefaultValue(5)]
         [Slider]
         public int LuresAmount;
+
+        [DefaultValue(true)]
+        public bool SpawnTom;
     }
 }

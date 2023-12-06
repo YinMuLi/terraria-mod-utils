@@ -2,13 +2,18 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Potions
+namespace Branch.Content.Items.Potions
 {
     /// <summary>
-    /// 高级探险者药水
+    /// 高级钓鱼药水
     /// </summary>
-    internal class AdvancedExplorerPotion : ModItem
+    public class AdvancedFishingPotion : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
+
         public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;
@@ -22,25 +27,16 @@ namespace Branch.Content.Potions
             Item.height = 32;
             Item.value = Item.buyPrice(0, 1, 0, 0);
             Item.rare = ItemRarityID.Master;
-            Item.buffType = ModContent.BuffType<Buffs.AdvancedExplorer>();
+            Item.buffType = ModContent.BuffType<Buffs.AdvancedFishing>();
             Item.buffTime = 52000;
         }
 
         public override void AddRecipes()
         {
             Recipe recipe = Recipe.Create(Item.type);
-            //危险感知
-            recipe.AddIngredient(ItemID.TrapsightPotion, 1);
-            recipe.AddIngredient(ItemID.HunterPotion, 1);
-            //洞穴探险
-            recipe.AddIngredient(ItemID.SpelunkerPotion, 1);
-            recipe.AddIngredient(ItemID.NightOwlPotion, 1);
-            //挖矿
-            recipe.AddIngredient(ItemID.MiningPotion, 1);
-            recipe.AddIngredient(ItemID.GillsPotion, 1);
-            recipe.AddIngredient(ItemID.FlipperPotion, 1);
-            recipe.AddIngredient(ItemID.WaterWalkingPotion, 1);
-            recipe.AddIngredient(ItemID.ObsidianSkinPotion, 1);
+            recipe.AddIngredient(ItemID.FishingPotion, 1);
+            recipe.AddIngredient(ItemID.SonarPotion, 1);
+            recipe.AddIngredient(ItemID.CratePotion, 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
         }

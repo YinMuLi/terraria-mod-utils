@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Potions
+namespace Branch.Content.Items.Potions
 {
     /// <summary>
     /// 高级防御药水

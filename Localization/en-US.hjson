@@ -8,6 +8,11 @@ Mods: {
 				}
 
 				DisplayName: Configs
+
+				SpawnTom: {
+					Label: Spawn Tom
+					Tooltip: ""
+				}
 			}
 		}
 
@@ -31,6 +36,7 @@ Mods: {
 				}
 
 				DisplayName: Tom
+				Census.SpawnCondition: Conditions unknown
 			}
 		}
 
@@ -54,6 +60,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Portable Sundial
 			}
+
+			PrisionBuilder: {
+				DisplayName: Prision Builder
+				Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -72,5 +83,7 @@ Mods: {
 				DisplayName: Advanced Defense
 			}
 		}
+
+		Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 	}
 }

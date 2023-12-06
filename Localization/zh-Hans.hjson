@@ -8,6 +8,11 @@ Mods: {
 				}
 
 				DisplayName: 个人配置
+
+				SpawnTom: {
+					Label: 是否生成汤姆
+					// Tooltip: ""
+				}
 			}
 		}
 
@@ -31,6 +36,7 @@ Mods: {
 				}
 
 				DisplayName: 汤姆
+				// Census.SpawnCondition: Conditions unknown
 			}
 		}
 
@@ -59,6 +65,11 @@ Mods: {
 				Tooltip: 加速一段时间
 				DisplayName: 便携式日晷
 			}
+
+			PrisionBuilder: {
+				// DisplayName: Prision Builder
+				// Tooltip: ""
+			}
 		}
 
 		Buffs: {
@@ -81,5 +92,7 @@ Mods: {
 				DisplayName: 铜墙铁壁
 			}
 		}
+
+		// Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 	}
 }

@@ -3,6 +3,7 @@ Mods: {
 		Tom: {
 			ChangeButton: ""
 			AnglerShop: ""
+			HerbsShop: ""
 		}
 	}
 }

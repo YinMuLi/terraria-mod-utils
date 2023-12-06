@@ -1,5 +1,4 @@
-﻿using Branch.Common;
-using Branch.Common.Utils;
+﻿using Branch.Common.Utils;
 using System;
 using Terraria;
 using Terraria.GameContent;
@@ -22,7 +21,7 @@ namespace Branch.Content.NPCS.Town
         /// <summary>
         /// 正在显示的商店编号
         /// 0：渔夫商店
-        /// 1：待定
+        /// 1：百草园
         /// </summary>
         public static int shopNum = 0;
 
@@ -33,8 +32,15 @@ namespace Branch.Content.NPCS.Town
 
         private const string UI_PREFIX = "Mods.UI.Tom";
 
-        //渔夫商店
+        /// <summary>
+        /// 渔夫商店
+        /// </summary>
         private string anglerShop => Language.GetTextValue($"{UI_PREFIX}.AnglerShop");
+
+        /// <summary>
+        /// 百草园
+        /// </summary>
+        private string herbsShop => Language.GetTextValue($"{UI_PREFIX}.HerbsShop");
 
         #region 基础设置
 
@@ -161,36 +167,46 @@ namespace Branch.Content.NPCS.Town
 
         public override string GetChat()
         {
+            string prefix = "Mods.NPCs.Tom.Chat";
             //设置对话
             WeightedRandom<String> chat = new();
-            //无家可归时
+            //无家可归时,必须if和else都设置，不然NPC有家时没有对话，导致对话框
+            //显示不出来
             if (NPC.homeless)
             {
-                chat.Add(ModUtils.GetChatText("Tom", 1));
+                chat.Add(Language.GetTextValue($"{prefix}1"));
             }
             else
             {
-                chat.Add(ModUtils.GetChatText("Tom", 3));
+                chat.Add(Language.GetTextValue($"{prefix}3"));
             }
             //正在举行派对时
             if (BirthdayParty.PartyIsUp)
             {
-                chat.Add(ModUtils.GetChatText("Tom", 2));
+                chat.Add(Language.GetTextValue($"{prefix}2"));
             }
             return chat;
+        }
+
+        /// <summary>
+        /// 获取商店名称
+        /// </summary>
+        /// <returns>string</returns>
+        private string GetShopName()
+        {
+            return shopNum switch
+            {
+                0 => anglerShop,
+                1 => herbsShop,
+                _ => null
+            };
         }
 
         //设置对话按钮的文本
         public override void SetChatButtons(ref string button, ref string button2)
         {
             //打开NPC对话框，每帧刷新
-            switch (shopNum)
-            {
-                case 0: button = anglerShop; break;
-
-                case 1: button = "待定"; break;
-                default: button = "3"; break;
-            };
+            button = GetShopName();
             //设置第二个按钮，实际上是第三个按钮
             button2 = Language.GetTextValue($"{UI_PREFIX}.ChangeButton");
         }
@@ -201,12 +217,7 @@ namespace Branch.Content.NPCS.Town
             //当第一个按钮被按下时
             if (firstButton)
             {
-                shopName = shopNum switch
-                {
-                    0 => anglerShop,
-                    1 => "待定",
-                    _ => "3",
-                };
+                shopName = GetShopName();
             }
             //如果是第二个按钮被按下时
             else
@@ -218,6 +229,7 @@ namespace Branch.Content.NPCS.Town
         public override void AddShops()
         {
             AddAnglerShop();
+            AddHerbsShop();
         }
 
         private void AddAnglerShop()
@@ -257,6 +269,30 @@ namespace Branch.Content.NPCS.Town
             {
                 shop.Add(new Item(items[i]));
             }
+            shop.Register();
+        }
+
+        private void AddHerbsShop()
+        {
+            NPCShop shop = new(Type, herbsShop);
+            var items = new short[]
+            {
+                ItemID.Blinkroot,//闪耀根
+                ItemID.Daybloom,//太阳花
+                ItemID.Deathweed,//死亡草
+                ItemID.Fireblossom,//火焰花
+                ItemID.Moonglow,//月光草
+                ItemID.Shiverthorn,//寒颤棘
+                ItemID.Waterleaf,//幌菊
+                ItemID.Cactus,//仙人掌
+                ItemID.BottledWater//瓶装水
+            };
+            for (int i = 0; i < items.Length; i++)
+            {
+                shop.Add(new Item(items[i]));
+            }
+            //击败骷髅王，添加骨头
+            shop.Add(new Item(ItemID.Bone), Condition.DownedSkeletron);
             shop.Register();
         }
 

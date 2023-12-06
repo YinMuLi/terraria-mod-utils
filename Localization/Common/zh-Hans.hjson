@@ -3,6 +3,7 @@ Mods: {
 		Tom: {
 			ChangeButton: 切换商店
 			AnglerShop: 渔夫商店
+			HerbsShop: 药房
 		}
 	}
 }

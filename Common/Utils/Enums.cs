@@ -17,6 +17,7 @@ namespace Branch.Common.Utils
 
         Wall,
         NoWall,
-        Block
+        Block,
+        Platform
     }
 }

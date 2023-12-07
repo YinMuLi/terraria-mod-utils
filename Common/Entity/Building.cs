@@ -30,20 +30,28 @@ namespace Branch.Common.Entity
         {
             this.width = width;
             this.height = height;
-            array = new TileSort[width, height];
+            array = new TileSort[height, width];
         }
 
-        public void SetSort(TileSort sort, int x, int y)
+        public void SetSortColumn(TileSort sort, int column, bool line = true, int start = 0, int end = 0)
         {
+            if (line)
+            {
+                end = height - 1;
+            }
+            for (int i = start; i <= end; i++)
+            {
+                array[i, column] = sort;
+            }
         }
 
-        public void SetSortColumn(TileSort sort, int column, int? start, int? end)
+        public void SetSortRow(TileSort sort, int row, bool line = true, int start = 0, int end = 0)
         {
-        }
-
-        public void SetSortRow(TileSort sort, int row, int start, int end)
-        {
-            for (int i = start; i < end; i++)
+            if (line)
+            {
+                end = width - 1;
+            }
+            for (int i = start; i <= end; i++)
             {
                 array[row, i] = sort;
             }
@@ -51,6 +59,13 @@ namespace Branch.Common.Entity
 
         public void SetSortArea(TileSort sort, Vector2 start, Vector2 end)
         {
+            for (int i = (int)start.X; i <= end.X; i++)
+            {
+                for (int j = (int)start.Y; j <= end.Y; j++)
+                {
+                    array[i, j] = sort;
+                }
+            }
         }
     }
 }

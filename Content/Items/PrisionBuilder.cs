@@ -8,25 +8,12 @@ using Terraria.ModLoader;
 using Terraria.UI;
 using Branch.Common.Utils;
 using Branch.Common.Entity;
+using System.Collections.Generic;
 
 namespace Branch.Content.Items
 {
     internal class PrisionBuilder : ModItem
     {
-        private int[,] array = new int[10, 6]
-            {
-                { 1, 1, 1, 1, 1 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-                { 1, 0, 0, 0, 0 ,1},
-            };
-
         private static Building prision;
 
         public override void Load()
@@ -35,7 +22,18 @@ namespace Branch.Content.Items
             if (!Main.dedServ)
             {
                 prision = new(6, 10);
-                prision.SetSortRow(TileSort.Block, 0, 0, 5);
+                prision.SetSortRow(TileSort.Block, 0);
+                prision.SetSortRow(TileSort.Block, 5, false, 0, 3);
+                prision.SetSortRow(TileSort.Platform, 9);
+                prision.SetSortColumn(TileSort.Block, 0, false, 1, 4);
+                prision.SetSortColumn(TileSort.Block, 5, false, 1, 5);
+                prision.SetSortColumn(TileSort.Platform, 0, false, 7, 9);
+                prision.SetSortColumn(TileSort.Platform, 5, false, 7, 9);
+                Vector2 start = new(1, 1);
+                Vector2 end = new(4, 4);
+                prision.SetSortArea(TileSort.Wall, start, end);
+
+                prision[5, 4] = TileSort.Troch;
             }
         }
 
@@ -97,16 +95,44 @@ namespace Branch.Content.Items
 
         private void Building(Player player)
         {
+            Dictionary<TileSort, Vector2> left = new();
             int x = Player.tileTargetX;
             int y = Player.tileTargetY;
+            Item block = new Item(ItemID.BambooBlock);
+            Item platform = new Item(ItemID.GlassPlatform);
+            Item wall = new Item(ItemID.GlassWall);
             for (int i = 0; i < prision.Height; i++)
             {
                 for (int j = 0; j < prision.Width; j++)
                 {
-                    if (prision[x, y] == TileSort.Block)
+                    TileSort sort = prision[i, j];
+                    int placeX = x - prision.Width / 2 + j;
+                    int placeY = y - prision.Height / 2 + i;
+                    if (sort == TileSort.Wall)
                     {
-                        TileUtils.PlaceTile(player, new Item(ItemID.Glass), x, y);
+                        PlaceWall(wall, player, placeX, placeY);
                     }
+                    switch (sort)
+                    {
+                        case TileSort.Block:
+                            TileUtils.PlaceTile(player, block, placeX, placeY);
+                            break;
+
+                        case TileSort.Platform:
+                            TileUtils.PlaceTile(player, platform, placeX, placeY);
+                            break;
+
+                        case TileSort.Troch:
+                            left.Add(sort, new(placeX, placeY));
+                            break;
+                    }
+                }
+            }
+            foreach (var item in left)
+            {
+                if (item.Key == TileSort.Troch)
+                {
+                    TileUtils.PlaceTile(player, new Item(ItemID.RainbowTorch), (int)item.Value.X, (int)item.Value.Y);
                 }
             }
         }
@@ -119,7 +145,7 @@ namespace Branch.Content.Items
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <returns>bool</returns>
-        private bool TryPlaceWall(Item item, Player player, int x, int y)
+        private bool PlaceWall(Item item, Player player, int x, int y)
         {
             //createWall是该物品墙属性的ID==WallID.xxx
             if (item.createWall > -1)
@@ -129,6 +155,7 @@ namespace Branch.Content.Items
                 if (Main.tile[x, y].WallType == 0)
                 {
                     WorldGen.PlaceWall(x, y, item.createWall, true);
+                    return true;
                 }
             }
             return false;

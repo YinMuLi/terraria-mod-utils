@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
+using Branch.Common.Utils;
 
 namespace Branch.Content.Items
 {
@@ -33,7 +34,7 @@ namespace Branch.Content.Items
 
         public override void HoldItem(Player player)
         {
-            DrawPreview(6, 10, player);
+            //DrawPreview(6, 10, player);
         }
 
         /// <summary>
@@ -71,15 +72,25 @@ namespace Branch.Content.Items
 
         private void Building(Player player)
         {
-            TryPlaceWall(new Item(ItemID.GlassWall), player, Player.tileTargetX, Player.tileTargetY);
+            int x = Player.tileTargetX; int y = Player.tileTargetY;
+            TileUtils.PlaceTile(player, new Item(ItemID.Wood), x, y);
+            //TryPlaceWall(new Item(ItemID.GlassWall), player, Player.tileTargetX, Player.tileTargetY);
         }
 
+        /// <summary>
+        /// 放置墙体，会把墙体前的方块破坏掉
+        /// </summary>
+        /// <param name="item">墙物品</param>
+        /// <param name="player">玩家</param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns>bool</returns>
         private bool TryPlaceWall(Item item, Player player, int x, int y)
         {
             //createWall是该物品墙属性的ID==WallID.xxx
             if (item.createWall > -1)
             {
-                TryKillTile(x, y, player);
+                TileUtils.KillTile(x, y, player);
                 WorldGen.KillWall(x, y);
                 if (Main.tile[x, y].WallType == 0)
                 {
@@ -87,24 +98,6 @@ namespace Branch.Content.Items
                 }
             }
             return false;
-        }
-
-        private void TryKillTile(int x, int y, Player player)
-        {
-            //TileType:这个位置tile的ID
-            Tile tile = Main.tile[x, y];
-            if (tile.HasTile && !Main.tileHammer[tile.TileType])
-            {
-                if (player.HasEnoughPickPowerToHurtTile(x, y))
-                {
-                    if (TileID.Sets.Grass[tile.TileType] || TileID.Sets.GrassSpecial[tile.TileType] || Main.tileMoss[tile.TileType] || TileID.Sets.tileMossBrick[tile.TileType])
-                    {
-                        //如果这个地方长草或者其它什么东西需要摧毁两次
-                        player.PickTile(x, y, 1000);
-                    }
-                    player.PickTile(x, y, 1000);
-                }
-            }
         }
     }
 }

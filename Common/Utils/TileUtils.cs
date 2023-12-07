@@ -6,7 +6,7 @@ namespace Branch.Common.Utils
     internal class TileUtils
     {
         /// <summary>
-        /// 先摧毁物块，在放置物块
+        /// 放置物块
         /// </summary>
         /// <param name="player"></param>
         /// <param name="item"></param>

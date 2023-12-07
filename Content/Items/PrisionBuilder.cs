@@ -7,16 +7,42 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 using Branch.Common.Utils;
+using Branch.Common.Entity;
 
 namespace Branch.Content.Items
 {
     internal class PrisionBuilder : ModItem
     {
+        private int[,] array = new int[10, 6]
+            {
+                { 1, 1, 1, 1, 1 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+                { 1, 0, 0, 0, 0 ,1},
+            };
+
+        private static Building prision;
+
+        public override void Load()
+        {
+            //不是死服务？
+            if (!Main.dedServ)
+            {
+                prision = new(6, 10);
+                prision.SetSortRow(TileSort.Block, 0, 0, 5);
+            }
+        }
+
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Sundial, 1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient(ItemID.Wood, 1);
             recipe.Register();
         }
 
@@ -51,7 +77,6 @@ namespace Branch.Content.Items
                 {
                     for (int j = -(height - height / 2); j < height / 2; j++)
                     {
-                        Broadcast.Print(height - height / 2);
                         Vector2 mouse = Main.MouseWorld;
                         mouse.X += i * 16;
                         mouse.Y += j * 16;
@@ -72,9 +97,18 @@ namespace Branch.Content.Items
 
         private void Building(Player player)
         {
-            int x = Player.tileTargetX; int y = Player.tileTargetY;
-            TileUtils.PlaceTile(player, new Item(ItemID.Wood), x, y);
-            //TryPlaceWall(new Item(ItemID.GlassWall), player, Player.tileTargetX, Player.tileTargetY);
+            int x = Player.tileTargetX;
+            int y = Player.tileTargetY;
+            for (int i = 0; i < prision.Height; i++)
+            {
+                for (int j = 0; j < prision.Width; j++)
+                {
+                    if (prision[x, y] == TileSort.Block)
+                    {
+                        TileUtils.PlaceTile(player, new Item(ItemID.Glass), x, y);
+                    }
+                }
+            }
         }
 
         /// <summary>

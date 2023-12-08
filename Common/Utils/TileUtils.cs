@@ -6,11 +6,12 @@ namespace Branch.Common.Utils
     internal class TileUtils
     {
         /// <summary>
-        /// 放置物块
+        /// 放置物块(方块，平台，建筑物)
         /// </summary>
         /// <param name="player"></param>
         /// <param name="item"></param>
-        /// <returns></returns>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public static void PlaceTile(Player player, Item item, int x, int y)
         {
             //TODO:物块的魔杖判断

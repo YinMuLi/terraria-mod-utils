@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.GameContent.Events;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -35,7 +36,12 @@ namespace Branch.Content.Items
 
         public override bool? UseItem(Player player)
         {
-            Main.time += 54000;
+            if (Main.netMode != NetmodeID.MultiplayerClient)
+            {
+                Main.time = 54000.0;
+                CultistRitual.delay = 0.0;
+                CultistRitual.recheck = 0.0;
+            }
             return true;
         }
     }

@@ -1,39 +1,57 @@
-﻿using Branch.Common;
+﻿using Branch.Common.Entity;
+using Branch.Common.Utils;
 using Branch.Content.Projectiles;
 using Microsoft.Xna.Framework;
-using rail;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.UI;
-using Branch.Common.Utils;
-using Branch.Common.Entity;
-using System.Collections.Generic;
 
 namespace Branch.Content.Items
 {
     internal class PrisionBuilder : ModItem
     {
-        private static Building prision;
+        private static TileSort[,] prision;
 
         public override void Load()
         {
             //不是死服务？
             if (!Main.dedServ)
             {
-                prision = new(6, 10);
-                prision.SetSortRow(TileSort.Block, 0);
-                prision.SetSortRow(TileSort.Block, 5, false, 0, 3);
-                prision.SetSortRow(TileSort.Platform, 9);
-                prision.SetSortColumn(TileSort.Block, 0, false, 1, 4);
-                prision.SetSortColumn(TileSort.Block, 5, false, 1, 5);
-                prision.SetSortColumn(TileSort.Platform, 0, false, 7, 9);
-                prision.SetSortColumn(TileSort.Platform, 5, false, 7, 9);
-                Vector2 start = new(1, 1);
-                Vector2 end = new(4, 4);
-                prision.SetSortArea(TileSort.Wall, start, end);
+                //没有任何物块
+                TileSort a = TileSort.None;
+                //有方块
+                TileSort b = TileSort.Block;
+                //平台
+                TileSort c = TileSort.Platform;
+                //墙
+                TileSort d = TileSort.Wall;
+                //工作台
+                TileSort e = TileSort.Wall | TileSort.Workbench;
+                //椅子
+                TileSort f = TileSort.Chair | TileSort.Wall;
+                //火把
+                TileSort g = TileSort.Troch;
+                prision = new TileSort[10, 6] {
+                    { b,b,b,b,b,b},
+                    { b,d,d,d,d,b},
+                    { b,d,d,d,d,b},
+                    { b,d,d,d,d,b},
+                    { b,f,e,d,d,b},
+                    { b,b,b,b,g,b},
+                    { c,a,a,a,a,c},
+                    { c,a,a,a,a,c},
+                    { c,a,a,a,a,c},
+                    { c,c,c,c,c,c},
+                };
+            }
+        }
 
-                prision[5, 4] = TileSort.Troch;
+        public override void Unload()
+        {
+            if (!Main.dedServ)
+            {
+                prision = null;
             }
         }
 
@@ -95,44 +113,49 @@ namespace Branch.Content.Items
 
         private void Building(Player player)
         {
-            Dictionary<TileSort, Vector2> left = new();
-            int x = Player.tileTargetX;
-            int y = Player.tileTargetY;
+            List<TileData> left = new();
             Item block = new Item(ItemID.BambooBlock);
             Item platform = new Item(ItemID.GlassPlatform);
             Item wall = new Item(ItemID.GlassWall);
-            for (int i = 0; i < prision.Height; i++)
+            for (int i = 0; i < prision.GetLength(0); i++)
             {
-                for (int j = 0; j < prision.Width; j++)
+                for (int j = 0; j < prision.GetLength(1); j++)
                 {
                     TileSort sort = prision[i, j];
-                    int placeX = x - prision.Width / 2 + j;
-                    int placeY = y - prision.Height / 2 + i;
-                    if (sort == TileSort.Wall)
+                    int x = Player.tileTargetX - prision.GetLength(1) / 2 + j;
+                    int y = Player.tileTargetY - prision.GetLength(0) / 2 + i;
+                    if (sort.HasFlag(TileSort.Wall))
                     {
-                        PlaceWall(wall, player, placeX, placeY);
+                        PlaceWall(wall, player, x, y);
                     }
-                    switch (sort)
+                    if (sort.HasFlag(TileSort.Block))
                     {
-                        case TileSort.Block:
-                            TileUtils.PlaceTile(player, block, placeX, placeY);
-                            break;
-
-                        case TileSort.Platform:
-                            TileUtils.PlaceTile(player, platform, placeX, placeY);
-                            break;
-
-                        case TileSort.Troch:
-                            left.Add(sort, new(placeX, placeY));
-                            break;
+                        TileUtils.PlaceTile(player, block, x, y);
+                    }
+                    if (sort.HasFlag(TileSort.Platform))
+                    {
+                        TileUtils.PlaceTile(player, platform, x, y);
+                    }
+                    if (sort.HasFlag(TileSort.Troch) || sort.HasFlag(TileSort.Chair) || sort.HasFlag(TileSort.Workbench))
+                    {
+                        left.Add(new(sort, x, y));
                     }
                 }
             }
-            foreach (var item in left)
+
+            for (int i = 0; i < left.Count; i++)
             {
-                if (item.Key == TileSort.Troch)
+                if (left[i].sort.HasFlag(TileSort.Troch))
                 {
-                    TileUtils.PlaceTile(player, new Item(ItemID.RainbowTorch), (int)item.Value.X, (int)item.Value.Y);
+                    TileUtils.PlaceTile(player, new(ItemID.RainbowTorch), left[i].x, left[i].y);
+                }
+                if (left[i].sort.HasFlag(TileSort.Workbench))
+                {
+                    TileUtils.PlaceTile(player, new(ItemID.WorkBench), left[i].x, left[i].y);
+                }
+                if (left[i].sort.HasFlag(TileSort.Chair))
+                {
+                    TileUtils.PlaceTile(player, new(ItemID.BambooChair), left[i].x, left[i].y);
                 }
             }
         }

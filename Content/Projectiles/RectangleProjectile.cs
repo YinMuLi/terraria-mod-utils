@@ -1,4 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Branch.Common.Utils;
+using Branch.Content.Items;
+using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
@@ -39,6 +42,14 @@ namespace Branch.Content.Projectiles
                 item = itemuseSource.Item;
             }
             base.OnSpawn(source);
+        }
+
+        public void Set(Action ConsumeEvent)
+        {
+            ConsumeEvent += () =>
+            {
+                this.Projectile.Kill();
+            };
         }
 
         public override void AI()

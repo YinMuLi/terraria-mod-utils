@@ -2,6 +2,7 @@
 using Branch.Common.Utils;
 using Branch.Content.Projectiles;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -47,6 +48,8 @@ namespace Branch.Content.Items
             }
         }
 
+        private event Action ConsumeEvent;
+
         public override void Unload()
         {
             if (!Main.dedServ)
@@ -57,9 +60,9 @@ namespace Branch.Content.Items
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Wood, 1);
-            recipe.Register();
+            CreateRecipe()
+                .AddRecipeGroup("Wood", 30)
+                .Register();
         }
 
         public override void SetDefaults()
@@ -72,11 +75,13 @@ namespace Branch.Content.Items
             Item.useStyle = ItemUseStyleID.Swing;//物品的使用方式
             Item.useAnimation = 10;
             Item.useTime = 10;
+            Item.consumable = true;
+            Item.maxStack = 30;
         }
 
         public override void HoldItem(Player player)
         {
-            //DrawPreview(6, 10, player);
+            DrawPreview(6, 10, player);
         }
 
         /// <summary>
@@ -102,6 +107,11 @@ namespace Branch.Content.Items
             }
         }
 
+        public override void OnConsumeItem(Player player)
+        {
+            base.OnConsumeItem(player);
+        }
+
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI == Main.myPlayer && !player.noBuilding)
@@ -114,8 +124,8 @@ namespace Branch.Content.Items
         private void Building(Player player)
         {
             List<TileData> left = new();
-            Item block = new Item(ItemID.BambooBlock);
-            Item platform = new Item(ItemID.GlassPlatform);
+            Item block = new Item(ItemID.RichMahogany);
+            Item platform = new Item(ItemID.RichMahoganyPlatform);
             Item wall = new Item(ItemID.GlassWall);
             for (int i = 0; i < prision.GetLength(0); i++)
             {
@@ -128,34 +138,46 @@ namespace Branch.Content.Items
                     {
                         PlaceWall(wall, player, x, y);
                     }
-                    if (sort.HasFlag(TileSort.Block))
+                    else
                     {
-                        TileUtils.PlaceTile(player, block, x, y);
+                        TileUtils.KillAll(player, x, y);
                     }
-                    if (sort.HasFlag(TileSort.Platform))
+                    switch (sort)
                     {
-                        TileUtils.PlaceTile(player, platform, x, y);
-                    }
-                    if (sort.HasFlag(TileSort.Troch) || sort.HasFlag(TileSort.Chair) || sort.HasFlag(TileSort.Workbench))
-                    {
-                        left.Add(new(sort, x, y));
+                        case TileSort.Platform:
+                            TileUtils.PlaceTile(player, platform, x, y);
+                            break;
+
+                        case TileSort.Block:
+                            TileUtils.PlaceTile(player, block, x, y);
+                            break;
+
+                        case TileSort.Troch:
+                        case TileSort.Chair:
+                        case TileSort.Workbench:
+                            left.Add(new(sort, x, y));
+                            break;
                     }
                 }
             }
 
             for (int i = 0; i < left.Count; i++)
             {
-                if (left[i].sort.HasFlag(TileSort.Troch))
+                switch (left[i].sort)
                 {
-                    TileUtils.PlaceTile(player, new(ItemID.RainbowTorch), left[i].x, left[i].y);
-                }
-                if (left[i].sort.HasFlag(TileSort.Workbench))
-                {
-                    TileUtils.PlaceTile(player, new(ItemID.WorkBench), left[i].x, left[i].y);
-                }
-                if (left[i].sort.HasFlag(TileSort.Chair))
-                {
-                    TileUtils.PlaceTile(player, new(ItemID.BambooChair), left[i].x, left[i].y);
+                    case TileSort.Troch:
+                        TileUtils.PlaceTile(player, new(ItemID.UltrabrightTorch), left[i].x, left[i].y);
+
+                        break;
+
+                    case TileSort.Chair:
+                        TileUtils.PlaceTile(player, new(ItemID.RichMahoganyChair), left[i].x, left[i].y);
+                        break;
+
+                    case TileSort.Workbench:
+                        TileUtils.PlaceTile(player, new(ItemID.RichMahoganyWorkBench), left[i].x, left[i].y);
+
+                        break;
                 }
             }
         }
@@ -173,7 +195,7 @@ namespace Branch.Content.Items
             //createWall是该物品墙属性的ID==WallID.xxx
             if (item.createWall > -1)
             {
-                TileUtils.KillTile(x, y, player);
+                TileUtils.KillTile(player, x, y);
                 WorldGen.KillWall(x, y);
                 if (Main.tile[x, y].WallType == 0)
                 {

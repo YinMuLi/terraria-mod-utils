@@ -172,6 +172,9 @@ namespace Branch.Content.Items
 
                     case TileSort.Chair:
                         TileUtils.PlaceTile(player, new(ItemID.RichMahoganyChair), left[i].x, left[i].y);
+                        //改变椅子的朝向
+                        Main.tile[left[i].x, left[i].y].TileFrameX += 18;
+                        Main.tile[left[i].x, left[i].y - 1].TileFrameX += 18;
                         break;
 
                     case TileSort.Workbench:

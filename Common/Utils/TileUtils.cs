@@ -32,7 +32,7 @@ namespace Branch.Common.Utils
         }
 
         /// <summary>
-        /// 摧毁物块，需要玩家有能挖动物块的镐子(不是强制性的)
+        /// 摧毁物块，需要玩家有能挖动物块的镐子
         /// </summary>
         /// <param name="player"></param>
         /// <param name="x"></param>

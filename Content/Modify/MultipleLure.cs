@@ -5,6 +5,9 @@ using Terraria.ModLoader;
 
 namespace Branch.Content.Modify
 {
+    /// <summary>
+    /// 鱼竿多线
+    /// </summary>
     public class MultipleLure : GlobalProjectile
     {
         public override bool InstancePerEntity => true;
@@ -14,7 +17,7 @@ namespace Branch.Content.Modify
             //bobber:钓鱼用的漂浮
             if (projectile.bobber && projectile.owner == Main.myPlayer && source is EntitySource_ItemUse)
             {
-                for (int i = 0; i < Configs.Instance.LuresAmount; i++)
+                for (int i = 0; i < BranchConfig.Instance.LuresAmount; i++)
                 {
                     Projectile.NewProjectile(projectile.GetSource_FromThis("MultipleLure"),
                            projectile.position,

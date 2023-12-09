@@ -10,7 +10,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-namespace Branch.Content.NPCS.Town
+namespace Branch.Content.NPCS
 {
     /// <summary>
     /// 模组NPC-Tom
@@ -28,7 +28,7 @@ namespace Branch.Content.NPCS.Town
         /// <summary>
         /// 商店的数量
         /// </summary>
-        public const int SHOP_COUNT = 2;
+        public const int SHOP_COUNT = 3;
 
         private const string UI_PREFIX = "Mods.UI.Tom";
 
@@ -42,11 +42,16 @@ namespace Branch.Content.NPCS.Town
         /// </summary>
         private string herbsShop => Language.GetTextValue($"{UI_PREFIX}.HerbsShop");
 
+        /// <summary>
+        /// 通用商店
+        /// </summary>
+        private string generalShop => Language.GetTextValue($"{UI_PREFIX}.GeneralShop");
+
         #region 基础设置
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return Configs.Instance.SpawnTom;
+            return BranchConfig.Instance.SpawnTom;
         }
 
         public override void SetStaticDefaults()
@@ -146,7 +151,7 @@ namespace Branch.Content.NPCS.Town
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
             //返回条件为：拥有两个NPC
-            return numTownNPCs >= 2 && Configs.Instance.SpawnTom;
+            return numTownNPCs >= 2 && BranchConfig.Instance.SpawnTom;
         }
 
         public override bool CanGoToStatue(bool toKingStatue)
@@ -173,7 +178,7 @@ namespace Branch.Content.NPCS.Town
         {
             string prefix = "Mods.NPCs.Tom.Chat";
             //设置对话
-            WeightedRandom<String> chat = new();
+            WeightedRandom<string> chat = new();
             //无家可归时,必须if和else都设置，不然NPC有家时没有对话，导致对话框
             //显示不出来
             if (NPC.homeless)
@@ -202,6 +207,7 @@ namespace Branch.Content.NPCS.Town
             {
                 0 => anglerShop,
                 1 => herbsShop,
+                2 => generalShop,
                 _ => null
             };
         }
@@ -234,6 +240,7 @@ namespace Branch.Content.NPCS.Town
         {
             AddAnglerShop();
             AddHerbsShop();
+            AddGeneralShop();
         }
 
         private void AddAnglerShop()
@@ -241,16 +248,11 @@ namespace Branch.Content.NPCS.Town
             NPCShop shop = new(Type, anglerShop);
             var items = new short[]
             {
-            //声呐药水
-            ItemID.SonarPotion,
-            //钓鱼药水
-            ItemID.FishingPotion,
-            //宝匣药水
-            ItemID.CratePotion,
-            //洞穴探险药水
-            ItemID.SpelunkerPotion,
-            //大师诱饵
-            ItemID.MasterBait,
+            ItemID.SonarPotion,//声呐药水
+            ItemID.FishingPotion,//钓鱼药水
+            ItemID.CratePotion,//宝匣药水
+            ItemID.SpelunkerPotion,//洞穴探险药水
+            ItemID.MasterBait,//大师诱饵
             //渔夫一套
             ItemID.AnglerHat,
             ItemID.AnglerVest,
@@ -302,6 +304,22 @@ namespace Branch.Content.NPCS.Town
             shop.Add(new Item(ItemID.Vertebrae), Condition.DownedBrainOfCthulhu);
             //骨头，骷髅王
             shop.Add(new Item(ItemID.Bone), Condition.DownedSkeletron);
+            //坠落之星,击败任意机械BOSS
+            shop.Add(new Item(ItemID.FallenStar), Condition.DownedMechBossAny);
+            shop.Register();
+        }
+
+        private void AddGeneralShop()
+        {
+            NPCShop shop = new(Type, generalShop);
+            var items = new short[]
+            {
+               ItemID.TeleportationPylonVictory//万能晶塔
+            };
+            for (int i = 0; i < items.Length; i++)
+            {
+                shop.Add(new Item(items[i]));
+            }
             shop.Register();
         }
 

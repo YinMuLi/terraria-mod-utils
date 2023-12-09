@@ -3,9 +3,9 @@ using Terraria.ModLoader.Config;
 
 namespace Branch.Common.Configs
 {
-    public class Configs : ModConfig
+    public class BranchConfig : ModConfig
     {
-        public static Configs Instance { get; private set; }
+        public static BranchConfig Instance { get; private set; }
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
         public override void OnLoaded() => Instance = this;
@@ -19,7 +19,16 @@ namespace Branch.Common.Configs
         [Slider]
         public int LuresAmount;
 
+        /// <summary>
+        /// 是否生成Tom NPC
+        /// </summary>
         [DefaultValue(true)]
         public bool SpawnTom;
+
+        /// <summary>
+        /// 无限制晶塔
+        /// </summary>
+        [DefaultValue(true)]
+        public bool UnrestrainedPylon;
     }
 }

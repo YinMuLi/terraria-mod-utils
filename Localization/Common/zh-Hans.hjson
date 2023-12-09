@@ -4,6 +4,7 @@ Mods: {
 			ChangeButton: 切换商店
 			AnglerShop: 渔夫商店
 			HerbsShop: 药房
+			GeneralShop: 通用商店
 		}
 	}
 }

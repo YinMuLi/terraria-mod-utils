@@ -4,6 +4,7 @@ Mods: {
 			ChangeButton: ""
 			AnglerShop: ""
 			HerbsShop: ""
+			GeneralShop: ""
 		}
 	}
 }

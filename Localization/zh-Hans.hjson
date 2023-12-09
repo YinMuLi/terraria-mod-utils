@@ -1,69 +1,50 @@
 Mods: {
 	Branch: {
-		Configs: {
-			Configs: {
-				LuresAmount: {
-					Tooltip: 修改所有鱼竿抛出的鱼线数量
-					Label: 鱼线数量
-				}
-
-				DisplayName: 个人配置
-
-				SpawnTom: {
-					Label: 是否生成汤姆
-					// Tooltip: ""
-				}
+		Buffs: {
+			AdvancedDefense: {
+				DisplayName: 铜墙铁壁
+				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷
 			}
-		}
 
-		NPCs: {
-			Tom: {
-				TownNPCMood: {
-					Princess_LovesNPC: I like {NPCName}.
-					LikeNPC_Princess: I like {NPCName}.
-					DislikeNPC: 我不喜欢{NPCName}。
-					LikeNPC: 我喜欢{NPCName}。
-					HateBiome: 我讨厌{BiomeName}。
-					DislikeBiome: 我不喜欢{BiomeName}。
-					LikeBiome: 我喜欢{BiomeName}。
-					LoveBiome: 我非常喜欢{BiomeName}。
-					HateCrowded: 我讨厌这么拥挤。
-					DislikeCrowded: 我不喜欢这么拥挤。
-					LoveSpace: 我非常喜欢有这么大的空间。
-					FarFromHome: 我离家太远了。
-					NoHome: 我讨厌没有家。
-					Content: 我很满足。
-				}
+			AdvancedExplorer: {
+				DisplayName: 探索者
+				Description:
+					'''
+					包含以下Buff：洞穴探险，夜猫子，挖矿，狩猎，
+					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤
+					'''
+			}
 
-				DisplayName: 汤姆
-				// Census.SpawnCondition: Conditions unknown
+			AdvancedFishing: {
+				DisplayName: 钓鱼高手
+				Description: 包含以下Buff：声呐,钓鱼,宝匣
 			}
 		}
 
 		Items: {
-			AdvancedFishingPotion: {
-				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
-				DisplayName: 高级钓鱼药水
+			PortableSundial: {
+				DisplayName: 便携式日晷
+				Tooltip: 加速一段时间
+			}
+
+			AdvancedDefensePotion: {
+				DisplayName: 高级防御药水
+				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
 			}
 
 			AdvancedExplorerPotion: {
+				DisplayName: 高级探险者药水
 				Tooltip:
 					'''
 					获得你在探险时需要的Buff
 					(洞穴探险，夜猫子，挖矿，狩猎，
 					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
 					'''
-				DisplayName: 高级探险者药水
 			}
 
-			AdvancedDefensePotion: {
-				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
-				DisplayName: 高级防御药水
-			}
-
-			PortableSundial: {
-				Tooltip: 加速一段时间
-				DisplayName: 便携式日晷
+			AdvancedFishingPotion: {
+				DisplayName: 高级钓鱼药水
+				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
 			}
 
 			PrisionBuilder: {
@@ -72,27 +53,54 @@ Mods: {
 			}
 		}
 
-		Buffs: {
-			AdvancedFishing: {
-				Description: 包含以下Buff：声呐,钓鱼,宝匣
-				DisplayName: 钓鱼高手
-			}
+		NPCs: {
+			Tom: {
+				DisplayName: 汤姆
 
-			AdvancedExplorer: {
-				Description:
-					'''
-					包含以下Buff：洞穴探险，夜猫子，挖矿，狩猎，
-					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤
-					'''
-				DisplayName: 探索者
-			}
-
-			AdvancedDefense: {
-				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷
-				DisplayName: 铜墙铁壁
+				TownNPCMood: {
+					Content: 我很满足。
+					NoHome: 我讨厌没有家。
+					FarFromHome: 我离家太远了。
+					LoveSpace: 我非常喜欢有这么大的空间。
+					DislikeCrowded: 我不喜欢这么拥挤。
+					HateCrowded: 我讨厌这么拥挤。
+					LoveBiome: 我非常喜欢{BiomeName}。
+					LikeBiome: 我喜欢{BiomeName}。
+					DislikeBiome: 我不喜欢{BiomeName}。
+					HateBiome: 我讨厌{BiomeName}。
+					LikeNPC: 我喜欢{NPCName}。
+					DislikeNPC: 我不喜欢{NPCName}。
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
 			}
 		}
 
 		// Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
+
+		Configs: {
+			BranchConfig: {
+				DisplayName: 个人配置
+
+				LuresAmount: {
+					Label: 鱼线数量
+					// Tooltip: ""
+				}
+
+				SpawnTom: {
+					Label: 生成Tom
+					// Tooltip: ""
+				}
+
+				UnrestrainedPylon: {
+					Label: 无限制晶塔
+					Tooltip:
+						'''
+						不限制晶塔放置个数
+						不限制晶塔传送条件(NPC个数，战斗状态，生态环境)
+						'''
+				}
+			}
+		}
 	}
 }

@@ -1,64 +1,41 @@
 Mods: {
 	Branch: {
-		Configs: {
-			Configs: {
-				LuresAmount: {
-					Tooltip: ""
-					Label: LuresAmount
-				}
-
-				DisplayName: Configs
-
-				SpawnTom: {
-					Label: Spawn Tom
-					Tooltip: ""
-				}
+		Buffs: {
+			AdvancedDefense: {
+				DisplayName: Advanced Defense
+				Description: Mods.Branch.Buffs.AdvancedDefense.Description
 			}
-		}
 
-		NPCs: {
-			Tom: {
-				TownNPCMood: {
-					Princess_LovesNPC: I like {NPCName}.
-					LikeNPC_Princess: I like {NPCName}.
-					DislikeNPC: 我不喜欢{NPCName}。
-					LikeNPC: 我喜欢{NPCName}。
-					HateBiome: 我讨厌{BiomeName}。
-					DislikeBiome: 我不喜欢{BiomeName}。
-					LikeBiome: 我喜欢{BiomeName}。
-					LoveBiome: 我非常喜欢{BiomeName}。
-					HateCrowded: 我讨厌这么拥挤。
-					DislikeCrowded: 我不喜欢这么拥挤。
-					LoveSpace: 我非常喜欢有这么大的空间。
-					FarFromHome: 我离家太远了。
-					NoHome: 我讨厌没有家。
-					Content: 我很满足。
-				}
+			AdvancedExplorer: {
+				DisplayName: Advanced Explorer
+				Description: Mods.Branch.Buffs.AdvancedExplorer.Description
+			}
 
-				DisplayName: Tom
-				Census.SpawnCondition: Conditions unknown
+			AdvancedFishing: {
+				DisplayName: Advanced Fishing
+				Description: Mods.Branch.Buffs.AdvancedFishing.Description
 			}
 		}
 
 		Items: {
-			AdvancedFishingPotion: {
+			PortableSundial: {
+				DisplayName: Portable Sundial
 				Tooltip: ""
-				DisplayName: Advanced Fishing Potion
-			}
-
-			AdvancedExplorerPotion: {
-				Tooltip: ""
-				DisplayName: Advanced Explorer Potion
 			}
 
 			AdvancedDefensePotion: {
-				Tooltip: ""
 				DisplayName: Advanced Defense Potion
+				Tooltip: ""
 			}
 
-			PortableSundial: {
+			AdvancedExplorerPotion: {
+				DisplayName: Advanced Explorer Potion
 				Tooltip: ""
-				DisplayName: Portable Sundial
+			}
+
+			AdvancedFishingPotion: {
+				DisplayName: Advanced Fishing Potion
+				Tooltip: ""
 			}
 
 			PrisionBuilder: {
@@ -67,23 +44,50 @@ Mods: {
 			}
 		}
 
-		Buffs: {
-			AdvancedFishing: {
-				Description: Mods.Branch.Buffs.AdvancedFishing.Description
-				DisplayName: Advanced Fishing
-			}
+		NPCs: {
+			Tom: {
+				DisplayName: Tom
 
-			AdvancedExplorer: {
-				Description: Mods.Branch.Buffs.AdvancedExplorer.Description
-				DisplayName: Advanced Explorer
-			}
-
-			AdvancedDefense: {
-				Description: Mods.Branch.Buffs.AdvancedDefense.Description
-				DisplayName: Advanced Defense
+				TownNPCMood: {
+					Content: 我很满足。
+					NoHome: 我讨厌没有家。
+					FarFromHome: 我离家太远了。
+					LoveSpace: 我非常喜欢有这么大的空间。
+					DislikeCrowded: 我不喜欢这么拥挤。
+					HateCrowded: 我讨厌这么拥挤。
+					LoveBiome: 我非常喜欢{BiomeName}。
+					LikeBiome: 我喜欢{BiomeName}。
+					DislikeBiome: 我不喜欢{BiomeName}。
+					HateBiome: 我讨厌{BiomeName}。
+					LikeNPC: 我喜欢{NPCName}。
+					DislikeNPC: 我不喜欢{NPCName}。
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
 			}
 		}
 
 		Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
+
+		Configs: {
+			BranchConfig: {
+				DisplayName: Branch Config
+
+				LuresAmount: {
+					Label: Lures Amount
+					Tooltip: ""
+				}
+
+				SpawnTom: {
+					Label: Spawn Tom
+					Tooltip: ""
+				}
+
+				UnrestrainedPylon: {
+					Label: Unrestrained Pylon
+					Tooltip: ""
+				}
+			}
+		}
 	}
 }

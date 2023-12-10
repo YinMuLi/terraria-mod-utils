@@ -320,6 +320,20 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             }
+            //困难模式
+
+            shop.Add(new Item(ItemID.Diamond), Condition.Hardmode);//钻石
+            shop.Add(new Item(ItemID.Amber), Condition.Hardmode);//琥珀
+            shop.Add(new Item(ItemID.Ruby), Condition.Hardmode);//鲁比
+            shop.Add(new Item(ItemID.Emerald), Condition.Hardmode);//绿宝石
+            shop.Add(new Item(ItemID.Sapphire), Condition.Hardmode);//莎菲(蓝宝石)
+            shop.Add(new Item(ItemID.Topaz), Condition.Hardmode);//黄玉
+            shop.Add(new Item(ItemID.Amethyst), Condition.Hardmode);//紫宝石
+            //叶绿锭(世纪之花)
+            shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);
+            //灵气(石巨人)
+            shop.Add(new Item(ItemID.Ectoplasm), Condition.DownedGolem);
+
             shop.Register();
         }
 

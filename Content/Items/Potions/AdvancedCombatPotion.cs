@@ -1,13 +1,18 @@
-﻿using Terraria;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria;
 
 namespace Branch.Content.Items.Potions
 {
     /// <summary>
-    /// 高级防御药水
+    /// 高级战斗药水
     /// </summary>
-    internal class AdvancedDefensePotion : ModItem
+    internal class AdvancedCombatPotion : ModItem
     {
         public override void SetStaticDefaults()
         {
@@ -27,22 +32,20 @@ namespace Branch.Content.Items.Potions
             Item.height = 32;
             Item.value = Item.buyPrice(0, 1, 0, 0);
             Item.rare = ItemRarityID.Master;
-            Item.buffType = ModContent.BuffType<Buffs.AdvancedDefense>();
+            Item.buffType = ModContent.BuffType<Buffs.AdvancedCombat>();
             Item.buffTime = 52000;
         }
 
         public override void AddRecipes()
         {
-            Recipe recipe = Recipe.Create(Item.type);
-            recipe.AddIngredient(ItemID.RegenerationPotion, 1);
-            recipe.AddIngredient(ItemID.LifeforcePotion, 1);
-            recipe.AddIngredient(ItemID.IronskinPotion, 1);
-            recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
-            recipe.AddIngredient(ItemID.EndurancePotion, 1);
-            recipe.AddIngredient(ItemID.ThornsPotion, 1);
-            recipe.AddIngredient(ItemID.ManaRegenerationPotion, 1);
-            recipe.AddTile(TileID.AlchemyTable);
-            recipe.Register();
+            Recipe recipe = Recipe.Create(Item.type)
+                .AddIngredient(ItemID.WrathPotion, 1)//怒气.
+                .AddIngredient(ItemID.RagePotion, 1)//暴怒
+                .AddIngredient(ItemID.ArcheryPotion, 1)//箭术药水
+                .AddIngredient(ItemID.MagicPowerPotion, 1)//魔能药水
+                .AddIngredient(ItemID.SummoningPotion, 1)//召唤药水
+                .AddTile(TileID.AlchemyTable)
+                .Register();
         }
     }
 }

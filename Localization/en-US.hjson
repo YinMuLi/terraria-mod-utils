@@ -15,6 +15,11 @@ Mods: {
 				DisplayName: Advanced Fishing
 				Description: Mods.Branch.Buffs.AdvancedFishing.Description
 			}
+
+			AdvancedCombat: {
+				Description: Mods.Branch.Buffs.AdvancedCombat.Description
+				DisplayName: Advanced Combat
+			}
 		}
 
 		Items: {
@@ -41,6 +46,11 @@ Mods: {
 			PrisionBuilder: {
 				DisplayName: Prision Builder
 				Tooltip: ""
+			}
+
+			AdvancedCombatPotion: {
+				Tooltip: ""
+				DisplayName: Advanced Combat Potion
 			}
 		}
 

@@ -38,6 +38,9 @@ namespace Branch.Content.Buffs
             //荆棘
             player.buffImmune[BuffID.Thorns] = true;
             if ((double)player.thorns < 1.0) player.thorns = 0.34f;
+            //魔能
+            player.buffImmune[6] = true;
+            player.manaRegenBuff = true;
         }
     }
 }

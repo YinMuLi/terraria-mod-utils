@@ -20,6 +20,11 @@ Mods: {
 				Description: Mods.Branch.Buffs.AdvancedCombat.Description
 				DisplayName: Advanced Combat
 			}
+
+			OriginalStationBuff: {
+				DisplayName: Original Station Buff
+				Description: Mods.Branch.Buffs.OriginalStationBuff.Description
+			}
 		}
 
 		Items: {
@@ -51,6 +56,11 @@ Mods: {
 			AdvancedCombatPotion: {
 				Tooltip: ""
 				DisplayName: Advanced Combat Potion
+			}
+
+			StationCake: {
+				DisplayName: Station Cake
+				Tooltip: ""
 			}
 		}
 

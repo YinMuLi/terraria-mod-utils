@@ -1,4 +1,5 @@
 ﻿using Branch.Common.Configs;
+using Branch.Content.Items;
 using System;
 using Terraria;
 using Terraria.GameContent;
@@ -252,7 +253,7 @@ namespace Branch.Content.NPCS
             ItemID.FishingPotion,//钓鱼药水
             ItemID.CratePotion,//宝匣药水
             ItemID.SpelunkerPotion,//洞穴探险药水
-            ItemID.MasterBait,//大师诱饵
+            ItemID.ApprenticeBait,//学徒鱼饵
             //渔夫一套
             ItemID.AnglerHat,
             ItemID.AnglerVest,
@@ -311,7 +312,7 @@ namespace Branch.Content.NPCS
 
         private void AddGeneralShop()
         {
-            NPCShop shop = new(Type, generalShop);
+            NPCShop shop = new NPCShop(Type, generalShop);
             var items = new short[]
             {
                ItemID.TeleportationPylonVictory//万能晶塔
@@ -320,6 +321,7 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             }
+            shop.Add<StationCake>(Condition.DownedSkeletron);
             //困难模式
 
             shop.Add(new Item(ItemID.Diamond), Condition.Hardmode);//钻石

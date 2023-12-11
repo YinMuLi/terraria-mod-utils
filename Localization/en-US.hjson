@@ -25,6 +25,11 @@ Mods: {
 				DisplayName: Original Station Buff
 				Description: Mods.Branch.Buffs.OriginalStationBuff.Description
 			}
+
+			FinalStationBuff: {
+				DisplayName: Final Station Buff
+				Description: Mods.Branch.Buffs.FinalStationBuff.Description
+			}
 		}
 
 		Items: {
@@ -61,6 +66,11 @@ Mods: {
 			StationCake: {
 				DisplayName: Station Cake
 				Tooltip: ""
+			}
+
+			FinalStation: {
+				Tooltip: ""
+				DisplayName: Final Station
 			}
 		}
 
@@ -109,5 +119,7 @@ Mods: {
 				}
 			}
 		}
+
+		Tiles.FinalStationTile.MapEntry: Final Station Tile
 	}
 }

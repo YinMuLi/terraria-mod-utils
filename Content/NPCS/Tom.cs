@@ -321,7 +321,7 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             }
-            shop.Add<StationCake>(Condition.DownedSkeletron);
+            shop.Add<FinalStation>(Condition.DownedSkeletron);
             //困难模式
 
             shop.Add(new Item(ItemID.Diamond), Condition.Hardmode);//钻石

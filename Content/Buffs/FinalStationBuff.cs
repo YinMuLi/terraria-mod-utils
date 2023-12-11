@@ -7,12 +7,14 @@ namespace Branch.Content.Buffs
     /// <summary>
     /// 原版药水外的增益效果
     /// </summary>
-    internal class OriginalStationBuff : ModBuff
+    internal class FinalStationBuff : ModBuff
     {
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = false;
+            Main.buffNoTimeDisplay[Type] = true;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
+            Main.buffNoSave[Type] = true;
         }
 
         public override void Update(Player player, ref int buffIndex)

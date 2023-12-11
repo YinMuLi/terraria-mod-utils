@@ -12,8 +12,8 @@ namespace Branch
             {
                 improveGame.Call(
                     "AddStation",//加入你自己的增益站1
-                    ModContent.ItemType<StationCake>(),
-                    ModContent.BuffType<OriginalStationBuff>()
+                    ModContent.ItemType<FinalStation>(),
+                    ModContent.BuffType<FinalStationBuff>()
                 );
             }
         }

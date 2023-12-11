@@ -33,6 +33,11 @@ Mods: {
 					,巴斯特雕像,蜂蜜)
 					'''
 			}
+
+			FinalStationBuff: {
+				// DisplayName: Final Station Buff
+				// Description: Mods.Branch.Buffs.FinalStationBuff.Description
+			}
 		}
 
 		Items: {
@@ -78,6 +83,11 @@ Mods: {
 					包含一下工作站增益：篝火，心灯，星灯，施法桌，利器站，水晶球，蛋糕块，战争桌
 					,巴斯特雕像,蜂蜜桶
 					'''
+			}
+
+			FinalStation: {
+				// Tooltip: ""
+				// DisplayName: Final Station
 			}
 		}
 
@@ -130,5 +140,7 @@ Mods: {
 				}
 			}
 		}
+
+		// Tiles.FinalStationTile.MapEntry: Final Station Tile
 	}
 }

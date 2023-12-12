@@ -35,8 +35,8 @@ Mods: {
 			}
 
 			FinalStationBuff: {
-				// DisplayName: Final Station Buff
-				// Description: Mods.Branch.Buffs.FinalStationBuff.Description
+				 DisplayName: 原版制作站终极增益
+				 Description: 剩下的是技术问题
 			}
 		}
 

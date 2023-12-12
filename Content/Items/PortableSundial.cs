@@ -30,7 +30,7 @@ namespace Branch.Content.Items
             Item.useAnimation = 30;//每次使用时动画播放时间
             Item.useTime = 30;//使用一次所需时间
             Item.UseSound = SoundID.Item100;//物品使用时声音
-            Item.useStyle = ItemUseStyleID.HoldUp;//物品的使用方式
+            Item.useStyle = ItemUseStyleID.Shoot;//物品的使用方式
             Item.mana = 20;//每次使用消耗的法力值
         }
 

@@ -30,5 +30,11 @@ namespace Branch.Common.Configs
         /// </summary>
         [DefaultValue(true)]
         public bool UnrestrainedPylon;
+
+        /// <summary>
+        /// 额外翅膀插槽
+        /// </summary>
+        [DefaultValue(true)]
+        public bool ExtraWingSlot;
     }
 }

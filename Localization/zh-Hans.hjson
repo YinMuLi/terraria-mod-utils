@@ -35,15 +35,15 @@ Mods: {
 			}
 
 			FinalStationBuff: {
-				 DisplayName: 原版制作站终极增益
-				 Description: 剩下的是技术问题
+				DisplayName: 原版制作站终极增益
+				Description: 剩下的是技术问题
 			}
 		}
 
 		Items: {
 			PortableSundial: {
-				DisplayName: 便携式日晷
-				Tooltip: 加速一段时间
+				DisplayName: 天堂制造
+				Tooltip: 你将暂时拥有神父普奇的替身，并可以加速一段时间
 			}
 
 			AdvancedDefensePotion: {
@@ -137,6 +137,11 @@ Mods: {
 						不限制晶塔放置个数
 						不限制晶塔传送条件(NPC个数，战斗状态，生态环境)
 						'''
+				}
+
+				ExtraWingSlot: {
+					// Label: Extra Wing Slot
+					// Tooltip: ""
 				}
 			}
 		}

@@ -33,7 +33,7 @@ namespace Branch.Content.Items
             Item.width = 20;//物品掉落时的碰撞体宽度
             Item.height = 20;//物品掉落时碰撞体高度
             Item.value = Item.buyPrice(0, 1, 0, 0);//物品的价值
-            Item.rare = ItemRarityID.LightRed;//物品的稀有度
+            Item.rare = ItemRarityID.Red;//物品的稀有度
             Item.useAnimation = 9;//每次使用时动画播放时间
             Item.useTime = 9;//使用一次所需时间
             Item.UseSound = SoundID.Item100;//物品使用时声音

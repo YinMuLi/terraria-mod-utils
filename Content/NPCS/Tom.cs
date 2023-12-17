@@ -292,7 +292,6 @@ namespace Branch.Content.NPCS
                 ItemID.Shiverthorn,//寒颤棘
                 ItemID.Waterleaf,//幌菊
                 ItemID.Cactus,//仙人掌
-                ItemID.SharkFin,//鲨鱼鳍
                 ItemID.BottledWater//瓶装水
             };
             for (int i = 0; i < items.Length; i++)
@@ -320,21 +319,12 @@ namespace Branch.Content.NPCS
             for (int i = 0; i < items.Length; i++)
             {
                 shop.Add(new Item(items[i]));
-            }
+            };
+            //自动锤炼机（世纪之花）
+            shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);
             shop.Add<FinalStation>(Condition.DownedSkeletron);
-            //困难模式
-
-            shop.Add(new Item(ItemID.Diamond), Condition.Hardmode);//钻石
-            shop.Add(new Item(ItemID.Amber), Condition.Hardmode);//琥珀
-            shop.Add(new Item(ItemID.Ruby), Condition.Hardmode);//鲁比
-            shop.Add(new Item(ItemID.Emerald), Condition.Hardmode);//绿宝石
-            shop.Add(new Item(ItemID.Sapphire), Condition.Hardmode);//莎菲(蓝宝石)
-            shop.Add(new Item(ItemID.Topaz), Condition.Hardmode);//黄玉
-            shop.Add(new Item(ItemID.Amethyst), Condition.Hardmode);//紫宝石
-            //叶绿锭(世纪之花)
-            shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);
-            //灵气(石巨人)
-            shop.Add(new Item(ItemID.Ectoplasm), Condition.DownedGolem);
+            //七彩草蛉
+            shop.Add(new Item(4961), Condition.DownedPlantera);
 
             shop.Register();
         }

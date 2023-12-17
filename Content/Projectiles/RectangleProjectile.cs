@@ -16,7 +16,6 @@ namespace Branch.Content.Projectiles
 
     {
         private Vector2 oldMouse;
-        private Item item;
 
         public override void SetDefaults()
         {
@@ -36,20 +35,7 @@ namespace Branch.Content.Projectiles
         public override void OnSpawn(IEntitySource source)
         {
             oldMouse = Main.MouseWorld;
-            if (source is EntitySource_ItemUse)
-            {
-                EntitySource_ItemUse itemuseSource = (EntitySource_ItemUse)source;
-                item = itemuseSource.Item;
-            }
             base.OnSpawn(source);
-        }
-
-        public void Set(Action ConsumeEvent)
-        {
-            ConsumeEvent += () =>
-            {
-                this.Projectile.Kill();
-            };
         }
 
         public override void AI()
@@ -62,7 +48,7 @@ namespace Branch.Content.Projectiles
             oldMouse = mouse;
             Projectile projectile = this.Projectile;
             projectile.timeLeft++;
-            if (player.HeldItem.type != item.type)
+            if (player.HeldItem.type != ModContent.ItemType<PrisionBuilder>())
             {
                 this.Projectile.Kill();
             }

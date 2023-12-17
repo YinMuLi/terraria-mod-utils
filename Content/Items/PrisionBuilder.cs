@@ -40,9 +40,9 @@ namespace Branch.Content.Items
                     { b,d,d,d,d,b},
                     { b,f,e,d,d,b},
                     { b,b,b,b,g,b},
-                    { c,a,a,a,a,c},
-                    { c,a,a,a,a,c},
-                    { c,a,a,a,a,c},
+                    { c,d,d,d,d,c},
+                    { c,d,d,d,d,c},
+                    { c,d,d,d,d,c},
                     { c,c,c,c,c,c},
                 };
             }
@@ -92,7 +92,7 @@ namespace Branch.Content.Items
         private void DrawPreview(int width, int height, Player player)
         {
             //限制抛射的数量
-            if (!(player.ownedProjectileCounts[ModContent.ProjectileType<RectangleProjectile>()] > 30))
+            if (player.whoAmI == Main.myPlayer && player.ownedProjectileCounts[ModContent.ProjectileType<RectangleProjectile>()] < 1)
             {
                 for (int i = -(width - width / 2); i < width / 2; i++)
                 {
@@ -126,7 +126,7 @@ namespace Branch.Content.Items
             List<TileData> left = new();
             Item block = new Item(ItemID.RichMahogany);
             Item platform = new Item(ItemID.RichMahoganyPlatform);
-            Item wall = new Item(ItemID.GlassWall);
+            Item wall = new Item(ItemID.RichMahoganyWall);
             for (int i = 0; i < prision.GetLength(0); i++)
             {
                 for (int j = 0; j < prision.GetLength(1); j++)
@@ -134,6 +134,7 @@ namespace Branch.Content.Items
                     TileSort sort = prision[i, j];
                     int x = Player.tileTargetX - prision.GetLength(1) / 2 + j;
                     int y = Player.tileTargetY - prision.GetLength(0) / 2 + i;
+                    //全部铺上墙
                     if (sort.HasFlag(TileSort.Wall))
                     {
                         PlaceWall(wall, player, x, y);

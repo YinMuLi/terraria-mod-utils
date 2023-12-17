@@ -68,7 +68,7 @@ Mods: {
 
 			PrisionBuilder: {
 				DisplayName: 监狱制造者
-				Tooltip: 显示预览时还有BUG，但能正常使用
+				Tooltip: 内部逻辑需要优化
 			}
 
 			AdvancedCombatPotion: {

@@ -6,11 +6,5 @@ Mods: {
 			HerbsShop: 药房
 			GeneralShop: 通用商店
 		}
-
-		WingSlot: {
-			Function: 翅膀
-			Vanity: 装扮 配饰
-			Dye: 染料
-		}
 	}
 }

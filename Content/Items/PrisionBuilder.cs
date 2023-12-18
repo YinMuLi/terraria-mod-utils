@@ -40,9 +40,9 @@ namespace Branch.Content.Items
                     { b,d,d,d,d,b},
                     { b,f,e,d,d,b},
                     { b,b,b,b,g,b},
-                    { c,d,d,d,d,c},
-                    { c,d,d,d,d,c},
-                    { c,d,d,d,d,c},
+                    { c,a,a,a,a,c},
+                    { c,a,a,a,a,c},
+                    { c,a,a,a,a,c},
                     { c,c,c,c,c,c},
                 };
             }

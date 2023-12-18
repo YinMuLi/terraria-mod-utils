@@ -20,6 +20,7 @@
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Common\Players\" />
     <Folder Include="Content\UI\" />
     <Folder Include="Localization\Chat\" />
     <Folder Include="Localization\Common\" />

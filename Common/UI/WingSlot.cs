@@ -37,12 +37,10 @@ namespace Branch.Common.UI
 
         public override void OnMouseHover(AccessorySlotType context)
         {
-            Main.hoverItemName = context switch
+            if (context == AccessorySlotType.FunctionalSlot)
             {
-                AccessorySlotType.FunctionalSlot => Language.GetTextValue("Mods.UI.WingSlot.Function"),
-                AccessorySlotType.VanitySlot => Language.GetTextValue("Mods.UI.WingSlot.Vanity"),
-                AccessorySlotType.DyeSlot => Language.GetTextValue("Mods.UI.WingSlot.Dye"),
-            };
+                Main.hoverItemName = "仅限翅膀类饰品";
+            }
             base.OnMouseHover(context);
         }
     }

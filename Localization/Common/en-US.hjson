@@ -6,11 +6,5 @@ Mods: {
 			HerbsShop: ""
 			GeneralShop: ""
 		}
-
-		WingSlot: {
-			Function: ""
-			Vanity: ""
-			Dye: ""
-		}
 	}
 }

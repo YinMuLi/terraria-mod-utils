@@ -291,7 +291,6 @@ namespace Branch.Content.NPCS
                 ItemID.Moonglow,//月光草
                 ItemID.Shiverthorn,//寒颤棘
                 ItemID.Waterleaf,//幌菊
-                ItemID.Cactus,//仙人掌
                 ItemID.BottledWater//瓶装水
             };
             for (int i = 0; i < items.Length; i++)
@@ -302,8 +301,6 @@ namespace Branch.Content.NPCS
             shop.Add(new Item(ItemID.RottenChunk), Condition.DownedEaterOfWorlds);
             //椎骨，击败克苏鲁之脑
             shop.Add(new Item(ItemID.Vertebrae), Condition.DownedBrainOfCthulhu);
-            //骨头，骷髅王
-            shop.Add(new Item(ItemID.Bone), Condition.DownedSkeletron);
             //坠落之星,击败任意机械BOSS
             shop.Add(new Item(ItemID.FallenStar), Condition.DownedMechBossAny);
             shop.Register();
@@ -320,6 +317,9 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             };
+            //陨石
+            shop.Add(new Item(ItemID.Meteorite), Condition.DownedBrainOfCthulhu);
+            shop.Add(new Item(ItemID.Meteorite), Condition.DownedEaterOfWorlds);
             //自动锤炼机（世纪之花）
             shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);
             shop.Add<FinalStation>(Condition.DownedSkeletron);

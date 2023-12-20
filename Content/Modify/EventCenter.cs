@@ -1,8 +1,4 @@
-﻿using Branch.Common.Utils;
-using MonoMod.Cil;
-using System;
-using Terraria;
-using Terraria.GameInput;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;

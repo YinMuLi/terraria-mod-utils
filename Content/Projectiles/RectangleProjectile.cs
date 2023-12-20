@@ -1,7 +1,5 @@
-﻿using Branch.Common.Utils;
-using Branch.Content.Items;
+﻿using Branch.Content.Items;
 using Microsoft.Xna.Framework;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;

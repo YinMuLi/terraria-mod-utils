@@ -1,6 +1,5 @@
 ﻿using Branch.Common.Configs;
 using Branch.Content.Items;
-using System;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;

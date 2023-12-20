@@ -20,37 +20,18 @@ Mods: {
 				Description: 包含以下Buff：声呐,钓鱼,宝匣
 			}
 
-			AdvancedCombat: {
-				Description: 包含以下Buff：暴怒，怒气，召唤，魔能
-				DisplayName: 勇士
-			}
-
-			OriginalStationBuff: {
-				DisplayName: 万能工作站
-				Description:
-					'''
-					包含原版工作站增益(篝火，心灯，星灯，施法桌，利器站，水晶球，蛋糕块，战争桌
-					,巴斯特雕像,蜂蜜)
-					'''
-			}
-
 			FinalStationBuff: {
 				DisplayName: 原版制作站终极增益
 				Description: 剩下的是技术问题
 			}
 
-			SuperDebuff: {
-				// DisplayName: Super Debuff
-				// Description: Mods.Branch.Buffs.SuperDebuff.Description
+			SickBlade: {
+				Description: 为敌怪添加原版绝大多数Debuff
+				DisplayName: 破伤风之刃
 			}
 		}
 
 		Items: {
-			PortableSundial: {
-				// DisplayName: Portable Sundial
-				// Tooltip: ""
-			}
-
 			AdvancedDefensePotion: {
 				DisplayName: 高级防御药水
 				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
@@ -76,20 +57,6 @@ Mods: {
 				Tooltip: 内部逻辑需要优化
 			}
 
-			AdvancedCombatPotion: {
-				Tooltip: 获得你在战斗时需要的Buff(暴怒，怒气，召唤，魔能)
-				DisplayName: 高级战斗药水
-			}
-
-			StationCake: {
-				DisplayName: 奶油芝士
-				Tooltip:
-					'''
-					包含一下工作站增益：篝火，心灯，星灯，施法桌，利器站，水晶球，蛋糕块，战争桌
-					,巴斯特雕像,蜂蜜桶
-					'''
-			}
-
 			FinalStation: {
 				// Tooltip: ""
 				// DisplayName: Final Station
@@ -98,6 +65,11 @@ Mods: {
 			MadeInHeaven: {
 				DisplayName: 天堂制造
 				Tooltip: 你将暂时拥有神父普奇的替身，并可以加速一段时间
+			}
+
+			SickPotion: {
+				Tooltip: 为敌怪添加原版绝大多数Debuff
+				DisplayName: 破伤风
 			}
 		}
 

@@ -1,9 +1,5 @@
-using Branch.Common.Utils;
 using Branch.Content.Buffs;
 using Branch.Content.Items;
-using System;
-using Terraria;
-using Terraria.GameInput;
 using Terraria.ModLoader;
 
 namespace Branch

@@ -1,12 +1,13 @@
-﻿using Terraria;
+﻿using Branch.Common.Players;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace Branch.Content.Buffs
 {
     /// <summary>
-    /// 超级debuff
+    /// 疾病附魔
     /// </summary>
-    internal class SuperDebuff : ModBuff
+    internal class SickBlade : ModBuff
     {
         public override void SetStaticDefaults()
         {
@@ -14,15 +15,9 @@ namespace Branch.Content.Buffs
             Main.persistentBuff[Type] = true;// 死亡后不会清除buff
         }
 
-        public override void Update(NPC npc, ref int buffIndex)
+        public override void Update(Player player, ref int buffIndex)
         {
-            //中毒
-            npc.poisoned = true;
-            //着火了
-            npc.onFire = true;
-            //困惑
-            npc.confused = true;
-            //诅咒狱火
+            player.GetModPlayer<CustomPlayer>().sickBlade = true;
         }
     }
 }

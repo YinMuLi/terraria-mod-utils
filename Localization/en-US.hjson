@@ -16,33 +16,18 @@ Mods: {
 				Description: Mods.Branch.Buffs.AdvancedFishing.Description
 			}
 
-			AdvancedCombat: {
-				Description: Mods.Branch.Buffs.AdvancedCombat.Description
-				DisplayName: Advanced Combat
-			}
-
-			OriginalStationBuff: {
-				DisplayName: Original Station Buff
-				Description: Mods.Branch.Buffs.OriginalStationBuff.Description
-			}
-
 			FinalStationBuff: {
 				DisplayName: Final Station Buff
 				Description: Mods.Branch.Buffs.FinalStationBuff.Description
 			}
 
-			SuperDebuff: {
-				DisplayName: Super Debuff
-				Description: Mods.Branch.Buffs.SuperDebuff.Description
+			SickBlade: {
+				Description: Mods.Branch.Buffs.SickBlade.Description
+				DisplayName: Sick Blade
 			}
 		}
 
 		Items: {
-			PortableSundial: {
-				DisplayName: Portable Sundial
-				Tooltip: ""
-			}
-
 			AdvancedDefensePotion: {
 				DisplayName: Advanced Defense Potion
 				Tooltip: ""
@@ -63,16 +48,6 @@ Mods: {
 				Tooltip: ""
 			}
 
-			AdvancedCombatPotion: {
-				Tooltip: ""
-				DisplayName: Advanced Combat Potion
-			}
-
-			StationCake: {
-				DisplayName: Station Cake
-				Tooltip: ""
-			}
-
 			FinalStation: {
 				Tooltip: ""
 				DisplayName: Final Station
@@ -81,6 +56,11 @@ Mods: {
 			MadeInHeaven: {
 				DisplayName: Made In Heaven
 				Tooltip: ""
+			}
+
+			SickPotion: {
+				Tooltip: ""
+				DisplayName: Sick Potion
 			}
 		}
 

@@ -72,6 +72,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Final Station
 			}
+
+			MadeInHeaven: {
+				DisplayName: Made In Heaven
+				Tooltip: ""
+			}
 		}
 
 		NPCs: {
@@ -100,7 +105,7 @@ Mods: {
 		Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 
 		Configs: {
-			BranchConfig: {
+			ModConfig: {
 				DisplayName: Branch Config
 
 				LuresAmount: {

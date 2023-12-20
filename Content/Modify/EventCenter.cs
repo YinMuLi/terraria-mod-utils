@@ -11,9 +11,10 @@ using Terraria.UI;
 namespace Branch.Content.Modify
 {
     /// <summary>
-    /// 修改一些物品能放置在钱币槽
+    /// 取消订阅事件
+    /// 1.猪猪存钱罐能放置在钱币槽
     /// </summary>
-    internal class CoinSlotPlacement : ILoadable
+    internal class EventCenter : ILoadable
     {
         public void Load(Mod mod)
         {

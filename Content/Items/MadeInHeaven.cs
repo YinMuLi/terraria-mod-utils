@@ -6,9 +6,9 @@ using Terraria.ModLoader;
 namespace Branch.Content.Items
 {
     /// <summary>
-    /// 便携式日晷，可以调整时间
+    /// 天堂制造：可以调节时间
     /// </summary>
-    public class PortableSundial : ModItem
+    public class MadeInHeaven : ModItem
     {
         /// <summary>
         /// 中午时刻

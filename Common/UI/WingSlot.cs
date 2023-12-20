@@ -22,7 +22,7 @@ namespace Branch.Common.UI
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return BranchConfig.Instance.ExtraWingSlot;
+            return ModConfig.Instance.ExtraWingSlot;
         }
 
         public override bool CanAcceptItem(Item checkItem, AccessorySlotType context)

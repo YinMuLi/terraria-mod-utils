@@ -52,7 +52,7 @@ namespace Branch.Content.NPCS
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return BranchConfig.Instance.SpawnTom;
+            return ModConfig.Instance.SpawnTom;
         }
 
         public override void SetStaticDefaults()
@@ -152,7 +152,7 @@ namespace Branch.Content.NPCS
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
             //返回条件为：拥有两个NPC
-            return numTownNPCs >= 2 && BranchConfig.Instance.SpawnTom;
+            return numTownNPCs >= 2 && ModConfig.Instance.SpawnTom;
         }
 
         public override bool CanGoToStatue(bool toKingStatue)
@@ -324,7 +324,7 @@ namespace Branch.Content.NPCS
             shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);
             shop.Add<FinalStation>(Condition.DownedSkeletron);
             //七彩草蛉
-            shop.Add(new Item(4961), Condition.DownedPlantera);
+            shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera);
 
             shop.Register();
         }

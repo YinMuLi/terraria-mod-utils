@@ -3,9 +3,9 @@ using Terraria.ModLoader.Config;
 
 namespace Branch.Common.Configs
 {
-    public class BranchConfig : ModConfig
+    public class ModConfig : Terraria.ModLoader.Config.ModConfig
     {
-        public static BranchConfig Instance { get; private set; }
+        public static ModConfig Instance { get; private set; }
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
         public override void OnLoaded() => Instance = this;

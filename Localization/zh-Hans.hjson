@@ -3,7 +3,7 @@ Mods: {
 		Buffs: {
 			AdvancedDefense: {
 				DisplayName: 铜墙铁壁
-				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷、魔力再生
+				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、敏捷
 			}
 
 			AdvancedExplorer: {
@@ -42,8 +42,8 @@ Mods: {
 
 		Items: {
 			PortableSundial: {
-				DisplayName: 天堂制造
-				Tooltip: 你将暂时拥有神父普奇的替身，并可以加速一段时间
+				// DisplayName: Portable Sundial
+				// Tooltip: ""
 			}
 
 			AdvancedDefensePotion: {
@@ -89,6 +89,11 @@ Mods: {
 				// Tooltip: ""
 				// DisplayName: Final Station
 			}
+
+			MadeInHeaven: {
+				DisplayName: 天堂制造
+				Tooltip: 你将暂时拥有神父普奇的替身，并可以加速一段时间
+			}
 		}
 
 		NPCs: {
@@ -117,7 +122,7 @@ Mods: {
 		// Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 
 		Configs: {
-			BranchConfig: {
+			ModConfig: {
 				DisplayName: 个人配置
 
 				LuresAmount: {
@@ -140,7 +145,7 @@ Mods: {
 				}
 
 				ExtraWingSlot: {
-					// Label: Extra Wing Slot
+					Label: 额外翅膀饰品栏
 					// Tooltip: ""
 				}
 			}

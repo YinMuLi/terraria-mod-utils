@@ -9,10 +9,19 @@ namespace Branch.Common.Utils
         /// <summary>
         /// 聊天框显示信息
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="msg"></param>
         public static void ShowText(string msg)
         {
             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), Color.White, -1);
+        }
+
+        /// <summary>
+        /// 屏幕上显示信息
+        /// </summary>
+        /// <param name="msg"></param>
+        public static void DrawString(string msg)
+        {
+            if (msg == string.Empty) return;
         }
     }
 }

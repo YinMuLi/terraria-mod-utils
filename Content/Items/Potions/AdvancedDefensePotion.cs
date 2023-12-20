@@ -40,7 +40,6 @@ namespace Branch.Content.Items.Potions
             recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
-            recipe.AddIngredient(ItemID.ManaRegenerationPotion, 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
         }

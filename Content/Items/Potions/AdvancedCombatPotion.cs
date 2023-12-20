@@ -14,6 +14,11 @@ namespace Branch.Content.Items.Potions
     /// </summary>
     internal class AdvancedCombatPotion : ModItem
     {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
+
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 20;
@@ -32,7 +37,7 @@ namespace Branch.Content.Items.Potions
             Item.height = 32;
             Item.value = Item.buyPrice(0, 1, 0, 0);
             Item.rare = ItemRarityID.Master;
-            Item.buffType = ModContent.BuffType<Buffs.AdvancedCombat>();
+            Item.buffType = ModContent.BuffType<Buffs.SuperDebuff>();
             Item.buffTime = 52000;
         }
 

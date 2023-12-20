@@ -10,7 +10,7 @@ namespace Branch.Content.Modify
     /// </summary>
     internal class UnrestrainedPylon : GlobalPylon
     {
-        public static BranchConfig configs => BranchConfig.Instance;
+        public static ModConfig configs => ModConfig.Instance;
 
         //不限制放置个数
         public override bool? PreCanPlacePylon(int x, int y, int tileType, TeleportPylonType pylonType)

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Branch.Common.Utils;
+using MonoMod.Cil;
+using System;
 using Terraria;
+using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
@@ -19,11 +18,15 @@ namespace Branch.Content.Modify
         public void Load(Mod mod)
         {
             On_ItemSlot.PickItemMovementAction += OnPlaceCoinSlot;
+            //On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
+            //IL_Main.DoDraw += OnChangeZoomBounds;
         }
 
         public void Unload()
         {
             On_ItemSlot.PickItemMovementAction -= OnPlaceCoinSlot;
+            //On_Main.UpdateViewZoomKeys -= OnUpdateViewZoom;
+            //IL_Main.DoDraw -= OnChangeZoomBounds;
         }
 
         private int OnPlaceCoinSlot(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)
@@ -35,5 +38,31 @@ namespace Branch.Content.Modify
             }
             return orig(inv, context, slot, checkItem);
         }
+
+        //private void OnUpdateViewZoom(On_Main.orig_UpdateViewZoomKeys orig, Main self)
+        //{
+        //    if (Main.inFancyUI)
+        //    {
+        //        //猜测：拍照模式
+        //        return;
+        //    }
+        //    float num = 0.01f * Main.GameZoomTarget;
+        //    if (PlayerInput.Triggers.Current.ViewZoomIn)
+        //    {
+        //        Main.GameZoomTarget += num;
+        //    }
+        //    if (PlayerInput.Triggers.Current.ViewZoomOut)
+        //    {
+        //        Main.GameZoomTarget -= num;
+        //    }
+        //    ModUtils.ShowText($"{Main.GameZoomTarget}");
+        //    //orig(self);
+        //}
+
+        //private void OnChangeZoomBounds(ILContext il)
+        //{
+        //    var c = new ILCursor(il);
+        //    c.Index++;
+        //}
     }
 }

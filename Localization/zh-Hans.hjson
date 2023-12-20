@@ -38,6 +38,11 @@ Mods: {
 				DisplayName: 原版制作站终极增益
 				Description: 剩下的是技术问题
 			}
+
+			SuperDebuff: {
+				// DisplayName: Super Debuff
+				// Description: Mods.Branch.Buffs.SuperDebuff.Description
+			}
 		}
 
 		Items: {

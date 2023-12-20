@@ -30,6 +30,11 @@ Mods: {
 				DisplayName: Final Station Buff
 				Description: Mods.Branch.Buffs.FinalStationBuff.Description
 			}
+
+			SuperDebuff: {
+				DisplayName: Super Debuff
+				Description: Mods.Branch.Buffs.SuperDebuff.Description
+			}
 		}
 
 		Items: {

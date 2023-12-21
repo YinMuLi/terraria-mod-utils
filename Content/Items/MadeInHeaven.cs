@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Branch.Common.Utils;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -48,17 +49,29 @@ namespace Branch.Content.Items
              * Main.time:白天介于0-54000 晚上介于0-32400
              */
             if (Main.dayTime && Main.time < HALF_NOON)
+            {
                 //清晨到中午
                 Main.SkipToTime(HALF_NOON, true);
+                ModUtils.ShowText("午时");
+            }
             else if (Main.dayTime)
+            {
                 //中午到黄昏
                 Main.SkipToTime(0, false);
+                ModUtils.ShowText("黄昏");
+            }
             else if (!Main.dayTime && Main.time < HALF_NEIGHT)
+            {
                 //黄昏到半夜
                 Main.SkipToTime(HALF_NEIGHT, false);
+                ModUtils.ShowText("半夜");
+            }
             else if (!Main.dayTime)
+            {
                 //半夜到清晨
                 Main.SkipToTime(0, true);
+                ModUtils.ShowText("清晨");
+            }
 
             return true;
         }

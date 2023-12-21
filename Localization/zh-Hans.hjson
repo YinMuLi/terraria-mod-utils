@@ -125,6 +125,11 @@ Mods: {
 					Label: 额外翅膀饰品栏
 					// Tooltip: ""
 				}
+
+				AutoFish: {
+					// Tooltip: ""
+					// Label: Auto Fish
+				}
 			}
 		}
 

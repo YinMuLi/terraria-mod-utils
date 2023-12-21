@@ -238,15 +238,13 @@ namespace Branch.Content.NPCS
 
         public override void AddShops()
         {
-            AddAnglerShop();
-            AddHerbsShop();
-            AddGeneralShop();
-        }
+            NPCShop shop = null;
+            short[] items = null;
 
-        private void AddAnglerShop()
-        {
-            NPCShop shop = new(Type, anglerShop);
-            var items = new short[]
+            #region 渔夫商店
+
+            shop = new NPCShop(Type, anglerShop);
+            items = new short[]
             {
             ItemID.SonarPotion,//声呐药水
             ItemID.FishingPotion,//钓鱼药水
@@ -276,12 +274,14 @@ namespace Branch.Content.NPCS
                 shop.Add(new Item(items[i]));
             }
             shop.Register();
-        }
 
-        private void AddHerbsShop()
-        {
-            NPCShop shop = new(Type, herbsShop);
-            var items = new short[]
+            #endregion 渔夫商店
+
+            #region 药房
+
+            shop = new NPCShop(Type, herbsShop);
+
+            items = new short[]
             {
                 ItemID.Blinkroot,//闪耀根
                 ItemID.Daybloom,//太阳花
@@ -296,19 +296,14 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             }
-            //腐肉,击败世界吞噬者
-            shop.Add(new Item(ItemID.RottenChunk), Condition.DownedEaterOfWorlds);
-            //椎骨，击败克苏鲁之脑
-            shop.Add(new Item(ItemID.Vertebrae), Condition.DownedBrainOfCthulhu);
-            //坠落之星,击败任意机械BOSS
-            shop.Add(new Item(ItemID.FallenStar), Condition.DownedMechBossAny);
             shop.Register();
-        }
 
-        private void AddGeneralShop()
-        {
-            NPCShop shop = new NPCShop(Type, generalShop);
-            var items = new short[]
+            #endregion 药房
+
+            #region 通用商店
+
+            shop = new NPCShop(Type, generalShop);
+            items = new short[]
             {
                ItemID.TeleportationPylonVictory//万能晶塔
             };
@@ -326,6 +321,8 @@ namespace Branch.Content.NPCS
             shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera);
 
             shop.Register();
+
+            #endregion 通用商店
         }
 
         #endregion 对话与商店

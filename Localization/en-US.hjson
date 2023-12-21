@@ -112,6 +112,11 @@ Mods: {
 					Label: Extra Wing Slot
 					Tooltip: ""
 				}
+
+				AutoFish: {
+					Tooltip: ""
+					Label: Auto Fish
+				}
 			}
 		}
 

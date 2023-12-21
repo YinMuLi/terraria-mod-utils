@@ -36,5 +36,11 @@ namespace Branch.Common.Configs
         /// </summary>
         [DefaultValue(true)]
         public bool ExtraWingSlot;
+
+        /// <summary>
+        /// 自动钓鱼
+        /// </summary>
+        [DefaultValue(true)]
+        public bool AutoFish;
     }
 }

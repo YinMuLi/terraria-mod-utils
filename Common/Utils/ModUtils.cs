@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.Chat;
 using Terraria.Localization;
 
@@ -12,7 +13,8 @@ namespace Branch.Common.Utils
         /// <param name="msg"></param>
         public static void ShowText(string msg)
         {
-            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), Color.White, -1);
+            //ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), Color.White, -1);
+            Main.NewText(msg);
         }
 
         /// <summary>

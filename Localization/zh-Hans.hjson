@@ -113,7 +113,7 @@ Mods: {
 				}
 
 				UnrestrainedPylon: {
-					Label: 无限制晶塔
+					Label: "[i:4951] 无限制晶塔"
 					Tooltip:
 						'''
 						不限制晶塔放置个数
@@ -122,13 +122,30 @@ Mods: {
 				}
 
 				ExtraWingSlot: {
-					Label: 额外翅膀饰品栏
+					Label: [i:2609] 额外翅膀饰品栏
 					// Tooltip: ""
 				}
 
 				AutoFish: {
+					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
+					Label: "[i:2294] 自动钓鱼"
+				}
+
+				Headers.Fishing: 钓鱼
+
+				PullWaitTimer: {
 					// Tooltip: ""
-					// Label: Auto Fish
+					 Label: 拉杆延迟时间
+				}
+
+				CatchAccessories: {
+					// Tooltip: ""
+					 Label: [i:3064] 捕获饰品
+				}
+
+				CatchCrate: {
+					// Tooltip: ""
+					 Label: "[i:2336] 捕获宝箱"
 				}
 			}
 		}

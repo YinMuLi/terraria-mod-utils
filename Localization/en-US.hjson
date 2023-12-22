@@ -117,6 +117,23 @@ Mods: {
 					Tooltip: ""
 					Label: Auto Fish
 				}
+
+				Headers.Fishing: Fishing Header
+
+				PullWaitTimer: {
+					Tooltip: ""
+					Label: Pull Wait Timer
+				}
+
+				CatchAccessories: {
+					Tooltip: ""
+					Label: Catch Accessories
+				}
+
+				CatchCrate: {
+					Tooltip: ""
+					Label: Catch Crate
+				}
 			}
 		}
 

@@ -35,7 +35,7 @@ namespace Branch.Common.Players
             On_Player.ItemCheck_Shoot -= OnShoot;
         }
 
-        public override void ResetEffects()
+        public override void OnEnterWorld()
         {
             modInvoke = false;
             autoMode = false;

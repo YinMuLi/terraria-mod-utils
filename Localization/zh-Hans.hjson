@@ -122,7 +122,7 @@ Mods: {
 				}
 
 				ExtraWingSlot: {
-					Label: [i:2609] 额外翅膀饰品栏
+					Label: "[i:2609] 额外翅膀饰品栏"
 					// Tooltip: ""
 				}
 
@@ -135,17 +135,17 @@ Mods: {
 
 				PullWaitTimer: {
 					// Tooltip: ""
-					 Label: 拉杆延迟时间
+					Label: 拉杆延迟时间
 				}
 
 				CatchAccessories: {
 					// Tooltip: ""
-					 Label: [i:3064] 捕获饰品
+					Label: "[i:3064] 捕获饰品"
 				}
 
 				CatchCrate: {
 					// Tooltip: ""
-					 Label: "[i:2336] 捕获宝箱"
+					Label: "[i:2336] 捕获宝箱"
 				}
 			}
 		}

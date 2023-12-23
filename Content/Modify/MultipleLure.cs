@@ -17,7 +17,7 @@ namespace Branch.Content.Modify
             //bobber:钓鱼用的漂浮
             if (projectile.bobber && projectile.owner == Main.myPlayer && source is EntitySource_ItemUse)
             {
-                for (int i = 0; i < ModConfig.Instance.LuresAmount; i++)
+                for (int i = 0; i < ClientConfig.Instance.LuresAmount; i++)
                 {
                     Projectile.NewProjectile(projectile.GetSource_FromThis("MultipleLure"),
                            projectile.position,

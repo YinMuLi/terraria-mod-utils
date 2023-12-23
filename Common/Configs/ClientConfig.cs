@@ -1,33 +1,22 @@
-﻿using System.ComponentModel;
-using System.Threading.Tasks.Dataflow;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using Terraria.ModLoader.Config;
 
 namespace Branch.Common.Configs
 {
-    public class ModConfig : Terraria.ModLoader.Config.ModConfig
+    /// <summary>
+    /// 多人模式下，客户端配置
+    /// </summary>
+    internal class ClientConfig : ModConfig
     {
-        public static ModConfig Instance { get; private set; }
+        public static ClientConfig Instance { get; private set; }
         public override ConfigScope Mode => ConfigScope.ClientSide;
 
         public override void OnLoaded() => Instance = this;
-
-        /// <summary>
-        /// 是否生成Tom NPC
-        /// </summary>
-        [DefaultValue(true)]
-        public bool SpawnTom;
-
-        /// <summary>
-        /// 无限制晶塔
-        /// </summary>
-        [DefaultValue(true)]
-        public bool UnrestrainedPylon;
-
-        /// <summary>
-        /// 额外翅膀插槽
-        /// </summary>
-        [DefaultValue(true)]
-        public bool ExtraWingSlot;
 
         [Header("Fishing")]
         /// <summary>

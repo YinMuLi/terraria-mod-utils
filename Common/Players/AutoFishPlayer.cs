@@ -101,7 +101,7 @@ namespace Branch.Common.Players
 
         private void OnShoot(On_Player.orig_ItemCheck_Shoot orig, Player self, int i, Item sItem, int weaponDamage)
         {
-            if (ModConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke && sItem.fishingPole > 0)
+            if (ClientConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke && sItem.fishingPole > 0)
             {
                 //既然它给你了player self就保险一点，获取钓鱼玩家
                 //玩家手动抛竿，记录抛竿的位置,启动自动钓鱼
@@ -115,7 +115,7 @@ namespace Branch.Common.Players
         private bool OnCheckFishingBobbers(On_Player.orig_ItemCheck_CheckFishingBobbers orig, Player self, bool canUse)
         {
             bool flag = orig.Invoke(self, canUse);//false:收杆
-            if (!flag && ModConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke)
+            if (!flag && ClientConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke)
             {
                 //玩家手动收杆，取消自动钓鱼
                 player.autoMode = false;
@@ -127,25 +127,25 @@ namespace Branch.Common.Players
         public override void CatchFish(FishingAttempt attempt, ref int itemDrop, ref int npcSpawn, ref AdvancedPopupRequest sonar, ref Vector2 sonarPosition)
         {
             base.CatchFish(attempt, ref itemDrop, ref npcSpawn, ref sonar, ref sonarPosition);
-            if (ModConfig.Instance.AutoFish && pullWaitTimer == 0 && itemDrop >= 0)
+            if (ClientConfig.Instance.AutoFish && pullWaitTimer == 0 && itemDrop >= 0)
             {
                 if (!Player.sonarPotion)
                 {
                     //玩家没有声呐药水，直接拉杆
-                    pullWaitTimer = (int)(ModConfig.Instance.PullWaitTimer * 60);
+                    pullWaitTimer = (int)(ClientConfig.Instance.PullWaitTimer * 60);
                     return;
                 }
-                if (ItemID.Sets.IsFishingCrate[itemDrop] && ModConfig.Instance.CatchCrate)
+                if (ItemID.Sets.IsFishingCrate[itemDrop] && ClientConfig.Instance.CatchCrate)
                 {
                     //宝箱
-                    pullWaitTimer = (int)(ModConfig.Instance.PullWaitTimer * 60);
+                    pullWaitTimer = (int)(ClientConfig.Instance.PullWaitTimer * 60);
                     return;
                 }
                 var item = new Item(itemDrop);
-                if (item.accessory && ModConfig.Instance.CatchAccessories)
+                if (item.accessory && ClientConfig.Instance.CatchAccessories)
                 {
                     //饰品
-                    pullWaitTimer = (int)(ModConfig.Instance.PullWaitTimer * 60);
+                    pullWaitTimer = (int)(ClientConfig.Instance.PullWaitTimer * 60);
                     return;
                 }
             }

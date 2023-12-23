@@ -6,4 +6,83 @@ Mods: {
 			Chat3: ""
 		}
 	}
+
+	Branch: {
+		Configs: {
+			ServerConfig: {
+				ExtraWingSlot: {
+				}
+
+				UnrestrainedPylon: {
+				}
+
+				SpawnTom: {
+				}
+			}
+
+			ClientConfig: {
+				CatchAccessories: {
+				}
+
+				CatchCrate: {
+				}
+
+				PullWaitTimer: {
+				}
+
+				LuresAmount: {
+				}
+
+				AutoFish: {
+				}
+			}
+		}
+
+		NPCs: {
+			Tom: {
+				TownNPCMood: {
+				}
+			}
+		}
+
+		Items: {
+			PrisionBuilder: {
+			}
+
+			SickPotion: {
+			}
+
+			AdvancedFishingPotion: {
+			}
+
+			AdvancedExplorerPotion: {
+			}
+
+			AdvancedDefensePotion: {
+			}
+
+			MadeInHeaven: {
+			}
+
+			FinalStation: {
+			}
+		}
+
+		Buffs: {
+			SickBlade: {
+			}
+
+			FinalStationBuff: {
+			}
+
+			AdvancedFishing: {
+			}
+
+			AdvancedExplorer: {
+			}
+
+			AdvancedDefense: {
+			}
+		}
+	}
 }

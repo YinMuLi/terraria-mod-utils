@@ -51,7 +51,7 @@ namespace Branch.Content.NPCS
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return ModConfig.Instance.SpawnTom;
+            return ServerConfig.Instance.SpawnTom;
         }
 
         public override void SetStaticDefaults()
@@ -151,7 +151,7 @@ namespace Branch.Content.NPCS
         public override bool CanTownNPCSpawn(int numTownNPCs)
         {
             //返回条件为：拥有两个NPC
-            return numTownNPCs >= 2 && ModConfig.Instance.SpawnTom;
+            return numTownNPCs >= 2 && ServerConfig.Instance.SpawnTom;
         }
 
         public override bool CanGoToStatue(bool toKingStatue)

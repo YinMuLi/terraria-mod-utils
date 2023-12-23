@@ -43,11 +43,6 @@ Mods: {
 				Tooltip: ""
 			}
 
-			PrisionBuilder: {
-				DisplayName: Prision Builder
-				Tooltip: ""
-			}
-
 			FinalStation: {
 				Tooltip: ""
 				DisplayName: Final Station
@@ -90,7 +85,7 @@ Mods: {
 		Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 
 		Configs: {
-			ModConfig: {
+			ServerConfig: {
 				DisplayName: Branch Config
 
 				LuresAmount: {
@@ -112,19 +107,9 @@ Mods: {
 					Label: Extra Wing Slot
 					Tooltip: ""
 				}
+			}
 
-				AutoFish: {
-					Tooltip: ""
-					Label: Auto Fish
-				}
-
-				Headers.Fishing: Fishing Header
-
-				PullWaitTimer: {
-					Tooltip: ""
-					Label: Pull Wait Timer
-				}
-
+			ClientConfig: {
 				CatchAccessories: {
 					Tooltip: ""
 					Label: Catch Accessories
@@ -134,6 +119,24 @@ Mods: {
 					Tooltip: ""
 					Label: Catch Crate
 				}
+
+				PullWaitTimer: {
+					Tooltip: ""
+					Label: Pull Wait Timer
+				}
+
+				LuresAmount: {
+					Tooltip: ""
+					Label: Lures Amount
+				}
+
+				AutoFish: {
+					Tooltip: ""
+					Label: Auto Fish
+				}
+
+				Headers.Fishing: Fishing Header
+				DisplayName: Client Config
 			}
 		}
 

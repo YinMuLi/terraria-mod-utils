@@ -52,11 +52,6 @@ Mods: {
 				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
 			}
 
-			PrisionBuilder: {
-				DisplayName: 监狱制造者
-				Tooltip: 内部逻辑需要优化
-			}
-
 			FinalStation: {
 				// Tooltip: ""
 				// DisplayName: Final Station
@@ -99,8 +94,8 @@ Mods: {
 		// Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
 
 		Configs: {
-			ModConfig: {
-				DisplayName: 个人配置
+			ServerConfig: {
+				DisplayName: 服务器配置
 
 				LuresAmount: {
 					Label: 鱼线数量
@@ -125,19 +120,9 @@ Mods: {
 					Label: "[i:2609] 额外翅膀饰品栏"
 					// Tooltip: ""
 				}
+			}
 
-				AutoFish: {
-					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
-					Label: "[i:2294] 自动钓鱼"
-				}
-
-				Headers.Fishing: 钓鱼
-
-				PullWaitTimer: {
-					// Tooltip: ""
-					Label: 拉杆延迟时间
-				}
-
+			ClientConfig: {
 				CatchAccessories: {
 					// Tooltip: ""
 					Label: "[i:3064] 捕获饰品"
@@ -147,6 +132,24 @@ Mods: {
 					// Tooltip: ""
 					Label: "[i:2336] 捕获宝箱"
 				}
+
+				PullWaitTimer: {
+					// Tooltip: ""
+					Label: 拉杆延迟时间
+				}
+
+				LuresAmount: {
+					// Tooltip: ""
+					Label: 鱼线数量
+				}
+
+				AutoFish: {
+					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
+					Label: "[i:2294] 自动钓鱼"
+				}
+
+				Headers.Fishing: 钓鱼
+				DisplayName: 个人配置
 			}
 		}
 

@@ -16,7 +16,7 @@ namespace Branch.Common.UI
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return ModConfig.Instance.ExtraWingSlot;
+            return ServerConfig.Instance.ExtraWingSlot;
         }
 
         public override bool CanAcceptItem(Item checkItem, AccessorySlotType context)

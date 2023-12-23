@@ -18,6 +18,7 @@ namespace Branch.Content.Modify
                     loot.Add(ItemDropRule.Common(ItemID.Diamond, 20, 1, 2));//(1-2)5% 钻石
                     loot.Add(ItemDropRule.Common(ItemID.Ruby, 20, 1, 2));//(1-2)5% 鲁比
                     loot.Add(ItemDropRule.Common(ItemID.Emerald, 20, 1, 2));//(1-2)5% 翡翠
+                    loot.Add(ItemDropRule.Common(ItemID.Sapphire, 20, 1, 2));//(1-2)5% 萨菲
                     break;
             }
         }

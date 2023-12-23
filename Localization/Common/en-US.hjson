@@ -1,0 +1,10 @@
+Mods: {
+	UI: {
+		Tom: {
+			ChangeButton: ""
+			AnglerShop: ""
+			HerbsShop: ""
+			GeneralShop: ""
+		}
+	}
+}

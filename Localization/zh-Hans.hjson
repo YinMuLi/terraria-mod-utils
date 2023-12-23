@@ -117,7 +117,7 @@ Mods: {
 				}
 
 				ExtraWingSlot: {
-					Label: "[i:2609] 额外翅膀饰品栏"
+					Label: 额外翅膀饰品栏
 					// Tooltip: ""
 				}
 			}
@@ -125,12 +125,12 @@ Mods: {
 			ClientConfig: {
 				CatchAccessories: {
 					// Tooltip: ""
-					Label: "[i:3064] 捕获饰品"
+					Label: 捕获饰品
 				}
 
 				CatchCrate: {
 					// Tooltip: ""
-					Label: "[i:2336] 捕获宝箱"
+					Label: 捕获宝箱
 				}
 
 				PullWaitTimer: {
@@ -145,7 +145,7 @@ Mods: {
 
 				AutoFish: {
 					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
-					Label: "[i:2294] 自动钓鱼"
+					Label: 自动钓鱼
 				}
 
 				Headers.Fishing: 钓鱼

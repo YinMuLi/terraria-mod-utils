@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Branch.Common.Configs;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -28,7 +29,7 @@ namespace Branch.Common.Players
                     Vector2 direction = npc.Center - Player.Center;//方向
                     float radian = direction.ToRotation();//弧度
                     direction.Normalize();
-                    direction *= 50;
+                    direction *= 20 * ClientConfig.Instance.CursorDistance;
                     ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.DeathText.Value, "->", direction + playerPos, Color.White, radian, FontAssets.DeathText.Value.MeasureString("->") / 2f, Vector2.One);
                 }
             }

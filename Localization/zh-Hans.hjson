@@ -150,6 +150,11 @@ Mods: {
 
 				Headers.Fishing: 钓鱼
 				DisplayName: 个人配置
+
+				CursorDistance: {
+					// Tooltip: ""
+					 Label: 提示指正距离玩家的距离
+				}
 			}
 		}
 

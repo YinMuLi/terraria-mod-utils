@@ -137,6 +137,11 @@ Mods: {
 
 				Headers.Fishing: Fishing Header
 				DisplayName: Client Config
+
+				CursorDistance: {
+					Tooltip: ""
+					Label: Cursor Distance
+				}
 			}
 		}
 

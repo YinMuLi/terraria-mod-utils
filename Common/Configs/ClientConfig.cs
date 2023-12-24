@@ -53,5 +53,13 @@ namespace Branch.Common.Configs
         /// </summary>
         [DefaultValue(false)]
         public bool CatchAccessories;
+
+        /// <summary>
+        /// 指针距离玩家的距离
+        /// </summary>
+        [Range(0f, 10f)]
+        [DefaultValue(3f)]
+        [Increment(0.5f)]
+        public float CursorDistance;
     }
 }

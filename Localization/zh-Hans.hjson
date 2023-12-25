@@ -59,7 +59,11 @@ Mods: {
 
 			MadeInHeaven: {
 				DisplayName: 天堂制造
-				Tooltip: 你将暂时拥有神父普奇的替身，并可以加速一段时间
+				Tooltip:
+					'''
+					你将暂时拥有神父普奇的替身，加速一段时间。
+					（危险情况下不可使用）
+					'''
 			}
 
 			SickPotion: {
@@ -153,7 +157,7 @@ Mods: {
 
 				CursorDistance: {
 					// Tooltip: ""
-					 Label: 提示指正距离玩家的距离
+					Label: 提示指正距离玩家的距离
 				}
 			}
 		}

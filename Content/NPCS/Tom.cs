@@ -311,12 +311,14 @@ namespace Branch.Content.NPCS
             {
                 shop.Add(new Item(items[i]));
             };
+            shop.Add<FinalStation>(Condition.DownedSkeletron);
             //陨石
             shop.Add(new Item(ItemID.Meteorite), Condition.DownedBrainOfCthulhu);
             shop.Add(new Item(ItemID.Meteorite), Condition.DownedEaterOfWorlds);
             //自动锤炼机（世纪之花）
             shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);
-            shop.Add<FinalStation>(Condition.DownedSkeletron);
+            //叶绿锭
+            shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);
             //七彩草蛉
             shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera);
 

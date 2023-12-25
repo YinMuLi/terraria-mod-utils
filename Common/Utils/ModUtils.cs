@@ -7,14 +7,14 @@ namespace Branch.Common.Utils
 {
     public static class ModUtils
     {
-        /// <summary>
-        /// 聊天框显示信息
-        /// </summary>
-        /// <param name="msg"></param>
         public static void ShowText(string msg)
         {
-            //ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), Color.White, -1);
             Main.NewText(msg);
+        }
+
+        public static void ShowText(string msg, Color color)
+        {
+            ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), color);
         }
 
         /// <summary>

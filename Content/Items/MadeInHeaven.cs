@@ -1,4 +1,5 @@
 ﻿using Branch.Common.Utils;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -30,8 +31,8 @@ namespace Branch.Content.Items
 
         public override void SetDefaults()
         {
-            Item.width = 20;//物品掉落时的碰撞体宽度
-            Item.height = 20;//物品掉落时碰撞体高度
+            Item.width = 32;//贴图的宽度
+            Item.height = 32;//贴图的高度
             Item.value = Item.buyPrice(0, 1, 0, 0);//物品的价值
             Item.rare = ItemRarityID.Red;//物品的稀有度
             Item.useAnimation = 9;//每次使用时动画播放时间
@@ -44,6 +45,7 @@ namespace Branch.Content.Items
 
         public override bool? UseItem(Player player)
         {
+            if (player.dangerSense) return false;
             /**
              * Main.dayTime:白天为真，晚上为假
              * Main.time:白天介于0-54000 晚上介于0-32400
@@ -52,25 +54,25 @@ namespace Branch.Content.Items
             {
                 //清晨到中午
                 Main.SkipToTime(HALF_NOON, true);
-                ModUtils.ShowText("午时");
+                ModUtils.ShowText("正午", Color.Yellow);
             }
             else if (Main.dayTime)
             {
                 //中午到黄昏
                 Main.SkipToTime(0, false);
-                ModUtils.ShowText("黄昏");
+                ModUtils.ShowText("黄昏", Color.Yellow);
             }
             else if (!Main.dayTime && Main.time < HALF_NEIGHT)
             {
                 //黄昏到半夜
                 Main.SkipToTime(HALF_NEIGHT, false);
-                ModUtils.ShowText("半夜");
+                ModUtils.ShowText("半夜", Color.Yellow);
             }
             else if (!Main.dayTime)
             {
                 //半夜到清晨
                 Main.SkipToTime(0, true);
-                ModUtils.ShowText("清晨");
+                ModUtils.ShowText("清晨", Color.Yellow);
             }
 
             return true;

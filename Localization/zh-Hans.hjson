@@ -70,6 +70,11 @@ Mods: {
 				Tooltip: 为敌怪添加原版绝大多数Debuff
 				DisplayName: 破伤风
 			}
+
+			WeatherReport: {
+				// DisplayName: Weather Report
+				// Tooltip: ""
+			}
 		}
 
 		NPCs: {

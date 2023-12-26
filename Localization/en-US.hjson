@@ -57,6 +57,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Sick Potion
 			}
+
+			WeatherReport: {
+				DisplayName: Weather Report
+				Tooltip: ""
+			}
 		}
 
 		NPCs: {

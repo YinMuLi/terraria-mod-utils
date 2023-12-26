@@ -15,10 +15,10 @@ namespace Branch.Content.Modify
             switch (item.type)
             {
                 case ItemID.GoldenCrate:
-                    loot.Add(ItemDropRule.Common(ItemID.Diamond, 20, 1, 2));//(1-2)5% 钻石
-                    loot.Add(ItemDropRule.Common(ItemID.Ruby, 20, 1, 2));//(1-2)5% 鲁比
-                    loot.Add(ItemDropRule.Common(ItemID.Emerald, 20, 1, 2));//(1-2)5% 翡翠
-                    loot.Add(ItemDropRule.Common(ItemID.Sapphire, 20, 1, 2));//(1-2)5% 萨菲
+                    loot.Add(ItemDropRule.Common(ItemID.Diamond, 5, 1, 2));//(1-2)20% 钻石
+                    loot.Add(ItemDropRule.Common(ItemID.Ruby, 5, 1, 2));//(1-2)20% 鲁比
+                    loot.Add(ItemDropRule.Common(ItemID.Emerald, 5, 1, 2));//(1-2)20% 翡翠
+                    loot.Add(ItemDropRule.Common(ItemID.Sapphire, 5, 1, 2));//(1-2)20% 萨菲
                     break;
             }
         }

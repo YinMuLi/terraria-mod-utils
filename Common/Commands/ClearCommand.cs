@@ -1,8 +1,6 @@
 ﻿using Branch.Common.Utils;
 using System;
 using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Common.Commands

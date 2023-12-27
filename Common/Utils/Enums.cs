@@ -1,5 +1,3 @@
-﻿using System;
-
-namespace Branch.Common.Utils
+﻿namespace Branch.Common.Utils
 {
 }

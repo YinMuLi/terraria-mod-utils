@@ -1,7 +1,5 @@
 ﻿using Branch.Common.Configs;
-using Branch.Common.Utils;
 using Microsoft.Xna.Framework;
-using System.Collections;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

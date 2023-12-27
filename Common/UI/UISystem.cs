@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Branch.Common.Extensions;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
@@ -32,7 +33,7 @@ namespace Branch.Common.UI
         public override void UpdateUI(GameTime gameTime)
         {
             if (Main.ingameOptionsWindow || Main.InGameUI.IsVisible) return;
-            if (WeatherReportUI.visible)
+            if (WeatherReportUI.Visible)
             {
                 weatherReportInterface?.Update(gameTime);
             }
@@ -41,18 +42,10 @@ namespace Branch.Common.UI
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
             // 精密线控仪
-            int insertIndex = layers.FindIndex(index => index.Name.Equals("Vanilla: Wire Selection"));
-            if (insertIndex != -1)
+            layers.FindVanilla("Wire Selection", index =>
             {
-                layers.Insert(insertIndex, new LegacyGameInterfaceLayer("Branch: Weather Report", () =>
-                {
-                    if (WeatherReportUI.visible)
-                    {
-                        weatherReport.Draw(Main.spriteBatch);
-                    }
-                    return true;
-                }, InterfaceScaleType.UI));
-            }
+                layers.Insert(index, "Weather Report", weatherReport, () => WeatherReportUI.Visible);
+            });
         }
     }
 }

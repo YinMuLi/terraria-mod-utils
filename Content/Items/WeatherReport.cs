@@ -28,7 +28,8 @@ namespace Branch.Content.Items
         {
             if (player.whoAmI == Main.myPlayer && player.altFunctionUse == 2 && !Main.dedServ)
             {
-                WeatherReportUI.visible = true;
+                WeatherReportUI.Visible = !WeatherReportUI.Visible;
+                return false;
             }
             return true;
         }

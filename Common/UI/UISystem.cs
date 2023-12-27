@@ -7,11 +7,17 @@ using Terraria.UI;
 
 namespace Branch.Common.UI
 {
+    [Autoload(Side = ModSide.Client)]
     internal class UISystem : ModSystem
     {
         internal static UISystem Instance { get; private set; }
         public WeatherReportUI weatherReport;
         private UserInterface weatherReportInterface;
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            return false;
+        }
 
         public override void Load()
         {
@@ -42,7 +48,7 @@ namespace Branch.Common.UI
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
         {
             // 精密线控仪
-            layers.FindVanilla("Wire Selection", index =>
+            layers.FindVanilla("Mouse Text", index =>
             {
                 layers.Insert(index, "Weather Report", weatherReport, () => WeatherReportUI.Visible);
             });

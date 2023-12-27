@@ -1,7 +1,7 @@
 ﻿using Branch.Common.Utils;
+using Branch.Content.Items;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections;
-using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.GameInput;
@@ -12,8 +12,10 @@ namespace Branch.Common.UI
 {
     internal class WeatherReportUI : UIState
     {
-        public static bool Visible;
+        public static bool Visible { get; private set; }
+
         private UIPanel panel;
+        private WeatherReport weatherReport;
 
         public override void OnInitialize()
         {
@@ -22,16 +24,9 @@ namespace Branch.Common.UI
             UIUtils.SetRectangle(panel, left: 600f, top: 100f, width: 150f, height: 200f);
             //下雨事件按钮
             //用tr原版图片实例化一个图片按钮
-            UIImageButton button = new UIImageButton(ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay"));
-            //设置按钮距宽度
-            button.Width.Set(22f, 0f);
-            //设置按钮高度
-            button.Height.Set(22f, 0f);
-            //设置按钮距离所属ui部件的最左端的距离
-            button.Left.Set(-11f, 0.5f);
-            //设置按钮距离所属ui部件的最顶端的距离
-            button.Top.Set(-11f, 0.5f);
+            UIHoverImageButton button = new(ModContent.Request<Texture2D>("Branch/Assets/Images/UI/Rain"), "下雨");
             //将按钮注册入面板中，这个按钮的坐标将以面板的坐标为基础计算
+            UIUtils.SetRectangle(button, 0f, 0f, 32f, 32f);
             panel.Append(button);
             //将这个面板注册到UIState
             Append(panel);
@@ -52,6 +47,28 @@ namespace Branch.Common.UI
             {
                 PlayerInput.LockVanillaMouseScroll("Brach/Weather Report"); // The passed in string can be anything.
             }
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            if (weatherReport == null)
+            {
+                Close();
+                return;
+            }
+            base.Update(gameTime);
+        }
+
+        public void Open(WeatherReport weatherReport)
+        {
+            this.weatherReport = weatherReport;
+            Visible = true;
+        }
+
+        public void Close()
+        {
+            weatherReport = null;
+            Visible = false;
         }
     }
 }

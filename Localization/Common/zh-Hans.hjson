@@ -7,4 +7,12 @@ Mods: {
 			GeneralShop: 通用商店
 		}
 	}
+
+	Items: {
+		WeatherReport: {
+			Rainning: 雨：天变暗，开始下雨
+			Sandstorm: 沙尘暴： 只有在没有沙尘暴进行时使用才有效
+			BloodMoon: 血夜：召唤诅咒之夜(夜间使用)
+		}
+	}
 }

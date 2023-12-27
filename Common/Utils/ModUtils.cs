@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Chat;
+using Terraria.ID;
 using Terraria.Localization;
 
 namespace Branch.Common.Utils
@@ -17,13 +18,10 @@ namespace Branch.Common.Utils
             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), color);
         }
 
-        /// <summary>
-        /// 屏幕上显示信息
-        /// </summary>
-        /// <param name="msg"></param>
-        public static void DrawString(string msg)
+        public static void SnycWorld()
         {
-            if (msg == string.Empty) return;
+            if (Main.netMode == NetmodeID.Server)
+                NetMessage.SendData(MessageID.WorldData);
         }
     }
 }

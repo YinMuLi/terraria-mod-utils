@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.Xna.Framework;
 using System;
-using Terraria.UI;
+using System.Collections.Generic;
 using Terraria;
+using Terraria.UI;
 
 namespace Branch.Common.Extensions
 {
@@ -11,7 +12,8 @@ namespace Branch.Common.Extensions
             Func<bool> func)
         {
             // 如果 Insert 是按照向前插入的逻辑，越早插入越晚绘制，也就是越靠近顶层。
-            layers.Insert(index + 1, new LegacyGameInterfaceLayer($"Branch: {name}", () =>
+            //这里的写法是在index图层之下
+            layers.Insert(index, new LegacyGameInterfaceLayer($"Branch: {name}", () =>
             {
                 if (func())
                 {

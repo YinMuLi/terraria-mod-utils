@@ -15,7 +15,7 @@ namespace Branch.Content.Modify
     /// </summary>
     internal class EventCenter : ILoadable
     {
-        private const float MIN_GAME_ZOOM = 0.86f;//经过测试
+        private const float MIN_GAME_ZOOM = 0.87f;//经过测试
         private const float MAX_GAME_ZOOM = 4f;
 
         public void Load(Mod mod)

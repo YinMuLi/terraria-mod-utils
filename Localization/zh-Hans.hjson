@@ -72,7 +72,7 @@ Mods: {
 			}
 
 			WeatherReport: {
-				// DisplayName: Weather Report
+				DisplayName: 天气预报
 				// Tooltip: ""
 			}
 		}

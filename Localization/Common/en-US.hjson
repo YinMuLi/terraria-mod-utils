@@ -7,4 +7,12 @@ Mods: {
 			GeneralShop: ""
 		}
 	}
+
+	Items: {
+		WeatherReport: {
+			Rainning: ""
+			Sandstorm: ""
+			BloodMoon: ""
+		}
+	}
 }

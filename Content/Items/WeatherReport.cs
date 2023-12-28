@@ -16,13 +16,12 @@ namespace Branch.Content.Items
     /// </summary>
     internal class WeatherReport : ModItem, IItemRightClickable
     {
-        public static Weather currentWeather;
+        private static Weather currentWeather;
 
         public override void SetDefaults()
         {
-            Item.width = 25;//贴图的宽度
-            Item.height = 25;//贴图的高度
-            Item.value = Item.buyPrice(0, 1, 0, 0);//物品的价值
+            Item.width = 32;//贴图的宽度
+            Item.height = 32;//贴图的高度
             Item.rare = ItemRarityID.Red;//物品的稀有度
             Item.useAnimation = 18;//每次使用时动画播放时间
             Item.useTime = 18;//使用一次所需时间
@@ -32,37 +31,20 @@ namespace Branch.Content.Items
             Item.mana = 20;//每次使用消耗的法力值
         }
 
-        //允许右键使用
-        public override bool AltFunctionUse(Player player) => true;
-
         public override bool CanUseItem(Player player)
         {
-            if (player.whoAmI == Main.myPlayer && !Main.dedServ)
+            if (player.whoAmI == Main.myPlayer)
             {
-                if (player.altFunctionUse == 2)
+                switch (currentWeather)
                 {
-                    //右键
-                    RightClick();
-                    return false;
+                    case Weather.Rainning: StartRainning(); break;
+                    case Weather.Sandstorm: StartSandstorm(); break;
+                    case Weather.BloodMoon: StartBloodMoon(); break;
+                    case Weather.SlimeRain: StartSlimeRain(); break;
                 }
-                else
-                {
-                    switch (currentWeather)
-                    {
-                        case Weather.Rainning: StartRainning(); break;
-                        case Weather.Sandstorm: StartSandstorm(); break;
-                        case Weather.BloodMoon: StartBloodMoon(); break;
-                    }
-                    return true;
-                }
+                return true;
             }
             return false;
-        }
-
-        private void RightClick()
-        {
-            SoundEngine.PlaySound(SoundID.Unlock);
-            currentWeather = (Weather)(((int)currentWeather + 1) % (int)Weather.Count);//这样写想笑
         }
 
         public override void ModifyTooltips(List<TooltipLine> list)
@@ -72,6 +54,7 @@ namespace Branch.Content.Items
                 Weather.Rainning => Language.GetTextValue("Mods.Items.WeatherReport.Rainning"),
                 Weather.Sandstorm => Language.GetTextValue("Mods.Items.WeatherReport.Sandstorm"),
                 Weather.BloodMoon => Language.GetTextValue("Mods.Items.WeatherReport.BloodMoon"),
+                Weather.SlimeRain => Language.GetTextValue("Mods.Items.WeatherReport.SlimeRain"),
                 _ => null
             };
             list.Add(new TooltipLine(Mod, "Weather", content) { OverrideColor = Color.LightGreen });
@@ -79,6 +62,7 @@ namespace Branch.Content.Items
 
         private void StartRainning()
         {
+            if (Main.IsItRaining) return;
             //灯笼夜
             LanternNight.ManualLanterns = false;
             LanternNight.GenuineLanterns = false;
@@ -104,17 +88,39 @@ namespace Branch.Content.Items
 
         private void StartBloodMoon()
         {
-            if (!Main.dayTime)
+            if (!Main.dayTime && !Main.bloodMoon)
             {
                 Main.bloodMoon = true;
                 ModUtils.SnycWorld();
             }
         }
 
+        private void StartSlimeRain()
+        {
+            if (Main.slimeRain) return;
+            Main.StartSlimeRain();
+            //这两个参数是从左下角文字提醒下史莱姆雨到真正下史莱姆雨的时间
+            Main.slimeWarningDelay = 1;//默认420
+            Main.slimeWarningTime = 1;
+            ModUtils.SnycWorld();
+        }
+
         public void OnRightClicked(Item item)
         {
             if (item.type != Type) return;
-            RightClick();
+            SoundEngine.PlaySound(SoundID.Unlock);
+            currentWeather = (Weather)(((int)currentWeather + 1) % (int)Weather.Count);//这样写想笑
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe.Create(Item.type)
+                .AddIngredient(ItemID.Goldfish, 1)
+                .AddIngredient(ItemID.Gel, 10)
+                .AddIngredient(ItemID.Gravestone, 1)//墓碑
+                .AddIngredient(ItemID.AntlionMandible, 1)//蚁狮上颚
+                .AddTile(TileID.WorkBenches)
+                .Register();
         }
     }
 }

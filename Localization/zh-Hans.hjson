@@ -73,7 +73,12 @@ Mods: {
 
 			WeatherReport: {
 				DisplayName: 天气预报
-				// Tooltip: ""
+				Tooltip: 右键切换天气
+			}
+
+			WarOrder: {
+				DisplayName: 战令
+				Tooltip: 右键切换事件
 			}
 		}
 

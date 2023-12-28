@@ -13,6 +13,16 @@ Mods: {
 			Rainning: ""
 			Sandstorm: ""
 			BloodMoon: ""
+			SlimeRain: ""
+		}
+
+		WarOrder: {
+			PumpkinMoon: ""
+			SnowMoon: ""
+			PirateInvasion: ""
+			MartianMadness: ""
+			GoblinArmy: ""
+			Eclipse: ""
 		}
 	}
 }

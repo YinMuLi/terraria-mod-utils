@@ -1,5 +1,6 @@
 ﻿using Branch.Common.Configs;
 using Microsoft.Xna.Framework;
+using System.Threading.Tasks;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -52,6 +53,11 @@ namespace Branch.Common.Players
             modInvoke = false;
             if (autoMode)
             {
+                if (Player.dead)
+                {
+                    //在挂机钓鱼的过程中死亡
+                    pullWaitTimer = 0;
+                }
                 if (pullWaitTimer > 0 && --pullWaitTimer == 0)
                 {
                     //自动收杆
@@ -98,15 +104,25 @@ namespace Branch.Common.Players
             return false;
         }
 
+        private bool IsManualOperation(Player player, out AutoFishPlayer fisherman)
+        {
+            fisherman = null;
+            if (ClientConfig.Instance.AutoFish && player.whoAmI == Main.myPlayer && player.TryGetModPlayer(out fisherman) && !fisherman.modInvoke)
+            {
+                return true;
+            }
+            return false;
+        }
+
         private void OnShoot(On_Player.orig_ItemCheck_Shoot orig, Player self, int i, Item sItem, int weaponDamage)
         {
-            if (ClientConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke && sItem.fishingPole > 0)
+            if (IsManualOperation(self, out AutoFishPlayer fisherman) && sItem.fishingPole > 0)
             {
                 //既然它给你了player self就保险一点，获取钓鱼玩家
                 //玩家手动抛竿，记录抛竿的位置,启动自动钓鱼
-                player.mousePos = Main.MouseWorld.ToPoint();
-                player.autoMode = true;
-                player.pullWaitTimer = 0;//重置拉杆等待时间
+                fisherman.mousePos = Main.MouseWorld.ToPoint();
+                fisherman.autoMode = true;
+                fisherman.pullWaitTimer = 0;//重置拉杆等待时间
             }
             orig.Invoke(self, i, sItem, weaponDamage);
         }
@@ -114,10 +130,10 @@ namespace Branch.Common.Players
         private bool OnCheckFishingBobbers(On_Player.orig_ItemCheck_CheckFishingBobbers orig, Player self, bool canUse)
         {
             bool flag = orig.Invoke(self, canUse);//false:收杆
-            if (!flag && ClientConfig.Instance.AutoFish && self.whoAmI == Main.myPlayer && self.TryGetModPlayer(out AutoFishPlayer player) && !player.modInvoke)
+            if (!flag && IsManualOperation(self, out AutoFishPlayer fisherman))
             {
                 //玩家手动收杆，取消自动钓鱼
-                player.autoMode = false;
+                fisherman.autoMode = false;
             }
             return flag;
         }

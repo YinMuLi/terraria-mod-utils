@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
-    internal class CustomPlayer : ModPlayer
+    internal class DamagePlayer : ModPlayer
 
     {
         /// <summary>

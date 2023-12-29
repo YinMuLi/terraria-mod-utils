@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.UI;
 
 namespace Branch.Common.Interface
 {
@@ -20,6 +21,7 @@ namespace Branch.Common.Interface
 
         public void HandleHover(Item[] inventory, int context, int slot)
         {
+            if (context is not ItemSlot.Context.InventoryItem) return;
             var item = inventory[slot];
             MouseState mouseState = Mouse.GetState();
             if (preMousePressed)

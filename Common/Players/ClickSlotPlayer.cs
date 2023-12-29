@@ -1,18 +1,25 @@
 ﻿using Branch.Common.Interface;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace Branch.Common.Players
 {
-    internal class ClickablePlayer : ModPlayer
+    internal class ClickSlotPlayer : ModPlayer
     {
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="inventory">物品所在的数组（背包/储钱罐...）</param>
+        /// <param name="context">物品的槽标识</param>
+        /// <param name="slot">物品的索引</param>
+        /// <returns></returns>
         public override bool HoverSlot(Item[] inventory, int context, int slot)
         {
             var item = inventory[slot];
             if (item.ModItem is IItemRightClickable clickable)
             {
                 clickable.HandleHover(inventory, context, slot);
-                return true;
             }
             return false;
         }

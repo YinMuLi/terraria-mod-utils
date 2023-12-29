@@ -17,7 +17,7 @@ namespace Branch.Content.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            player.GetModPlayer<CustomPlayer>().sickBlade = true;
+            player.GetModPlayer<DamagePlayer>().sickBlade = true;
         }
     }
 }

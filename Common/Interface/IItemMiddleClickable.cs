@@ -13,7 +13,7 @@ namespace Branch.Common.Interface
     /// <summary>
     /// 容器中的物品不需要关闭UI右击点击
     /// </summary>
-    internal interface IItemRightClickable
+    internal interface IItemMiddleClickable
     {
         private static bool preMousePressed;
 
@@ -27,9 +27,9 @@ namespace Branch.Common.Interface
             if (preMousePressed)
             {
                 //当第一次被按下，值为True,满足条件，一直判断知道松开为False
-                preMousePressed = mouseState.RightButton is ButtonState.Pressed;
+                preMousePressed = mouseState.MiddleButton is ButtonState.Pressed;
             }
-            if (mouseState.RightButton is ButtonState.Pressed && !preMousePressed)
+            if (mouseState.MiddleButton is ButtonState.Pressed && !preMousePressed)
             {
                 //只要鼠标右键被按下不松开，就会一直运行，preMousePressed解决这个问题
                 preMousePressed = true;

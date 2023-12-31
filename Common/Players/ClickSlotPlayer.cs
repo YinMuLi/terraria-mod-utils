@@ -1,7 +1,6 @@
 ﻿using Branch.Common.Interface;
 using Terraria;
 using Terraria.ModLoader;
-using Terraria.UI;
 
 namespace Branch.Common.Players
 {
@@ -17,7 +16,7 @@ namespace Branch.Common.Players
         public override bool HoverSlot(Item[] inventory, int context, int slot)
         {
             var item = inventory[slot];
-            if (item.ModItem is IItemRightClickable clickable)
+            if (item.ModItem is IItemMiddleClickable clickable)
             {
                 clickable.HandleHover(inventory, context, slot);
             }

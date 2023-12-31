@@ -14,10 +14,5 @@ namespace Branch.Content.Buffs
             Main.meleeBuff[Type] = true;// 设为true后将会与原版武器灌注冲突（只会存在一种武器灌注）
             Main.persistentBuff[Type] = true;// 死亡后不会清除buff
         }
-
-        public override void Update(Player player, ref int buffIndex)
-        {
-            player.GetModPlayer<DamagePlayer>().sickBlade = true;
-        }
     }
 }

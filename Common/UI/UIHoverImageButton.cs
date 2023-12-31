@@ -1,11 +1,13 @@
-﻿using Branch.Common.Utils;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 
 namespace Branch.Common.UI
 {
+    /// <summary>
+    /// UI的绘制层数要与Mouse Text低一层，不然没法显示
+    /// </summary>
     internal class UIHoverImageButton : UIImageButton
     {
         private string hoverText;

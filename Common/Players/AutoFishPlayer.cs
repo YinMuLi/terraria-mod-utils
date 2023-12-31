@@ -1,6 +1,5 @@
 ﻿using Branch.Common.Configs;
 using Microsoft.Xna.Framework;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

@@ -1,6 +1,4 @@
 ﻿using Branch.Common.Utils;
-using Branch.Content.Items;
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
@@ -15,7 +13,6 @@ namespace Branch.Common.UI
         public static bool Visible { get; private set; }
 
         private UIPanel panel;
-        private WeatherReport weatherReport;
 
         public override void OnInitialize()
         {
@@ -47,28 +44,6 @@ namespace Branch.Common.UI
             {
                 PlayerInput.LockVanillaMouseScroll("Brach/Weather Report"); // The passed in string can be anything.
             }
-        }
-
-        public override void Update(GameTime gameTime)
-        {
-            if (weatherReport == null)
-            {
-                Close();
-                return;
-            }
-            base.Update(gameTime);
-        }
-
-        public void Open(WeatherReport weatherReport)
-        {
-            this.weatherReport = weatherReport;
-            Visible = true;
-        }
-
-        public void Close()
-        {
-            weatherReport = null;
-            Visible = false;
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Branch.Common.Configs
         /// <summary>
         /// 鱼线数量
         /// </summary>
-        [Range(0, 50)]
+        [Range(0, 200)]
         [Increment(1)]
         [DefaultValue(5)]
         [Slider]

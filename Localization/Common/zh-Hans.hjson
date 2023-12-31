@@ -6,6 +6,8 @@ Mods: {
 			HerbsShop: 药房
 			GeneralShop: 通用商店
 		}
+
+		InfoDisplay.Minion: "{0}/{1} 召唤栏 {2}/{3} 哨兵栏"
 	}
 
 	Items: {

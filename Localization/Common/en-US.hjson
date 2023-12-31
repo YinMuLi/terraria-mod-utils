@@ -6,6 +6,8 @@ Mods: {
 			HerbsShop: ""
 			GeneralShop: ""
 		}
+
+		InfoDisplay.Minion: ""
 	}
 
 	Items: {

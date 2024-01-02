@@ -52,21 +52,6 @@ Mods: {
 				DisplayName: Made In Heaven
 				Tooltip: ""
 			}
-
-			SickPotion: {
-				Tooltip: ""
-				DisplayName: Sick Potion
-			}
-
-			WeatherReport: {
-				DisplayName: Weather Report
-				Tooltip: ""
-			}
-
-			WarOrder: {
-				DisplayName: War Order
-				Tooltip: ""
-			}
 		}
 
 		NPCs: {

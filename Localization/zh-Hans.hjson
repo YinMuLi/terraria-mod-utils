@@ -65,21 +65,6 @@ Mods: {
 					（危险情况下不可使用）
 					'''
 			}
-
-			SickPotion: {
-				Tooltip: 为敌怪添加原版绝大多数Debuff
-				DisplayName: 破伤风
-			}
-
-			WeatherReport: {
-				DisplayName: 天气预报
-				Tooltip: 右键切换天气
-			}
-
-			WarOrder: {
-				DisplayName: 战令
-				Tooltip: 右键切换事件
-			}
 		}
 
 		NPCs: {

@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Branch.Common.Players;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -46,7 +48,13 @@ namespace Branch.Content.Modify
         {
             if (historyPrefix.Contains(item.prefix))
             {
-                //退款 灾厄强盗有个退款的功能
+                //获取价值
+                int value = item.value;
+                Player p = Main.LocalPlayer;
+                ItemLoader.ReforgePrice(item, ref value, ref p.discountAvailable);
+                //退款
+                var coinCount = Utils.CoinsSplit(value / 3);
+                Main.LocalPlayer.GetModPlayer<ReforgePlayer>()?.Refund(coinCount);
                 return;
             }
             historyPrefix.Add(item.prefix);

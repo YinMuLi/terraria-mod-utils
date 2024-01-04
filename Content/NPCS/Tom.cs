@@ -1,5 +1,6 @@
 ﻿using Branch.Common.Configs;
 using Branch.Content.Items;
+using Branch.Content.Items.Potions;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -303,25 +304,16 @@ namespace Branch.Content.NPCS
             #region 通用商店
 
             shop = new NPCShop(Type, generalShop);
-            items = new short[]
-            {
-               ItemID.TeleportationPylonVictory//万能晶塔
-            };
-            for (int i = 0; i < items.Length; i++)
-            {
-                shop.Add(new Item(items[i]));
-            };
-            shop.Add<FinalStation>(Condition.DownedSkeletron);
-            //陨石
-            shop.Add(new Item(ItemID.Meteorite), Condition.DownedBrainOfCthulhu);
-            shop.Add(new Item(ItemID.Meteorite), Condition.DownedEaterOfWorlds);
-            //自动锤炼机（世纪之花）
-            shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);
-            //叶绿锭
-            shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);
-            //七彩草蛉
-            shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera);
-
+            shop.Add(new Item(ItemID.TeleportationPylonVictory));//万能晶塔
+            shop.Add<AdvancedDefensePotion>(Condition.Hardmode);
+            shop.Add(new Item(ItemID.Bacon), Condition.Hardmode);//培根
+            shop.Add<FinalStation>(Condition.Hardmode);
+            shop.Add(new Item(ItemID.TerrasparkBoots), Condition.DownedSkeletron);//泰拉闪耀靴
+            shop.Add(new Item(ItemID.Shellphone), Condition.DownedSkeletron);//贝壳电话
+            shop.Add(new Item(ItemID.Meteorite), Condition.DownedEowOrBoc);//陨石
+            shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);//自动锤炼机（世纪之花）
+            shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);//叶绿锭
+            shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera); //七彩草蛉
             shop.Register();
 
             #endregion 通用商店

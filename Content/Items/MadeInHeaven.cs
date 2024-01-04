@@ -23,10 +23,11 @@ namespace Branch.Content.Items
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Sundial, 1);
-            recipe.AddTile(TileID.WorkBenches);
-            recipe.Register();
+            CreateRecipe()
+                .AddRecipeGroup("Branch:AnyDemoniteBar", 10)
+                .AddIngredient(ItemID.FallenStar, 5)
+                .AddTile(TileID.WorkBenches)
+                .Register();
         }
 
         public override void SetDefaults()

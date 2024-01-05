@@ -27,10 +27,16 @@ namespace Branch.Common.System
 
             AddConvertRecipe(ItemID.Ebonkoi, ItemID.Hemopiranha);// 黑檀锦鲤-血腥食人鱼
             AddConvertRecipe(ItemID.DemoniteOre, ItemID.CrimtaneOre);// 魔矿-猩红矿
-            AddConvertRecipe(ItemID.ShadowScale, ItemID.TissueSample);//组织样本-暗影鳞片
+            AddConvertRecipe(ItemID.TissueSample, ItemID.ShadowScale);//组织样本-暗影鳞片
             AddConvertRecipe(ItemID.Vertebrae, ItemID.RottenChunk);//腐肉-椎骨
+            AddConvertRecipe(ItemID.CursedFlame, ItemID.Ichor);//诅咒焰-灵液
 
             #endregion 猩红和腐败之间的物品能够相互转换
+
+            //墓碑
+            Recipe.Create(ItemID.Gravestone)
+                .AddIngredient(ItemID.StoneBlock, 10)
+                .Register();
         }
 
         /// <summary>

@@ -26,7 +26,7 @@ namespace Branch.Content.Items
             CreateRecipe()
                 .AddRecipeGroup("Branch:AnyDemoniteBar", 10)
                 .AddIngredient(ItemID.FallenStar, 5)
-                .AddTile(TileID.WorkBenches)
+                .AddTile(TileID.DemonAltar)
                 .Register();
         }
 

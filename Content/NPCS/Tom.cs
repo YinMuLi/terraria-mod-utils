@@ -250,7 +250,6 @@ namespace Branch.Content.NPCS
             ItemID.SonarPotion,//声呐药水
             ItemID.FishingPotion,//钓鱼药水
             ItemID.CratePotion,//宝匣药水
-            ItemID.SpelunkerPotion,//洞穴探险药水
             ItemID.ApprenticeBait,//学徒鱼饵
             //渔夫一套
             ItemID.AnglerHat,
@@ -304,11 +303,14 @@ namespace Branch.Content.NPCS
             #region 通用商店
 
             shop = new NPCShop(Type, generalShop);
+            shop.Add(new Item(ItemID.TorchGodsFavor));
             shop.Add(new Item(ItemID.TeleportationPylonVictory));//万能晶塔
             shop.Add<AdvancedDefensePotion>(Condition.Hardmode);
             shop.Add(new Item(ItemID.Bacon), Condition.Hardmode);//培根
+            shop.Add(new Item(ItemID.TruffleWorm), Condition.Hardmode);//松露虫
             shop.Add<FinalStation>(Condition.Hardmode);
             shop.Add(new Item(ItemID.TerrasparkBoots), Condition.DownedSkeletron);//泰拉闪耀靴
+            shop.Add<AdvancedExplorerPotion>(Condition.DownedSkeletron);
             shop.Add(new Item(ItemID.Shellphone), Condition.DownedSkeletron);//贝壳电话
             shop.Add(new Item(ItemID.Meteorite), Condition.DownedEowOrBoc);//陨石
             shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);//自动锤炼机（世纪之花）

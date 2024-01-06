@@ -19,9 +19,10 @@ namespace Branch.Content.Modify
             {
                 for (int i = 0; i < ClientConfig.Instance.LuresAmount; i++)
                 {
+                    //projectile.velocity.RotatedBy(0.01 * i)
                     Projectile.NewProjectile(projectile.GetSource_FromThis("MultipleLure"),
                            projectile.position,
-                           projectile.velocity.RotatedBy(0.01 * i),
+                           projectile.velocity,
                            projectile.type,
                            projectile.damage,
                            projectile.knockBack,

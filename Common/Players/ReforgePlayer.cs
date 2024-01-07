@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
-    internal class ReforgePlayer : ModPlayer
+    public partial class BranchPlayer : ModPlayer
     {
         /// <summary>
         /// Refund:退款

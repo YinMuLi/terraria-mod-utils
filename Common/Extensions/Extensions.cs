@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Branch.Common.Players;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.UI;
 
 namespace Branch.Common.Extensions
 {
-    public static class UISystemExtensions
+    public static class Extensions
     {
+        #region UI
+
         public static void Insert(this List<GameInterfaceLayer> layers, int index, string name, UIState state,
             Func<bool> func)
         {
@@ -37,5 +40,13 @@ namespace Branch.Common.Extensions
                 action(index);
             }
         }
+
+        #endregion UI
+
+        #region Player
+
+        public static BranchPlayer ModPlayer(this Player player) => player.GetModPlayer<BranchPlayer>();
+
+        #endregion Player
     }
 }

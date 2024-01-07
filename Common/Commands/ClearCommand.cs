@@ -1,9 +1,4 @@
-﻿using Branch.Common.Utils;
-using System;
-using Terraria;
-using Terraria.ModLoader;
-
-namespace Branch.Common.Commands
+﻿namespace Branch.Common.Commands
 {
     /// <summary>
     /// 清除方块指令

@@ -10,7 +10,7 @@ using Terraria.UI.Chat;
 
 namespace Branch.Common.Players
 {
-    internal class InfoPlayers : ModPlayer
+    public partial class BranchPlayer : ModPlayer
     {
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {

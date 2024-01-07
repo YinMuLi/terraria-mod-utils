@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
-    internal class ClickSlotPlayer : ModPlayer
+    public partial class BranchPlayer : ModPlayer
     {
         /// <summary>
         ///

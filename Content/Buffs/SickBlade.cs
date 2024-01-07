@@ -1,5 +1,4 @@
-﻿using Branch.Common.Players;
-using Terraria;
+﻿using Terraria;
 using Terraria.ModLoader;
 
 namespace Branch.Content.Buffs

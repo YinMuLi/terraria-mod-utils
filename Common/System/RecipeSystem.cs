@@ -30,12 +30,17 @@ namespace Branch.Common.System
             AddConvertRecipe(ItemID.TissueSample, ItemID.ShadowScale);//组织样本-暗影鳞片
             AddConvertRecipe(ItemID.Vertebrae, ItemID.RottenChunk);//腐肉-椎骨
             AddConvertRecipe(ItemID.CursedFlame, ItemID.Ichor);//诅咒焰-灵液
+            AddConvertRecipe(ItemID.WormFood, ItemID.BloodySpine);//蠕虫小吃-血腥脊椎
 
             #endregion 猩红和腐败之间的物品能够相互转换
 
             //墓碑
             Recipe.Create(ItemID.Gravestone)
                 .AddIngredient(ItemID.StoneBlock, 10)
+                .Register();
+            //粉凝胶
+            Recipe.Create(ItemID.PinkGel)
+                .AddIngredient(ItemID.Gel, 10)
                 .Register();
         }
 

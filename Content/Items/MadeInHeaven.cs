@@ -1,5 +1,6 @@
 ﻿using Branch.Common.Utils;
 using Microsoft.Xna.Framework;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -46,7 +47,8 @@ namespace Branch.Content.Items
 
         public override bool CanUseItem(Player player)
         {
-            return player.dangerSense;
+            //不是BOSS战时可以使用
+            return !Main.npc.Any(t => t.active && t.boss); ;
         }
 
         public override bool? UseItem(Player player)

@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 namespace Branch.Common.Players
 {
     //自动钓鱼
-    public partial class BranchPlayer : ModPlayer
+    public class FishPlayer : ModPlayer
     {
         /// <summary>
         /// 本模组调用
@@ -104,7 +104,7 @@ namespace Branch.Common.Players
             return false;
         }
 
-        private bool IsManualOperation(Player player, out BranchPlayer fisherman)
+        private bool IsManualOperation(Player player, out FishPlayer fisherman)
         {
             fisherman = null;
             if (ClientConfig.Instance.AutoFish && player.whoAmI == Main.myPlayer && player.TryGetModPlayer(out fisherman) && !fisherman.modInvoke)
@@ -116,7 +116,7 @@ namespace Branch.Common.Players
 
         private void OnShoot(On_Player.orig_ItemCheck_Shoot orig, Player self, int i, Item sItem, int weaponDamage)
         {
-            if (IsManualOperation(self, out BranchPlayer fisherman) && sItem.fishingPole > 0)
+            if (IsManualOperation(self, out FishPlayer fisherman) && sItem.fishingPole > 0)
             {
                 //既然它给你了player self就保险一点，获取钓鱼玩家
                 //玩家手动抛竿，记录抛竿的位置,启动自动钓鱼
@@ -130,7 +130,7 @@ namespace Branch.Common.Players
         private bool OnCheckFishingBobbers(On_Player.orig_ItemCheck_CheckFishingBobbers orig, Player self, bool canUse)
         {
             bool flag = orig.Invoke(self, canUse);//false:收杆
-            if (!flag && IsManualOperation(self, out BranchPlayer fisherman))
+            if (!flag && IsManualOperation(self, out FishPlayer fisherman))
             {
                 //玩家手动收杆，取消自动钓鱼
                 fisherman.autoMode = false;

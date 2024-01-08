@@ -42,11 +42,5 @@ namespace Branch.Common.Extensions
         }
 
         #endregion UI
-
-        #region Player
-
-        public static BranchPlayer ModPlayer(this Player player) => player.GetModPlayer<BranchPlayer>();
-
-        #endregion Player
     }
 }

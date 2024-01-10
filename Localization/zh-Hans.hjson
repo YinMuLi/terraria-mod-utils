@@ -65,6 +65,22 @@ Mods: {
 					（危险情况下不可使用）
 					'''
 			}
+
+			FishBone: {
+				Tooltip:
+					'''
+					增加80点渔力
+					具有防熔岩渔具的功能
+					具有声呐药水和宝匣药水Buff
+					---放置时装栏也生效---
+					'''
+				DisplayName: 鱼骨头
+			}
+
+			LightningPower: {
+				Tooltip: 非Boss战时极大增强跑图能力（待完成）
+				DisplayName: 闪电之力
+			}
 		}
 
 		NPCs: {
@@ -119,6 +135,11 @@ Mods: {
 					Label: 额外翅膀饰品栏
 					// Tooltip: ""
 				}
+
+				BossSpawnNotConsumable: {
+					// Tooltip: ""
+					Label: Boss召唤物不消耗
+				}
 			}
 
 			ClientConfig: {
@@ -153,6 +174,11 @@ Mods: {
 				CursorDistance: {
 					// Tooltip: ""
 					Label: 提示指正距离玩家的距离
+				}
+
+				ShowMinion: {
+					Label: 显示召唤栏位信息
+					// Tooltip: ""
 				}
 			}
 		}

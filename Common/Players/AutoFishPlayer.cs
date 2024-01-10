@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
-    //自动钓鱼
+    //自动钓鱼 非常不喜欢这里的定时器
     public class FishPlayer : ModPlayer
     {
         /// <summary>
@@ -51,40 +51,34 @@ namespace Branch.Common.Players
              * 自动模式：自动抛竿，自动收杆
              */
             modInvoke = false;
-            if (autoMode)
+            if (!autoMode) return;
+
+            if (pullWaitTimer > 0 && --pullWaitTimer == 0)
             {
-                if (Player.dead)
-                {
-                    //在挂机钓鱼的过程中死亡
-                    pullWaitTimer = 0;
-                }
-                if (pullWaitTimer > 0 && --pullWaitTimer == 0)
-                {
-                    //自动收杆
-                    Player.controlUseItem = true;
-                    Player.releaseUseItem = true;
-                    modInvoke = true;
-                    //玩家检查物品，会触发ItemCheck的事件
-                    Player.ItemCheck();
-                }
-                if (Player.HeldItem.fishingPole == 0)
-                {
-                    //玩家不是手持鱼竿，关闭自动钓鱼
-                    autoMode = false;
-                    return;
-                }
-                if (IsBobberActive(Player.whoAmI))
-                {
-                    //还有浮漂处于激活，即处于钓鱼状态不能抛竿
-                    return;
-                }
-                Main.mouseX = mousePos.X - (int)Main.screenPosition.X;
-                Main.mouseY = mousePos.Y - (int)Main.screenPosition.Y;
+                //自动收杆
                 Player.controlUseItem = true;
                 Player.releaseUseItem = true;
                 modInvoke = true;
+                //玩家检查物品，会触发ItemCheck的事件
                 Player.ItemCheck();
             }
+            if (Player.HeldItem.fishingPole == 0)
+            {
+                //玩家不是手持鱼竿，关闭自动钓鱼
+                autoMode = false;
+                return;
+            }
+            if (IsBobberActive(Player.whoAmI))
+            {
+                //还有浮漂处于激活，即处于钓鱼状态不能抛竿
+                return;
+            }
+            Main.mouseX = mousePos.X - (int)Main.screenPosition.X;
+            Main.mouseY = mousePos.Y - (int)Main.screenPosition.Y;
+            Player.controlUseItem = true;
+            Player.releaseUseItem = true;
+            modInvoke = true;
+            Player.ItemCheck();
         }
 
         /// <summary>

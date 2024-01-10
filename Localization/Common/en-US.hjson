@@ -10,21 +10,5 @@ Mods: {
 		InfoDisplay.Minion: ""
 	}
 
-	Items: {
-		WeatherReport: {
-			Rainning: ""
-			Sandstorm: ""
-			BloodMoon: ""
-			SlimeRain: ""
-		}
-
-		WarOrder: {
-			PumpkinMoon: ""
-			SnowMoon: ""
-			PirateInvasion: ""
-			MartianMadness: ""
-			GoblinArmy: ""
-			Eclipse: ""
-		}
-	}
+	Items.NotConsumable: ""
 }

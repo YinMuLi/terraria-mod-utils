@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Content.Modify
 {
-    internal class CrateLoot : GlobalItem
+    internal class Loot : GlobalItem
     {
         public override bool InstancePerEntity => false;
 
@@ -19,6 +19,10 @@ namespace Branch.Content.Modify
                     loot.Add(ItemDropRule.Common(ItemID.Ruby, 5, 1, 2));//(1-2)20% 鲁比
                     loot.Add(ItemDropRule.Common(ItemID.Emerald, 5, 1, 2));//(1-2)20% 翡翠
                     loot.Add(ItemDropRule.Common(ItemID.Sapphire, 5, 1, 2));//(1-2)20% 萨菲
+                    break;
+
+                case ItemID.PlanteraBossBag:
+                    loot.Add(ItemDropRule.Common(ItemID.LifeFruit, 1, 6, 8));//世纪之花宝藏袋添加生命果
                     break;
             }
         }

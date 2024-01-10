@@ -52,6 +52,16 @@ Mods: {
 				DisplayName: Made In Heaven
 				Tooltip: ""
 			}
+
+			FishBone: {
+				Tooltip: ""
+				DisplayName: Fish Bone
+			}
+
+			LightningPower: {
+				Tooltip: ""
+				DisplayName: Lightning Power
+			}
 		}
 
 		NPCs: {
@@ -102,6 +112,11 @@ Mods: {
 					Label: Extra Wing Slot
 					Tooltip: ""
 				}
+
+				BossSpawnNotConsumable: {
+					Tooltip: ""
+					Label: Boss Spawn Not Consumable
+				}
 			}
 
 			ClientConfig: {
@@ -136,6 +151,11 @@ Mods: {
 				CursorDistance: {
 					Tooltip: ""
 					Label: Cursor Distance
+				}
+
+				ShowMinion: {
+					Label: Show Minion
+					Tooltip: ""
 				}
 			}
 		}

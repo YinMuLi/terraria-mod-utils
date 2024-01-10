@@ -31,5 +31,12 @@ namespace Branch.Common.Configs
         [DefaultValue(true)]
         [ReloadRequired]
         public bool ExtraWingSlot;
+
+        /// <summary>
+        /// Boss召唤物不消耗
+        /// </summary>
+        [DefaultValue(true)]
+        [ReloadRequired]
+        public bool BossSpawnNotConsumable;
     }
 }

@@ -10,21 +10,5 @@ Mods: {
 		InfoDisplay.Minion: "{0}/{1} 召唤栏 {2}/{3} 哨兵栏"
 	}
 
-	Items: {
-		WeatherReport: {
-			Rainning: 雨：天变暗，开始下雨
-			Sandstorm: 沙尘暴：召唤沙尘暴
-			BloodMoon: 血夜：召唤诅咒之夜(夜间使用)
-			SlimeRain: 史莱姆雨：立即下史莱姆雨
-		}
-
-		WarOrder: {
-			PumpkinMoon: 南瓜月：南瓜月正在升起……
-			SnowMoon: 霜月：霜月正在升起……
-			PirateInvasion: 海盗入侵：海盗来了！
-			MartianMadness: 火星暴乱：火星人要入侵了！
-			GoblinArmy: 哥布林军队：哥布林军队来了！
-			Eclipse: 日食：正在发生日食
-		}
-	}
+	Items.NotConsumable: 无消耗
 }

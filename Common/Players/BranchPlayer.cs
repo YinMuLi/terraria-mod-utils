@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
-    public class ClickPlayer : ModPlayer
+    public partial class BranchPlayer : ModPlayer
     {
         /// <summary>
         ///
@@ -13,14 +13,14 @@ namespace Branch.Common.Players
         /// <param name="context">物品的槽标识</param>
         /// <param name="slot">物品的索引</param>
         /// <returns></returns>
-        public override bool HoverSlot(Item[] inventory, int context, int slot)
-        {
-            var item = inventory[slot];
-            if (item.ModItem is IItemMiddleClickable clickable)
-            {
-                clickable.HandleHover(inventory, context, slot);
-            }
-            return false;
-        }
+        //public override bool HoverSlot(Item[] inventory, int context, int slot)
+        //{
+        //    var item = inventory[slot];
+        //    if (item.ModItem is IItemMiddleClickable clickable)
+        //    {
+        //        clickable.HandleHover(inventory, context, slot);
+        //    }
+        //    return false;
+        //}
     }
 }

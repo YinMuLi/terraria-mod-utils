@@ -54,7 +54,7 @@ namespace Branch.Content.Modify
                 ItemLoader.ReforgePrice(item, ref value, ref p.discountAvailable);
                 //退款
                 var coinCount = Utils.CoinsSplit(value / 5);
-                Main.LocalPlayer.GetModPlayer<ReforgePlayer>().Refund(coinCount);
+                Main.LocalPlayer.ModPlayer().Refund(coinCount);
                 return;
             }
             historyPrefix.Add(item.prefix);

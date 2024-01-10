@@ -1,4 +1,5 @@
-﻿using Humanizer;
+﻿using Branch.Common.Configs;
+using Humanizer;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
@@ -12,7 +13,7 @@ namespace Branch.Common.Info
     /// </summary>
     internal class MinionInfo : InfoDisplay
     {
-        public override bool Active() => true;
+        public override bool Active() => ClientConfig.Instance.ShowMinion;
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {

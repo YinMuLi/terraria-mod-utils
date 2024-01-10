@@ -48,7 +48,7 @@ namespace Branch.Content.Items
         public override bool CanUseItem(Player player)
         {
             //不是BOSS战时可以使用
-            return !Main.npc.Any(t => t.active && t.boss); ;
+            return !Main.npc.Any(t => t.active && t.boss);
         }
 
         public override bool? UseItem(Player player)

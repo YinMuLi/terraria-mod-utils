@@ -23,5 +23,6 @@
     <Folder Include="Content\Projectiles\" />
     <Folder Include="Localization\Chat\" />
     <Folder Include="Localization\Common\" />
+    <Folder Include="References\" />
   </ItemGroup>
 </Project>

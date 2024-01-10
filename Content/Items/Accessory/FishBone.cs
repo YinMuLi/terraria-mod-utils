@@ -18,7 +18,7 @@ namespace Branch.Content.Items.Accessory
 
         private void Effect(Player player)
         {
-            player.fishingSkill += 50;//渔力+50
+            player.fishingSkill += 80;//渔力+80
             //钓鱼袋
             player.accFishingLine = true;//不断线
             player.accTackleBox = true;//钓鱼箱：不消耗鱼饵的几率

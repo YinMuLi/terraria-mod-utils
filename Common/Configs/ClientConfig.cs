@@ -51,6 +51,12 @@ namespace Branch.Common.Configs
         public bool CatchAccessories;
 
         /// <summary>
+        /// 是否在右侧信息栏显示额外的仆从信息
+        /// </summary>
+        [DefaultValue(true)]
+        public bool ShowMinion;
+
+        /// <summary>
         /// 指针距离玩家的距离
         /// </summary>
         [Range(0f, 10f)]

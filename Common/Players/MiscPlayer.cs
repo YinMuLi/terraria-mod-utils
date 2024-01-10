@@ -5,13 +5,26 @@ using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI.Chat;
 
 namespace Branch.Common.Players
 {
-    public class InfoPlayer : ModPlayer
+    public partial class BranchPlayer : ModPlayer
     {
+        /// <summary>
+        /// Refund:退款
+        /// </summary>
+        /// <param name="coinCount"></param>
+        internal void Refund(int[] coinCount)
+        {
+            if (coinCount[0] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.CopperCoin, coinCount[0]);
+            if (coinCount[1] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.SilverCoin, coinCount[1]);
+            if (coinCount[2] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.GoldCoin, coinCount[2]);
+            if (coinCount[3] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.PlatinumCoin, coinCount[3]);
+        }
+
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
             base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);

@@ -239,13 +239,10 @@ namespace Branch.Content.NPCS
 
         public override void AddShops()
         {
-            NPCShop shop = null;
-            short[] items = null;
-
             #region 渔夫商店
 
-            shop = new NPCShop(Type, anglerShop);
-            items = new short[]
+            NPCShop shop = new NPCShop(Type, anglerShop);
+            short[] items = new short[]
             {
             ItemID.SonarPotion,//声呐药水
             ItemID.FishingPotion,//钓鱼药水
@@ -255,19 +252,11 @@ namespace Branch.Content.NPCS
             ItemID.AnglerHat,
             ItemID.AnglerVest,
             ItemID.AnglerPants,
-            ItemID.GoldenFishingRod,
-            ItemID.GoldenBugNet,
-            ItemID.AnglerEarring,
-            ItemID.TackleBox,
-            ItemID.FishermansGuide,
-            ItemID.WeatherRadio,
-            ItemID.Sextant,
-            //防熔岩钓钩
-            ItemID.LavaFishingHook,
-            //优质钓鱼线
-            ItemID.HighTestFishingLine,
-            ItemID.SuperAbsorbantSponge,
-            ItemID.BottomlessBucket,
+            ItemID.LavaproofTackleBag,//防熔岩渔具袋
+            ItemID.SuperAbsorbantSponge,//吸水海绵
+            ItemID.BottomlessBucket,//无底水桶
+            ItemID.LavaAbsorbantSponge,//熔岩吸收绵
+            ItemID.BottomlessLavaBucket,//无底岩浆桶
             };
             for (int i = 0; i < items.Length; i++)
             {

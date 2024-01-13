@@ -1,4 +1,5 @@
-﻿using Branch.Common.Utils;
+﻿using Branch.Common.UI.System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
@@ -18,12 +19,14 @@ namespace Branch.Common.UI
         {
             //实例化一个面板
             panel = new UIPanel();
-            UIUtils.SetRectangle(panel, left: 600f, top: 100f, width: 150f, height: 200f);
+            //UIUtils.SetRectangle(panel, left: 600f, top: 100f, width: 150f, height: 200f);
             //下雨事件按钮
             //用tr原版图片实例化一个图片按钮
-            UIHoverImageButton button = new(ModContent.Request<Texture2D>("Branch/Assets/Images/UI/Rain"), "下雨");
+            ToolTipsButton button = new(ModContent.Request<Texture2D>("Branch/Assets/Images/UI/Rain"), "下雨");
             //将按钮注册入面板中，这个按钮的坐标将以面板的坐标为基础计算
-            UIUtils.SetRectangle(button, 0f, 0f, 32f, 32f);
+            //UIUtils.SetRectangle(button, 0f, 0f, 32f, 32f);
+            var op = new UIColoredImageButton(ModContent.Request<Texture2D>("Branch/Assets/Images/UI/Rain"));
+            op.SetColor(Color.White);
             panel.Append(button);
             //将这个面板注册到UIState
             Append(panel);

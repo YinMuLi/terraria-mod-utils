@@ -1,6 +1,4 @@
-﻿using Branch.Common.Interface;
-using Terraria;
-using Terraria.ModLoader;
+﻿using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {

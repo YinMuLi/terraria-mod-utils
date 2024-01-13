@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Common.UI
+namespace Branch.Common.AccessorySlot
 {
     /// <summary>
     /// 添加翅膀饰品插槽

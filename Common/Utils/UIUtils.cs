@@ -2,7 +2,7 @@
 
 namespace Branch.Common.Utils
 {
-    public static class UIUtils
+    public static partial class ModUtils
     {
         /// <summary>
         /// 设置UI元素的位置和大小

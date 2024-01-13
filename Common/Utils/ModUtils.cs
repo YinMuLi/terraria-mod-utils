@@ -6,7 +6,7 @@ using Terraria.Localization;
 
 namespace Branch.Common.Utils
 {
-    public static class ModUtils
+    public static partial class ModUtils
     {
         public static void ShowText(string msg)
         {

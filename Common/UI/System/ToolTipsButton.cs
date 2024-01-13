@@ -3,16 +3,16 @@ using ReLogic.Content;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 
-namespace Branch.Common.UI
+namespace Branch.Common.UI.System
 {
     /// <summary>
     /// UI的绘制层数要与Mouse Text低一层，不然没法显示
     /// </summary>
-    internal class UIHoverImageButton : UIImageButton
+    internal class ToolTipsButton : UIColoredImageButton
     {
         private string hoverText;
 
-        public UIHoverImageButton(Asset<Texture2D> texture, string hoverText) : base(texture)
+        public ToolTipsButton(Asset<Texture2D> texture, string hoverText) : base(texture)
         {
             this.hoverText = hoverText;
         }

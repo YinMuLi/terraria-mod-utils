@@ -1,11 +1,12 @@
 ﻿using Branch.Common.Configs;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     internal class NotConsumable : GlobalItem
     {
@@ -25,6 +26,7 @@ namespace Branch.Content.Modify
                     if (line.Mod.Equals("Terraria") && line.Name.Equals("Consumable"))
                     {
                         line.Text = Language.GetTextValue("Mods.Items.NotConsumable");
+                        line.OverrideColor = Color.Aqua;
                     }
                 }
             }

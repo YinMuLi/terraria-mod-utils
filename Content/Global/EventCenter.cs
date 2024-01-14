@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     /// <summary>
     /// 取消订阅事件

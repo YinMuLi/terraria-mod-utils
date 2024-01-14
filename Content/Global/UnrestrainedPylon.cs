@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     /// <summary>
     /// 无限制的晶塔

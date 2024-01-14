@@ -6,7 +6,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     internal class BetterReforge : GlobalItem
     {

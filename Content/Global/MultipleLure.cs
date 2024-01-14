@@ -3,7 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     /// <summary>
     /// 鱼竿多线

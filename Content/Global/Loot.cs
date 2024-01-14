@@ -3,7 +3,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Modify
+namespace Branch.Content.Global
 {
     internal class Loot : GlobalItem
     {

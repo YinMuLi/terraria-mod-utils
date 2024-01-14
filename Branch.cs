@@ -1,3 +1,9 @@
+/**===== 全局引用 =====**/
+
+global using Branch.Common.Utils;
+
+/**===== 全局引用 =====**/
+
 using Branch.Content.Buffs;
 using Branch.Content.Items;
 using Terraria.ModLoader;

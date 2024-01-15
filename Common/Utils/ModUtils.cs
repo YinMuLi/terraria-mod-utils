@@ -8,11 +8,6 @@ namespace Branch.Common.Utils
 {
     public static partial class ModUtils
     {
-        public static void ShowText(string msg)
-        {
-            Main.NewText(msg);
-        }
-
         public static void ShowText(string msg, Color color)
         {
             ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral(msg), color);
@@ -23,5 +18,7 @@ namespace Branch.Common.Utils
             if (Main.netMode == NetmodeID.Server)
                 NetMessage.SendData(MessageID.WorldData);
         }
+
+        //CombatText.NewText(Player.getRect(), Color.LightYellow, Language.GetTextValue($"{BossLogUI.LangLog}.Records.NewRecord"), true);
     }
 }

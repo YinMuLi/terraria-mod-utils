@@ -11,8 +11,9 @@ Mods: {
 	}
 
 	Items.NotConsumable: ""
-	DPS:{
-	Common:""
-	_:""
+
+	DPS: {
+		Common: ""
+		_: ""
 	}
 }

@@ -1,4 +1,6 @@
-﻿using Terraria.ModLoader;
+﻿using System.Collections.Generic;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace Branch.Common.Players
 {
@@ -20,5 +22,29 @@ namespace Branch.Common.Players
         //    }
         //    return false;
         //}
+        public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
+        {
+            List<Item> list = new();
+            //添加魔法存储初始礼包
+            string modName = "MagicStorage";
+
+            if (ModLoader.TryGetMod(modName, out Mod _))
+            {
+                ModItem modItem = null;
+                if (ModContent.TryFind(modName, "StorageHeart", out modItem))
+                {
+                    list.Add(new Item(modItem.Type));
+                }
+                if (ModContent.TryFind(modName, "CraftingAccess", out modItem))
+                {
+                    list.Add(new Item(modItem.Type));
+                }
+                if (ModContent.TryFind(modName, "StorageUnit", out modItem))
+                {
+                    list.Add(new Item(modItem.Type, 10));
+                }
+            }
+            return list;
+        }
     }
 }

@@ -252,6 +252,7 @@ namespace Branch.Content.NPCS
             ItemID.AnglerHat,
             ItemID.AnglerVest,
             ItemID.AnglerPants,
+            ItemID.GoldenFishingRod,
             ItemID.LavaproofTackleBag,//防熔岩渔具袋
             ItemID.SuperAbsorbantSponge,//吸水海绵
             ItemID.BottomlessBucket,//无底水桶

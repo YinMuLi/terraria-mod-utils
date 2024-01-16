@@ -26,6 +26,7 @@ namespace Branch.Common.System
             AddConvertRecipe(ItemID.Vertebrae, ItemID.RottenChunk);//腐肉-椎骨
             AddConvertRecipe(ItemID.CursedFlame, ItemID.Ichor);//诅咒焰-灵液
             AddConvertRecipe(ItemID.WormFood, ItemID.BloodySpine);//蠕虫小吃-血腥脊椎
+            AddConvertRecipe(ItemID.Ebonwood, ItemID.Shadewood);//乌木-暗影木
 
             #endregion 猩红和腐败之间的物品能够相互转换
 

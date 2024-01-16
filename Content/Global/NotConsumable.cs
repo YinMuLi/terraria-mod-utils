@@ -52,7 +52,9 @@ namespace Branch.Content.Global
                 ItemID.MagicMirror => false,
                 ItemID.IceMirror => false,
                 ItemID.TreasureMap => false,
-                _ => ItemID.Sets.SortingPriorityBossSpawns[item.type] >= 0
+                _ => ItemID.Sets.SortingPriorityBossSpawns[item.type] is >= 0
+                and not 20 and not 19,
+                //灾厄20和19
             };
         }
     }

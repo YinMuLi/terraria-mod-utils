@@ -1,6 +1,8 @@
 ﻿using Branch.Common.Configs;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -10,6 +12,18 @@ namespace Branch.Content.Global
 {
     internal class NotConsumable : GlobalItem
     {
+        private static int[] invaildBoss =
+        {
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.LifeCrystal],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.LifeFruit],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.ManaCrystal],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.CellPhone],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.PDA],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.MagicMirror],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.IceMirror],
+            ItemID.Sets.SortingPriorityBossSpawns[ItemID.TreasureMap],
+        };
+
         public override bool IsLoadingEnabled(Mod mod)
         {
             return ServerConfig.Instance.BossSpawnNotConsumable;
@@ -43,19 +57,8 @@ namespace Branch.Content.Global
 
         private bool IsBossSpawn(Item item)
         {
-            return item.type switch
-            {
-                ItemID.LifeCrystal => false,
-                ItemID.ManaCrystal => false,
-                ItemID.CellPhone => false,
-                ItemID.PDA => false,
-                ItemID.MagicMirror => false,
-                ItemID.IceMirror => false,
-                ItemID.TreasureMap => false,
-                _ => ItemID.Sets.SortingPriorityBossSpawns[item.type] is >= 0
-                and not 20 and not 19,
-                //灾厄20和19
-            };
+            return ItemID.Sets.SortingPriorityBossSpawns[item.type] >= 0
+                && Array.IndexOf(invaildBoss, ItemID.Sets.SortingPriorityBossSpawns[item.type]) == -1;
         }
     }
 }

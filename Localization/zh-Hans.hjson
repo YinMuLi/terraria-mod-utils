@@ -81,6 +81,11 @@ Mods: {
 				Tooltip: 非Boss战时极大增强跑图能力（待完成）
 				DisplayName: 闪电之力
 			}
+
+			StarterBag: {
+				DisplayName: 初始物资袋
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			}
 		}
 
 		NPCs: {
@@ -113,7 +118,7 @@ Mods: {
 				DisplayName: 服务器配置
 
 				LuresAmount: {
-					Label: 鱼线数量
+					Label: 鱼线数量（最多200）
 					// Tooltip: ""
 				}
 
@@ -123,7 +128,7 @@ Mods: {
 				}
 
 				UnrestrainedPylon: {
-					Label: "[i:4951] 无限制晶塔"
+					Label: 无限制晶塔
 					Tooltip:
 						'''
 						不限制晶塔放置个数

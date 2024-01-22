@@ -1,5 +1,4 @@
-﻿using Branch.Common.Utils;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
 using Terraria.ID;

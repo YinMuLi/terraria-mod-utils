@@ -21,7 +21,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Images\UI\" />
-    <Folder Include="Common\Commands\" />
     <Folder Include="Content\Projectiles\" />
     <Folder Include="Localization\Chat\" />
     <Folder Include="Localization\Common\" />

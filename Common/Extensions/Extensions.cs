@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
+using Terraria.ModLoader;
 using Terraria.UI;
 
 namespace Branch.Common.Extensions
@@ -80,5 +82,19 @@ namespace Branch.Common.Extensions
         #endregion UI
 
         public static BranchPlayer ModPlayer(this Player player) => player.GetModPlayer<BranchPlayer>();
+
+        /// <summary>
+        /// 简便添加一个物品的掉落
+        /// </summary>
+        /// <param name="loot"></param>
+        /// <param name="itemID">掉落的物品</param>
+        /// <param name="dropRateInt">掉落概率（1/xx分母）</param>
+        /// <param name="minQuantity">最小掉落数量,默认是1</param>
+        /// <param name="maxQuantity">最大掉落数量，默认是1</param>
+        /// <returns></returns>
+        public static IItemDropRule Add(this ILoot loot, int itemID, int dropRateInt = 1, int minQuantity = 1, int maxQuantity = 1)
+        {
+            return loot.Add(ItemDropRule.Common(itemID, dropRateInt, minQuantity, maxQuantity));
+        }
     }
 }

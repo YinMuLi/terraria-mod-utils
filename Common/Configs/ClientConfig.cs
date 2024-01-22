@@ -24,10 +24,8 @@ namespace Branch.Common.Configs
         /// <summary>
         /// 鱼线数量
         /// </summary>
-        [Range(0, 200)]
-        [Increment(1)]
+        [Range(1, 200)]
         [DefaultValue(5)]
-        [Slider]
         public int LuresAmount;
 
         /// <summary>

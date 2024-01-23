@@ -6,6 +6,8 @@ global using Branch.Common.Utils;
 
 using Branch.Content.Buffs;
 using Branch.Content.Items;
+using Branch.Content.Items.BossSummon;
+using System.Collections.Generic;
 using Terraria.ModLoader;
 
 namespace Branch
@@ -21,6 +23,13 @@ namespace Branch
                     ModContent.ItemType<FinalStation>(),
                     ModContent.BuffType<FinalStationBuff>()
                 );
+            }
+            if (ModLoader.TryGetMod("BossChecklist", out Mod bossList))
+            {
+                bossList.Call("SubmitEntrySpawnItems", this, new Dictionary<string, object>()
+            {
+                { "Terraria Plantera", ModContent.ItemType<PlanteraBulb>()}
+            });
             }
         }
     }

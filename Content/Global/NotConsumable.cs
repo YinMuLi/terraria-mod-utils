@@ -1,6 +1,5 @@
 ﻿using Branch.Common.Configs;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -11,18 +10,6 @@ namespace Branch.Content.Global
 {
     internal class NotConsumable : GlobalItem
     {
-        private static int[] invaildBoss =
-        {
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.LifeCrystal],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.LifeFruit],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.ManaCrystal],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.CellPhone],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.PDA],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.MagicMirror],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.IceMirror],
-            ItemID.Sets.SortingPriorityBossSpawns[ItemID.TreasureMap],
-        };
-
         public override bool IsLoadingEnabled(Mod mod)
         {
             return ServerConfig.Instance.BossSpawnNotConsumable;
@@ -45,6 +32,16 @@ namespace Branch.Content.Global
             }
         }
 
+        public override bool? UseItem(Item item, Player player)
+        {
+            if (item.type == ItemID.CelestialSigil)
+            {
+                NPC.MoonLordCountdown = 1;
+                NetMessage.SendData(MessageID.MoonlordHorror, number: NPC.MoonLordCountdown);
+            }
+            return base.UseItem(item, player);
+        }
+
         public override bool ConsumeItem(Item item, Player player)
         {
             if (IsBossSpawn(item) && item.consumable)
@@ -56,8 +53,21 @@ namespace Branch.Content.Global
 
         private bool IsBossSpawn(Item item)
         {
-            return ItemID.Sets.SortingPriorityBossSpawns[item.type] >= 0
-                && Array.IndexOf(invaildBoss, ItemID.Sets.SortingPriorityBossSpawns[item.type]) == -1;
+            return item.type switch
+
+            {
+                ItemID.LifeCrystal => false,
+                ItemID.LifeFruit => false,
+                ItemID.ManaCrystal => false,
+                ItemID.CellPhone => false,
+                ItemID.PDA => false,
+                ItemID.MagicMirror => false,
+                ItemID.IceMirror => false,
+                ItemID.TreasureMap => false,
+                ItemID.TruffleWorm => false,//松露虫
+                _ => ItemID.Sets.SortingPriorityBossSpawns[item.type] is >= 0 and
+                 not 20 and not 21,
+            };
         }
     }
 }

@@ -67,6 +67,11 @@ Mods: {
 				DisplayName: Starter Bag
 				Tooltip: ""
 			}
+
+			PlanteraBulb: {
+				DisplayName: Plantera Bulb
+				Tooltip: ""
+			}
 		}
 
 		NPCs: {

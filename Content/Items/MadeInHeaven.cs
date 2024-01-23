@@ -40,8 +40,6 @@ namespace Branch.Content.Items
             Item.useTime = 18;//使用一次所需时间
             Item.UseSound = SoundID.Item4;//物品使用时声音
             Item.useStyle = ItemUseStyleID.HoldUp;//物品的使用方式
-            Item.autoReuse = false;
-            Item.mana = 20;//每次使用消耗的法力值
         }
 
         public override bool CanUseItem(Player player)

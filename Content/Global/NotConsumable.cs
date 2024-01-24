@@ -34,7 +34,7 @@ namespace Branch.Content.Global
 
         public override bool? UseItem(Item item, Player player)
         {
-            if (item.type == ItemID.CelestialSigil)
+            if (item.type == ItemID.CelestialSigil && NPC.MoonLordCountdown > 1)
             {
                 NPC.MoonLordCountdown = 1;
                 NetMessage.SendData(MessageID.MoonlordHorror, number: NPC.MoonLordCountdown);

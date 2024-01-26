@@ -58,11 +58,6 @@ Mods: {
 				DisplayName: Fish Bone
 			}
 
-			LightningPower: {
-				Tooltip: ""
-				DisplayName: Lightning Power
-			}
-
 			StarterBag: {
 				DisplayName: Starter Bag
 				Tooltip: ""
@@ -71,6 +66,11 @@ Mods: {
 			PlanteraBulb: {
 				DisplayName: Plantera Bulb
 				Tooltip: ""
+			}
+
+			ButterflyToken: {
+				Tooltip: ""
+				DisplayName: Butterfly Token
 			}
 		}
 

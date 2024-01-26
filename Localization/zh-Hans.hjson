@@ -77,11 +77,6 @@ Mods: {
 				DisplayName: 鱼骨头
 			}
 
-			LightningPower: {
-				// Tooltip: ""
-				// DisplayName: Lightning Power
-			}
-
 			StarterBag: {
 				DisplayName: 初始物资袋
 				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
@@ -95,6 +90,16 @@ Mods: {
 					在地下丛林外狂暴
 					无消耗
 					'''
+			}
+
+			ButterflyToken: {
+				Tooltip:
+					'''
+					召唤光之女皇
+					白天狂暴
+					无消耗
+					'''
+				DisplayName: 七彩草蛉的信物
 			}
 		}
 

@@ -1,5 +1,6 @@
 ﻿using Branch.Common.Configs;
 using Branch.Content.Items;
+using Branch.Content.Items.BossSummon;
 using Branch.Content.Items.Potions;
 using Terraria;
 using Terraria.GameContent;
@@ -306,7 +307,7 @@ namespace Branch.Content.NPCS
             shop.Add(new Item(ItemID.Meteorite), Condition.DownedEowOrBoc);//陨石
             shop.Add(new Item(ItemID.Autohammer), Condition.DownedPlantera);//自动锤炼机（世纪之花）
             shop.Add(new Item(ItemID.ChlorophyteBar), Condition.DownedPlantera);//叶绿锭
-            shop.Add(new Item(ItemID.EmpressButterfly), Condition.DownedPlantera); //七彩草蛉
+            shop.Add<ButterflyToken>(Condition.DownedPlantera); //七彩草蛉的信物
             shop.Register();
 
             #endregion 通用商店

@@ -204,5 +204,6 @@ Mods: {
 		}
 
 		// Tiles.FinalStationTile.MapEntry: Final Station Tile
+		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
 	}
 }

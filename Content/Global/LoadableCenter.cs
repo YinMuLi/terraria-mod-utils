@@ -13,7 +13,7 @@ namespace Branch.Content.Global
     /// 1.猪猪存钱罐能放置在钱币槽
     /// 2.修改游戏缩放
     /// </summary>
-    internal class EventCenter : ILoadable
+    internal class LoadableCenter : ILoadable
     {
         private const float MIN_GAME_ZOOM = 0.87f;//经过测试
         private const float MAX_GAME_ZOOM = 4f;

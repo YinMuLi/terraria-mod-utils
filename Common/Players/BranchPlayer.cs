@@ -1,6 +1,13 @@
-﻿using Branch.Content.Items;
+﻿using Branch.Common.System;
+using Branch.Content.Items;
+using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.DataStructures;
+using Terraria.GameInput;
+using Terraria.Graphics.Effects;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Common.Players
@@ -28,6 +35,24 @@ namespace Branch.Common.Players
             if (!mediumCoreDeath)//硬核人物？？？
             {
                 yield return new Item(ModContent.ItemType<StarterBag>());
+            }
+        }
+
+        public override void ProcessTriggers(TriggersSet triggersSet)
+        {
+            //处理快捷键
+            if (Player.DeadOrGhost) return;
+            if (KeybindSystem.TeleportDeathPoint.JustPressed && Player.lastDeathPostion != Vector2.Zero)
+            {
+                bool postImmune = Player.immune;
+                int postImmuneTime = Player.immuneTime;
+                Player.Teleport(Player.lastDeathPostion, TeleportationStyleID.TeleportationPotion);
+                if (Main.netMode == NetmodeID.MultiplayerClient)
+                    NetMessage.SendData(MessageID.TeleportEntity, number2: Player.whoAmI, number3: Player.lastDeathPostion.X, number4: Player.lastDeathPostion.Y, number5: TeleportationStyleID.TeleportationPotion);
+                Player.velocity = Vector2.Zero;
+                Player.immune = postImmune;
+                Player.immuneTime = postImmuneTime;
+                SoundEngine.PlaySound(SoundID.Item6, Player.Center);
             }
         }
     }

@@ -171,5 +171,6 @@ Mods: {
 		}
 
 		Tiles.FinalStationTile.MapEntry: Final Station Tile
+		Keybinds.TeleportDeathPoint.DisplayName: Teleport Death Point
 	}
 }

@@ -61,5 +61,11 @@ namespace Branch.Common.Configs
         [DefaultValue(3f)]
         [Increment(0.5f)]
         public float CursorDistance;
+
+        [ReloadRequired]
+        [Increment(0.1f)]
+        [Range(0.3f, 4f)]
+        [DefaultValue(0.3f)]
+        public float MinZoom;
     }
 }

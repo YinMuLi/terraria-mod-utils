@@ -200,6 +200,11 @@ Mods: {
 					Label: 显示召唤栏位信息
 					// Tooltip: ""
 				}
+
+				MinZoom: {
+					// Tooltip: ""
+					Label: 最小视距
+				}
 			}
 		}
 

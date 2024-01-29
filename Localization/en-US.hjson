@@ -167,6 +167,11 @@ Mods: {
 					Label: Show Minion
 					Tooltip: ""
 				}
+
+				MinZoom: {
+					Tooltip: ""
+					Label: Min Zoom
+				}
 			}
 		}
 

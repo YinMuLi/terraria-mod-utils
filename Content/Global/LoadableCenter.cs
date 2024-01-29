@@ -1,4 +1,5 @@
-﻿using MonoMod.Cil;
+﻿using Branch.Common.Configs;
+using MonoMod.Cil;
 using System;
 using Terraria;
 using Terraria.GameInput;
@@ -15,8 +16,8 @@ namespace Branch.Content.Global
     /// </summary>
     internal class LoadableCenter : ILoadable
     {
-        private const float MIN_GAME_ZOOM = 0.87f;//经过测试
-        private const float MAX_GAME_ZOOM = 4f;
+        private float minZoom => ClientConfig.Instance.MinZoom;
+        private const float MAX_ZOOM = 4f;
 
         public void Load(Mod mod)
         {
@@ -52,11 +53,11 @@ namespace Branch.Content.Global
             float num = 0.01f * Main.GameZoomTarget;
             if (PlayerInput.Triggers.Current.ViewZoomIn)
             {
-                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget + num, MIN_GAME_ZOOM, MAX_GAME_ZOOM);
+                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget + num, minZoom, MAX_ZOOM);
             }
             if (PlayerInput.Triggers.Current.ViewZoomOut)
             {
-                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget - num, MIN_GAME_ZOOM, MAX_GAME_ZOOM);
+                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget - num, minZoom, MAX_ZOOM);
             }
         }
 
@@ -69,9 +70,9 @@ namespace Branch.Content.Global
             i => i.MatchLdsfld<Main>("ForcedMinimumZoom"),
             i => i.MatchLdsfld<Main>("GameZoomTarget"),
             i => i.MatchLdcR4(1))) return;
-            c.Prev.Operand = MIN_GAME_ZOOM;
+            c.Prev.Operand = minZoom;
             c.Index++;
-            c.Prev.Operand = MAX_GAME_ZOOM;
+            c.Prev.Operand = MAX_ZOOM;
         }
     }
 }

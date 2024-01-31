@@ -1,5 +1,7 @@
 Mods: {
 	Branch: {
+		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
+
 		Buffs: {
 			AdvancedDefense: {
 				DisplayName: Advanced Defense
@@ -16,18 +18,48 @@ Mods: {
 				Description: Mods.Branch.Buffs.AdvancedFishing.Description
 			}
 
-			FinalStationBuff: {
-				DisplayName: Final Station Buff
-				Description: Mods.Branch.Buffs.FinalStationBuff.Description
+			CommonStationBuff: {
+				DisplayName: Common Station Buff
+				Description: Mods.Branch.Buffs.CommonStationBuff.Description
 			}
 
 			SickBlade: {
-				Description: Mods.Branch.Buffs.SickBlade.Description
 				DisplayName: Sick Blade
+				Description: Mods.Branch.Buffs.SickBlade.Description
 			}
 		}
 
 		Items: {
+			FishBone: {
+				DisplayName: Fish Bone
+				Tooltip: ""
+			}
+
+			BloodyDoll: {
+				DisplayName: Bloody Doll
+				Tooltip: ""
+			}
+
+			ButterflyToken: {
+				DisplayName: Butterfly Token
+				Tooltip: ""
+			}
+
+			PlanteraBulb: {
+				DisplayName: Plantera Bulb
+				Tooltip: ""
+			}
+
+			CommonStation: {
+				DisplayName: Common Station
+				Tooltip: ""
+			}
+
+			MadeInHeaven: {
+				DisplayName: Made In Heaven
+				Tooltip: ""
+			}
+
 			AdvancedDefensePotion: {
 				DisplayName: Advanced Defense Potion
 				Tooltip: ""
@@ -43,39 +75,9 @@ Mods: {
 				Tooltip: ""
 			}
 
-			FinalStation: {
-				Tooltip: ""
-				DisplayName: Final Station
-			}
-
-			MadeInHeaven: {
-				DisplayName: Made In Heaven
-				Tooltip: ""
-			}
-
-			FishBone: {
-				Tooltip: ""
-				DisplayName: Fish Bone
-			}
-
 			StarterBag: {
 				DisplayName: Starter Bag
 				Tooltip: ""
-			}
-
-			PlanteraBulb: {
-				DisplayName: Plantera Bulb
-				Tooltip: ""
-			}
-
-			ButterflyToken: {
-				Tooltip: ""
-				DisplayName: Butterfly Token
-			}
-
-			BloodyDoll: {
-				Tooltip: ""
-				DisplayName: Bloody Doll
 			}
 		}
 
@@ -102,16 +104,54 @@ Mods: {
 			}
 		}
 
-		Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
-
 		Configs: {
-			ServerConfig: {
-				DisplayName: Branch Config
+			ClientConfig: {
+				DisplayName: Client Config
+				Headers.Fishing: Fishing Header
+
+				AutoFish: {
+					Label: Auto Fish
+					Tooltip: ""
+				}
 
 				LuresAmount: {
 					Label: Lures Amount
 					Tooltip: ""
 				}
+
+				PullWaitTimer: {
+					Label: Pull Wait Timer
+					Tooltip: ""
+				}
+
+				CatchCrate: {
+					Label: Catch Crate
+					Tooltip: ""
+				}
+
+				CatchAccessories: {
+					Label: Catch Accessories
+					Tooltip: ""
+				}
+
+				ShowMinion: {
+					Label: Show Minion
+					Tooltip: ""
+				}
+
+				CursorDistance: {
+					Label: Cursor Distance
+					Tooltip: ""
+				}
+
+				MinZoom: {
+					Label: Min Zoom
+					Tooltip: ""
+				}
+			}
+
+			ServerConfig: {
+				DisplayName: Server Config
 
 				SpawnTom: {
 					Label: Spawn Tom
@@ -129,58 +169,10 @@ Mods: {
 				}
 
 				BossSpawnNotConsumable: {
-					Tooltip: ""
 					Label: Boss Spawn Not Consumable
-				}
-			}
-
-			ClientConfig: {
-				CatchAccessories: {
 					Tooltip: ""
-					Label: Catch Accessories
-				}
-
-				CatchCrate: {
-					Tooltip: ""
-					Label: Catch Crate
-				}
-
-				PullWaitTimer: {
-					Tooltip: ""
-					Label: Pull Wait Timer
-				}
-
-				LuresAmount: {
-					Tooltip: ""
-					Label: Lures Amount
-				}
-
-				AutoFish: {
-					Tooltip: ""
-					Label: Auto Fish
-				}
-
-				Headers.Fishing: Fishing Header
-				DisplayName: Client Config
-
-				CursorDistance: {
-					Tooltip: ""
-					Label: Cursor Distance
-				}
-
-				ShowMinion: {
-					Label: Show Minion
-					Tooltip: ""
-				}
-
-				MinZoom: {
-					Tooltip: ""
-					Label: Min Zoom
 				}
 			}
 		}
-
-		Tiles.FinalStationTile.MapEntry: Final Station Tile
-		Keybinds.TeleportDeathPoint.DisplayName: Teleport Death Point
 	}
 }

@@ -20,8 +20,8 @@ namespace Branch
             {
                 improveGame.Call(
                     "AddStation",
-                    ModContent.ItemType<FinalStation>(),
-                    ModContent.BuffType<FinalStationBuff>()
+                    ModContent.ItemType<CommonStation>(),
+                    ModContent.BuffType<CommonStationBuff>()
                 );
             }
             if (ModLoader.TryGetMod("BossChecklist", out Mod bossList))

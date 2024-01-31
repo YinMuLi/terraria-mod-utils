@@ -1,19 +1,27 @@
-﻿using Branch.Content.Titles;
+﻿using Branch.Content.Buffs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Content.Items
 {
-    internal class FinalStation : ModItem
+    internal class CommonStation : ModItem
     {
         public override void SetDefaults()
         {
-            Item.DefaultToPlaceableTile(ModContent.TileType<FinalStationTile>());
-            Item.width = 48;
-            Item.height = 48;
+            Item.UseSound = SoundID.Item2;
+            Item.useStyle = ItemUseStyleID.EatFood;
+            Item.useTurn = true;
+            Item.width = 28;
+            Item.height = 28;
             Item.value = Item.buyPrice(1, 0, 0, 0);
             Item.rare = ItemRarityID.LightRed;
+            Item.maxStack = 1;
+            Item.consumable = false;
+            Item.useAnimation = 17;
+            Item.useTime = 17;
+            Item.buffType = ModContent.BuffType<CommonStationBuff>();
+            Item.buffTime = 108000;
         }
 
         //public override void AddRecipes()

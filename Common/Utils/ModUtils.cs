@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.Audio;
 using Terraria.Chat;
 using Terraria.ID;
 using Terraria.Localization;
@@ -32,6 +33,25 @@ namespace Branch.Common.Utils
         {
             if (ModContent.TryFind(modName, itemName, out ModItem modItem))
                 Item.NewItem(null, player.Center, modItem.Type, amount);
+        }
+
+        /// <summary>
+        /// 传送玩家到指定地点
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="pos">传送的地点</param>
+        /// <param name="style">传送的类型（默认随机传送药水）</param>
+        public static void ModTeleportion(Player player, Vector2 pos, int style = TeleportationStyleID.TeleportationPotion)
+        {
+            bool postImmune = player.immune;
+            int postImmuneTime = player.immuneTime;
+            player.Teleport(pos, style);
+            if (Main.netMode == NetmodeID.MultiplayerClient)
+                NetMessage.SendData(MessageID.TeleportEntity, number2: player.whoAmI, number3: pos.X, number4: pos.Y, number5: style);
+            player.velocity = Vector2.Zero;
+            player.immune = postImmune;
+            player.immuneTime = postImmuneTime;
+            SoundEngine.PlaySound(SoundID.Item6, player.Center);
         }
     }
 }

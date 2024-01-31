@@ -300,7 +300,7 @@ namespace Branch.Content.NPCS
             shop.Add<AdvancedDefensePotion>(Condition.Hardmode);
             shop.Add(new Item(ItemID.Bacon), Condition.Hardmode);//培根
             shop.Add(new Item(ItemID.TruffleWorm), Condition.Hardmode);//松露虫
-            shop.Add<FinalStation>(Condition.Hardmode);
+            shop.Add<CommonStation>(Condition.Hardmode);
             shop.Add(new Item(ItemID.TerrasparkBoots), Condition.DownedSkeletron);//泰拉闪耀靴
             shop.Add<AdvancedExplorerPotion>(Condition.DownedSkeletron);
             shop.Add(new Item(ItemID.Shellphone), Condition.DownedSkeletron);//贝壳电话

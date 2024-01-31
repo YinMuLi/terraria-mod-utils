@@ -1,5 +1,7 @@
 Mods: {
 	Branch: {
+		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
+
 		Buffs: {
 			AdvancedDefense: {
 				DisplayName: 铜墙铁壁
@@ -20,18 +22,72 @@ Mods: {
 				Description: 包含以下Buff：声呐,钓鱼,宝匣
 			}
 
-			FinalStationBuff: {
-				DisplayName: 原版制作站终极增益
-				Description: 剩下的是技术问题
+			CommonStationBuff: {
+				DisplayName: 通用增益
+				Description: 心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
 			}
 
 			SickBlade: {
-				Description: 为敌怪添加原版绝大多数Debuff
 				DisplayName: 破伤风之刃
+				Description: 为敌怪添加原版绝大多数Debuff
 			}
 		}
 
 		Items: {
+			FishBone: {
+				DisplayName: 鱼骨头
+				Tooltip:
+					'''
+					增加80点渔力
+					具有防熔岩渔具的功能
+					具有声呐药水和宝匣药水Buff
+					---放置时装栏也生效---
+					'''
+			}
+
+			BloodyDoll: {
+				DisplayName: 血腥娃娃
+				Tooltip:
+					'''
+					地狱召唤血肉墙
+					无消耗
+					'''
+			}
+
+			ButterflyToken: {
+				DisplayName: 七彩草蛉的信物
+				Tooltip:
+					'''
+					召唤光之女皇
+					白天狂暴
+					无消耗
+					'''
+			}
+
+			PlanteraBulb: {
+				DisplayName: 世纪之花花苞
+				Tooltip:
+					'''
+					在丛林使用以召唤世纪之花
+					在地下丛林外狂暴
+					无消耗
+					'''
+			}
+
+			CommonStation: {
+				DisplayName: 通用增益站台
+				Tooltip: 给予心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
+			}
+
+			MadeInHeaven: {
+				DisplayName: 天堂制造
+				Tooltip:
+					'''
+					加速一段时间。
+					右键传送到上一次死亡地点
+					'''
+			}
+
 			AdvancedDefensePotion: {
 				DisplayName: 高级防御药水
 				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
@@ -52,63 +108,9 @@ Mods: {
 				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
 			}
 
-			FinalStation: {
-				// Tooltip: ""
-				// DisplayName: Final Station
-			}
-
-			MadeInHeaven: {
-				DisplayName: 天堂制造
-				Tooltip:
-					'''
-					你将暂时拥有神父普奇的替身，加速一段时间。
-					（危险情况下不可使用）
-					'''
-			}
-
-			FishBone: {
-				Tooltip:
-					'''
-					增加80点渔力
-					具有防熔岩渔具的功能
-					具有声呐药水和宝匣药水Buff
-					---放置时装栏也生效---
-					'''
-				DisplayName: 鱼骨头
-			}
-
 			StarterBag: {
 				DisplayName: 初始物资袋
 				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
-			}
-
-			PlanteraBulb: {
-				DisplayName: 世纪之花花苞
-				Tooltip:
-					'''
-					在丛林使用以召唤世纪之花
-					在地下丛林外狂暴
-					无消耗
-					'''
-			}
-
-			ButterflyToken: {
-				Tooltip:
-					'''
-					召唤光之女皇
-					白天狂暴
-					无消耗
-					'''
-				DisplayName: 七彩草蛉的信物
-			}
-
-			BloodyDoll: {
-				Tooltip:
-					'''
-					地狱召唤血肉墙
-					无消耗
-					'''
-				DisplayName: 血腥娃娃
 			}
 		}
 
@@ -135,16 +137,54 @@ Mods: {
 			}
 		}
 
-		// Projectiles.RectangleProjectile.DisplayName: Rectangle Projectile
-
 		Configs: {
-			ServerConfig: {
-				DisplayName: 服务器配置
+			ClientConfig: {
+				DisplayName: 个人配置
+				Headers.Fishing: 钓鱼
+
+				AutoFish: {
+					Label: 自动钓鱼
+					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
+				}
 
 				LuresAmount: {
-					Label: 鱼线数量（最多200）
+					Label: 鱼线数量
 					// Tooltip: ""
 				}
+
+				PullWaitTimer: {
+					Label: 拉杆延迟时间
+					// Tooltip: ""
+				}
+
+				CatchCrate: {
+					Label: 捕获宝箱
+					// Tooltip: ""
+				}
+
+				CatchAccessories: {
+					Label: 捕获饰品
+					// Tooltip: ""
+				}
+
+				ShowMinion: {
+					Label: 显示召唤栏位信息
+					// Tooltip: ""
+				}
+
+				CursorDistance: {
+					Label: 提示指正距离玩家的距离
+					// Tooltip: ""
+				}
+
+				MinZoom: {
+					Label: 最小视距
+					// Tooltip: ""
+				}
+			}
+
+			ServerConfig: {
+				DisplayName: 服务器配置
 
 				SpawnTom: {
 					Label: 生成Tom
@@ -166,58 +206,10 @@ Mods: {
 				}
 
 				BossSpawnNotConsumable: {
-					// Tooltip: ""
 					Label: Boss召唤物不消耗
-				}
-			}
-
-			ClientConfig: {
-				CatchAccessories: {
 					// Tooltip: ""
-					Label: 捕获饰品
-				}
-
-				CatchCrate: {
-					// Tooltip: ""
-					Label: 捕获宝箱
-				}
-
-				PullWaitTimer: {
-					// Tooltip: ""
-					Label: 拉杆延迟时间
-				}
-
-				LuresAmount: {
-					// Tooltip: ""
-					Label: 鱼线数量
-				}
-
-				AutoFish: {
-					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
-					Label: 自动钓鱼
-				}
-
-				Headers.Fishing: 钓鱼
-				DisplayName: 个人配置
-
-				CursorDistance: {
-					// Tooltip: ""
-					Label: 提示指正距离玩家的距离
-				}
-
-				ShowMinion: {
-					Label: 显示召唤栏位信息
-					// Tooltip: ""
-				}
-
-				MinZoom: {
-					// Tooltip: ""
-					Label: 最小视距
 				}
 			}
 		}
-
-		// Tiles.FinalStationTile.MapEntry: Final Station Tile
-		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
 	}
 }

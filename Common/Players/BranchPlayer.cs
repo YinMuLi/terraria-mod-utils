@@ -40,20 +40,6 @@ namespace Branch.Common.Players
 
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            //处理快捷键
-            if (Player.DeadOrGhost) return;
-            if (KeybindSystem.TeleportDeathPoint.JustPressed && Player.lastDeathPostion != Vector2.Zero)
-            {
-                bool postImmune = Player.immune;
-                int postImmuneTime = Player.immuneTime;
-                Player.Teleport(Player.lastDeathPostion, TeleportationStyleID.TeleportationPotion);
-                if (Main.netMode == NetmodeID.MultiplayerClient)
-                    NetMessage.SendData(MessageID.TeleportEntity, number2: Player.whoAmI, number3: Player.lastDeathPostion.X, number4: Player.lastDeathPostion.Y, number5: TeleportationStyleID.TeleportationPotion);
-                Player.velocity = Vector2.Zero;
-                Player.immune = postImmune;
-                Player.immuneTime = postImmuneTime;
-                SoundEngine.PlaySound(SoundID.Item6, Player.Center);
-            }
         }
     }
 }

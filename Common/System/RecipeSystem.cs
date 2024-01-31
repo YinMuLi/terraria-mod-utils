@@ -39,11 +39,6 @@ namespace Branch.Common.System
             Recipe.Create(ItemID.PinkGel)
                 .AddIngredient(ItemID.Gel, 10)
                 .Register();
-            //向导巫毒娃娃
-            Recipe.Create(ItemID.GuideVoodooDoll)
-               .AddIngredient(ItemID.Silk, 3)
-               .AddTile(TileID.DemonAltar)
-               .Register();
         }
 
         /// <summary>

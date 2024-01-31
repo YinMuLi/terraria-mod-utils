@@ -101,6 +101,15 @@ Mods: {
 					'''
 				DisplayName: 七彩草蛉的信物
 			}
+
+			BloodyDoll: {
+				Tooltip:
+					'''
+					地狱召唤血肉墙
+					无消耗
+					'''
+				DisplayName: 血腥娃娃
+			}
 		}
 
 		NPCs: {

@@ -72,6 +72,11 @@ Mods: {
 				Tooltip: ""
 				DisplayName: Butterfly Token
 			}
+
+			BloodyDoll: {
+				Tooltip: ""
+				DisplayName: Bloody Doll
+			}
 		}
 
 		NPCs: {

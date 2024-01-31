@@ -32,15 +32,15 @@ namespace Branch.Content.Global
             }
         }
 
-        public override bool? UseItem(Item item, Player player)
-        {
-            if (item.type == ItemID.CelestialSigil && NPC.MoonLordCountdown > 1)
-            {
-                NPC.MoonLordCountdown = 1;
-                NetMessage.SendData(MessageID.MoonlordHorror, number: NPC.MoonLordCountdown);
-            }
-            return base.UseItem(item, player);
-        }
+        //public override bool? UseItem(Item item, Player player)
+        //{
+        //    if (item.type == ItemID.CelestialSigil && NPC.MoonLordCountdown > 1)
+        //    {
+        //        NPC.MoonLordCountdown = 1;
+        //        NetMessage.SendData(MessageID.MoonlordHorror, number: NPC.MoonLordCountdown);
+        //    }
+        //    return base.UseItem(item, player);
+        //}
 
         public override bool ConsumeItem(Item item, Player player)
         {

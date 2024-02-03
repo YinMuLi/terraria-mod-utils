@@ -34,17 +34,6 @@ Mods: {
 		}
 
 		Items: {
-			FishBone: {
-				DisplayName: 鱼骨头
-				Tooltip:
-					'''
-					增加80点渔力
-					具有防熔岩渔具的功能
-					具有声呐药水和宝匣药水Buff
-					---放置时装栏也生效---
-					'''
-			}
-
 			BloodyDoll: {
 				DisplayName: 血腥娃娃
 				Tooltip:
@@ -111,6 +100,17 @@ Mods: {
 			StarterBag: {
 				DisplayName: 初始物资袋
 				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			}
+
+			FishingGuide: {
+				DisplayName: 钓鱼指南
+				Tooltip:
+					'''
+					增加80点渔力
+					具有防熔岩渔具的功能
+					具有声呐药水和宝匣药水功能
+					[c/C4232C:- 时装栏即可生效 -]
+					'''
 			}
 		}
 

@@ -30,11 +30,6 @@ Mods: {
 		}
 
 		Items: {
-			FishBone: {
-				DisplayName: Fish Bone
-				Tooltip: ""
-			}
-
 			BloodyDoll: {
 				DisplayName: Bloody Doll
 				Tooltip: ""
@@ -77,6 +72,11 @@ Mods: {
 
 			StarterBag: {
 				DisplayName: Starter Bag
+				Tooltip: ""
+			}
+
+			FishingGuide: {
+				DisplayName: Fishing Guide
 				Tooltip: ""
 			}
 		}

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace Branch.Content.Items.Accessory
 {
-    internal class FishBone : ModItem
+    internal class FishingGuide : ModItem
     {
         public override void SetDefaults()
         {

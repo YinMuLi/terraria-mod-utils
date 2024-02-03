@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Branch.Common.Extensions;
+using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -22,7 +23,10 @@ namespace Branch.Content.Global
                     break;
 
                 case ItemID.PlanteraBossBag:
-                    loot.Add(ItemDropRule.Common(ItemID.LifeFruit, 1, 6, 8));//世纪之花宝藏袋添加生命果
+
+                    //世纪之花宝藏袋添加生命果
+                    loot.AddIf((info) => Main.LocalPlayer.ConsumedLifeFruit < Player.LifeFruitMax, ItemID.LifeFruit,
+                        minQuantity: Player.LifeFruitMax - Main.LocalPlayer.ConsumedLifeFruit, maxQuantity: Player.LifeFruitMax - Main.LocalPlayer.ConsumedLifeFruit);
                     break;
             }
         }

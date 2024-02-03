@@ -36,6 +36,17 @@ namespace Branch.Common.Utils
         }
 
         /// <summary>
+        /// 给予玩家物品
+        /// </summary>
+        /// <param name="player">给予玩家对象</param>
+        /// <param name="itemID">物品ID</param>
+        /// <param name="amount">物品的个数（默认是1）</param>
+        public static void GiveItem(Player player, int itemID, int amount = 1)
+        {
+            Item.NewItem(null, player.Center, itemID, amount);
+        }
+
+        /// <summary>
         /// 传送玩家到指定地点
         /// </summary>
         /// <param name="player"></param>

@@ -96,5 +96,40 @@ namespace Branch.Common.Extensions
         {
             return loot.Add(ItemDropRule.Common(itemID, dropRateInt, minQuantity, maxQuantity));
         }
+
+        /// <summary>
+        /// 物品的条件掉落
+        /// </summary>
+        /// <param name="loot"></param>
+        /// <param name="func">掉落规则，条件默认是显示UI，条件描述为空</param>
+        /// <param name="itemID"></param>
+        /// <param name="dropRateInt"></param>
+        /// <param name="minQuantity"></param>
+        /// <param name="maxQuantity"></param>
+        /// <returns></returns>
+        public static IItemDropRule AddIf(this ILoot loot, Func<DropAttemptInfo, bool> func, int itemID, int dropRateInt = 1, int minQuantity = 1, int maxQuantity = 1)
+        {
+            return loot.Add(ItemDropRule.ByCondition(new SimpleDropCondition(func, true, null), itemID, dropRateInt, minQuantity, maxQuantity));
+        }
+    }
+
+    public class SimpleDropCondition : IItemDropRuleCondition
+    {
+        private readonly Func<DropAttemptInfo, bool> condition;
+        private readonly bool showUI;
+        private readonly string description;
+
+        public SimpleDropCondition(Func<DropAttemptInfo, bool> condition, bool showUI, string description)
+        {
+            this.condition = condition;
+            this.showUI = showUI;
+            this.description = description;
+        }
+
+        public bool CanDrop(DropAttemptInfo info) => condition(info);
+
+        public bool CanShowItemDropInUI() => showUI;
+
+        public string GetConditionDescription() => description;
     }
 }

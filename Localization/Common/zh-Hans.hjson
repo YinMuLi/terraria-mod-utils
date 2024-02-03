@@ -11,9 +11,5 @@ Mods: {
 	}
 
 	Items.NotConsumable: 无消耗
-
-	DPS: {
-		// Common: ""
-		// _: ""
-	}
+	Tips.InternalID: 物品ID：{0}
 }

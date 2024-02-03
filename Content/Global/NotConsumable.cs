@@ -1,4 +1,5 @@
 ﻿using Branch.Common.Configs;
+using Humanizer;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -17,7 +18,6 @@ namespace Branch.Content.Global
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
-            base.ModifyTooltips(item, tooltips);
             //Boss召唤物
             if (IsBossSpawn(item) && item.consumable)
             {
@@ -30,6 +30,10 @@ namespace Branch.Content.Global
                     }
                 }
             }
+            //显示内部编号
+            //tooltips.Add(new TooltipLine(Mod, "InternalID",
+            //    $"{Language.GetTextValue("Mods.Tips.InternalID").FormatWith(item.type)}")
+            //{ OverrideColor = Color.Gray });
         }
 
         //public override bool? UseItem(Item item, Player player)

@@ -25,8 +25,9 @@ namespace Branch.Content.Global
                 case ItemID.PlanteraBossBag:
 
                     //世纪之花宝藏袋添加生命果
+                    int quantity = Player.LifeFruitMax - Main.LocalPlayer.ConsumedLifeFruit;
                     loot.AddIf((info) => Main.LocalPlayer.ConsumedLifeFruit < Player.LifeFruitMax, ItemID.LifeFruit,
-                        minQuantity: Player.LifeFruitMax - Main.LocalPlayer.ConsumedLifeFruit, maxQuantity: Player.LifeFruitMax - Main.LocalPlayer.ConsumedLifeFruit);
+                        minQuantity: quantity, maxQuantity: quantity);
                     break;
             }
         }

@@ -32,12 +32,13 @@ namespace Branch.Common.System
             #endregion 猩红和腐败之间的物品能够相互转换
 
             //墓碑
-            Recipe.Create(ItemID.Gravestone)
-                .AddIngredient(ItemID.StoneBlock, 10)
-                .Register();
+            //Recipe.Create(ItemID.Gravestone)
+            //    .AddIngredient(ItemID.StoneBlock, 10)
+            //    .Register();
             //粉凝胶
             Recipe.Create(ItemID.PinkGel)
                 .AddIngredient(ItemID.Gel, 10)
+                .AddTile(TileID.Solidifier)//固化机
                 .Register();
         }
 

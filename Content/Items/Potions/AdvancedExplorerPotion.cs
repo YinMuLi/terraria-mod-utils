@@ -41,6 +41,8 @@ namespace Branch.Content.Items.Potions
             recipe.AddIngredient(ItemID.FlipperPotion, 1);
             recipe.AddIngredient(ItemID.WaterWalkingPotion, 1);
             recipe.AddIngredient(ItemID.ObsidianSkinPotion, 1);
+            recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
+
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
         }

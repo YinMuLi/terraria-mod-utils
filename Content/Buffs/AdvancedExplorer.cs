@@ -48,6 +48,9 @@ namespace Branch.Content.Buffs
             player.buffImmune[BuffID.ObsidianSkin] = true;
             player.fireWalk = true;
             player.lavaImmune = true;
+            //敏捷
+            player.buffImmune[BuffID.Swiftness] = true;
+            player.moveSpeed += 0.25f;
         }
     }
 }

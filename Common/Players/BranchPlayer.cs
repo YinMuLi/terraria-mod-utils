@@ -1,13 +1,7 @@
-﻿using Branch.Common.System;
-using Branch.Content.Items;
-using Microsoft.Xna.Framework;
+﻿using Branch.Content.Items;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.Graphics.Effects;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Common.Players

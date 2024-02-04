@@ -29,13 +29,13 @@ namespace Branch.Common.AccessorySlot
             return item.wingSlot > 0;
         }
 
-        public override void OnMouseHover(AccessorySlotType context)
-        {
-            if (context == AccessorySlotType.FunctionalSlot)
-            {
-                Main.hoverItemName = "仅限翅膀类饰品";
-            }
-            base.OnMouseHover(context);
-        }
+        //public override void OnMouseHover(AccessorySlotType context)
+        //{
+        //    if (context == AccessorySlotType.FunctionalSlot)
+        //    {
+        //        Main.hoverItemName = "仅限翅膀类饰品";
+        //    }
+        //    base.OnMouseHover(context);
+        //}
     }
 }

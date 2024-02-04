@@ -39,16 +39,10 @@ namespace Branch.Content.Items.Potions
             recipe.AddIngredient(ItemID.RegenerationPotion, 1);
             recipe.AddIngredient(ItemID.LifeforcePotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);
-            recipe.AddIngredient(ItemID.SwiftnessPotion, 1);
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
-        }
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }
     }
 }

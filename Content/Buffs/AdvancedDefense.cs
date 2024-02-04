@@ -29,9 +29,6 @@ namespace Branch.Content.Buffs
             //铁皮
             player.buffImmune[BuffID.Ironskin] = true;
             player.statDefense += 8;
-            //敏捷
-            player.buffImmune[BuffID.Swiftness] = true;
-            player.moveSpeed += 0.25f;
             //耐力
             player.buffImmune[BuffID.Endurance] = true;
             player.endurance += 0.1f;

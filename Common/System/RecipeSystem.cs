@@ -40,6 +40,7 @@ namespace Branch.Common.System
                 .AddIngredient(ItemID.Gel, 10)
                 .AddTile(TileID.Solidifier)//固化机
                 .Register();
+            AddShimmerRecipe(ItemID.CorruptFishingCrate, ItemID.CrimsonFishingCrate);
         }
 
         /// <summary>
@@ -58,6 +59,17 @@ namespace Branch.Common.System
                 .AddTile(TileID.DemonAltar)
                 .DisableDecraft()
                 .Register();
+        }
+
+        /// <summary>
+        /// 微光互相转换
+        /// </summary>
+        /// <param name="itemID"></param>
+        /// <param name="convertItemID"></param>
+        private static void AddShimmerRecipe(int itemID, int convertItemID)
+        {
+            ItemID.Sets.ShimmerTransformToItem[itemID] = convertItemID;
+            ItemID.Sets.ShimmerTransformToItem[convertItemID] = itemID;
         }
     }
 }

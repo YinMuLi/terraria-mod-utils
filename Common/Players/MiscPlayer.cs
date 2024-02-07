@@ -27,7 +27,6 @@ namespace Branch.Common.Players
 
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
-            base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
             if (Main.gameMenu) return;//暂停界面
             float detectRange = Math.Min(Main.screenWidth, Main.screenHeight) / 2f;//检测范围
             Vector2 playerPos = Player.Center - Main.screenPosition;
@@ -40,10 +39,13 @@ namespace Branch.Common.Players
                 {
                     Texture2D tex = TextureAssets.Npc[npc.type].Value;
                     Vector2 direction = npc.Center - Player.Center;//方向
-                    float radian = direction.ToRotation();//弧度
+                    //把贴图转为水平方向，加了90度
+                    float rotation = direction.ToRotation() + (float)(Math.PI / 2);//弧度
                     direction.Normalize();
                     direction *= 20 * ClientConfig.Instance.CursorDistance;
-                    ChatManager.DrawColorCodedStringWithShadow(Main.spriteBatch, FontAssets.DeathText.Value, "->", direction + playerPos, Color.White, radian, FontAssets.DeathText.Value.MeasureString("->") / 2f, Vector2.One);
+                    //origin:旋转中心点，左上角为参考系中心，图片内部坐标
+                    Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Branch/Content/Projectiles/Indicator").Value,
+                        direction + playerPos, null, Color.White, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
                 }
             }
         }

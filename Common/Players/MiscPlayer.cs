@@ -1,5 +1,4 @@
-﻿using Branch.Common.Configs;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using Terraria;
@@ -7,7 +6,6 @@ using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
-using Terraria.UI.Chat;
 
 namespace Branch.Common.Players
 {
@@ -42,7 +40,7 @@ namespace Branch.Common.Players
                     //把贴图转为水平方向，加了90度
                     float rotation = direction.ToRotation() + (float)(Math.PI / 2);//弧度
                     direction.Normalize();
-                    direction *= 20 * ClientConfig.Instance.CursorDistance;
+                    direction *= 80;
                     //origin:旋转中心点，左上角为参考系中心，图片内部坐标
                     Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Branch/Content/Projectiles/Indicator").Value,
                         direction + playerPos, null, Color.White, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);

@@ -10,8 +10,8 @@ namespace Branch.Content.Items
         public override void SetDefaults()
         {
             Item.consumable = true;
-            Item.width = 24;
-            Item.height = 24;
+            Item.width = 32;
+            Item.height = 32;
             Item.rare = ItemRarityID.Blue;
         }
 
@@ -38,28 +38,6 @@ namespace Branch.Content.Items
                     itemLoot.Add(modItem.Type, 1, 10, 10);
                 }
             }
-            //更好的生活体验
-            string improveGame = "ImproveGame";
-            if (ModLoader.TryGetMod(improveGame, out Mod _))
-            {
-                if (ModContent.TryFind(improveGame, "CreateWand", out modItem))
-                {
-                    itemLoot.Add(modItem.Type);
-                }
-                if (ModContent.TryFind(improveGame, "MagickWand", out modItem))
-                {
-                    itemLoot.Add(modItem.Type);
-                }
-                if (ModContent.TryFind(improveGame, "SpaceWand", out modItem))
-                {
-                    itemLoot.Add(modItem.Type);
-                }
-                if (ModContent.TryFind(improveGame, "WallPlace", out modItem))
-                {
-                    itemLoot.Add(modItem.Type);
-                }
-            }
-            itemLoot.Add(ItemID.ManaCrystal);
         }
     }
 }

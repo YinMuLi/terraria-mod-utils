@@ -54,14 +54,6 @@ namespace Branch.Common.Configs
         [DefaultValue(true)]
         public bool ShowMinion;
 
-        /// <summary>
-        /// 指针距离玩家的距离
-        /// </summary>
-        [Range(0f, 10f)]
-        [DefaultValue(3f)]
-        [Increment(0.5f)]
-        public float CursorDistance;
-
         [ReloadRequired]
         [Increment(0.1f)]
         [Range(0.3f, 4f)]

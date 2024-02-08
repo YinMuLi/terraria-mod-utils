@@ -98,7 +98,7 @@ Mods: {
 			}
 
 			StarterBag: {
-				DisplayName: 初始物资袋
+				DisplayName: 新手礼包
 				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 			}
 
@@ -106,7 +106,7 @@ Mods: {
 				DisplayName: 钓鱼指南
 				Tooltip:
 					'''
-					增加80点渔力
+					+80渔力
 					具有防熔岩渔具的功能
 					具有声呐药和宝匣药水功能
 					[c/C4232C:- 时装栏即可生效 -]

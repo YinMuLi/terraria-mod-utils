@@ -12,7 +12,7 @@ namespace Branch.Common.AccessorySlot
     {
         public override string Name => "WingSlot";
 
-        public override string FunctionalTexture => $"Terraria/Images/Item_{ItemID.FishronWings}";
+        public override string FunctionalTexture => $"Terraria/Images/Item_{ItemID.CreativeWings}";
 
         public override bool IsLoadingEnabled(Mod mod)
         {

@@ -23,6 +23,7 @@ namespace Branch.Content.Items.Accessory
         public override bool? UseItem(Player player)
         {
             //TODO：联机同步？
+            if (!player.BuyItem(Item.buyPrice(platinum: 1))) return false;
             SoundEngine.PlaySound(SoundID.Item37, player.position);
             for (int i = 3; i <= 9; i++)
             {

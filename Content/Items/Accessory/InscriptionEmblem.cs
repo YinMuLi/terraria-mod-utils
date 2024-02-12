@@ -22,6 +22,7 @@ namespace Branch.Content.Items.Accessory
 
         public override bool? UseItem(Player player)
         {
+            if (player.whoAmI != Main.myPlayer) return false;
             //TODO：联机同步？
             if (!player.BuyItem(Item.buyPrice(platinum: 1))) return false;
             SoundEngine.PlaySound(SoundID.Item37, player.position);
@@ -49,6 +50,15 @@ namespace Branch.Content.Items.Accessory
                 }
             }
             return true;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddRecipeGroup(RecipeGroupID.IronBar)
+                .AddIngredient(ItemID.SoulofNight)
+                .AddIngredient(ItemID.SoulofLight)
+                .Register();
         }
     }
 }

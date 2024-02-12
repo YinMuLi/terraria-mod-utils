@@ -112,6 +112,16 @@ Mods: {
 					[c/C4232C:- 时装栏即可生效 -]
 					'''
 			}
+
+			GoldenBait: {
+				// Tooltip: ""
+				DisplayName: 黄金诱饵
+			}
+
+			InscriptionEmblem: {
+				Tooltip: 左键使所有装备的饰品的前缀统一修改为本物品的前缀
+				DisplayName: 铭刻徽章
+			}
 		}
 
 		NPCs: {

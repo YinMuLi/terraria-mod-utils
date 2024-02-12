@@ -79,6 +79,16 @@ Mods: {
 				DisplayName: Fishing Guide
 				Tooltip: ""
 			}
+
+			GoldenBait: {
+				Tooltip: ""
+				DisplayName: Golden Bait
+			}
+
+			InscriptionEmblem: {
+				Tooltip: ""
+				DisplayName: Inscription Emblem
+			}
 		}
 
 		NPCs: {

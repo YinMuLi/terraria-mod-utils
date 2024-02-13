@@ -27,6 +27,8 @@ namespace Branch.Content.Items.Accessory
             player.cratePotion = true;//宝匣药水
         }
 
+        public override bool AllowPrefix(int pre) => false;
+
         //装饰栏生效
         public override void UpdateVanity(Player player) => Effect(player);
 

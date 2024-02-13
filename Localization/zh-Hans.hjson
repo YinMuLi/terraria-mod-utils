@@ -119,7 +119,7 @@ Mods: {
 			}
 
 			InscriptionEmblem: {
-				Tooltip: 花费1铂金币修改所有装备的饰品的前缀为该物品的前缀
+				Tooltip: 花费1铂金币重铸所有生效的饰品（以该物品的词条为准）
 				DisplayName: 铭刻徽章
 			}
 		}

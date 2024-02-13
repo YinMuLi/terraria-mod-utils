@@ -29,8 +29,7 @@ namespace Branch.Content.Items.Accessory
             if (player.whoAmI != Main.myPlayer) return false;
             for (int i = 3; i <= 9; i++)
             {
-                Item item = player.armor[i];
-                Reforge(player, Item.prefix, item);
+                Reforge(player, Item.prefix, player.armor[i]);
             }
             //模组饰品栏
             var accessoryPlayer = player.GetModPlayer<ModAccessorySlotPlayer>();
@@ -40,8 +39,7 @@ namespace Branch.Content.Items.Accessory
                 if (loader.ModdedIsItemSlotUnlockedAndUsable(i, player))
                 {
                     var slot = loader.Get(i, player);
-                    Item item = slot.FunctionalItem;
-                    Reforge(player, Item.prefix, item);
+                    Reforge(player, Item.prefix, slot.FunctionalItem);
                 }
             }
             return true;

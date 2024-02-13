@@ -8,6 +8,8 @@ namespace Branch.Content.Items.Accessory
 {
     internal class InscriptionEmblem : ModItem
     {
+        private static long price = Item.buyPrice(platinum: 1);//1铂金币
+
         public override void SetDefaults()
         {
             Item.width = 28;
@@ -20,19 +22,15 @@ namespace Branch.Content.Items.Accessory
             Item.accessory = true;
         }
 
+        public override bool CanUseItem(Player player) => player.CanAfford(price);
+
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI != Main.myPlayer) return false;
-            //TODO：联机同步？
-            if (!player.BuyItem(Item.buyPrice(platinum: 1))) return false;
-            SoundEngine.PlaySound(SoundID.Item37, player.position);
             for (int i = 3; i <= 9; i++)
             {
                 Item item = player.armor[i];
-                if (item != null && item.accessory && item.prefix != Item.prefix)
-                {
-                    item.Prefix(Item.prefix);
-                }
+                Reforge(player, Item.prefix, item);
             }
             //模组饰品栏
             var accessoryPlayer = player.GetModPlayer<ModAccessorySlotPlayer>();
@@ -43,13 +41,24 @@ namespace Branch.Content.Items.Accessory
                 {
                     var slot = loader.Get(i, player);
                     Item item = slot.FunctionalItem;
-                    if (item != null && item.accessory && item.prefix != Item.prefix)
-                    {
-                        item.Prefix(Item.prefix);
-                    }
+                    Reforge(player, Item.prefix, item);
                 }
             }
             return true;
+        }
+
+        private static void Reforge(Player player, int prefixID, Item item)
+        {
+            if (item.stack > 0 && item.prefix != prefixID && ItemLoader.CanReforge(item))
+            {
+                player.BuyItem(price);
+                item.ResetPrefix();
+                item.Prefix(prefixID);
+                item.position = player.Center;//显示文字的位置
+                ItemLoader.PostReforge(item);
+                PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);
+                SoundEngine.PlaySound(SoundID.Item37);
+            }
         }
 
         public override void AddRecipes()

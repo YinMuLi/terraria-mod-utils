@@ -27,6 +27,7 @@ namespace Branch.Content.Items.Accessory
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI != Main.myPlayer) return false;
+            player.BuyItem(price);
             for (int i = 3; i <= 9; i++)
             {
                 Reforge(player, Item.prefix, player.armor[i]);
@@ -49,7 +50,6 @@ namespace Branch.Content.Items.Accessory
         {
             if (item.stack > 0 && item.prefix != prefixID && ItemLoader.CanReforge(item))
             {
-                player.BuyItem(price);
                 item.ResetPrefix();
                 item.Prefix(prefixID);
                 item.position = player.Center;//显示文字的位置

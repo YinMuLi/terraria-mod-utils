@@ -114,8 +114,12 @@ Mods: {
 			}
 
 			GoldenBait: {
-				// Tooltip: ""
-				DisplayName: 黄金诱饵
+				Tooltip:
+					'''
+					不消耗
+					节省几个弹药栏
+					'''
+				DisplayName: 黄金鱼饵
 			}
 
 			InscriptionEmblem: {

@@ -2,7 +2,6 @@
 using Branch.Content.Items;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
-using MonoMod.Utils;
 using System;
 using Terraria;
 using Terraria.GameInput;
@@ -28,6 +27,7 @@ namespace Branch.Content.Global
             On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
             IL_Main.DoDraw += PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait += PatchNoConsumeBait;
+            On_Item.CanFillEmptyAmmoSlot += OnPlaceInventorySlot;
         }
 
         public void Unload()
@@ -36,6 +36,7 @@ namespace Branch.Content.Global
             On_Main.UpdateViewZoomKeys -= OnUpdateViewZoom;
             IL_Main.DoDraw -= PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait -= PatchNoConsumeBait;
+            On_Item.CanFillEmptyAmmoSlot -= OnPlaceInventorySlot;
         }
 
         private int OnPlaceCoinSlot(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)
@@ -64,6 +65,17 @@ namespace Branch.Content.Global
             {
                 Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget - num, minZoom, MAX_ZOOM);
             }
+        }
+
+        /// <summary>
+        /// 拾取到的物品都不放在弹药栏
+        /// </summary>
+        /// <param name="orig"></param>
+        /// <param name="self"></param>
+        /// <returns></returns>
+        private bool OnPlaceInventorySlot(On_Item.orig_CanFillEmptyAmmoSlot orig, Item self)
+        {
+            return false;
         }
 
         private void PatchZoomBounds(ILContext il)

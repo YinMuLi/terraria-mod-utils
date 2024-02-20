@@ -17,12 +17,11 @@
     <None Remove="Localization\cn_Branch.Configs.hjson" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
+    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.5" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\Projectiles\" />
     <Folder Include="Localization\Chat\" />
     <Folder Include="Localization\Common\" />
-    <Folder Include="References\" />
   </ItemGroup>
 </Project>

@@ -117,7 +117,11 @@ Mods: {
 		Configs: {
 			ClientConfig: {
 				DisplayName: Client Config
-				Headers.Fishing: Fishing Header
+
+				Headers: {
+					Fishing: Fishing Header
+					Common: Common Header
+				}
 
 				AutoFish: {
 					Label: Auto Fish
@@ -157,6 +161,11 @@ Mods: {
 				MinZoom: {
 					Label: Min Zoom
 					Tooltip: ""
+				}
+
+				SwitchInventory: {
+					Tooltip: ""
+					Label: Switch Inventory
 				}
 			}
 

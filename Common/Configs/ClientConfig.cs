@@ -14,6 +14,13 @@ namespace Branch.Common.Configs
 
         public override void OnLoaded() => Instance = this;
 
+        /// <summary>
+        /// 快速堆叠后交换物品栏
+        /// </summary>
+        [Header("Common")]
+        [DefaultValue(true)]
+        public bool SwitchInventory;
+
         [Header("Fishing")]
         /// <summary>
         /// 自动钓鱼

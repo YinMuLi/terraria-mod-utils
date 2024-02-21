@@ -11,28 +11,45 @@ using Terraria.UI;
 
 namespace Branch.Content.Global
 {
-    /// <summary>
-    /// 取消订阅事件
-    /// 1.猪猪存钱罐能放置在钱币槽
-    /// 2.修改游戏缩放
-    /// </summary>
     internal class LoadableCenter : ILoadable
     {
         private float minZoom => ClientConfig.Instance.MinZoom;
         private const float MAX_ZOOM = 4f;
+
+        public void Unload()
+        {
+        }
 
         public void Load(Mod mod)
         {
             On_ItemSlot.PickItemMovementAction += OnPlaceCoinSlot;
             On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
             On_Item.CanFillEmptyAmmoSlot += OnPlaceInventorySlot;
+            On_Player.QuickStackAllChests += OnQuickStack;
             IL_Main.DoDraw += PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait += PatchNoConsumeBait;
-            IL_Player.QuickStackAllChests += PatchQuickStack;
+            //IL_Player.QuickStackAllChests += PatchQuickStack;
         }
 
-        public void Unload()
+        private void OnQuickStack(On_Player.orig_QuickStackAllChests orig, Player self)
         {
+            orig(self);
+            if (!ClientConfig.Instance.SwitchInventory) return;
+            //交换物品栏-->截取[更好的体验]
+            if (self.ItemTimeIsZero && self.itemAnimation is 0)
+            {
+                for (int i = 0; i <= 9; i++)
+                {
+                    (self.inventory[i], self.inventory[i + 10]) = (self.inventory[i + 10], self.inventory[i]);
+                    if (Main.netMode is NetmodeID.MultiplayerClient)
+                    {
+                        NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i,
+                            number3: Main.LocalPlayer.inventory[i].prefix);
+                        NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i + 10,
+                            number3: Main.LocalPlayer.inventory[i].prefix);
+                    }
+                }
+            }
         }
 
         private int OnPlaceCoinSlot(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)
@@ -139,34 +156,34 @@ namespace Branch.Content.Global
             });
         }
 
-        private void PatchQuickStack(ILContext il)
-        {
-            //修改快速堆叠从第一行开始
-            var c = new ILCursor(il);
-            //第一处单人模式
-            //IL_01EF: bne.un    IL_038D
-            //IL_01F4: ldc.i4.s  10  <--修改
-            //IL_01F6: stloc.s V_15
-            //IL_01F8: br IL_02A5
-            if (!c.TryGotoNext(MoveType.After,
-                i => i.Match(OpCodes.Bne_Un),
-                i => i.Match(OpCodes.Ldc_I4_S))) return;
-            c.EmitDelegate<Func<int, int>>(returnvalue =>
-            {
-                return 0;
-            });
-            //第二处多人模式
-            //IL_038C: ret
-            //IL_038D: ldc.i4.s  10  <--修改
-            //IL_038F: stloc.s V_17
-            //IL_0391: br IL_0445
-            if (!c.TryGotoNext(MoveType.After,
-                i => i.Match(OpCodes.Ret),
-                i => i.Match(OpCodes.Ldc_I4_S))) return;
-            c.EmitDelegate<Func<int, int>>(returnvalue =>
-            {
-                return 0;
-            });
-        }
+        //private void PatchQuickStack(ILContext il)
+        //{
+        //    //修改快速堆叠从第一行开始
+        //    var c = new ILCursor(il);
+        //    //第一处单人模式
+        //    //IL_01EF: bne.un    IL_038D
+        //    //IL_01F4: ldc.i4.s  10  <--修改
+        //    //IL_01F6: stloc.s V_15
+        //    //IL_01F8: br IL_02A5
+        //    if (!c.TryGotoNext(MoveType.After,
+        //        i => i.Match(OpCodes.Bne_Un),
+        //        i => i.Match(OpCodes.Ldc_I4_S))) return;
+        //    c.EmitDelegate<Func<int, int>>(returnvalue =>
+        //    {
+        //        return 0;
+        //    });
+        //    //第二处多人模式
+        //    //IL_038C: ret
+        //    //IL_038D: ldc.i4.s  10  <--修改
+        //    //IL_038F: stloc.s V_17
+        //    //IL_0391: br IL_0445
+        //    if (!c.TryGotoNext(MoveType.After,
+        //        i => i.Match(OpCodes.Ret),
+        //        i => i.Match(OpCodes.Ldc_I4_S))) return;
+        //    c.EmitDelegate<Func<int, int>>(returnvalue =>
+        //    {
+        //        return 0;
+        //    });
+        //}
     }
 }

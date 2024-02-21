@@ -154,7 +154,11 @@ Mods: {
 		Configs: {
 			ClientConfig: {
 				DisplayName: 个人配置
-				Headers.Fishing: 钓鱼
+
+				Headers: {
+					Fishing: 钓鱼
+					Common: 通用配置
+				}
 
 				AutoFish: {
 					Label: 自动钓鱼
@@ -194,6 +198,11 @@ Mods: {
 				MinZoom: {
 					Label: 最小视距
 					// Tooltip: ""
+				}
+
+				SwitchInventory: {
+					Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
+					Label: 交换物品栏
 				}
 			}
 

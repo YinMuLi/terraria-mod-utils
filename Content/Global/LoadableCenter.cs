@@ -25,18 +25,14 @@ namespace Branch.Content.Global
         {
             On_ItemSlot.PickItemMovementAction += OnPlaceCoinSlot;
             On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
+            On_Item.CanFillEmptyAmmoSlot += OnPlaceInventorySlot;
             IL_Main.DoDraw += PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait += PatchNoConsumeBait;
-            On_Item.CanFillEmptyAmmoSlot += OnPlaceInventorySlot;
+            IL_Player.QuickStackAllChests += PatchQuickStack;
         }
 
         public void Unload()
         {
-            On_ItemSlot.PickItemMovementAction -= OnPlaceCoinSlot;
-            On_Main.UpdateViewZoomKeys -= OnUpdateViewZoom;
-            IL_Main.DoDraw -= PatchZoomBounds;
-            IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait -= PatchNoConsumeBait;
-            On_Item.CanFillEmptyAmmoSlot -= OnPlaceInventorySlot;
         }
 
         private int OnPlaceCoinSlot(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)
@@ -140,6 +136,36 @@ namespace Branch.Content.Global
                     return 0;
                 }
                 return returnValue;
+            });
+        }
+
+        private void PatchQuickStack(ILContext il)
+        {
+            //修改快速堆叠从第一行开始
+            var c = new ILCursor(il);
+            //第一处单人模式
+            //IL_01EF: bne.un    IL_038D
+            //IL_01F4: ldc.i4.s  10  <--修改
+            //IL_01F6: stloc.s V_15
+            //IL_01F8: br IL_02A5
+            if (!c.TryGotoNext(MoveType.After,
+                i => i.Match(OpCodes.Bne_Un),
+                i => i.Match(OpCodes.Ldc_I4_S))) return;
+            c.EmitDelegate<Func<int, int>>(returnvalue =>
+            {
+                return 0;
+            });
+            //第二处多人模式
+            //IL_038C: ret
+            //IL_038D: ldc.i4.s  10  <--修改
+            //IL_038F: stloc.s V_17
+            //IL_0391: br IL_0445
+            if (!c.TryGotoNext(MoveType.After,
+                i => i.Match(OpCodes.Ret),
+                i => i.Match(OpCodes.Ldc_I4_S))) return;
+            c.EmitDelegate<Func<int, int>>(returnvalue =>
+            {
+                return 0;
             });
         }
     }

@@ -1,1 +1,6 @@
-枝丫 is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+游戏内容修改
+1.猪猪储钱罐能够放置在钱币槽
+2.调整游戏视角的缩放值
+3.无线鱼饵
+4.快速堆叠从第一行开始
+5.拾取到的弹药不放在弹药栏中

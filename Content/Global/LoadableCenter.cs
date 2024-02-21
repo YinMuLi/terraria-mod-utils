@@ -36,20 +36,26 @@ namespace Branch.Content.Global
             orig(self);
             if (!ClientConfig.Instance.SwitchInventory) return;
             //交换物品栏-->截取[更好的体验]
-            if (self.ItemTimeIsZero && self.itemAnimation is 0)
+            void Switch(Player self)
             {
-                for (int i = 0; i <= 9; i++)
+                if (self.ItemTimeIsZero && self.itemAnimation is 0)
                 {
-                    (self.inventory[i], self.inventory[i + 10]) = (self.inventory[i + 10], self.inventory[i]);
-                    if (Main.netMode is NetmodeID.MultiplayerClient)
+                    for (int i = 0; i <= 9; i++)
                     {
-                        NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i,
-                            number3: Main.LocalPlayer.inventory[i].prefix);
-                        NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i + 10,
-                            number3: Main.LocalPlayer.inventory[i].prefix);
+                        (self.inventory[i], self.inventory[i + 10]) = (self.inventory[i + 10], self.inventory[i]);
+                        if (Main.netMode is NetmodeID.MultiplayerClient)
+                        {
+                            NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i,
+                                number3: Main.LocalPlayer.inventory[i].prefix);
+                            NetMessage.SendData(MessageID.SyncEquipment, number: Main.myPlayer, number2: i + 10,
+                                number3: Main.LocalPlayer.inventory[i].prefix);
+                        }
                     }
                 }
             }
+            Switch(self);
+            orig(self);
+            Switch(self);
         }
 
         private int OnPlaceCoinSlot(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)

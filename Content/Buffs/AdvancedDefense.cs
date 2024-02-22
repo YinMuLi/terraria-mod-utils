@@ -35,6 +35,9 @@ namespace Branch.Content.Buffs
             //荆棘
             player.buffImmune[BuffID.Thorns] = true;
             if ((double)player.thorns < 1.0) player.thorns = 0.34f;
+            //保暖药水
+            player.buffImmune[BuffID.Warmth] = true;
+            player.resistCold = true;
         }
     }
 }

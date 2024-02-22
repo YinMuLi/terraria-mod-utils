@@ -5,7 +5,7 @@ Mods: {
 		Buffs: {
 			AdvancedDefense: {
 				DisplayName: 铜墙铁壁
-				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘
+				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、保暖
 			}
 
 			AdvancedExplorer: {
@@ -79,7 +79,7 @@ Mods: {
 
 			AdvancedDefensePotion: {
 				DisplayName: 高级防御药水
-				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷)
+				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷、保暖)
 			}
 
 			AdvancedExplorerPotion: {

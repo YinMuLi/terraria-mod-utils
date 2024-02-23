@@ -29,12 +29,6 @@ namespace Branch.Common.Players
             On_Player.ItemCheck_Shoot += OnShoot;
         }
 
-        public override void Unload()
-        {
-            On_Player.ItemCheck_CheckFishingBobbers -= OnCheckFishingBobbers;
-            On_Player.ItemCheck_Shoot -= OnShoot;
-        }
-
         public override void OnEnterWorld()
         {
             modInvoke = false;

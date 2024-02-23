@@ -5,16 +5,25 @@ Mods: {
 		Buffs: {
 			AdvancedDefense: {
 				DisplayName: 铜墙铁壁
-				Description: 包含以下Buff:再生，生命力，铁皮、耐力、荆棘、保暖
+				Description:
+					'''
+					+2生命再生
+					+8防御
+					+20%最大生命值（每有100点生命值增加20点最大上限）
+					-10%所受伤害
+					-30%寒冷主题敌怪伤害
+					反弹33%敌怪伤害
+					'''
 			}
 
 			AdvancedExplorer: {
 				DisplayName: 探索者
 				Description:
-					'''
-					包含以下Buff：洞穴探险，夜猫子，挖矿，狩猎，
-					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤,敏捷
-					'''
+				'''
+				+25%移动速度
+				+25%挖矿速度
+				许多其它非数值的增益
+				'''
 			}
 
 			AdvancedFishing: {
@@ -24,7 +33,14 @@ Mods: {
 
 			CommonStationBuff: {
 				DisplayName: 通用增益
-				Description: 心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
+				Description:
+					'''
+					+10%当前生命再生
+					+2.5生命再生
+					+5防御
+					+20%移动速度
+					+20%挖矿速度
+					'''
 			}
 
 			SickBlade: {
@@ -38,7 +54,7 @@ Mods: {
 				DisplayName: 血腥娃娃
 				Tooltip:
 					'''
-					地狱召唤血肉墙
+					地狱召唤血肉墙(不确定召唤的方向)
 					无消耗
 					'''
 			}

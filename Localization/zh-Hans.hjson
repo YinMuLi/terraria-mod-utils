@@ -144,7 +144,7 @@ Mods: {
 				Tooltip:
 					'''
 					不消耗
-					节省几个弹药栏
+					“夕阳西下，钓鱼人在这里”
 					'''
 				DisplayName: 黄金鱼饵
 			}
@@ -156,7 +156,7 @@ Mods: {
 
 			DryadsBlessingPotion: {
 				DisplayName: 树妖的祝福
-				Tooltip: 给予树妖投射树叶领域的增益
+				Tooltip: 给予树叶领域内的增益
 			}
 		}
 

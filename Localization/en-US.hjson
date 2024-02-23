@@ -27,6 +27,11 @@ Mods: {
 				DisplayName: Sick Blade
 				Description: Mods.Branch.Buffs.SickBlade.Description
 			}
+
+			DryadsBlessing: {
+				DisplayName: Dryads Blessing
+				Description: Mods.Branch.Buffs.DryadsBlessing.Description
+			}
 		}
 
 		Items: {
@@ -88,6 +93,11 @@ Mods: {
 			InscriptionEmblem: {
 				Tooltip: ""
 				DisplayName: Inscription Emblem
+			}
+
+			DryadsBlessingPotion: {
+				DisplayName: Dryads Blessing Potion
+				Tooltip: ""
 			}
 		}
 

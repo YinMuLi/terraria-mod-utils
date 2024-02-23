@@ -19,11 +19,11 @@ Mods: {
 			AdvancedExplorer: {
 				DisplayName: 探索者
 				Description:
-				'''
-				+25%移动速度
-				+25%挖矿速度
-				许多其它非数值的增益
-				'''
+					'''
+					+25%移动速度
+					+25%挖矿速度
+					许多其它非数值的增益
+					'''
 			}
 
 			AdvancedFishing: {
@@ -46,6 +46,17 @@ Mods: {
 			SickBlade: {
 				DisplayName: 破伤风之刃
 				Description: 为敌怪添加原版绝大多数Debuff
+			}
+
+			DryadsBlessing: {
+				DisplayName: 自然之力
+				Description:
+					'''
+					+6生命再生
+					+8防御
+					+50%荆棘效果（即50%的伤害反射，可与荆棘药水提供的效果叠加）
+					"请大自然赐予我们力量，高米迪不可战胜的自然之王，变身!"
+					'''
 			}
 		}
 
@@ -141,6 +152,11 @@ Mods: {
 			InscriptionEmblem: {
 				Tooltip: 花费1铂金币重铸所有生效的饰品（以该物品的词条为准）
 				DisplayName: 铭刻徽章
+			}
+
+			DryadsBlessingPotion: {
+				DisplayName: 树妖的祝福
+				Tooltip: 给予树妖投射树叶领域的增益
 			}
 		}
 

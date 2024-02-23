@@ -298,6 +298,7 @@ namespace Branch.Content.NPCS
             shop.Add(new Item(ItemID.TorchGodsFavor));
             shop.Add(new Item(ItemID.TeleportationPylonVictory));//万能晶塔
             shop.Add<AdvancedDefensePotion>(Condition.Hardmode);
+            shop.Add<DryadsBlessingPotion>(Condition.Hardmode);
             shop.Add(new Item(ItemID.Bacon), Condition.Hardmode);//培根
             shop.Add(new Item(ItemID.TruffleWorm), Condition.Hardmode);//松露虫
             shop.Add<CommonStation>(Condition.Hardmode);

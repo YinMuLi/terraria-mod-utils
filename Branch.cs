@@ -5,8 +5,8 @@ global using Branch.Common.Utils;
 /**===== 全局引用 =====**/
 
 using Branch.Content.Buffs;
-using Branch.Content.Items;
 using Branch.Content.Items.BossSummon;
+using Branch.Content.Items.Misc;
 using System.Collections.Generic;
 using Terraria.ModLoader;
 
@@ -20,7 +20,7 @@ namespace Branch
             {
                 improveGame.Call(
                     "AddStation",
-                    ModContent.ItemType<CommonStation>(),
+                    ModContent.ItemType<Cake>(),
                     ModContent.BuffType<CommonStationBuff>()
                 );
             }

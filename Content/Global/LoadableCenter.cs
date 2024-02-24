@@ -1,5 +1,5 @@
 ﻿using Branch.Common.Configs;
-using Branch.Content.Items;
+using Branch.Content.Items.Misc;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using System;

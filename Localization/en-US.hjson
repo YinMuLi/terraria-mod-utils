@@ -50,11 +50,6 @@ Mods: {
 				Tooltip: ""
 			}
 
-			CommonStation: {
-				DisplayName: Common Station
-				Tooltip: ""
-			}
-
 			MadeInHeaven: {
 				DisplayName: Made In Heaven
 				Tooltip: ""
@@ -97,6 +92,11 @@ Mods: {
 
 			DryadsBlessingPotion: {
 				DisplayName: Dryads Blessing Potion
+				Tooltip: ""
+			}
+
+			Cake: {
+				DisplayName: Cake
 				Tooltip: ""
 			}
 		}

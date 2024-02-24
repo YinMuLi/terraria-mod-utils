@@ -31,7 +31,7 @@ namespace Branch.Content.Items.BossSummon
         {
             SoundEngine.PlaySound(SoundID.Roar, player.Center);
             if (Main.netMode != NetmodeID.MultiplayerClient)
-                NPC.SpawnOnPlayer(player.whoAmI, NPCID.WallofFlesh);
+                NPC.SpawnWOF(player.Center);
             else
                 NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: NPCID.WallofFlesh);
 

@@ -1,7 +1,7 @@
 ﻿using Branch.Common.Configs;
 using Humanizer;
 using Microsoft.Xna.Framework;
-using System;
+using System.Linq;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -17,21 +17,14 @@ namespace Branch.Common.Info
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {
-            int maxMinion = Main.LocalPlayer.maxMinions;
+            //int maxMinion = Main.LocalPlayer.maxMinions;
             //有的召唤物单位不是1,保留两位小数
-            float minionCount = (float)Math.Round(Main.LocalPlayer.slotsMinions, 2);
-
-            int sentryCount = 0;//哨兵
-            for (int i = 0; i < Main.maxProjectiles; i++)
-            {
-                var proj = Main.projectile[i];
-                if (proj.active && proj.sentry && proj.owner == Main.myPlayer)
-                {
-                    sentryCount++;
-                }
-            }
+            //float minionCount = (float)Math.Round(Main.LocalPlayer.slotsMinions, 2);
+            //int sentryCount = Main.projectile.Count(proj => proj.active && proj.owner == Main.LocalPlayer.whoAmI && proj.sentry);
             return Language.GetTextValue("Mods.UI.InfoDisplay.Minion")
-                .FormatWith(minionCount, maxMinion, sentryCount, Main.LocalPlayer.maxTurrets);
+                .FormatWith(Main.LocalPlayer.slotsMinions, Main.LocalPlayer.maxMinions,
+                Main.projectile.Count(proj => proj.active && proj.owner == Main.LocalPlayer.whoAmI && proj.sentry)
+                , Main.LocalPlayer.maxTurrets);
         }
     }
 }

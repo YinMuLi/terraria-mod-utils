@@ -24,8 +24,9 @@ namespace Branch.Content.Global
         {
             On_ItemSlot.PickItemMovementAction += OnPlaceCoinSlot;
             On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
-            On_Item.CanFillEmptyAmmoSlot += OnPlaceInventorySlot;
+            On_Item.CanFillEmptyAmmoSlot += (_, _) => false; //拾取到的物品都不放在弹药栏
             On_Player.QuickStackAllChests += OnQuickStack;
+            //On_WorldGen.ScoreRoom_IsThisRoomOccupiedBySomeone += (_, _, _) => false;//一个房间可以被多个NPC使用
             IL_Main.DoDraw += PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait += PatchNoConsumeBait;
             //IL_Player.QuickStackAllChests += PatchQuickStack;
@@ -84,17 +85,6 @@ namespace Branch.Content.Global
             {
                 Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget - num, minZoom, MAX_ZOOM);
             }
-        }
-
-        /// <summary>
-        /// 拾取到的物品都不放在弹药栏
-        /// </summary>
-        /// <param name="orig"></param>
-        /// <param name="self"></param>
-        /// <returns></returns>
-        private bool OnPlaceInventorySlot(On_Item.orig_CanFillEmptyAmmoSlot orig, Item self)
-        {
-            return false;
         }
 
         private void PatchZoomBounds(ILContext il)

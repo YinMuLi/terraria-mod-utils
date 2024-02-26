@@ -1,4 +1,7 @@
-﻿using Terraria.ModLoader;
+﻿using Humanizer;
+using Terraria;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace Branch.Common.Commands
 {
@@ -8,15 +11,11 @@ namespace Branch.Common.Commands
 
         public override CommandType Type => CommandType.Chat;
 
-        public override string Description => "";
+        public override string Description => "显示基本信息";
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
-            //if (args.Length < 1) return;
-            //if (int.TryParse(args[0], out int type))
-            //{
-            //    ModUtils.GiveItem(caller.Player, type);
-            //}
+            Main.NewText(Language.GetTextValue("Mods.Misc.Info").FormatWith(caller.Player.name, caller.Player.numberOfDeathsPVE));
         }
     }
 }

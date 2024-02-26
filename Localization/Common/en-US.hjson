@@ -11,5 +11,5 @@ Mods: {
 	}
 
 	Items.NotConsumable: ""
-	Tips.InternalID: ""
+	Misc.Info: ""
 }

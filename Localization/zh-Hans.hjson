@@ -251,17 +251,13 @@ Mods: {
 				DisplayName: 服务器配置
 
 				SpawnTom: {
-					Label: 生成Tom
+					Label: 生成模组NPC
 					// Tooltip: ""
 				}
 
 				UnrestrainedPylon: {
 					Label: 无限制晶塔
-					Tooltip:
-						'''
-						不限制晶塔放置个数
-						不限制晶塔传送条件(NPC个数，战斗状态，生态环境)
-						'''
+					Tooltip: 不限制晶塔放置个数和传送条件
 				}
 
 				ExtraWingSlot: {

@@ -99,6 +99,15 @@ Mods: {
 				DisplayName: Cake
 				Tooltip: ""
 			}
+
+			SummonBloodNautilus: {
+				DisplayName: 出血贝壳
+				Tooltip:
+					'''
+					血月召唤恐惧鹦鹉螺
+					无消耗
+					'''
+			}
 		}
 
 		NPCs: {

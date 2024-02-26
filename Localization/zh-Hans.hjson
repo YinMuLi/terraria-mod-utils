@@ -71,7 +71,7 @@ Mods: {
 			}
 
 			ButterflyToken: {
-				DisplayName: 七彩草蛉的信物
+				DisplayName: 七彩草蛉之证
 				Tooltip:
 					'''
 					召唤光之女皇
@@ -157,6 +157,15 @@ Mods: {
 			Cake: {
 				DisplayName: 蛋糕
 				Tooltip: 给予心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
+			}
+
+			SummonBloodNautilus: {
+				DisplayName: 出血贝壳
+				Tooltip:
+					'''
+					血月召唤恐惧鹦鹉螺
+					无消耗
+					'''
 			}
 		}
 

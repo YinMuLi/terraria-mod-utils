@@ -63,8 +63,6 @@ namespace Branch.Content.Items.Accessory
         {
             CreateRecipe()
                 .AddRecipeGroup(RecipeGroupID.IronBar)
-                .AddIngredient(ItemID.SoulofNight)
-                .AddIngredient(ItemID.SoulofLight)
                 .Register();
         }
     }

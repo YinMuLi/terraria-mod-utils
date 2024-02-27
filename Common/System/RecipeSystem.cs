@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using System.Linq;
+using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -39,6 +40,24 @@ namespace Branch.Common.System
             AddShimmerRecipe(ItemID.CorruptFishingCrate, ItemID.CrimsonFishingCrate);
         }
 
+        public override void PostAddRecipes()
+        {
+            //对灾厄的一些配方进行修改
+            if (ModLoader.TryGetMod("CalamityMod", out Mod calamity))
+            {
+                ModItem target = null;
+                ModItem removeItme = null;
+                if (calamity.TryFind<ModItem>("Teratoma", out target) && calamity.TryFind<ModItem>("RottenMatter", out removeItme))
+                {
+                    RemoveRecipeIngredient(target.Type, removeItme.Type);
+                }
+                if (calamity.TryFind<ModItem>("BloodyWormFood", out target) && calamity.TryFind<ModItem>("BloodSample", out removeItme))
+                {
+                    RemoveRecipeIngredient(target.Type, removeItme.Type);
+                }
+            }
+        }
+
         /// <summary>
         /// 添加不同世界之间一比一之间的转换
         /// </summary>
@@ -66,6 +85,14 @@ namespace Branch.Common.System
         {
             ItemID.Sets.ShimmerTransformToItem[itemID] = convertItemID;
             ItemID.Sets.ShimmerTransformToItem[convertItemID] = itemID;
+        }
+
+        public static void RemoveRecipeIngredient(int itemType, int ingredientType)
+        {
+            Main.recipe.Where(x => x.createItem.type == itemType).ToList().ForEach(s =>
+            {
+                s.RemoveIngredient(ingredientType);
+            });
         }
     }
 }

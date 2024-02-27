@@ -71,19 +71,16 @@ namespace Branch.Content.Global
 
         private void OnUpdateViewZoom(On_Main.orig_UpdateViewZoomKeys orig, Main self)
         {
-            if (Main.inFancyUI)
-            {
-                //猜测：拍照模式
-                return;
-            }
-            float num = 0.01f * Main.GameZoomTarget;
+            if (Main.inFancyUI) return;
+            //泰拉瑞亚源码
+            float num = 0.01f;//源码是0.02f
             if (PlayerInput.Triggers.Current.ViewZoomIn)
             {
-                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget + num, minZoom, MAX_ZOOM);
+                Main.GameZoomTarget = Utils.Clamp<float>(Main.GameZoomTarget + num, minZoom, MAX_ZOOM);
             }
             if (PlayerInput.Triggers.Current.ViewZoomOut)
             {
-                Main.GameZoomTarget = Math.Clamp(Main.GameZoomTarget - num, minZoom, MAX_ZOOM);
+                Main.GameZoomTarget = Utils.Clamp<float>(Main.GameZoomTarget - num, minZoom, MAX_ZOOM);
             }
         }
 

@@ -29,21 +29,7 @@ namespace Branch.Content.Global
                     }
                 }
             }
-            //显示内部编号
-            //tooltips.Add(new TooltipLine(Mod, "InternalID",
-            //    $"{Language.GetTextValue("Mods.Tips.InternalID").FormatWith(item.type)}")
-            //{ OverrideColor = Color.Gray });
         }
-
-        //public override bool? UseItem(Item item, Player player)
-        //{
-        //    if (item.type == ItemID.CelestialSigil && NPC.MoonLordCountdown > 1)
-        //    {
-        //        NPC.MoonLordCountdown = 1;
-        //        NetMessage.SendData(MessageID.MoonlordHorror, number: NPC.MoonLordCountdown);
-        //    }
-        //    return base.UseItem(item, player);
-        //}
 
         public override bool ConsumeItem(Item item, Player player)
         {

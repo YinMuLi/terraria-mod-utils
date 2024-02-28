@@ -1,4 +1,4 @@
-﻿using Branch.Content.Items;
+﻿using Branch.Common.Configs;
 using Branch.Content.Items.Misc;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,18 +14,6 @@ namespace Branch.Common.Players
 {
     public partial class BranchPlayer : ModPlayer
     {
-        /// <summary>
-        /// Refund:退款
-        /// </summary>
-        /// <param name="coinCount"></param>
-        internal void Refund(int[] coinCount)
-        {
-            if (coinCount[0] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.CopperCoin, coinCount[0]);
-            if (coinCount[1] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.SilverCoin, coinCount[1]);
-            if (coinCount[2] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.GoldCoin, coinCount[2]);
-            if (coinCount[3] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.PlatinumCoin, coinCount[3]);
-        }
-
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
             if (!mediumCoreDeath)//硬核人物？？？
@@ -34,9 +22,19 @@ namespace Branch.Common.Players
             }
         }
 
+        public override bool HoverSlot(Item[] inventory, int context, int slot)
+        {
+            return base.HoverSlot(inventory, context, slot);
+        }
+
         public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
         {
             DisplayRareCreaturesIndicator();
+        }
+
+        public override void PostUpdateMiscEffects()
+        {
+            ForceBiomes();
         }
 
         /// <summary>
@@ -64,6 +62,66 @@ namespace Branch.Common.Players
                     Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Branch/Content/Projectiles/Indicator").Value,
                         direction + playerPos, null, Color.White, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Refund:退款
+        /// </summary>
+        /// <param name="coinCount"></param>
+        internal void Refund(int[] coinCount)
+        {
+            if (coinCount[0] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.CopperCoin, coinCount[0]);
+            if (coinCount[1] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.SilverCoin, coinCount[1]);
+            if (coinCount[2] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.GoldCoin, coinCount[2]);
+            if (coinCount[3] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.PlatinumCoin, coinCount[3]);
+        }
+
+        /// <summary>
+        /// 喷泉强制改变环境
+        /// </summary>
+        private void ForceBiomes()
+        {
+            if (!ServerConfig.Instance.EnableFountain) return;
+            //法狗
+            switch (Main.SceneMetrics.ActiveFountainColor)
+            {
+                case 0: //纯净喷泉
+                    Player.ZoneBeach = true;
+                    break;
+
+                case 2: //腐败
+                    Player.ZoneCorrupt = true;
+                    break;
+
+                case 3: //丛林
+                    Player.ZoneJungle = true;
+                    break;
+
+                case 4: //神圣
+                    if (Main.hardMode)
+                        Player.ZoneHallow = true;
+                    break;
+
+                case 5: //雪原
+                    Player.ZoneSnow = true;
+                    break;
+
+                case 6: //绿洲
+                    goto case 12;
+
+                case 10: //猩红
+                    Player.ZoneCrimson = true;
+                    break;
+
+                case 12: //desert fountain
+                    Player.ZoneDesert = true;
+                    if (Player.Center.Y > 3200f)
+                        Player.ZoneUndergroundDesert = true;
+                    break;
+
+                default:
+                    break;
             }
         }
     }

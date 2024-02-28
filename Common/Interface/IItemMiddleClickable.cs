@@ -4,9 +4,6 @@ using Terraria.UI;
 
 namespace Branch.Common.Interface
 {
-    /// <summary>
-    /// 容器中的物品不需要关闭UI右击点击
-    /// </summary>
     internal interface IItemMiddleClickable
     {
         private static bool preMousePressed;

@@ -38,5 +38,11 @@ namespace Branch.Common.Configs
         [DefaultValue(true)]
         [ReloadRequired]
         public bool BossSpawnNotConsumable;
+
+        /// <summary>
+        /// 喷泉改变环境
+        /// </summary>
+        [DefaultValue(true)]
+        public bool EnableFountain;
     }
 }

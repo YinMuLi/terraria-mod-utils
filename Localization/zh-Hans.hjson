@@ -269,6 +269,11 @@ Mods: {
 					Label: Boss召唤物不消耗
 					// Tooltip: ""
 				}
+
+				EnableFountain: {
+					// Tooltip: ""
+					Label: 喷泉改变环境
+				}
 			}
 		}
 	}

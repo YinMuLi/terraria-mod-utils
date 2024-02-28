@@ -210,6 +210,11 @@ Mods: {
 					Label: Boss Spawn Not Consumable
 					Tooltip: ""
 				}
+
+				EnableFountain: {
+					Tooltip: ""
+					Label: Enable Fountain
+				}
 			}
 		}
 	}

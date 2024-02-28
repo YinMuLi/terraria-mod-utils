@@ -8,8 +8,6 @@ namespace Branch.Content.Items.Accessory
 {
     internal class InscriptionEmblem : ModItem
     {
-        private static long price = Item.buyPrice(platinum: 1);//1铂金币
-
         public override void SetDefaults()
         {
             Item.width = 28;
@@ -22,12 +20,9 @@ namespace Branch.Content.Items.Accessory
             Item.accessory = true;
         }
 
-        public override bool CanUseItem(Player player) => player.CanAfford(price);
-
         public override bool? UseItem(Player player)
         {
             if (player.whoAmI != Main.myPlayer) return false;
-            player.BuyItem(price);
             for (int i = 3; i <= 9; i++)
             {
                 Reforge(player, Item.prefix, player.armor[i]);

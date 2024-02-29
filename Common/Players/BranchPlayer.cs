@@ -82,7 +82,6 @@ namespace Branch.Common.Players
         /// </summary>
         private void ForceBiomes()
         {
-            if (!ServerConfig.Instance.EnableFountain) return;
             //法狗
             switch (Main.SceneMetrics.ActiveFountainColor)
             {

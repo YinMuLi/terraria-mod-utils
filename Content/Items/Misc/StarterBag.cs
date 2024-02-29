@@ -7,6 +7,8 @@ namespace Branch.Content.Items.Misc
 {
     internal class StarterBag : ModItem
     {
+        public override string Texture => $"Terraria/Images/Item_{ItemID.GoodieBag}";
+
         public override void SetDefaults()
         {
             Item.consumable = true;

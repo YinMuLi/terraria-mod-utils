@@ -109,7 +109,7 @@ namespace Branch.Common.Players
                 case 6: //绿洲
                     goto case 12;
 
-                case 10: //猩红
+                case 9: //猩红
                     Player.ZoneCrimson = true;
                     break;
 

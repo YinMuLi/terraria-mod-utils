@@ -29,29 +29,10 @@ namespace Branch.Content.Global
             On_Main.UpdateViewZoomKeys += OnUpdateViewZoom;
             On_Item.CanFillEmptyAmmoSlot += (_, _) => false; //拾取到的物品都不放在弹药栏
             On_Player.QuickStackAllChests += OnQuickStack;
-            On_Main.DrawInventory += DrawInventory;
             //On_WorldGen.ScoreRoom_IsThisRoomOccupiedBySomeone += (_, _, _) => false;//一个房间可以被多个NPC使用
             IL_Main.DoDraw += PatchZoomBounds;
             IL_Player.ItemCheck_CheckFishingBobber_PickAndConsumeBait += PatchNoConsumeBait;
             //IL_Player.QuickStackAllChests += PatchQuickStack;
-        }
-
-        private void DrawInventory(On_Main.orig_DrawInventory orig, Main self)
-        {
-            orig(self);
-            //遍历装饰栏前三个盔甲栏不要
-            int index = 3;
-            int temp = 174 + Main.maxScreenH;
-            float targetX = Main.screenWidth - 58 - 56 * Main.inventoryScale;
-            for (int i = 13; i < 20; i++)
-            {
-                if ((i != 18 || Main.LocalPlayer.CanDemonHeartAccessoryBeShown()) && (i != 19 || Main.LocalPlayer.CanMasterModeAccessoryBeShown()))
-                {
-                    //大师模式和困难模式多一个饰品栏
-                    Texture2D tex = TextureAssets.InventoryTickOn.Value;
-                    Main.spriteBatch.Draw(tex, new Vector2(targetX, 514), Color.White);
-                }
-            }
         }
 
         private void OnQuickStack(On_Player.orig_QuickStackAllChests orig, Player self)

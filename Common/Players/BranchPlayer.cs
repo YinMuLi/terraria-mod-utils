@@ -85,35 +85,35 @@ namespace Branch.Common.Players
             //法狗
             switch (Main.SceneMetrics.ActiveFountainColor)
             {
-                case 0: //纯净喷泉
+                case WaterStyleID.Purity: //纯净喷泉
                     Player.ZoneBeach = true;
                     break;
 
-                case 2: //腐败
+                case WaterStyleID.Corrupt: //腐败
                     Player.ZoneCorrupt = true;
                     break;
 
-                case 3: //丛林
+                case WaterStyleID.Jungle: //丛林
                     Player.ZoneJungle = true;
                     break;
 
-                case 4: //神圣
+                case WaterStyleID.Hallow: //神圣
                     if (Main.hardMode)
                         Player.ZoneHallow = true;
                     break;
 
-                case 5: //雪原
+                case WaterStyleID.Snow: //雪原
                     Player.ZoneSnow = true;
                     break;
 
-                case 6: //绿洲
-                    goto case 12;
+                case WaterStyleID.Desert: //沙漠
+                    goto case WaterStyleID.UndergroundDesert;
 
-                case 9: //猩红
+                case WaterStyleID.Crimson: //猩红
                     Player.ZoneCrimson = true;
                     break;
 
-                case 12: //desert fountain
+                case WaterStyleID.UndergroundDesert://地下沙漠
                     Player.ZoneDesert = true;
                     if (Player.Center.Y > 3200f)
                         Player.ZoneUndergroundDesert = true;

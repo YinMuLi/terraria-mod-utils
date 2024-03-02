@@ -23,5 +23,10 @@ namespace Branch.Content.Items.Misc
                 .AddIngredient(ItemID.MasterBait, 100)
                 .Register();
         }
+
+        public override bool? CanConsumeBait(Player player)
+        {
+            return false;
+        }
     }
 }

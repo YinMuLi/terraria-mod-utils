@@ -1,5 +1,4 @@
-﻿using Branch.Common.Configs;
-using Branch.Content.Items.Misc;
+﻿using Branch.Content.Items.Misc;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;

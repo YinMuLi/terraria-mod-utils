@@ -45,15 +45,17 @@ namespace Branch.Content.Global
 
         public override void OnCreated(Item item, ItemCreationContext context)
         {
+            int prefixID = 0;
             //召唤
-            if (item.DamageType == DamageClass.SummonMeleeSpeed) Reforge(item, PrefixID.Legendary);//传奇
-            if (item.DamageType == DamageClass.Summon) Reforge(item, PrefixID.Ruthless);//无情
+            if (item.DamageType == DamageClass.SummonMeleeSpeed) prefixID = PrefixID.Legendary;//传奇
+            if (item.DamageType == DamageClass.Summon) prefixID = PrefixID.Ruthless;//无情
             //战士
-            if (item.DamageType == DamageClass.Melee || item.DamageType == DamageClass.MeleeNoSpeed) Reforge(item, PrefixID.Legendary);//传奇
+            if (item.DamageType == DamageClass.Melee || item.DamageType == DamageClass.MeleeNoSpeed) prefixID = PrefixID.Legendary;//传奇
             //射手
-            if (item.DamageType == DamageClass.Ranged) Reforge(item, PrefixID.Unreal);//虚幻
+            if (item.DamageType == DamageClass.Ranged) prefixID = PrefixID.Unreal;//虚幻
             //法师
-            if (item.DamageType == DamageClass.Magic) Reforge(item, PrefixID.Mythical);//神话
+            if (item.DamageType == DamageClass.Magic) prefixID = PrefixID.Mythical;//神话
+            if (prefixID > 0) ModUtils.Reforge(null, item, prefixID);
         }
     }
 }

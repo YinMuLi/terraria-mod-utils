@@ -64,5 +64,29 @@ namespace Branch.Common.Utils
             player.immuneTime = postImmuneTime;
             SoundEngine.PlaySound(SoundID.Item6, player.Center);
         }
+
+        /// <summary>
+        /// 重铸物品前缀
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="item"></param>
+        /// <param name="prefixID"></param>
+        /// <param name="showMessage">显示重铸信息</param>
+        /// <param name="playSound">播放重铸声音</param>
+        public static void Reforge(Player player, Item item, int prefixID, bool showMessage = false, bool playSound = false)
+        {
+            if (item.stack == 1 && item.prefix != prefixID && ItemLoader.CanReforge(item))
+            {
+                item.ResetPrefix();
+                item.Prefix(prefixID);
+                ItemLoader.PostReforge(item);
+                if (showMessage)
+                {
+                    item.position = player.Center;//显示文字的位置
+                    PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);
+                }
+                if (playSound) SoundEngine.PlaySound(SoundID.Item37);
+            }
+        }
     }
 }

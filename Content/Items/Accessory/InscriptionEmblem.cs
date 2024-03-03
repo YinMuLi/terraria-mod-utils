@@ -25,7 +25,7 @@ namespace Branch.Content.Items.Accessory
             if (player.whoAmI != Main.myPlayer) return false;
             for (int i = 3; i <= 9; i++)
             {
-                Reforge(player, Item.prefix, player.armor[i]);
+                ModUtils.Reforge(player, player.armor[i], Item.prefix, true, true);
             }
             //模组饰品栏
             var accessoryPlayer = player.GetModPlayer<ModAccessorySlotPlayer>();
@@ -35,23 +35,10 @@ namespace Branch.Content.Items.Accessory
                 if (loader.ModdedIsItemSlotUnlockedAndUsable(i, player))
                 {
                     var slot = loader.Get(i, player);
-                    Reforge(player, Item.prefix, slot.FunctionalItem);
+                    ModUtils.Reforge(player, slot.FunctionalItem, Item.prefix, true, true);
                 }
             }
             return true;
-        }
-
-        private static void Reforge(Player player, int prefixID, Item item)
-        {
-            if (item.stack > 0 && item.prefix != prefixID && ItemLoader.CanReforge(item))
-            {
-                item.ResetPrefix();
-                item.Prefix(prefixID);
-                item.position = player.Center;//显示文字的位置
-                ItemLoader.PostReforge(item);
-                PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);
-                SoundEngine.PlaySound(SoundID.Item37);
-            }
         }
 
         public override void AddRecipes()

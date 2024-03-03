@@ -80,7 +80,7 @@ namespace Branch.Common.Utils
                 item.ResetPrefix();
                 item.Prefix(prefixID);
                 ItemLoader.PostReforge(item);
-                if (showMessage)
+                if (showMessage && player != null)
                 {
                     item.position = player.Center;//显示文字的位置
                     PopupText.NewText(PopupTextContext.ItemReforge, item, item.stack, noStack: true);

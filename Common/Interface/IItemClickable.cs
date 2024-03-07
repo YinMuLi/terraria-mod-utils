@@ -10,6 +10,8 @@ namespace Branch.Common.Interface
 
         public void OnRightClicked(Item item);
 
+        bool CanMiddleClickable(Item item) => false;
+
         public void HandleHover(Item[] inventory, int context, int slot)
         {
             if (context is not ItemSlot.Context.InventoryItem) return;

@@ -105,13 +105,11 @@ namespace Branch.Common.Players
                     Player.ZoneSnow = true;
                     break;
 
-                case WaterStyleID.Desert: //沙漠
-                    goto case WaterStyleID.UndergroundDesert;
-
                 case WaterStyleID.Crimson: //猩红
                     Player.ZoneCrimson = true;
                     break;
 
+                case WaterStyleID.Desert: //沙漠
                 case WaterStyleID.UndergroundDesert://地下沙漠
                     Player.ZoneDesert = true;
                     if (Player.Center.Y > 3200f)

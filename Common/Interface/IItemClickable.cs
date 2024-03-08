@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Input;
+using System;
 using Terraria;
 using Terraria.UI;
 
@@ -10,15 +11,11 @@ namespace Branch.Common.Interface
         private static bool preMousePressed_Right;
         private static bool preMousePressed_Left;
 
-        bool CanRightClickable(Item item) => false;
+        ClickType CanClickable(Item item, int index);
 
         void OnRightClicked(Item item, int index) { }
 
-        bool CanMiddleClickable(Item item) => false;
-
         void OnMiddleClicked(Item item, int index) { }
-
-        bool CanLeftClickable(Item item) => false;
 
         void OnLeftClicked(Item item, int index) { }
 
@@ -34,7 +31,7 @@ namespace Branch.Common.Interface
             var item = inventory[slot];
             MouseState mouseState = Mouse.GetState();
             //右键
-            if (CanRightClickable(item))
+            if (CanClickable(item, slot).HasFlag(ClickType.Right))
             {
                 if (preMousePressed_Right)
                 {
@@ -49,7 +46,7 @@ namespace Branch.Common.Interface
                 }
             }
             //左键
-            if (CanLeftClickable(item))
+            if (CanClickable(item, slot).HasFlag(ClickType.Left))
             {
                 if (preMousePressed_Left)
                 {
@@ -64,7 +61,7 @@ namespace Branch.Common.Interface
                 }
             }
             //中键
-            if (CanMiddleClickable(item))
+            if (CanClickable(item, slot).HasFlag(ClickType.Middle))
             {
                 if (preMousePressed_Middle)
                 {
@@ -79,5 +76,11 @@ namespace Branch.Common.Interface
                 }
             }
         }
+    }
+
+    [Flags]
+    public enum ClickType
+    {
+        None, Right, Left, Middle
     }
 }

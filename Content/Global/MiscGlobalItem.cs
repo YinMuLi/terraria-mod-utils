@@ -1,6 +1,4 @@
 ﻿using Branch.Common.Extensions;
-using Branch.Common.Interface;
-using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.ItemDropRules;

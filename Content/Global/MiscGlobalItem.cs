@@ -1,4 +1,6 @@
 ﻿using Branch.Common.Extensions;
+using Branch.Common.Interface;
+using System.Runtime.CompilerServices;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.ItemDropRules;
@@ -9,8 +11,6 @@ namespace Branch.Content.Global
 {
     internal class MiscGlobalItem : GlobalItem
     {
-        public override bool InstancePerEntity => false;
-
         public override void ModifyItemLoot(Item item, ItemLoot loot)
         {
             //这里loot的概率都是1/xxx计算的参数是分母
@@ -30,16 +30,6 @@ namespace Branch.Content.Global
                     loot.AddIf((info) => Player.LifeFruitMax > Main.LocalPlayer.ConsumedLifeFruit
                     , ItemID.LifeFruit, minQuantity: 10, maxQuantity: 15);
                     break;
-            }
-        }
-
-        private void Reforge(Item item, int prefixID)
-        {
-            if (item.prefix != prefixID && item.CanApplyPrefix(prefixID))
-            {
-                item.ResetPrefix();
-                item.Prefix(prefixID);
-                ItemLoader.PostReforge(item);
             }
         }
 

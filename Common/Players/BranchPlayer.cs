@@ -1,8 +1,10 @@
-﻿using Branch.Content.Items.Misc;
+﻿using Branch.Common.Interface;
+using Branch.Content.Items.Misc;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -23,6 +25,11 @@ namespace Branch.Common.Players
 
         public override bool HoverSlot(Item[] inventory, int context, int slot)
         {
+            Item item = inventory[slot];
+            foreach (var globalItem in from i in GlobalList<GlobalItem>.Globals where i is IItemClickable select i)
+            {
+                ((IItemClickable)globalItem).HandleHover(inventory, context, slot);
+            }
             return base.HoverSlot(inventory, context, slot);
         }
 

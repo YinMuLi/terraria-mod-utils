@@ -21,13 +21,6 @@ namespace Branch.Common.Configs
         [DefaultValue(true)]
         public bool SwitchInventory;
 
-        /// <summary>
-        /// 是否在右侧信息栏显示额外的仆从信息
-        /// </summary>
-        [DefaultValue(true)]
-        public bool ShowMinion;
-
-        [ReloadRequired]
         [Increment(0.1f)]
         [Range(0.3f, 4f)]
         [DefaultValue(0.3f)]

@@ -47,7 +47,7 @@ namespace Branch.Content.Global
         /// <param name="item">物品</param>
         /// <param name="compareItemName">模组中比较物品名称</param>
         /// <returns>True:相等</returns>
-        private bool IsModItemEquals(Mod mod, Item item, string compareItemName)
+        private static bool IsModItemEquals(Mod mod, Item item, string compareItemName)
         {
             if (mod != null && mod.TryFind<ModItem>(compareItemName, out ModItem modItem))
             {

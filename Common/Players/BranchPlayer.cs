@@ -43,6 +43,11 @@ namespace Branch.Common.Players
             ForceBiomes();
         }
 
+        public override void PostUpdate()
+        {
+            base.PostUpdate();
+        }
+
         /// <summary>
         /// 显示指示稀有生物指针
         /// </summary>

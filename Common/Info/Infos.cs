@@ -13,8 +13,6 @@ namespace Branch.Common.Info
     /// </summary>
     internal class MinionInfo : InfoDisplay
     {
-        public override bool Active() => ClientConfig.Instance.ShowMinion;
-
         public override LocalizedText DisplayName => Language.GetText("BuffName.Summoning");//召唤
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)

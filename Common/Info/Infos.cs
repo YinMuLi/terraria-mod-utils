@@ -15,6 +15,8 @@ namespace Branch.Common.Info
     {
         public override LocalizedText DisplayName => Language.GetText("BuffName.Summoning");//召唤
 
+        public override bool Active() => true;
+
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {
             //int maxMinion = Main.LocalPlayer.maxMinions;

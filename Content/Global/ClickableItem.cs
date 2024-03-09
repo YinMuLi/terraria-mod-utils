@@ -1,4 +1,6 @@
-﻿using Branch.Common.Interface;
+﻿using Branch.Common.Extensions;
+using Branch.Common.Interface;
+using Branch.Common.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +18,16 @@ namespace Branch.Content.Global
     {
         public ClickType CanClickable(Item item, int index)
         {
-            if (item.type == ItemID.VoidLens)
+            if (item.DamageType == DamageClass.Summon)
             {
-                return ClickType.Left;
+                return ClickType.Middle;
             }
             return ClickType.None;
         }
 
         public override bool IsLoadingEnabled(Mod mod)
         {
-            return false;
+            return true;
         }
 
         public void OnLeftClicked(Item item, int index)
@@ -37,6 +39,15 @@ namespace Branch.Content.Global
                     Main.LocalPlayer.bank4.item[i] = Main.mouseItem.Clone();
                     Main.mouseItem.TurnToAir();
                 }
+            }
+        }
+
+        public void OnMiddleClicked(Item item, int index)
+        {
+            int count = Main.LocalPlayer.maxMinions - (int)Main.LocalPlayer.slotsMinions;
+            for (int i = 0; i < count; i++)
+            {
+                Main.LocalPlayer.ModPlayer().Summon(item);
             }
         }
     }

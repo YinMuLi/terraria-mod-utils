@@ -1,5 +1,4 @@
-﻿using Branch.Common.Configs;
-using Humanizer;
+﻿using Humanizer;
 using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;

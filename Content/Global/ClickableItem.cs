@@ -1,14 +1,6 @@
 ﻿using Branch.Common.Extensions;
 using Branch.Common.Interface;
-using Branch.Common.Players;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Content.Global

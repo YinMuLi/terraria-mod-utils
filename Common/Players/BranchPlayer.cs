@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -16,9 +15,6 @@ namespace Branch.Common.Players
 {
     public partial class BranchPlayer : ModPlayer
     {
-        internal MethodInfo ItemCheck_Shoot = typeof(Player).GetMethod("ItemCheck_Shoot", BindingFlags.Instance | BindingFlags.NonPublic);
-        internal MethodInfo ItemCheck_ApplyPetBuffs = typeof(Player).GetMethod("ItemCheck_ApplyPetBuffs", BindingFlags.Instance | BindingFlags.NonPublic);
-
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
             if (!mediumCoreDeath)//硬核人物？？？
@@ -99,9 +95,9 @@ namespace Branch.Common.Players
         internal void Summon(Item item)
         {
             //召唤仆从
-            ItemCheck_Shoot?.Invoke(Player, new object[] { Main.myPlayer, item, Player.GetWeaponDamage(item) });
+            Player.ItemCheck_Shoot(Player.whoAmI, item, Player.GetWeaponDamage(item));
             //添加仆从对应Buff栏信息
-            ItemCheck_ApplyPetBuffs?.Invoke(Player, new object[] { item });
+            Player.ItemCheck_ApplyPetBuffs(item);
         }
 
         /// <summary>

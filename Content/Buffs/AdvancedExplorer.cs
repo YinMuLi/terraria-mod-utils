@@ -34,8 +34,8 @@ namespace Branch.Content.Buffs
             //危险感知药水
             player.buffImmune[111] = true;
             player.dangerSense = true;
-            //鱼鳃药水,没有颠倒世界的特性时添加鱼鳃药水的效果
-            if (!Main.getGoodWorld)
+            //鱼鳃药水,考虑颠倒世界的特性
+            if (Collision.DrownCollision(player.position, player.width, player.height, player.gravDir, false))
             {
                 player.buffImmune[4] = true;
                 player.gills = true;

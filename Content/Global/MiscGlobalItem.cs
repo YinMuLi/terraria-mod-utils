@@ -46,5 +46,44 @@ namespace Branch.Content.Global
             if (item.DamageType == DamageClass.Magic) prefixID = PrefixID.Mythical;//神话
             if (prefixID > 0) ModUtils.Reforge(null, item, prefixID);
         }
+
+        public override void UpdateInventory(Item item, Player player)
+        {
+            //喷泉改变环境
+            switch (item.type)
+            {
+                case ItemID.PureWaterFountain://纯净喷泉
+                    player.ZoneBeach = true;//海洋
+                    break;
+
+                case ItemID.JungleWaterFountain://丛林喷泉
+                    player.ZoneJungle = true;
+                    break;
+
+                case ItemID.IcyWaterFountain://冰雪喷泉
+                    player.ZoneSnow = true;
+                    break;
+
+                case ItemID.CorruptWaterFountain://腐化喷泉
+                    player.ZoneCorrupt = true;
+                    break;
+
+                case ItemID.CrimsonWaterFountain://猩红喷泉
+                    player.ZoneCrimson = true;
+                    break;
+
+                case ItemID.HallowedWaterFountain://神圣喷泉
+                    if (Main.hardMode)
+                        player.ZoneHallow = true;
+                    break;
+
+                case ItemID.OasisFountain://绿洲喷泉
+                case ItemID.DesertWaterFountain://沙漠喷泉
+                    player.ZoneDesert = true;
+                    if (player.Center.Y > 3200f)
+                        player.ZoneUndergroundDesert = true;
+                    break;
+            }
+        }
     }
 }

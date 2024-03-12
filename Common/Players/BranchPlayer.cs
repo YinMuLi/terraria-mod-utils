@@ -38,11 +38,6 @@ namespace Branch.Common.Players
             DisplayRareCreaturesIndicator();
         }
 
-        public override void PostUpdateMiscEffects()
-        {
-            ForceBiomes();
-        }
-
         public override void PostUpdate()
         {
             base.PostUpdate();
@@ -98,51 +93,6 @@ namespace Branch.Common.Players
             Player.ItemCheck_Shoot(Player.whoAmI, item, Player.GetWeaponDamage(item));
             //添加仆从对应Buff栏信息
             Player.ItemCheck_ApplyPetBuffs(item);
-        }
-
-        /// <summary>
-        /// 喷泉强制改变环境
-        /// </summary>
-        private void ForceBiomes()
-        {
-            //法狗
-            switch (Main.SceneMetrics.ActiveFountainColor)
-            {
-                case WaterStyleID.Purity: //纯净喷泉
-                    Player.ZoneBeach = true;
-                    break;
-
-                case WaterStyleID.Corrupt: //腐败
-                    Player.ZoneCorrupt = true;
-                    break;
-
-                case WaterStyleID.Jungle: //丛林
-                    Player.ZoneJungle = true;
-                    break;
-
-                case WaterStyleID.Hallow: //神圣
-                    if (Main.hardMode)
-                        Player.ZoneHallow = true;
-                    break;
-
-                case WaterStyleID.Snow: //雪原
-                    Player.ZoneSnow = true;
-                    break;
-
-                case WaterStyleID.Crimson: //猩红
-                    Player.ZoneCrimson = true;
-                    break;
-
-                case WaterStyleID.Desert: //沙漠
-                case WaterStyleID.UndergroundDesert://地下沙漠
-                    Player.ZoneDesert = true;
-                    if (Player.Center.Y > 3200f)
-                        Player.ZoneUndergroundDesert = true;
-                    break;
-
-                default:
-                    break;
-            }
         }
     }
 }

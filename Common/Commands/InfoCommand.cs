@@ -1,4 +1,5 @@
 ﻿using Humanizer;
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -15,7 +16,7 @@ namespace Branch.Common.Commands
 
         public override void Action(CommandCaller caller, string input, string[] args)
         {
-            Main.NewText(Language.GetTextValue("Mods.Misc.Info").FormatWith(caller.Player.name, caller.Player.numberOfDeathsPVE));
+            Main.NewText(Language.GetTextValue("Mods.Misc.Info").FormatWith(caller.Player.name, caller.Player.numberOfDeathsPVE), Color.Green);
         }
     }
 }

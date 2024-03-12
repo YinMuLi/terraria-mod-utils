@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Branch.Common.System;
+using Microsoft.Xna.Framework;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -24,7 +25,7 @@ namespace Branch.Content.Items.Misc
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddRecipeGroup("Branch:AnyDemoniteBar", 10)
+                .AddRecipeGroup(RecipeSystem.AnyDemoniteBar, 10)
                 .AddIngredient(ItemID.FallenStar, 5)
                 .AddTile(TileID.DemonAltar)
                 .Register();

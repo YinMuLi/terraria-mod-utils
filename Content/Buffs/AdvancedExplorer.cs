@@ -34,9 +34,12 @@ namespace Branch.Content.Buffs
             //危险感知药水
             player.buffImmune[111] = true;
             player.dangerSense = true;
-            //鱼鳃药水
-            player.buffImmune[4] = true;
-            player.gills = true;
+            //鱼鳃药水,没有颠倒世界的特性时添加鱼鳃药水的效果
+            if (!Main.getGoodWorld)
+            {
+                player.buffImmune[4] = true;
+                player.gills = true;
+            }
             //水上漂药水
             player.buffImmune[15] = true;
             player.waterWalk = true;

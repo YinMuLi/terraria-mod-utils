@@ -8,13 +8,18 @@ namespace Branch.Common.System
 {
     internal class RecipeSystem : ModSystem
     {
+        /// <summary>
+        /// 任意邪恶锭
+        /// </summary>
+        internal static int AnyDemoniteBar;
+
         public override void AddRecipeGroups()
         {
             string any = Language.GetTextValue("LegacyMisc.37");
             //任何邪恶锭
             int[] items = new int[] { ItemID.DemoniteBar, ItemID.CrimtaneBar };
             RecipeGroup group = new RecipeGroup(() => $"{any} {Lang.GetItemName(ItemID.DemoniteBar)}", items);
-            RecipeGroup.RegisterGroup("Branch:AnyDemoniteBar", group);
+            AnyDemoniteBar = RecipeGroup.RegisterGroup("Branch:AnyDemoniteBar", group);
         }
 
         public override void AddRecipes()

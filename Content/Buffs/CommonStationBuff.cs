@@ -26,18 +26,17 @@ namespace Branch.Content.Buffs
             player.buffImmune[48] = true;
             player.honey = true;
             //施法桌：+1最大随从
-            //player.buffImmune[150] = true;
-            //++player.maxMinions;
+            player.buffImmune[150] = true;
+            ++player.maxMinions;
             //利器站：所有近战武器的盔甲穿透提高 12
-            //player.buffImmune[159] = true;
-            //player.GetArmorPenetration(DamageClass.Melee) += 12;
-            //player.GetArmorPenetration(DamageClass.Summon) += 12;
+            player.buffImmune[159] = true;
+            player.GetArmorPenetration(DamageClass.Melee) += 12;
             //水晶球：+20 最大魔力 +5 % 魔法伤害 + 2 % 魔法暴击率 −2 % 魔力消耗
-            //player.buffImmune[29] = true;
-            //player.GetDamage(DamageClass.Magic) += 0.05f;
-            //player.GetCritChance(DamageClass.Magic) += 2;
-            //player.statManaMax2 += 20;
-            //player.manaCost -= 0.02f;
+            player.buffImmune[29] = true;
+            player.GetDamage(DamageClass.Magic) += 0.05f;
+            player.GetCritChance(DamageClass.Magic) += 2;
+            player.statManaMax2 += 20;
+            player.manaCost -= 0.02f;
             //弹药箱(加不加无所谓)
             //player.buffImmune[93] = true;
             //player.ammoBox = true;

@@ -9,12 +9,26 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.IO;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 namespace Branch.Common.Players
 {
     public partial class BranchPlayer : ModPlayer
     {
+        internal string linkWorldID;
+
+        public override void SaveData(TagCompound tag)
+        {
+            tag["LinkWord"] = linkWorldID;
+        }
+
+        public override void LoadData(TagCompound tag)
+        {
+            tag.TryGet("LinkWord", out linkWorldID);
+        }
+
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)
         {
             if (!mediumCoreDeath)//硬核人物？？？
@@ -38,10 +52,12 @@ namespace Branch.Common.Players
             DisplayRareCreaturesIndicator();
         }
 
-        public override void PostUpdate()
-        {
-            base.PostUpdate();
-        }
+        /// <summary>
+        /// 判断玩家是否和当前世界进行连接
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        internal bool IsLinkWord(WorldFileData data) => linkWorldID.Equals(data.UniqueId.ToString());
 
         /// <summary>
         /// 显示指示稀有生物指针

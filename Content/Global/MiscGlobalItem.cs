@@ -1,6 +1,5 @@
 ﻿using Branch.Common.Extensions;
 using Terraria;
-using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;

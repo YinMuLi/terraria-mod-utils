@@ -1,8 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
+using System.Linq;
 using Terraria;
 using Terraria.Audio;
 using Terraria.Chat;
 using Terraria.ID;
+using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
@@ -87,6 +89,16 @@ namespace Branch.Common.Utils
                 }
                 if (playSound) SoundEngine.PlaySound(SoundID.Item37);
             }
+        }
+
+        public static WorldFileData GetWorldFileData(string worldUniqueId)
+        {
+            if (!Main.WorldList.Any()) Main.LoadWorlds();
+            foreach (var worldData in Main.WorldList)
+            {
+                if (worldData.UniqueId.ToString() == worldUniqueId) return worldData;
+            }
+            return null;
         }
     }
 }

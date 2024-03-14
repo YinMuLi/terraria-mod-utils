@@ -45,8 +45,8 @@ namespace Branch.Content.Buffs
             player.pickSpeed -= 0.2f;
             player.moveSpeed += 0.2f;
             //星星瓶：每秒额外回复1魔力
-            //player.buffImmune[158] = true;
-            //player.manaRegenBonus += 1;
+            player.buffImmune[158] = true;
+            player.manaRegenBonus += 1;
             //战争桌：玩家的哨兵上限提高 1
             //player.buffImmune[348] = true;
             //++player.maxTurrets;

@@ -100,7 +100,7 @@ namespace Branch.Common.Players
         }
 
         /// <summary>
-        /// 召唤仆从
+        /// 召唤一次仆从
         /// </summary>
         /// <param name="item">召唤武器</param>
         internal void Summon(Item item)

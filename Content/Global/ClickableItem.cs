@@ -2,6 +2,7 @@
 using Branch.Common.Interface;
 using Terraria;
 using Terraria.Audio;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Branch.Content.Global
@@ -24,7 +25,8 @@ namespace Branch.Content.Global
 
         public void OnMiddleClicked(Item item, int index)
         {
-            int count = Main.LocalPlayer.maxMinions - (int)Main.LocalPlayer.slotsMinions;
+            float perSlot = ItemID.Sets.StaffMinionSlotsRequired[item.type];
+            int count = (int)(Main.LocalPlayer.maxMinions / perSlot);
             SoundEngine.PlaySound(item.UseSound, Main.LocalPlayer.Center);
             for (int i = 0; i < count; i++)
             {

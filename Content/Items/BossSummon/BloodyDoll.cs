@@ -1,25 +1,11 @@
 ﻿using Terraria;
-using Terraria.Audio;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace Branch.Content.Items.BossSummon
 {
-    internal class BloodyDoll : ModItem
+    internal class BloodyDoll : BaseBossSummon
     {
-        public override void SetStaticDefaults()
-        {
-            NPCID.Sets.MPAllowedEnemies[NPCID.WallofFlesh] = true;//多人模式能被召唤
-            ItemID.Sets.SortingPriorityBossSpawns[Type] = 11; // 松露虫
-        }
-
-        public override void SetDefaults()
-        {
-            Item.useAnimation = 10;
-            Item.useTime = 10;
-            Item.useStyle = ItemUseStyleID.HoldUp;
-            Item.rare = ItemRarityID.Lime;
-        }
+        internal override int NPCType => NPCID.WallofFlesh;
 
         public override bool CanUseItem(Player player)
         {
@@ -29,7 +15,6 @@ namespace Branch.Content.Items.BossSummon
 
         public override bool? UseItem(Player player)
         {
-            SoundEngine.PlaySound(SoundID.Roar, player.Center);
             if (Main.netMode != NetmodeID.MultiplayerClient)
                 NPC.SpawnWOF(player.Center);
             else

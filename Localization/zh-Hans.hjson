@@ -73,7 +73,7 @@ Mods: {
 					'''
 			}
 
-			ButterflyToken: {
+			SummonHallowBoss: {
 				DisplayName: 七彩草蛉之证
 				Tooltip:
 					'''
@@ -169,6 +169,15 @@ Mods: {
 					血月期间召唤恐惧鹦鹉螺
 					无消耗
 					'''
+			}
+
+			SummonDukeFishron: {
+				Tooltip:
+					'''
+					海洋环境中召唤猪龙鱼公爵
+					无消耗
+					'''
+				DisplayName: 赤红松露虫
 			}
 		}
 

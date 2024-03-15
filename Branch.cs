@@ -35,8 +35,9 @@ namespace Branch
                 bossList.Call("SubmitEntrySpawnItems", this, new Dictionary<string, object>()
             {
                 { "Terraria Plantera", ModContent.ItemType<PlanteraBulb>()},
-                { "Terraria HallowBoss", ModContent.ItemType<ButterflyToken>()},
-                { "Terraria WallofFlesh", ModContent.ItemType<BloodyDoll>()}
+                { "Terraria HallowBoss", ModContent.ItemType<SummonHallowBoss>()},
+                { "Terraria WallofFlesh", ModContent.ItemType<BloodyDoll>()},
+                { "Terraria DukeFishron", ModContent.ItemType<SummonDukeFishron>()}
             });
             }
         }

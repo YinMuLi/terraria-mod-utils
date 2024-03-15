@@ -40,7 +40,7 @@ Mods: {
 				Tooltip: ""
 			}
 
-			ButterflyToken: {
+			SummonHallowBoss: {
 				DisplayName: Butterfly Token
 				Tooltip: ""
 			}
@@ -107,6 +107,11 @@ Mods: {
 					血月召唤恐惧鹦鹉螺
 					无消耗
 					'''
+			}
+
+			SummonDukeFishron: {
+				Tooltip: ""
+				DisplayName: Summon Duke Fishron
 			}
 		}
 

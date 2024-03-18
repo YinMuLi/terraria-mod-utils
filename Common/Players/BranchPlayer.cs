@@ -53,13 +53,6 @@ namespace Branch.Common.Players
         }
 
         /// <summary>
-        /// 判断玩家是否和当前世界进行连接
-        /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
-        internal bool IsLinkWord(WorldFileData data) => linkWorldID.Equals(data.UniqueId.ToString());
-
-        /// <summary>
         /// 显示指示稀有生物指针
         /// </summary>
         public void DisplayRareCreaturesIndicator()
@@ -97,18 +90,6 @@ namespace Branch.Common.Players
             if (coinCount[1] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.SilverCoin, coinCount[1]);
             if (coinCount[2] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.GoldCoin, coinCount[2]);
             if (coinCount[3] > 0) Player.QuickSpawnItem(Item.GetSource_TownSpawn(), ItemID.PlatinumCoin, coinCount[3]);
-        }
-
-        /// <summary>
-        /// 召唤一次仆从
-        /// </summary>
-        /// <param name="item">召唤武器</param>
-        internal void Summon(Item item)
-        {
-            //召唤仆从
-            Player.ItemCheck_Shoot(Player.whoAmI, item, Player.GetWeaponDamage(item));
-            //添加仆从对应Buff栏信息
-            Player.ItemCheck_ApplyPetBuffs(item);
         }
     }
 }

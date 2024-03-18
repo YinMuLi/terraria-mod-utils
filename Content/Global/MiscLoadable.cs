@@ -17,7 +17,7 @@ using Terraria.UI;
 
 namespace Branch.Content.Global
 {
-    internal class MiscLoadableCenter : ILoadable
+    internal class MiscLoadable : ILoadable
     {
         private float minZoom => ClientConfig.Instance.MinZoom;
         private const float MAX_ZOOM = 4f;
@@ -221,11 +221,11 @@ namespace Branch.Content.Global
 
         private int PickItemMovementAction(On_ItemSlot.orig_PickItemMovementAction orig, Item[] inv, int context, int slot, Item checkItem)
         {
-            if (context == ItemSlot.Context.InventoryCoin && checkItem.type == ItemID.PiggyBank)
-            {
-                //猪猪存钱罐能放置在钱币槽
-                return 0;
-            }
+            //if (context == ItemSlot.Context.InventoryCoin && checkItem.type == ItemID.PiggyBank)
+            //{
+            //    //猪猪存钱罐能放置在钱币槽
+            //    return 0;
+            //}
             //武器能放置在装饰栏...不支持模组的
             if (checkItem.damage >= 0 && context is ItemSlot.Context.EquipArmorVanity or ItemSlot.Context.EquipAccessoryVanity)
             {

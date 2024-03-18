@@ -152,12 +152,11 @@ namespace Branch.Content.Global
                 //多人游戏不可用
                 if (modPlayer.linkWorldID == null && Main.menuMultiplayer && !Main.menuServer)
                     return;
-                UIImageButton linkButton = new(NoChainButtonTexture)
+                UIImageButton linkButton = new(modPlayer.linkWorldID != null ? PlayChainButtonTexture : NoChainButtonTexture)
                 {
                     VAlign = 1f,
                     Left = StyleDimension.FromPixelsAndPercent(num, 0f)
                 };
-                if (modPlayer.linkWorldID != null) linkButton.SetImage(PlayChainButtonTexture);
                 linkButton.OnLeftClick += (evt, element) =>
                 {
                     if (modPlayer.linkWorldID == null) return;

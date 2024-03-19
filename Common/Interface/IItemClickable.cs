@@ -7,6 +7,12 @@ namespace Branch.Common.Interface
 {
     internal interface IItemClickable
     {
+        [Flags]
+        public enum ClickType
+        {
+            None, Right, Left, Middle
+        }
+
         private static bool preMousePressed_Middle;
         private static bool preMousePressed_Right;
         private static bool preMousePressed_Left;
@@ -76,11 +82,5 @@ namespace Branch.Common.Interface
                 }
             }
         }
-    }
-
-    [Flags]
-    public enum ClickType
-    {
-        None, Right, Left, Middle
     }
 }

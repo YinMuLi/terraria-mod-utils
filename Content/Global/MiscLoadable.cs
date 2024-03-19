@@ -20,7 +20,7 @@ namespace Branch.Content.Global
     internal class MiscLoadable : ILoadable
     {
         private float minZoom => ClientConfig.Instance.MinZoom;
-        private const float MAX_ZOOM = 4f;
+        private const float MAX_ZOOM = 4f;//屏幕放大最大尺寸
         private Asset<Texture2D> NoChainButtonTexture;
         private Asset<Texture2D> ChainButtonTexture;
         private Asset<Texture2D> PlayChainButtonTexture;
@@ -34,9 +34,9 @@ namespace Branch.Content.Global
 
         public void Load(Mod mod)
         {
-            NoChainButtonTexture = ModContent.Request<Texture2D>("Branch/Assets/UI/NoChainButton", AssetRequestMode.AsyncLoad);
-            ChainButtonTexture = ModContent.Request<Texture2D>("Branch/Assets/UI/ChainButton", AssetRequestMode.AsyncLoad);
-            PlayChainButtonTexture = ModContent.Request<Texture2D>("Branch/Assets/UI/PlayChainButton", AssetRequestMode.AsyncLoad);
+            NoChainButtonTexture = mod.Assets.Request<Texture2D>("Assets/UI/NoChainButton", AssetRequestMode.AsyncLoad);
+            ChainButtonTexture = mod.Assets.Request<Texture2D>("Assets/UI/ChainButton", AssetRequestMode.AsyncLoad);
+            PlayChainButtonTexture = mod.Assets.Request<Texture2D>("Assets/UI/PlayChainButton", AssetRequestMode.AsyncLoad);
             On_ItemSlot.PickItemMovementAction += PickItemMovementAction;
             On_Main.UpdateViewZoomKeys += UpdateViewZoom;
             On_Item.CanFillEmptyAmmoSlot += (_, _) => false; //拾取到的物品都不放在弹药栏
@@ -45,6 +45,12 @@ namespace Branch.Content.Global
             IL_Main.DoDraw += Patch_ZoomBounds;
             IL_UICharacterListItem.ctor += Patch_UICharacterListItem_Ctor;//构造函数
             IL_UIWorldListItem.ctor += Patch_UIWorldListItem_Ctor;
+            IL_Player.TrySwitchingLoadout += Patch_TrySwitchingLoadout;//
+        }
+
+        private void Patch_TrySwitchingLoadout(ILContext il)
+        {
+            throw new System.NotImplementedException();
         }
 
         /// <summary>

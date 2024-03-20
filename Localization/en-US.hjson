@@ -50,11 +50,6 @@ Mods: {
 				Tooltip: ""
 			}
 
-			MadeInHeaven: {
-				DisplayName: Made In Heaven
-				Tooltip: ""
-			}
-
 			AdvancedDefensePotion: {
 				DisplayName: Advanced Defense Potion
 				Tooltip: ""

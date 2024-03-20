@@ -46,7 +46,7 @@ namespace Branch.Content.Global
             IL_Main.DoDraw += Patch_ZoomBounds;
             IL_UICharacterListItem.ctor += Patch_UICharacterListItem_Ctor;//构造函数
             IL_UIWorldListItem.ctor += Patch_UIWorldListItem_Ctor;
-            IL_Player.TrySwitchingLoadout += Patch_TrySwitchingLoadout;//
+            IL_Player.TrySwitchingLoadout += Patch_TrySwitchingLoadout;//切换装备
         }
 
         private void Patch_TrySwitchingLoadout(ILContext il)

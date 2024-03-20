@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Microsoft.Xna.Framework;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Default;
@@ -19,8 +20,15 @@ namespace Branch.Content.Items.Accessory
             Item.accessory = true;
         }
 
+        public override bool AltFunctionUse(Player player) => true;
+
         public override bool? UseItem(Player player)
         {
+            if (player.altFunctionUse == 2 && player.lastDeathPostion != Vector2.Zero)
+            {
+                ModUtils.ModTeleportion(player, player.lastDeathPostion);
+                return true;
+            }
             if (player.whoAmI != Main.myPlayer) return false;
             for (int i = 3; i <= 9; i++)
             {

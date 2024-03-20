@@ -93,15 +93,6 @@ Mods: {
 					'''
 			}
 
-			MadeInHeaven: {
-				DisplayName: 天堂制造
-				Tooltip:
-					'''
-					加速一段时间。
-					右键传送到上一次死亡地点
-					'''
-			}
-
 			AdvancedDefensePotion: {
 				DisplayName: 高级防御药水
 				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷、保暖)
@@ -148,7 +139,11 @@ Mods: {
 			}
 
 			InscriptionEmblem: {
-				Tooltip: 重铸所有生效的饰品（以该物品的词条为准）
+				Tooltip:
+					'''
+					重铸所有生效的饰品（以该物品的词条为准）
+					<right>传送到上一次死亡地点
+					'''
 				DisplayName: 铭刻徽章
 			}
 

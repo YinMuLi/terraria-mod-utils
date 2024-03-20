@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using ReLogic.Content;
+using System;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
 using Terraria.GameInput;
@@ -50,7 +51,45 @@ namespace Branch.Content.Global
 
         private void Patch_TrySwitchingLoadout(ILContext il)
         {
-            throw new System.NotImplementedException();
+            //IL_006D: callvirt instance void Terraria.EquipmentLoadout::Swap(class Terraria.Player)
+            //<--
+            //IL_0072: ldarg.0
+            //IL_0073: ldarg.1
+            //IL_0074: stfld
+            var c = new ILCursor(il);
+            if (!c.TryGotoNext(MoveType.After,
+                i => i.Match(OpCodes.Callvirt),
+                i => i.MatchLdarg0(),
+                i => i.MatchLdarg1()
+                )) return;
+            c.Index--;
+            c.EmitLdarg(0);//玩家
+            c.EmitLdarg(1);//loadoutIndex
+            c.EmitDelegate<Action<Player, int>>((player, loadoutIndex) =>
+            {
+                if (!ClientConfig.Instance.NoSwapDecoration) return;
+
+                //染料
+                Item[] currentDye = player.dye;
+                Item[] preDye = player.Loadouts[player.CurrentLoadoutIndex].Dye;
+                for (int i = 0; i < currentDye.Length; i++)
+                {
+                    if (currentDye[i].IsAir)
+                    {
+                        Utils.Swap<Item>(ref currentDye[i], ref preDye[i]);
+                    }
+                }
+                //装饰
+                Item[] currentArmor = player.armor;
+                Item[] preArmor = player.Loadouts[player.CurrentLoadoutIndex].Armor;
+                for (int i = 10; i < currentArmor.Length; i++)
+                {
+                    if (currentArmor[i].IsAir)
+                    {
+                        Utils.Swap<Item>(ref currentArmor[i], ref preArmor[i]);
+                    }
+                }
+            });
         }
 
         /// <summary>

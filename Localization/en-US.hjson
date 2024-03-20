@@ -196,6 +196,11 @@ Mods: {
 					Tooltip: ""
 					Label: Switch Inventory
 				}
+
+				NoSwapDecoration: {
+					Label: No Swap Decoration
+					Tooltip: ""
+				}
 			}
 
 			ServerConfig: {

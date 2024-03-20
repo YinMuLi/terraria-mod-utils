@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading;
 using Terraria.ModLoader.Config;
 
 namespace Branch.Common.Configs
@@ -25,6 +26,12 @@ namespace Branch.Common.Configs
         [Range(0.3f, 4f)]
         [DefaultValue(0.3f)]
         public float MinZoom;
+
+        /// <summary>
+        /// 切换装备时不交换装饰品
+        /// </summary>
+        [DefaultValue(true)]
+        public bool NoSwapDecoration;
 
         [Header("Fishing")]
         /// <summary>

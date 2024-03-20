@@ -262,6 +262,11 @@ Mods: {
 					Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
 					Label: 交换物品栏堆叠
 				}
+
+				NoSwapDecoration: {
+					Label: 切换装备时不交换装饰品
+					// Tooltip: ""
+				}
 			}
 
 			ServerConfig: {

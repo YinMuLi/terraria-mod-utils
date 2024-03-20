@@ -77,7 +77,7 @@ namespace Branch.Common.Utils
         /// <param name="playSound">播放重铸声音</param>
         public static void Reforge(Player player, Item item, int prefixID, bool showMessage = false, bool playSound = false)
         {
-            if (item.stack == 1 && item.prefix != prefixID && ItemLoader.CanReforge(item))
+            if (!item.IsAir && item.prefix != prefixID && ItemLoader.CanReforge(item))
             {
                 item.ResetPrefix();
                 item.Prefix(prefixID);

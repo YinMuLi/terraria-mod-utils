@@ -40,7 +40,6 @@ namespace Branch.Common.Players
         //一秒60次
         public override void PreUpdate()
         {
-            if (Player.whoAmI != Main.myPlayer) return;
             /**
              * 自动模式：自动抛竿，自动收杆
              */

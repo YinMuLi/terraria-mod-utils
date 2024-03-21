@@ -1,296 +1,294 @@
 Mods: {
-	Branch: {
-		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
+	Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
 
-		Buffs: {
-			AdvancedDefense: {
-				DisplayName: 铜墙铁壁
-				Description:
-					'''
-					+2生命再生
-					+8防御
-					+20%最大生命值（每有100点生命值增加20点最大上限）
-					-10%所受伤害
-					-30%寒冷主题敌怪伤害
-					反弹33%敌怪伤害
-					'''
-			}
-
-			AdvancedExplorer: {
-				DisplayName: 探索者
-				Description:
-					'''
-					+25%移动速度
-					+25%挖矿速度
-					许多其它非数值的增益
-					'''
-			}
-
-			AdvancedFishing: {
-				DisplayName: 钓鱼高手
-				Description: 包含以下Buff：声呐,钓鱼,宝匣
-			}
-
-			CommonStationBuff: {
-				DisplayName: 通用增益
-				Description:
-					'''
-					+10%当前生命再生
-					+2.5生命再生
-					+5防御
-					+20%移动速度 +20%挖矿速度
-					+1召唤栏
-					+12近战盔甲穿透
-					+20最大魔力 +5%魔法伤害 +2%魔法暴击 -2%魔力消耗
-					+1魔力恢复
-					'''
-			}
-
-			SickBlade: {
-				DisplayName: 破伤风之刃
-				Description: 为敌怪添加原版绝大多数Debuff
-			}
-
-			DryadsBlessing: {
-				DisplayName: 自然之力
-				Description:
-					'''
-					+6生命再生
-					+8防御
-					+50%荆棘效果（即50%的伤害反射，可与荆棘药水提供的效果叠加）
-					"请大自然赐予我们力量，高米迪不可战胜的自然之王，变身!"
-					'''
-			}
+	Buffs: {
+		AdvancedDefense: {
+			DisplayName: 铜墙铁壁
+			Description:
+				'''
+				+2生命再生
+				+8防御
+				+20%最大生命值（每有100点生命值增加20点最大上限）
+				-10%所受伤害
+				-30%寒冷主题敌怪伤害
+				反弹33%敌怪伤害
+				'''
 		}
 
-		Items: {
-			BloodyDoll: {
-				DisplayName: 血腥娃娃
-				Tooltip:
-					'''
-					地狱召唤血肉墙(不确定召唤的方向)
-					无消耗
-					'''
+		AdvancedExplorer: {
+			DisplayName: 探索者
+			Description:
+				'''
+				+25%移动速度
+				+25%挖矿速度
+				许多其它非数值的增益
+				'''
+		}
+
+		AdvancedFishing: {
+			DisplayName: 钓鱼高手
+			Description: 包含以下Buff：声呐,钓鱼,宝匣
+		}
+
+		CommonStationBuff: {
+			DisplayName: 通用增益
+			Description:
+				'''
+				+10%当前生命再生
+				+2.5生命再生
+				+5防御
+				+20%移动速度 +20%挖矿速度
+				+1召唤栏
+				+12近战盔甲穿透
+				+20最大魔力 +5%魔法伤害 +2%魔法暴击 -2%魔力消耗
+				+1魔力恢复
+				'''
+		}
+
+		SickBlade: {
+			DisplayName: 破伤风之刃
+			Description: 为敌怪添加原版绝大多数Debuff
+		}
+
+		DryadsBlessing: {
+			DisplayName: 自然之力
+			Description:
+				'''
+				+6生命再生
+				+8防御
+				+50%荆棘效果（即50%的伤害反射，可与荆棘药水提供的效果叠加）
+				"请大自然赐予我们力量，高米迪不可战胜的自然之王，变身!"
+				'''
+		}
+	}
+
+	Items: {
+		BloodyDoll: {
+			DisplayName: 血腥娃娃
+			Tooltip:
+				'''
+				地狱召唤血肉墙(不确定召唤的方向)
+				无消耗
+				'''
+		}
+
+		SummonHallowBoss: {
+			DisplayName: 七彩草蛉之证
+			Tooltip:
+				'''
+				召唤光之女皇
+				白天狂暴
+				无消耗
+				'''
+		}
+
+		PlanteraBulb: {
+			DisplayName: 世纪之花花苞
+			Tooltip:
+				'''
+				在丛林使用以召唤世纪之花
+				在地下丛林外狂暴
+				无消耗
+				'''
+		}
+
+		AdvancedDefensePotion: {
+			DisplayName: 高级防御药水
+			Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷、保暖)
+		}
+
+		AdvancedExplorerPotion: {
+			DisplayName: 高级探险者药水
+			Tooltip:
+				'''
+				获得你在探险时需要的Buff
+				(洞穴探险，夜猫子，挖矿，狩猎，敏捷
+				危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
+				'''
+		}
+
+		AdvancedFishingPotion: {
+			DisplayName: 高级钓鱼药水
+			Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
+		}
+
+		StarterBag: {
+			DisplayName: 新手礼包
+			Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+		}
+
+		FishingGuide: {
+			DisplayName: 钓鱼指南
+			Tooltip:
+				'''
+				+80渔力
+				具有防熔岩渔具的功能
+				具有声呐药和宝匣药水功能
+				[c/C4232C:- 时装栏即可生效 -]
+				'''
+		}
+
+		GoldenBait: {
+			Tooltip:
+				'''
+				不消耗
+				“夕阳西下，钓鱼人在这里”
+				'''
+			DisplayName: 黄金鱼饵
+		}
+
+		InscriptionEmblem: {
+			Tooltip:
+				'''
+				重铸所有生效的饰品（以该物品的词条为准）
+				<right>传送到上一次死亡地点
+				'''
+			DisplayName: 铭刻徽章
+		}
+
+		DryadsBlessingPotion: {
+			DisplayName: 树妖的祝福
+			Tooltip: 给予树叶领域内的增益
+		}
+
+		Cake: {
+			DisplayName: 蛋糕
+			Tooltip: 给予心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
+		}
+
+		SummonBloodNautilus: {
+			DisplayName: 出血贝壳
+			Tooltip:
+				'''
+				血月期间召唤恐惧鹦鹉螺
+				无消耗
+				'''
+		}
+
+		SummonDukeFishron: {
+			Tooltip:
+				'''
+				海洋环境中召唤猪龙鱼公爵
+				无消耗
+				'''
+			DisplayName: 赤红松露虫
+		}
+
+		Bag: {
+			// DisplayName: Bag
+			// Tooltip: ""
+		}
+	}
+
+	NPCs: {
+		Tom: {
+			DisplayName: 汤姆
+
+			TownNPCMood: {
+				Content: 我很满足。
+				NoHome: 我讨厌没有家。
+				FarFromHome: 我离家太远了。
+				LoveSpace: 我非常喜欢有这么大的空间。
+				DislikeCrowded: 我不喜欢这么拥挤。
+				HateCrowded: 我讨厌这么拥挤。
+				LoveBiome: 我非常喜欢{BiomeName}。
+				LikeBiome: 我喜欢{BiomeName}。
+				DislikeBiome: 我不喜欢{BiomeName}。
+				HateBiome: 我讨厌{BiomeName}。
+				LikeNPC: 我喜欢{NPCName}。
+				DislikeNPC: 我不喜欢{NPCName}。
+				LikeNPC_Princess: I like {NPCName}.
+				Princess_LovesNPC: I like {NPCName}.
+			}
+		}
+	}
+
+	Configs: {
+		ClientConfig: {
+			DisplayName: 个人配置
+
+			Headers: {
+				Fishing: 钓鱼
+				Common: 通用配置
 			}
 
-			SummonHallowBoss: {
-				DisplayName: 七彩草蛉之证
-				Tooltip:
-					'''
-					召唤光之女皇
-					白天狂暴
-					无消耗
-					'''
+			AutoFish: {
+				Label: 自动钓鱼
+				Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
 			}
 
-			PlanteraBulb: {
-				DisplayName: 世纪之花花苞
-				Tooltip:
-					'''
-					在丛林使用以召唤世纪之花
-					在地下丛林外狂暴
-					无消耗
-					'''
+			LuresAmount: {
+				Label: 鱼线数量
+				// Tooltip: ""
 			}
 
-			AdvancedDefensePotion: {
-				DisplayName: 高级防御药水
-				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷、保暖)
+			PullWaitTimer: {
+				Label: 拉杆延迟时间
+				// Tooltip: ""
 			}
 
-			AdvancedExplorerPotion: {
-				DisplayName: 高级探险者药水
-				Tooltip:
-					'''
-					获得你在探险时需要的Buff
-					(洞穴探险，夜猫子，挖矿，狩猎，敏捷
-					危险感知，水上漂，鱼鳃，脚蹼，黑曜石皮肤)
-					'''
+			CatchCrate: {
+				Label: 捕获宝箱
+				// Tooltip: ""
 			}
 
-			AdvancedFishingPotion: {
-				DisplayName: 高级钓鱼药水
-				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
+			CatchAccessories: {
+				Label: 捕获饰品
+				// Tooltip: ""
 			}
 
-			StarterBag: {
-				DisplayName: 新手礼包
-				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+			ShowMinion: {
+				Label: 显示召唤栏位信息
+				// Tooltip: ""
 			}
 
-			FishingGuide: {
-				DisplayName: 钓鱼指南
-				Tooltip:
-					'''
-					+80渔力
-					具有防熔岩渔具的功能
-					具有声呐药和宝匣药水功能
-					[c/C4232C:- 时装栏即可生效 -]
-					'''
+			CursorDistance: {
+				Label: 提示指正距离玩家的距离
+				// Tooltip: ""
 			}
 
-			GoldenBait: {
-				Tooltip:
-					'''
-					不消耗
-					“夕阳西下，钓鱼人在这里”
-					'''
-				DisplayName: 黄金鱼饵
+			MinZoom: {
+				Label: 最小视距
+				// Tooltip: ""
 			}
 
-			InscriptionEmblem: {
-				Tooltip:
-					'''
-					重铸所有生效的饰品（以该物品的词条为准）
-					<right>传送到上一次死亡地点
-					'''
-				DisplayName: 铭刻徽章
+			SwitchInventory: {
+				Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
+				Label: 交换物品栏堆叠
 			}
 
-			DryadsBlessingPotion: {
-				DisplayName: 树妖的祝福
-				Tooltip: 给予树叶领域内的增益
-			}
-
-			Cake: {
-				DisplayName: 蛋糕
-				Tooltip: 给予心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
-			}
-
-			SummonBloodNautilus: {
-				DisplayName: 出血贝壳
-				Tooltip:
-					'''
-					血月期间召唤恐惧鹦鹉螺
-					无消耗
-					'''
-			}
-
-			SummonDukeFishron: {
-				Tooltip:
-					'''
-					海洋环境中召唤猪龙鱼公爵
-					无消耗
-					'''
-				DisplayName: 赤红松露虫
-			}
-
-			Bag: {
-				// DisplayName: Bag
+			NoSwapDecoration: {
+				Label: 切换装备时不交换装饰品
 				// Tooltip: ""
 			}
 		}
 
-		NPCs: {
-			Tom: {
-				DisplayName: 汤姆
+		ServerConfig: {
+			DisplayName: 服务器配置
 
-				TownNPCMood: {
-					Content: 我很满足。
-					NoHome: 我讨厌没有家。
-					FarFromHome: 我离家太远了。
-					LoveSpace: 我非常喜欢有这么大的空间。
-					DislikeCrowded: 我不喜欢这么拥挤。
-					HateCrowded: 我讨厌这么拥挤。
-					LoveBiome: 我非常喜欢{BiomeName}。
-					LikeBiome: 我喜欢{BiomeName}。
-					DislikeBiome: 我不喜欢{BiomeName}。
-					HateBiome: 我讨厌{BiomeName}。
-					LikeNPC: 我喜欢{NPCName}。
-					DislikeNPC: 我不喜欢{NPCName}。
-					LikeNPC_Princess: I like {NPCName}.
-					Princess_LovesNPC: I like {NPCName}.
-				}
-			}
-		}
-
-		Configs: {
-			ClientConfig: {
-				DisplayName: 个人配置
-
-				Headers: {
-					Fishing: 钓鱼
-					Common: 通用配置
-				}
-
-				AutoFish: {
-					Label: 自动钓鱼
-					Tooltip: 自动捕获饰品只有在玩家有声呐药水增益时才生效
-				}
-
-				LuresAmount: {
-					Label: 鱼线数量
-					// Tooltip: ""
-				}
-
-				PullWaitTimer: {
-					Label: 拉杆延迟时间
-					// Tooltip: ""
-				}
-
-				CatchCrate: {
-					Label: 捕获宝箱
-					// Tooltip: ""
-				}
-
-				CatchAccessories: {
-					Label: 捕获饰品
-					// Tooltip: ""
-				}
-
-				ShowMinion: {
-					Label: 显示召唤栏位信息
-					// Tooltip: ""
-				}
-
-				CursorDistance: {
-					Label: 提示指正距离玩家的距离
-					// Tooltip: ""
-				}
-
-				MinZoom: {
-					Label: 最小视距
-					// Tooltip: ""
-				}
-
-				SwitchInventory: {
-					Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
-					Label: 交换物品栏堆叠
-				}
-
-				NoSwapDecoration: {
-					Label: 切换装备时不交换装饰品
-					// Tooltip: ""
-				}
+			SpawnTom: {
+				Label: 生成模组NPC
+				// Tooltip: ""
 			}
 
-			ServerConfig: {
-				DisplayName: 服务器配置
+			UnrestrainedPylon: {
+				Label: 无限制晶塔
+				Tooltip: 不限制晶塔放置个数和传送条件
+			}
 
-				SpawnTom: {
-					Label: 生成模组NPC
-					// Tooltip: ""
-				}
+			ExtraWingSlot: {
+				Label: 额外翅膀饰品栏
+				// Tooltip: ""
+			}
 
-				UnrestrainedPylon: {
-					Label: 无限制晶塔
-					Tooltip: 不限制晶塔放置个数和传送条件
-				}
+			BossSpawnNotConsumable: {
+				Label: Boss召唤物不消耗
+				// Tooltip: ""
+			}
 
-				ExtraWingSlot: {
-					Label: 额外翅膀饰品栏
-					// Tooltip: ""
-				}
-
-				BossSpawnNotConsumable: {
-					Label: Boss召唤物不消耗
-					// Tooltip: ""
-				}
-
-				EnableFountain: {
-					// Tooltip: ""
-					Label: 喷泉改变环境
-				}
+			EnableFountain: {
+				// Tooltip: ""
+				Label: 喷泉改变环境
 			}
 		}
 	}

@@ -1,3 +1,3 @@
 displayName = 饮木的学习模组
 author = 饮木
-version = 1.2
+version = 1.2.1

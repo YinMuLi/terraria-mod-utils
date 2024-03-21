@@ -2,7 +2,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\tModLoader.targets" />
   <PropertyGroup>
-    <AssemblyName>Branch</AssemblyName>
+    <AssemblyName>YinMu</AssemblyName>
     <TargetFramework>net6.0</TargetFramework>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
@@ -14,7 +14,7 @@
     <None Remove="Common\Config\**" />
   </ItemGroup>
   <ItemGroup>
-    <None Remove="Localization\cn_Branch.Configs.hjson" />
+    <None Remove="Localization\cn_YinMu.Configs.hjson" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Solaestas.tModLoader.ModBuilder" Version="1.4.1" />

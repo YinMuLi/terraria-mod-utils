@@ -1,4 +1,4 @@
-﻿using Branch.Common.Players;
+﻿using YinMu.Common.Players;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -6,7 +6,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Terraria.UI;
 
-namespace Branch.Common.Extensions
+namespace YinMu.Common.Extensions
 {
     public static class Extensions
     {
@@ -20,7 +20,7 @@ namespace Branch.Common.Extensions
         {
             // 如果 Insert 是按照向前插入的逻辑，越早插入越晚绘制，也就是越靠近顶层。
             //这里的写法是在index图层之下
-            layers.Insert(index, new LegacyGameInterfaceLayer($"Branch: {name}", () =>
+            layers.Insert(index, new LegacyGameInterfaceLayer($"YinMu: {name}", () =>
             {
                 //绘制UI层的条件
                 if (func())
@@ -40,7 +40,7 @@ namespace Branch.Common.Extensions
         {
             // 如果 Insert 是按照向前插入的逻辑，越早插入越晚绘制，也就是越靠近顶层。
             //这里的写法是在index图层之下
-            layers.Insert(index, new LegacyGameInterfaceLayer($"Branch: {state.GetType().Name}", () =>
+            layers.Insert(index, new LegacyGameInterfaceLayer($"YinMu: {state.GetType().Name}", () =>
             {
                 //绘制UI层的条件
                 if (func())
@@ -61,7 +61,7 @@ namespace Branch.Common.Extensions
         /// <param name="state"></param>
         public static void Insert(this List<GameInterfaceLayer> layers, int index, string name, UIState state)
         {
-            layers.Insert(index, new LegacyGameInterfaceLayer($"Branch: {name}",
+            layers.Insert(index, new LegacyGameInterfaceLayer($"YinMu: {name}",
                 () =>
                 {
                     state.Draw(Main.spriteBatch);
@@ -81,7 +81,7 @@ namespace Branch.Common.Extensions
 
         #endregion UI
 
-        public static BranchPlayer ModPlayer(this Player player) => player.GetModPlayer<BranchPlayer>();
+        public static YinMuPlayer ModPlayer(this Player player) => player.GetModPlayer<YinMuPlayer>();
 
         /// <summary>
         /// 简便添加一个物品的掉落

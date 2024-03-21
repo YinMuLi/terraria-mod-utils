@@ -1,4 +1,4 @@
-﻿//using Branch.Content.Buffs;
+﻿//using YinMu.Content.Buffs;
 //using Microsoft.Xna.Framework;
 //using Terraria;
 //using Terraria.ID;
@@ -6,7 +6,7 @@
 //using Terraria.ModLoader;
 //using Terraria.ObjectData;
 
-//namespace Branch.Content.Titles
+//namespace YinMu.Content.Titles
 //{
 //    //TODO:开启关闭增益
 //    internal class FinalStationTile : ModTile

@@ -1,6 +1,6 @@
 ﻿using Terraria.ModLoader;
 
-namespace Branch.Common.System
+namespace YinMu.Common.System
 {
     internal class KeybindSystem : ModSystem
     {

@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.Potions
+namespace YinMu.Content.Items.Potions
 {
     internal class DryadsBlessingPotion : ModItem
     {

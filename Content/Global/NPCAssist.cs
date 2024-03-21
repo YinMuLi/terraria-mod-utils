@@ -2,7 +2,7 @@
 using Terraria;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     internal class NPCAssist : GlobalNPC
     {

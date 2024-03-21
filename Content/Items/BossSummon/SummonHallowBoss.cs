@@ -1,6 +1,6 @@
 ﻿using Terraria.ID;
 
-namespace Branch.Content.Items.BossSummon
+namespace YinMu.Content.Items.BossSummon
 {
     internal class SummonHallowBoss : BaseBossSummon
     {

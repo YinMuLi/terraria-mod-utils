@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.Default;
 
-namespace Branch.Content.Items.Accessory
+namespace YinMu.Content.Items.Accessory
 {
     internal class InscriptionEmblem : ModItem
     {

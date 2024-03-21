@@ -1,9 +1,9 @@
-﻿using Branch.Common.Configs;
+﻿using YinMu.Common.Configs;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     /// <summary>
     /// 鱼竿多线

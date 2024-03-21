@@ -1,9 +1,9 @@
-﻿using Branch.Content.Buffs;
+﻿using YinMu.Content.Buffs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.Misc
+namespace YinMu.Content.Items.Misc
 {
     internal class Cake : ModItem
     {

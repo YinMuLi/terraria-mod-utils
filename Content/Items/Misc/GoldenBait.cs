@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.Misc
+namespace YinMu.Content.Items.Misc
 {
     internal class GoldenBait : ModItem
     {

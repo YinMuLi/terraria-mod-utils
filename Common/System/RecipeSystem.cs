@@ -4,7 +4,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Branch.Common.System
+namespace YinMu.Common.System
 {
     internal class RecipeSystem : ModSystem
     {
@@ -19,7 +19,7 @@ namespace Branch.Common.System
             //任何邪恶锭
             int[] items = new int[] { ItemID.DemoniteBar, ItemID.CrimtaneBar };
             RecipeGroup group = new RecipeGroup(() => $"{any} {Lang.GetItemName(ItemID.DemoniteBar)}", items);
-            AnyDemoniteBar = RecipeGroup.RegisterGroup("Branch:AnyDemoniteBar", group);
+            AnyDemoniteBar = RecipeGroup.RegisterGroup("YinMu:AnyDemoniteBar", group);
         }
 
         public override void AddRecipes()

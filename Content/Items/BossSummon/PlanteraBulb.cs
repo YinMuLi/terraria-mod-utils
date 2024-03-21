@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace Branch.Content.Items.BossSummon
+namespace YinMu.Content.Items.BossSummon
 {
     /// <summary>
     /// Bulb:电灯泡;(植物)鳞茎;鳞茎状物(如温度计的球部)

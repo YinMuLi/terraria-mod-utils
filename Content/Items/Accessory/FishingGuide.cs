@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.Accessory
+namespace YinMu.Content.Items.Accessory
 {
     internal class FishingGuide : ModItem
     {

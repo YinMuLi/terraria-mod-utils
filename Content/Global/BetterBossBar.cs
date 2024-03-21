@@ -6,7 +6,7 @@ using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     internal class BetterBossBar : GlobalBossBar
     {

@@ -1,9 +1,9 @@
-﻿using Branch.Common.Extensions;
+﻿using YinMu.Common.Extensions;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.Misc
+namespace YinMu.Content.Items.Misc
 {
     internal class StarterBag : ModItem
     {

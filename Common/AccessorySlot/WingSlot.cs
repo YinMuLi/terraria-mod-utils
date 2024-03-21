@@ -1,9 +1,9 @@
-﻿using Branch.Common.Configs;
+﻿using YinMu.Common.Configs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Common.AccessorySlot
+namespace YinMu.Common.AccessorySlot
 {
     /// <summary>
     /// 添加翅膀饰品插槽

@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Threading;
 using Terraria.ModLoader.Config;
 
-namespace Branch.Common.Configs
+namespace YinMu.Common.Configs
 {
     /// <summary>
     /// 多人模式下，客户端配置

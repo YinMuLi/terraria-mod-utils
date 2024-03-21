@@ -1,11 +1,11 @@
-﻿using Branch.Common.Configs;
+﻿using YinMu.Common.Configs;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Common.Players
+namespace YinMu.Common.Players
 {
     //自动钓鱼 非常不喜欢这里的定时器
     public class FishPlayer : ModPlayer

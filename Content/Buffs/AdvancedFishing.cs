@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Buffs
+namespace YinMu.Content.Buffs
 {
     /// <summary>
     /// 高级钓鱼增益buff

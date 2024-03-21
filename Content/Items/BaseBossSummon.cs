@@ -2,7 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items
+namespace YinMu.Content.Items
 {
     /// <summary>
     /// 通用的Boss召唤物

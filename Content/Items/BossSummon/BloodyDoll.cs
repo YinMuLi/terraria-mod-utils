@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace Branch.Content.Items.BossSummon
+namespace YinMu.Content.Items.BossSummon
 {
     internal class BloodyDoll : BaseBossSummon
     {

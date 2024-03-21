@@ -1,7 +1,7 @@
-﻿using Branch.Common.Configs;
-using Branch.Content.Items.BossSummon;
-using Branch.Content.Items.Misc;
-using Branch.Content.Items.Potions;
+﻿using YinMu.Common.Configs;
+using YinMu.Content.Items.BossSummon;
+using YinMu.Content.Items.Misc;
+using YinMu.Content.Items.Potions;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
@@ -12,7 +12,7 @@ using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
 
-namespace Branch.Content.NPCS
+namespace YinMu.Content.NPCS
 {
     /// <summary>
     /// 模组NPC-Tom

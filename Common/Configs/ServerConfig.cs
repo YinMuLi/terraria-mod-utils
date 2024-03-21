@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Terraria.ModLoader.Config;
 
-namespace Branch.Common.Configs
+namespace YinMu.Common.Configs
 {
     /// <summary>
     /// 服务器配置，一个人也是服务器

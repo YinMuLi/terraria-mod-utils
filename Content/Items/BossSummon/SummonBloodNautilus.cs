@@ -3,7 +3,7 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Items.BossSummon
+namespace YinMu.Content.Items.BossSummon
 {
     internal class SummonBloodNautilus : ModItem
     {

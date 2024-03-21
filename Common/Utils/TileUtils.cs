@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ID;
 
-namespace Branch.Common.Utils
+namespace YinMu.Common.Utils
 {
     internal class TileUtils
     {

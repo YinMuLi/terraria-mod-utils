@@ -3,7 +3,7 @@ using System;
 using Terraria;
 using Terraria.UI;
 
-namespace Branch.Common.Interface
+namespace YinMu.Common.Interface
 {
     internal interface IItemClickable
     {

@@ -1,4 +1,4 @@
-﻿using Branch.Common.Configs;
+﻿using YinMu.Common.Configs;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
@@ -6,7 +6,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     internal class NotConsumable : GlobalItem
     {

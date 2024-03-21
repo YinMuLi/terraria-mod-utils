@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 
-namespace Branch.Common.System
+namespace YinMu.Common.System
 {
     internal class UISystem : ModSystem
     {

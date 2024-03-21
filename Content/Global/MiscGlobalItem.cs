@@ -1,11 +1,11 @@
-﻿using Branch.Common.Extensions;
+﻿using YinMu.Common.Extensions;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     internal class MiscGlobalItem : GlobalItem
     {

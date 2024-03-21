@@ -8,7 +8,7 @@ using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Branch.Common.Utils
+namespace YinMu.Common.Utils
 {
     public static partial class ModUtils
     {

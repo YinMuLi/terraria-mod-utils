@@ -5,7 +5,7 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace Branch.Common.Info
+namespace YinMu.Common.Info
 {
     /// <summary>
     /// Minion:仆从 Sentry:哨兵 Turrets:炮塔

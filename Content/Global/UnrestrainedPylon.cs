@@ -1,9 +1,9 @@
-﻿using Branch.Common.Configs;
+﻿using YinMu.Common.Configs;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ModLoader;
 
-namespace Branch.Content.Global
+namespace YinMu.Content.Global
 {
     /// <summary>
     /// 无限制的晶塔

@@ -1,6 +1,6 @@
 ﻿using Terraria.UI;
 
-namespace Branch.Common.Utils
+namespace YinMu.Common.Utils
 {
     public static partial class ModUtils
     {

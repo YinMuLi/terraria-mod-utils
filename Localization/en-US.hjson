@@ -1,228 +1,210 @@
 Mods: {
-	Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
+	YinMu: {
+		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
 
-	Buffs: {
-		AdvancedDefense: {
-			DisplayName: Advanced Defense
-			Description: Mods.YinMu.Buffs.AdvancedDefense.Description
-		}
-
-		AdvancedExplorer: {
-			DisplayName: Advanced Explorer
-			Description: Mods.YinMu.Buffs.AdvancedExplorer.Description
-		}
-
-		AdvancedFishing: {
-			DisplayName: Advanced Fishing
-			Description: Mods.YinMu.Buffs.AdvancedFishing.Description
-		}
-
-		CommonStationBuff: {
-			DisplayName: Common Station Buff
-			Description: Mods.YinMu.Buffs.CommonStationBuff.Description
-		}
-
-		SickBlade: {
-			DisplayName: Sick Blade
-			Description: Mods.YinMu.Buffs.SickBlade.Description
-		}
-
-		DryadsBlessing: {
-			DisplayName: Dryads Blessing
-			Description: Mods.YinMu.Buffs.DryadsBlessing.Description
-		}
-	}
-
-	Items: {
-		BloodyDoll: {
-			DisplayName: Bloody Doll
-			Tooltip: ""
-		}
-
-		SummonHallowBoss: {
-			DisplayName: Butterfly Token
-			Tooltip: ""
-		}
-
-		PlanteraBulb: {
-			DisplayName: Plantera Bulb
-			Tooltip: ""
-		}
-
-		AdvancedDefensePotion: {
-			DisplayName: Advanced Defense Potion
-			Tooltip: ""
-		}
-
-		AdvancedExplorerPotion: {
-			DisplayName: Advanced Explorer Potion
-			Tooltip: ""
-		}
-
-		AdvancedFishingPotion: {
-			DisplayName: Advanced Fishing Potion
-			Tooltip: ""
-		}
-
-		StarterBag: {
-			DisplayName: Starter Bag
-			Tooltip: ""
-		}
-
-		FishingGuide: {
-			DisplayName: Fishing Guide
-			Tooltip: ""
-		}
-
-		GoldenBait: {
-			Tooltip: ""
-			DisplayName: Golden Bait
-		}
-
-		InscriptionEmblem: {
-			Tooltip: ""
-			DisplayName: Inscription Emblem
-		}
-
-		DryadsBlessingPotion: {
-			DisplayName: Dryads Blessing Potion
-			Tooltip: ""
-		}
-
-		Cake: {
-			DisplayName: Cake
-			Tooltip: ""
-		}
-
-		SummonBloodNautilus: {
-			DisplayName: 出血贝壳
-			Tooltip:
-				'''
-				血月召唤恐惧鹦鹉螺
-				无消耗
-				'''
-		}
-
-		SummonDukeFishron: {
-			Tooltip: ""
-			DisplayName: Summon Duke Fishron
-		}
-
-		Bag: {
-			DisplayName: Bag
-			Tooltip: ""
-		}
-	}
-
-	NPCs: {
-		Tom: {
-			DisplayName: Tom
-
-			TownNPCMood: {
-				Content: 我很满足。
-				NoHome: 我讨厌没有家。
-				FarFromHome: 我离家太远了。
-				LoveSpace: 我非常喜欢有这么大的空间。
-				DislikeCrowded: 我不喜欢这么拥挤。
-				HateCrowded: 我讨厌这么拥挤。
-				LoveBiome: 我非常喜欢{BiomeName}。
-				LikeBiome: 我喜欢{BiomeName}。
-				DislikeBiome: 我不喜欢{BiomeName}。
-				HateBiome: 我讨厌{BiomeName}。
-				LikeNPC: 我喜欢{NPCName}。
-				DislikeNPC: 我不喜欢{NPCName}。
-				LikeNPC_Princess: I like {NPCName}.
-				Princess_LovesNPC: I like {NPCName}.
-			}
-		}
-	}
-
-	Configs: {
-		ClientConfig: {
-			DisplayName: Client Config
-
-			Headers: {
-				Fishing: Fishing Header
-				Common: Common Header
+		Buffs: {
+			AdvancedDefense: {
+				DisplayName: Advanced Defense
+				Description: Mods.YinMu.Buffs.AdvancedDefense.Description
 			}
 
-			AutoFish: {
-				Label: Auto Fish
+			AdvancedExplorer: {
+				DisplayName: Advanced Explorer
+				Description: Mods.YinMu.Buffs.AdvancedExplorer.Description
+			}
+
+			AdvancedFishing: {
+				DisplayName: Advanced Fishing
+				Description: Mods.YinMu.Buffs.AdvancedFishing.Description
+			}
+
+			CommonStationBuff: {
+				DisplayName: Common Station Buff
+				Description: Mods.YinMu.Buffs.CommonStationBuff.Description
+			}
+
+			SickBlade: {
+				DisplayName: Sick Blade
+				Description: Mods.YinMu.Buffs.SickBlade.Description
+			}
+
+			DryadsBlessing: {
+				DisplayName: Dryads Blessing
+				Description: Mods.YinMu.Buffs.DryadsBlessing.Description
+			}
+		}
+
+		Items: {
+			BloodyDoll: {
+				DisplayName: Bloody Doll
 				Tooltip: ""
 			}
 
-			LuresAmount: {
-				Label: Lures Amount
+			SummonHallowBoss: {
+				DisplayName: Butterfly Token
 				Tooltip: ""
 			}
 
-			PullWaitTimer: {
-				Label: Pull Wait Timer
+			PlanteraBulb: {
+				DisplayName: Plantera Bulb
 				Tooltip: ""
 			}
 
-			CatchCrate: {
-				Label: Catch Crate
+			AdvancedDefensePotion: {
+				DisplayName: Advanced Defense Potion
 				Tooltip: ""
 			}
 
-			CatchAccessories: {
-				Label: Catch Accessories
+			AdvancedExplorerPotion: {
+				DisplayName: Advanced Explorer Potion
 				Tooltip: ""
 			}
 
-			ShowMinion: {
-				Label: Show Minion
+			AdvancedFishingPotion: {
+				DisplayName: Advanced Fishing Potion
 				Tooltip: ""
 			}
 
-			CursorDistance: {
-				Label: Cursor Distance
+			StarterBag: {
+				DisplayName: Starter Bag
 				Tooltip: ""
 			}
 
-			MinZoom: {
-				Label: Min Zoom
+			FishingGuide: {
+				DisplayName: Fishing Guide
 				Tooltip: ""
 			}
 
-			SwitchInventory: {
+			GoldenBait: {
 				Tooltip: ""
-				Label: Switch Inventory
+				DisplayName: Golden Bait
 			}
 
-			NoSwapDecoration: {
-				Label: No Swap Decoration
+			InscriptionEmblem: {
+				Tooltip: ""
+				DisplayName: Inscription Emblem
+			}
+
+			DryadsBlessingPotion: {
+				DisplayName: Dryads Blessing Potion
+				Tooltip: ""
+			}
+
+			Cake: {
+				DisplayName: Cake
+				Tooltip: ""
+			}
+
+			SummonBloodNautilus: {
+				DisplayName: 出血贝壳
+				Tooltip:
+					'''
+					血月召唤恐惧鹦鹉螺
+					无消耗
+					'''
+			}
+
+			SummonDukeFishron: {
+				Tooltip: ""
+				DisplayName: Summon Duke Fishron
+			}
+
+			Bag: {
+				DisplayName: Bag
 				Tooltip: ""
 			}
 		}
 
-		ServerConfig: {
-			DisplayName: Server Config
+		NPCs: {
+			Tom: {
+				DisplayName: Tom
 
-			SpawnTom: {
-				Label: Spawn Tom
-				Tooltip: ""
+				TownNPCMood: {
+					Content: 我很满足。
+					NoHome: 我讨厌没有家。
+					FarFromHome: 我离家太远了。
+					LoveSpace: 我非常喜欢有这么大的空间。
+					DislikeCrowded: 我不喜欢这么拥挤。
+					HateCrowded: 我讨厌这么拥挤。
+					LoveBiome: 我非常喜欢{BiomeName}。
+					LikeBiome: 我喜欢{BiomeName}。
+					DislikeBiome: 我不喜欢{BiomeName}。
+					HateBiome: 我讨厌{BiomeName}。
+					LikeNPC: 我喜欢{NPCName}。
+					DislikeNPC: 我不喜欢{NPCName}。
+					LikeNPC_Princess: I like {NPCName}.
+					Princess_LovesNPC: I like {NPCName}.
+				}
+			}
+		}
+
+		Configs: {
+			ClientConfig: {
+				DisplayName: Client Config
+
+				Headers: {
+					Fishing: Fishing Header
+					Common: Common Header
+				}
+
+				LuresAmount: {
+					Label: Lures Amount
+					Tooltip: ""
+				}
+
+				QuickFishing: {
+					Label: Lures Amount
+					Tooltip: ""
+				}
+
+				ShowMinion: {
+					Label: Show Minion
+					Tooltip: ""
+				}
+
+				MinZoom: {
+					Label: Min Zoom
+					Tooltip: ""
+				}
+
+				SwitchInventory: {
+					Tooltip: ""
+					Label: Switch Inventory
+				}
+
+				NoSwapDecoration: {
+					Label: No Swap Decoration
+					Tooltip: ""
+				}
 			}
 
-			UnrestrainedPylon: {
-				Label: Unrestrained Pylon
-				Tooltip: ""
-			}
+			ServerConfig: {
+				DisplayName: Server Config
 
-			ExtraWingSlot: {
-				Label: Extra Wing Slot
-				Tooltip: ""
-			}
+				SpawnTom: {
+					Label: Spawn Tom
+					Tooltip: ""
+				}
 
-			BossSpawnNotConsumable: {
-				Label: Boss Spawn Not Consumable
-				Tooltip: ""
-			}
+				UnrestrainedPylon: {
+					Label: Unrestrained Pylon
+					Tooltip: ""
+				}
 
-			EnableFountain: {
-				Tooltip: ""
-				Label: Enable Fountain
+				ExtraWingSlot: {
+					Label: Extra Wing Slot
+					Tooltip: ""
+				}
+
+				BossSpawnNotConsumable: {
+					Label: Boss Spawn Not Consumable
+					Tooltip: ""
+				}
+
+				EnableFountain: {
+					Tooltip: ""
+					Label: Enable Fountain
+				}
 			}
 		}
 	}

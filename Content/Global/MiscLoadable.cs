@@ -15,6 +15,7 @@ using Terraria.IO;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.UI;
+using static Humanizer.In;
 
 namespace YinMu.Content.Global
 {
@@ -42,11 +43,28 @@ namespace YinMu.Content.Global
             On_Main.UpdateViewZoomKeys += UpdateViewZoom;
             On_Item.CanFillEmptyAmmoSlot += (_, _) => false; //拾取到的物品都不放在弹药栏
             On_Player.QuickStackAllChests += QuickStackAllChests;
+            On_Player.ItemCheck_CheckFishingBobbers += ItemCheck_CheckFishingBobbers;
             //On_WorldGen.ScoreRoom_IsThisRoomOccupiedBySomeone += (_, _, _) => false;//一个房间可以被多个NPC使用
             IL_Main.DoDraw += Patch_ZoomBounds;
             IL_UICharacterListItem.ctor += Patch_UICharacterListItem_Ctor;//构造函数
             IL_UIWorldListItem.ctor += Patch_UIWorldListItem_Ctor;
             IL_Player.TrySwitchingLoadout += Patch_TrySwitchingLoadout;//切换装备
+        }
+
+        private bool ItemCheck_CheckFishingBobbers(On_Player.orig_ItemCheck_CheckFishingBobbers orig, Player self, bool canUse)
+        {
+            //快速钓鱼
+            if (ClientConfig.Instance.QuickFishing)
+            {
+                foreach (var p in Main.projectile)
+                {
+                    if (p.owner == self.whoAmI && p.active && p.bobber)
+                    {
+                        p.FishingCheck();
+                    }
+                }
+            }
+            return orig.Invoke(self, canUse);
         }
 
         private void Patch_TrySwitchingLoadout(ILContext il)

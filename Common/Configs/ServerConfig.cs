@@ -19,11 +19,11 @@ namespace YinMu.Common.Configs
         [DefaultValue(true)]
         public bool SpawnTom;
 
-        /// <summary>
-        /// 无限制晶塔
-        /// </summary>
-        [DefaultValue(true)]
-        public bool UnrestrainedPylon;
+        ///// <summary>
+        ///// 无限制晶塔
+        ///// </summary>
+        //[DefaultValue(true)]
+        //public bool UnrestrainedPylon;
 
         /// <summary>
         /// 额外翅膀插槽

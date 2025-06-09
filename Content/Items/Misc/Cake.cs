@@ -12,8 +12,8 @@ namespace YinMu.Content.Items.Misc
             Item.UseSound = SoundID.Item2;
             Item.useStyle = ItemUseStyleID.EatFood;
             Item.useTurn = true;
-            Item.width = 28;
-            Item.height = 28;
+            Item.width = 32;
+            Item.height = 32;
             Item.value = Item.buyPrice(1, 0, 0, 0);
             Item.rare = ItemRarityID.LightRed;
             Item.maxStack = 1;

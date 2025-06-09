@@ -14,7 +14,7 @@ namespace YinMu.Common.Info
     {
         public override LocalizedText DisplayName => Language.GetText("BuffName.Summoning");//召唤
 
-        public override bool Active() => true;
+        public override bool Active() => false;//Summoner 模组已有实现，此代码仅作学习
 
         public override string DisplayValue(ref Color displayColor, ref Color displayShadowColor)
         {

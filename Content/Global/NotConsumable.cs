@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using YinMu.Common.System;
 
 namespace YinMu.Content.Global
 {
@@ -17,15 +18,32 @@ namespace YinMu.Content.Global
 
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
+            //从BossCheckList中获取Boss召唤物，并把召唤物改为无消耗
+
             //Boss召唤物
-            if (IsBossSpawn(item) && item.consumable)
+            //if (IsBossSpawn(item) && item.consumable)
+            //{
+            //    foreach (var line in tooltips)
+            //    {
+            //        if (line.Mod.Equals("Terraria") && line.Name.Equals("Consumable"))
+            //        {
+            //            line.Text = Language.GetTextValue("Mods.Items.NotConsumable");
+            //            line.OverrideColor = Color.Aqua;
+            //        }
+            //    }
+            //}
+
+            foreach (var itemID in BossInfoDict.GetAllBossSpawnItems())
             {
-                foreach (var line in tooltips)
+                if (item.type == itemID && item.consumable && ItemID.Sets.SortingPriorityBossSpawns[item.type] >= 0 && item.bait == 0)
                 {
-                    if (line.Mod.Equals("Terraria") && line.Name.Equals("Consumable"))
+                    foreach (var line in tooltips)
                     {
-                        line.Text = Language.GetTextValue("Mods.Items.NotConsumable");
-                        line.OverrideColor = Color.Aqua;
+                        if (line.Mod.Equals("Terraria") && line.Name.Equals("Consumable"))
+                        {
+                            line.Text = Language.GetTextValue("Mods.Items.NotConsumable");
+                            line.OverrideColor = Color.Aqua;
+                        }
                     }
                 }
             }
@@ -33,9 +51,12 @@ namespace YinMu.Content.Global
 
         public override bool ConsumeItem(Item item, Player player)
         {
-            if (IsBossSpawn(item) && item.consumable)
+            foreach (var itemID in BossInfoDict.GetAllBossSpawnItems())
             {
-                return false;
+                if (item.type == itemID && item.consumable && ItemID.Sets.SortingPriorityBossSpawns[item.type] >= 0 && item.bait == 0)
+                {
+                    return false;
+                }
             }
             return base.ConsumeItem(item, player);
         }

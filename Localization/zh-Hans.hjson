@@ -230,7 +230,7 @@ Mods: {
 
 				MinZoom: {
 					Label: 最小视距
-					// Tooltip: ""
+					Tooltip: 数值越小，界面缩放的越小
 				}
 
 				SwitchInventory: {
@@ -254,7 +254,7 @@ Mods: {
 
 				UnrestrainedPylon: {
 					Label: 无限制晶塔
-					Tooltip: 不限制晶塔放置个数和传送条件
+					Tooltip: 不限制晶塔放置个数和传送条件，鉴于更好的体验中已经存在，不建议打开
 				}
 
 				ExtraWingSlot: {

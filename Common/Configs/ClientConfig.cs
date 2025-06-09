@@ -23,8 +23,8 @@ namespace YinMu.Common.Configs
         public bool SwitchInventory;
 
         [Increment(0.1f)]
-        [Range(0.3f, 4f)]
-        [DefaultValue(0.3f)]
+        [Range(0.5f, 4f)]
+        [DefaultValue(0.85f)]
         public float MinZoom;
 
         /// <summary>

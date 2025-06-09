@@ -30,9 +30,9 @@ namespace YinMu
                     ModContent.BuffType<CommonStationBuff>()
                 );
             }
-            if (ModLoader.TryGetMod("BossChecklist", out Mod bossList))
+            if (ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist))
             {
-                bossList.Call("SubmitEntrySpawnItems", this, new Dictionary<string, object>()
+                bossChecklist.Call("SubmitEntrySpawnItems", this, new Dictionary<string, object>()
             {
                 { "Terraria Plantera", ModContent.ItemType<PlanteraBulb>()},
                 { "Terraria HallowBoss", ModContent.ItemType<SummonHallowBoss>()},

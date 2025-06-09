@@ -282,7 +282,8 @@ namespace YinMu.Content.NPCS
                 ItemID.Moonglow,//月光草
                 ItemID.Shiverthorn,//寒颤棘
                 ItemID.Waterleaf,//幌菊
-                ItemID.BottledWater//瓶装水
+                ItemID.BottledWater,//瓶装水
+                ItemID.VileMushroom//邪菇，合成世界吞噬者召唤物
             };
             for (int i = 0; i < items.Length; i++)
             {

@@ -136,7 +136,7 @@ namespace YinMu.Content.Global
                 UIImageButton linkButton = new(ChainButtonTexture)
                 {
                     VAlign = 1f,
-                    Left = StyleDimension.FromPixelsAndPercent(num, 0f)
+                    Left = StyleDimension.FromPercent(0.5f)
                 };
                 //连接玩家或者解除绑定玩家
                 linkButton.OnLeftClick += (_, _) =>
@@ -202,8 +202,8 @@ namespace YinMu.Content.Global
             c.EmitLdarg0();//把方法第n个参数装入堆栈,在非静态函数中，第0个参数是一个隐含的参数，代表this
             c.EmitLdarg1();//PlayerFileData
             c.EmitLdarg2();//snapPointIndex
-            //Ldloc 将指定索引处的局部变量加载到计算堆栈上。
-            //Ldloca 将位于特定索引处的局部变量的地址加载到计算堆栈上。能用ref
+                           //Ldloc 将指定索引处的局部变量加载到计算堆栈上。
+                           //Ldloca 将位于特定索引处的局部变量的地址加载到计算堆栈上。能用ref
             c.EmitLdloca(0);//推送本地变量就是num（少打了一个a，检查一个小时...哭）
             c.EmitDelegate((UICharacterListItem self, PlayerFileData data, int snapPointIndex, ref float num) =>
             {
@@ -218,7 +218,9 @@ namespace YinMu.Content.Global
                 UIImageButton linkButton = new(modPlayer.linkWorldID != null ? PlayChainButtonTexture : NoChainButtonTexture)
                 {
                     VAlign = 1f,
-                    Left = StyleDimension.FromPixelsAndPercent(num, 0f)
+                    //这个方法允许你同时指定一个基础像素值和一个百分比值，最终的尺寸会根据这两个值进行计算。
+                    //pixels：基础像素值。percent：百分比值（相对于父容器的宽度或高度）。
+                    Left = StyleDimension.FromPercent(0.5f)
                 };
                 linkButton.OnLeftClick += (evt, element) =>
                 {

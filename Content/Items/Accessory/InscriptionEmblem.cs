@@ -51,7 +51,7 @@ namespace YinMu.Content.Items.Accessory
         public override void AddRecipes()
         {
             CreateRecipe()
-                .AddRecipeGroup(RecipeGroupID.IronBar)
+                .AddIngredient(ItemID.HellstoneBar, 10)//狱石锭
                 .Register();
         }
     }

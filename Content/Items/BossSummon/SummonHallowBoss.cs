@@ -4,7 +4,7 @@ namespace YinMu.Content.Items.BossSummon
 {
     internal class SummonHallowBoss : BaseBossSummon
     {
-        public override string Texture => $"Terraria/Images/Item_{ItemID.EmpressButterfly}";
+        //public override string Texture => $"Terraria/Images/Item_{ItemID.EmpressButterfly}";
 
         internal override int NPCType => NPCID.HallowBoss;
 

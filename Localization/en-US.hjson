@@ -1,112 +1,207 @@
 Mods: {
 	YinMu: {
-		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
+		Keybinds.TeleportDeathPoint.DisplayName: Teleport to Last Death Point
 
 		Buffs: {
 			AdvancedDefense: {
-				DisplayName: Advanced Defense
-				Description: Mods.YinMu.Buffs.AdvancedDefense.Description
+				DisplayName: Ironclad
+				Description:
+					'''
+					```
+					+2 Life Regeneration
+					+8 Defense
+					+20% Maximum Health (Increases by 20 for every 100 base health)
+					-10% Damage Taken
+					-30% Damage from Cold-themed Enemies
+					Reflect 33% of Melee Damage
+					```
+					'''
 			}
 
 			AdvancedExplorer: {
-				DisplayName: Advanced Explorer
-				Description: Mods.YinMu.Buffs.AdvancedExplorer.Description
+				DisplayName: Explorer
+				Description:
+					'''
+					```
+					+25% Movement Speed
+					+25% Mining Speed
+					Many other non-numeric benefits
+					```
+					'''
 			}
 
-			AdvancedFishing: {
-				DisplayName: Advanced Fishing
-				Description: Mods.YinMu.Buffs.AdvancedFishing.Description
+			EnhancedFishing: {
+				DisplayName: Master Angler
+				Description:
+					'''
+					```
+					Master the secrets of the ocean and enhance your fishing skills.
+					Increases chance to catch treasure crates.
+					+15 Fishing Power
+					Reveals the type of fish on your hook.
+					```
+					'''
 			}
 
 			CommonStationBuff: {
-				DisplayName: Common Station Buff
-				Description: Mods.YinMu.Buffs.CommonStationBuff.Description
-			}
-
-			SickBlade: {
-				DisplayName: Sick Blade
-				Description: Mods.YinMu.Buffs.SickBlade.Description
+				DisplayName: Universal Buff
+				Description:
+					'''
+					```
+					+10% Current Life Regeneration
+					+2.5 Life Regeneration
+					+5 Defense
+					+20% Movement Speed +20% Mining Speed
+					+1 Minion Slot
+					+12 Melee Armor Penetration
+					+20 Maximum Mana +5% Magic Damage +2% Magic Critical Strike Chance -2% Mana Cost
+					+1 Mana Regeneration
+					```
+					'''
 			}
 
 			DryadsBlessing: {
-				DisplayName: Dryads Blessing
-				Description: Mods.YinMu.Buffs.DryadsBlessing.Description
+				DisplayName: Nature's Power
+				Description:
+					'''
+					```
+					+6 Life Regeneration
+					+8 Defense
+					+50% Thorns Effect (Reflects 50% of damage, stacks with Thorns Potion)
+					"Let nature grant us strength, Gao Midi invincible king of nature, transform!"
+					```
+					'''
 			}
 		}
 
 		Items: {
 			BloodyDoll: {
 				DisplayName: Bloody Doll
-				Tooltip: ""
+				Tooltip:
+					'''
+					```
+					Summons the Wall of Flesh in the Underworld (direction is random).
+					Non-consumable.
+					```
+					'''
 			}
 
 			SummonHallowBoss: {
-				DisplayName: Butterfly Token
-				Tooltip: ""
+				DisplayName: Prismatic Proof of the Dusk
+				Tooltip:
+					'''
+					```
+					Summons the Empress of Light.
+					Enrages during the day.
+					Non-consumable.
+					```
+					'''
 			}
 
 			PlanteraBulb: {
-				DisplayName: Plantera Bulb
-				Tooltip: ""
+				DisplayName: Plantera's Bulb
+				Tooltip:
+					'''
+					```
+					Use in the Jungle to summon Plantera.
+					Enrages outside the Underground Jungle.
+					Non-consumable.
+					```
+					'''
 			}
 
 			AdvancedDefensePotion: {
 				DisplayName: Advanced Defense Potion
-				Tooltip: ""
+				Tooltip: Grants defensive buffs (Regeneration, Lifeforce, Iron Skin, Endurance, Thorns, Swiftness, Warmth).
 			}
 
 			AdvancedExplorerPotion: {
 				DisplayName: Advanced Explorer Potion
-				Tooltip: ""
+				Tooltip:
+					'''
+					```
+					Grants essential exploration buffs:
+					(Cave, Night Owl, Mining, Hunter, Swiftness,
+					Dangersense, Water Walking, Gills, Flipper, Obsidian Skin)
+					```
+					'''
 			}
 
-			AdvancedFishingPotion: {
-				DisplayName: Advanced Fishing Potion
-				Tooltip: ""
+			EnhancedFishingPotion: {
+				DisplayName: Enhanced Fishing Potion
+				Tooltip: Grants the effects of Fishing, Sonar, and Crate Potions.
 			}
 
 			StarterBag: {
 				DisplayName: Starter Bag
-				Tooltip: ""
+				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 			}
 
 			FishingGuide: {
 				DisplayName: Fishing Guide
-				Tooltip: ""
+				Tooltip:
+					'''
+					```
+					+80 Fishing Power
+					Functions as Lavaproof Fishing Hook.
+					Grants Sonar and Crate Potion effects.
+					[c/C4232C:- Equip in Vanity Slot to Activate -]
+					```
+					'''
 			}
 
 			GoldenBait: {
-				Tooltip: ""
 				DisplayName: Golden Bait
+				Tooltip:
+					'''
+					```
+					Non-consumable.
+					"The sun sets, and the angler stays."
+					```
+					'''
 			}
 
 			InscriptionEmblem: {
-				Tooltip: ""
 				DisplayName: Inscription Emblem
+				Tooltip:
+					'''
+					```
+					Re-rolls all equipped accessories with this item's modifiers.
+					<right> Teleport to your last death point.
+					```
+					'''
 			}
 
 			DryadsBlessingPotion: {
-				DisplayName: Dryads Blessing Potion
-				Tooltip: ""
+				DisplayName: Dryad's Blessing
+				Tooltip: Grants the benefits of being in a Leaf Zone.
 			}
 
 			Cake: {
 				DisplayName: Cake
-				Tooltip: ""
+				Tooltip: Grants Heart Lamp, Campfire, Honey, Banners, and Cake Block effects.
 			}
 
 			SummonBloodNautilus: {
-				DisplayName: 出血贝壳
+				DisplayName: Bleeding Shell
 				Tooltip:
 					'''
-					血月召唤恐惧鹦鹉螺
-					无消耗
+					```
+					Summons the Blood Nautilus during a Blood Moon.
+					Non-consumable.
+					```
 					'''
 			}
 
 			SummonDukeFishron: {
-				Tooltip: ""
-				DisplayName: Summon Duke Fishron
+				DisplayName: Crimson Truffle Worm
+				Tooltip:
+					'''
+					```
+					Summons Duke Fishron in Ocean biomes.
+					Non-consumable.
+					```
+					'''
 			}
 
 			Bag: {
@@ -120,90 +215,90 @@ Mods: {
 				DisplayName: Tom
 
 				TownNPCMood: {
-					Content: 我很满足。
-					NoHome: 我讨厌没有家。
-					FarFromHome: 我离家太远了。
-					LoveSpace: 我非常喜欢有这么大的空间。
-					DislikeCrowded: 我不喜欢这么拥挤。
-					HateCrowded: 我讨厌这么拥挤。
-					LoveBiome: 我非常喜欢{BiomeName}。
-					LikeBiome: 我喜欢{BiomeName}。
-					DislikeBiome: 我不喜欢{BiomeName}。
-					HateBiome: 我讨厌{BiomeName}。
-					LikeNPC: 我喜欢{NPCName}。
-					DislikeNPC: 我不喜欢{NPCName}。
+					Content: I'm content.
+					NoHome: I hate having no home.
+					FarFromHome: I'm too far from home.
+					LoveSpace: I love having so much space!
+					DislikeCrowded: I don't like being crowded.
+					HateCrowded: I hate being crowded!
+					LoveBiome: I absolutely love the {BiomeName}.
+					LikeBiome: I like the {BiomeName}.
+					DislikeBiome: I don't like the {BiomeName}.
+					HateBiome: I hate the {BiomeName}!
+					LikeNPC: I like {NPCName}.
+					DislikeNPC: I don't like {NPCName}.
 					LikeNPC_Princess: I like {NPCName}.
-					Princess_LovesNPC: I like {NPCName}.
+					Princess_LovesNPC: I adore {NPCName}!
 				}
 			}
 		}
 
 		Configs: {
 			ClientConfig: {
-				DisplayName: Client Config
+				DisplayName: Client Configuration
 
 				Headers: {
-					Fishing: Fishing Header
-					Common: Common Header
+					Fishing: Fishing
+					Common: General Settings
 				}
 
 				LuresAmount: {
-					Label: Lures Amount
+					Label: Number of Fishing Lures
 					Tooltip: ""
 				}
 
 				QuickFishing: {
-					Label: Lures Amount
-					Tooltip: ""
+					Label: Quick Fishing
+					Tooltip: Automatically catch fish when reeling in.
 				}
 
 				ShowMinion: {
-					Label: Show Minion
+					Label: Show Minion Slot Info
 					Tooltip: ""
 				}
 
 				MinZoom: {
-					Label: Min Zoom
-					Tooltip: ""
+					Label: Minimum Zoom
+					Tooltip: Smaller value = smaller interface zoom.
 				}
 
 				SwitchInventory: {
-					Tooltip: ""
-					Label: Switch Inventory
+					Label: Swap Inventory Rows After Stacking
+					Tooltip: When auto-stacking into nearby chests starts from the second row, enabling this will swap the first and second rows after stacking.
 				}
 
 				NoSwapDecoration: {
-					Label: No Swap Decoration
+					Label: Don't Swap Accessories When Changing Equipment
 					Tooltip: ""
 				}
 			}
 
 			ServerConfig: {
-				DisplayName: Server Config
+				DisplayName: Server Configuration
 
 				SpawnTom: {
-					Label: Spawn Tom
+					Label: Spawn Mod NPC
 					Tooltip: ""
 				}
 
 				UnrestrainedPylon: {
-					Label: Unrestrained Pylon
-					Tooltip: ""
+					Label: Unrestricted Teleportation Pylons
+					Tooltip: Allows unlimited pylons and removes placement restrictions. Not recommended if Better Experience mod is installed.
 				}
 
 				ExtraWingSlot: {
-					Label: Extra Wing Slot
+					Label: Extra Wing Accessory Slot
 					Tooltip: ""
 				}
 
 				BossSpawnNotConsumable: {
-					Label: Boss Spawn Not Consumable
+					Label: Non-Consumable Boss Summons
 					Tooltip: ""
 				}
 
 				EnableFountain: {
+					Label: Fountains Alter Biomes
 					Tooltip: ""
-					Label: Enable Fountain
 				}
 			}
 		}

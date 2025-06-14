@@ -15,7 +15,7 @@ using Terraria.ModLoader.IO;
 
 namespace YinMu.Common.Players
 {
-    public partial class YinMuPlayer : ModPlayer
+    public partial class LinkedPlayer : ModPlayer
     {
         internal string linkWorldID;
 

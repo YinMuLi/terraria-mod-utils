@@ -81,7 +81,7 @@ namespace YinMu.Common.Extensions
 
         #endregion UI
 
-        public static YinMuPlayer ModPlayer(this Player player) => player.GetModPlayer<YinMuPlayer>();
+        public static LinkedPlayer ModPlayer(this Player player) => player.GetModPlayer<LinkedPlayer>();
 
         /// <summary>
         /// 简便添加一个物品的掉落

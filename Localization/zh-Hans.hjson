@@ -3,7 +3,7 @@ Mods: {
 		Keybinds.TeleportDeathPoint.DisplayName: 传送上一次死亡地点
 
 		Buffs: {
-			AdvancedDefense: {
+			EnhancedSurvival: {
 				DisplayName: 铜墙铁壁
 				Description:
 					'''
@@ -26,9 +26,14 @@ Mods: {
 					'''
 			}
 
-			AdvancedFishing: {
+			EnhancedFishing: {
 				DisplayName: 钓鱼高手
-				Description: 包含以下Buff：声呐,钓鱼,宝匣
+				Description:
+					'''
+					提高获得宝匣的几率
+					+15渔力
+					查明上钩的鱼
+					'''
 			}
 
 			CommonStationBuff: {
@@ -44,11 +49,6 @@ Mods: {
 					+20最大魔力 +5%魔法伤害 +2%魔法暴击 -2%魔力消耗
 					+1魔力恢复
 					'''
-			}
-
-			SickBlade: {
-				DisplayName: 破伤风之刃
-				Description: 为敌怪添加原版绝大多数Debuff
 			}
 
 			DryadsBlessing: {
@@ -93,8 +93,8 @@ Mods: {
 					'''
 			}
 
-			AdvancedDefensePotion: {
-				DisplayName: 高级防御药水
+			EnhancedSurvivalPotion: {
+				DisplayName: 强化生存药水
 				Tooltip: 增强防御(再生，生命力，铁皮，耐力，荆棘，敏捷、保暖)
 			}
 
@@ -108,9 +108,9 @@ Mods: {
 					'''
 			}
 
-			AdvancedFishingPotion: {
-				DisplayName: 高级钓鱼药水
-				Tooltip: 获得你在钓鱼时需要的Buff(钓鱼,宝匣,声呐)
+			EnhancedFishingPotion: {
+				DisplayName: 强化钓鱼药水
+				Tooltip: 赋予使用者钓鱼药水,宝匣药水,声呐药水的增益
 			}
 
 			StarterBag: {
@@ -130,21 +130,21 @@ Mods: {
 			}
 
 			GoldenBait: {
+				DisplayName: 黄金鱼饵
 				Tooltip:
 					'''
 					不消耗
 					“夕阳西下，钓鱼人在这里”
 					'''
-				DisplayName: 黄金鱼饵
 			}
 
 			InscriptionEmblem: {
+				DisplayName: 铭刻徽章
 				Tooltip:
 					'''
-					重铸所有生效的饰品（以该物品的词条为准）
+					重铸所有已装备的饰品（以该物品的词条为准）
 					<right>传送到上一次死亡地点
 					'''
-				DisplayName: 铭刻徽章
 			}
 
 			DryadsBlessingPotion: {
@@ -167,12 +167,12 @@ Mods: {
 			}
 
 			SummonDukeFishron: {
+				DisplayName: 赤红松露虫
 				Tooltip:
 					'''
 					海洋环境中召唤猪龙鱼公爵
 					无消耗
 					'''
-				DisplayName: 赤红松露虫
 			}
 
 			Bag: {
@@ -234,8 +234,8 @@ Mods: {
 				}
 
 				SwitchInventory: {
-					Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
 					Label: 交换物品栏堆叠
+					Tooltip: 快速堆叠进附近的箱子是从物品栏第二行开始，开启此功能会在堆叠后自动交换物品栏的第一行和第二行。
 				}
 
 				NoSwapDecoration: {
@@ -268,8 +268,8 @@ Mods: {
 				}
 
 				EnableFountain: {
-					// Tooltip: ""
 					Label: 喷泉改变环境
+					// Tooltip: ""
 				}
 			}
 		}

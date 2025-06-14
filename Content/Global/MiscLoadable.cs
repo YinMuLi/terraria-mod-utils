@@ -132,7 +132,7 @@ namespace YinMu.Content.Global
             c.EmitDelegate((UIWorldListItem self, WorldFileData data, int orderInList, bool canBePlayed, ref float num) =>
             {
                 if (!canBePlayed) return;
-                YinMuPlayer modPlayer = Main.ActivePlayerFileData.Player.ModPlayer();
+                LinkedPlayer modPlayer = Main.ActivePlayerFileData.Player.ModPlayer();
                 UIImageButton linkButton = new(ChainButtonTexture)
                 {
                     VAlign = 1f,
@@ -207,7 +207,7 @@ namespace YinMu.Content.Global
             c.EmitLdloca(0);//推送本地变量就是num（少打了一个a，检查一个小时...哭）
             c.EmitDelegate((UICharacterListItem self, PlayerFileData data, int snapPointIndex, ref float num) =>
             {
-                YinMuPlayer modPlayer = data.Player.ModPlayer();
+                LinkedPlayer modPlayer = data.Player.ModPlayer();
                 WorldFileData worldData = ModUtils.GetWorldFileData(modPlayer.linkWorldID);
                 //连接的世界被删除了
                 if (modPlayer.linkWorldID != null && (worldData == null || !worldData.IsValid))

@@ -33,7 +33,11 @@ namespace YinMu.Common.Players
         {
             if (!mediumCoreDeath)//硬核人物？？？
             {
-                yield return new Item(ModContent.ItemType<StarterBag>());
+                var ruleList = Main.ItemDropsDB.GetRulesForItemID(ModContent.ItemType<StarterBox>());
+                if (ruleList.Count > 0)
+                {
+                    yield return new Item(ModContent.ItemType<StarterBox>());
+                }
             }
         }
 

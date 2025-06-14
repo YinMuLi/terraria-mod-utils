@@ -64,7 +64,7 @@
 //            if (player is null)
 //                return;
 //            if (!player.dead && player.active)
-//                player.AddBuff(ModContent.BuffType<CommonStationBuff>(), 20);
+//                player.AddBuff(ModContent.BuffType<SugarRush>(), 20);
 //        }
 //    }
 //}

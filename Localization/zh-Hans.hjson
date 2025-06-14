@@ -36,8 +36,8 @@ Mods: {
 					'''
 			}
 
-			CommonStationBuff: {
-				DisplayName: 通用增益
+			SugarRush: {
+				DisplayName: 糖分爆发
 				Description:
 					'''
 					+10%当前生命再生
@@ -48,6 +48,8 @@ Mods: {
 					+12近战盔甲穿透
 					+20最大魔力 +5%魔法伤害 +2%魔法暴击 -2%魔力消耗
 					+1魔力恢复
+					20%不消耗弹药
+					+1哨兵栏
 					'''
 			}
 
@@ -113,8 +115,8 @@ Mods: {
 				Tooltip: 赋予使用者钓鱼药水,宝匣药水,声呐药水的增益
 			}
 
-			StarterBag: {
-				DisplayName: 新手礼包
+			StarterBox: {
+				DisplayName: 初始物资
 				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
 			}
 
@@ -152,9 +154,13 @@ Mods: {
 				Tooltip: 给予树叶领域内的增益
 			}
 
-			Cake: {
-				DisplayName: 蛋糕
-				Tooltip: 给予心灯、篝火、蜂蜜、巴斯特雕像、蛋糕块增益
+			MiracleCake: {
+				DisplayName: 奇迹蛋糕
+				Tooltip: 
+				'''
+				给予原版所有增益站台的增益
+				篝火、心灯、蜂蜜、施法桌、利器站、水晶球、弹药箱、蛋糕块、星星瓶、战争桌、巴斯特雕像
+				'''
 			}
 
 			SummonBloodNautilus: {

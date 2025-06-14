@@ -301,7 +301,7 @@ namespace YinMu.Content.NPCS
             shop.Add<EnhancedSurvivalPotion>(Condition.Hardmode);
             shop.Add<DryadsBlessingPotion>(Condition.Hardmode);
             shop.Add(new Item(ItemID.Bacon), Condition.Hardmode);//培根
-            shop.Add<Cake>(Condition.Hardmode);
+            shop.Add<MiracleCake>(Condition.Hardmode);
             shop.Add(new Item(ItemID.TerrasparkBoots), Condition.DownedSkeletron);//泰拉闪耀靴
             shop.Add<AdvancedExplorerPotion>(Condition.DownedSkeletron);
             shop.Add(new Item(ItemID.Shellphone), Condition.DownedSkeletron);//贝壳电话

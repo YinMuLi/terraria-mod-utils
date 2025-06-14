@@ -1,306 +1,179 @@
 Mods: {
-	YinMu: {
-		Keybinds.TeleportDeathPoint.DisplayName: Teleport to Last Death Point
+    YinMu: {
+        Keybinds.TeleportDeathPoint.DisplayName: "Teleport to Last Death Point",
 
-		Buffs: {
-			AdvancedDefense: {
-				DisplayName: Ironclad
-				Description:
-					'''
-					```
-					+2 Life Regeneration
-					+8 Defense
-					+20% Maximum Health (Increases by 20 for every 100 base health)
-					-10% Damage Taken
-					-30% Damage from Cold-themed Enemies
-					Reflect 33% of Melee Damage
-					```
-					'''
-			}
+        Buffs: {
+            EnhancedSurvival: {
+                DisplayName: "Ironclad",
+                Description: "+2 Life Regeneration\n+8 Defense\n+20% Max Health (Increases maximum health by 20 for every 100 health points)\n-10% Damage Taken\n-30% Damage from Cold-themed Enemies\nReflects 33% of Melee Damage"
+            },
 
-			AdvancedExplorer: {
-				DisplayName: Explorer
-				Description:
-					'''
-					```
-					+25% Movement Speed
-					+25% Mining Speed
-					Many other non-numeric benefits
-					```
-					'''
-			}
+            AdvancedExplorer: {
+                DisplayName: "Explorer",
+                Description: "+25% Movement Speed\n+25% Mining Speed\nMany other non-numeric benefits"
+            },
 
-			EnhancedFishing: {
-				DisplayName: Master Angler
-				Description:
-					'''
-					```
-					Master the secrets of the ocean and enhance your fishing skills.
-					Increases chance to catch treasure crates.
-					+15 Fishing Power
-					Reveals the type of fish on your hook.
-					```
-					'''
-			}
+            EnhancedFishing: {
+                DisplayName: "Master Angler",
+                Description: "Increases chance to catch treasure crates\n+15 Fishing Power\nReveals fish biting your line"
+            },
 
-			CommonStationBuff: {
-				DisplayName: Universal Buff
-				Description:
-					'''
-					```
-					+10% Current Life Regeneration
-					+2.5 Life Regeneration
-					+5 Defense
-					+20% Movement Speed +20% Mining Speed
-					+1 Minion Slot
-					+12 Melee Armor Penetration
-					+20 Maximum Mana +5% Magic Damage +2% Magic Critical Strike Chance -2% Mana Cost
-					+1 Mana Regeneration
-					```
-					'''
-			}
+            SugarRush: {
+                DisplayName: "Sugar Rush",
+                Description: "+10% Current Life Regeneration\n+2.5 Life Regeneration\n+5 Defense\n+20% Movement Speed & Mining Speed\n+1 Minion Slot\n+12 Melee Armor Penetration\n+20 Max Mana, +5% Magic Damage, +2% Magic Crit, -2% Mana Cost\n+1 Mana Regeneration\n20% chance to not consume ammo\n+1 Sentinel Slot"
+            },
 
-			DryadsBlessing: {
-				DisplayName: Nature's Power
-				Description:
-					'''
-					```
-					+6 Life Regeneration
-					+8 Defense
-					+50% Thorns Effect (Reflects 50% of damage, stacks with Thorns Potion)
-					"Let nature grant us strength, Gao Midi invincible king of nature, transform!"
-					```
-					'''
-			}
-		}
+            DryadsBlessing: {
+                DisplayName: "Nature's Force",
+                Description: "+6 Life Regeneration\n+8 Defense\n+50% Thorns Effect (Reflects 50% of damage, stacks with Thorns Potion)\n\"Nature, grant us your power!\""
+            }
+        },
 
-		Items: {
-			BloodyDoll: {
-				DisplayName: Bloody Doll
-				Tooltip:
-					'''
-					```
-					Summons the Wall of Flesh in the Underworld (direction is random).
-					Non-consumable.
-					```
-					'''
-			}
+        Items: {
+            BloodyDoll: {
+                DisplayName: "Bloody Doll",
+                Tooltip: "Summons the Wall of Flesh in the Underworld (direction is random)\nNon-consumable"
+            },
 
-			SummonHallowBoss: {
-				DisplayName: Prismatic Proof of the Dusk
-				Tooltip:
-					'''
-					```
-					Summons the Empress of Light.
-					Enrages during the day.
-					Non-consumable.
-					```
-					'''
-			}
+            SummonHallowBoss: {
+                DisplayName: "Prismatic Moth Charm",
+                Tooltip: "Summons the Empress of Light\nEnrages during the day\nNon-consumable"
+            },
 
-			PlanteraBulb: {
-				DisplayName: Plantera's Bulb
-				Tooltip:
-					'''
-					```
-					Use in the Jungle to summon Plantera.
-					Enrages outside the Underground Jungle.
-					Non-consumable.
-					```
-					'''
-			}
+            PlanteraBulb: {
+                DisplayName: "Plantera's Bulb",
+                Tooltip: "Use in the Jungle to summon Plantera\nEnrages outside of the Underground Jungle\nNon-consumable"
+            },
 
-			AdvancedDefensePotion: {
-				DisplayName: Advanced Defense Potion
-				Tooltip: Grants defensive buffs (Regeneration, Lifeforce, Iron Skin, Endurance, Thorns, Swiftness, Warmth).
-			}
+            EnhancedSurvivalPotion: {
+                DisplayName: "Enhanced Survival Potion",
+                Tooltip: "Grants defensive buffs (Regeneration, Lifeforce, Iron Skin, Endurance, Thorns, Swiftness, Warmth)"
+            },
 
-			AdvancedExplorerPotion: {
-				DisplayName: Advanced Explorer Potion
-				Tooltip:
-					'''
-					```
-					Grants essential exploration buffs:
-					(Cave, Night Owl, Mining, Hunter, Swiftness,
-					Dangersense, Water Walking, Gills, Flipper, Obsidian Skin)
-					```
-					'''
-			}
+            AdvancedExplorerPotion: {
+                DisplayName: "Advanced Explorer Potion",
+                Tooltip: "Grants essential exploration buffs (Cave, Night Owl, Mining, Hunter, Swiftness, Danger Sense, Water Walking, Gills, Flipper, Obsidian Skin)"
+            },
 
-			EnhancedFishingPotion: {
-				DisplayName: Enhanced Fishing Potion
-				Tooltip: Grants the effects of Fishing, Sonar, and Crate Potions.
-			}
+            EnhancedFishingPotion: {
+                DisplayName: "Enhanced Fishing Potion",
+                Tooltip: "Grants the effects of Fishing, crate, and Sonar potions"
+            },
 
-			StarterBag: {
-				DisplayName: Starter Bag
-				Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
-			}
+            StarterBox: {
+                DisplayName: "Starter Box",
+                Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+            },
 
-			FishingGuide: {
-				DisplayName: Fishing Guide
-				Tooltip:
-					'''
-					```
-					+80 Fishing Power
-					Functions as Lavaproof Fishing Hook.
-					Grants Sonar and Crate Potion effects.
-					[c/C4232C:- Equip in Vanity Slot to Activate -]
-					```
-					'''
-			}
+            FishingGuide: {
+                DisplayName: "Fishing Guide",
+                Tooltip: "+80 Fishing Power\nFunctions as Lavaproof Tackle Box\nGrants Sonar and Crate Potion effects\n[c/C4232C:- Equip in Vanity Slot -]"
+            },
 
-			GoldenBait: {
-				DisplayName: Golden Bait
-				Tooltip:
-					'''
-					```
-					Non-consumable.
-					"The sun sets, and the angler stays."
-					```
-					'''
-			}
+            GoldenBait: {
+                DisplayName: "Golden Bait",
+                Tooltip: "Non-consumable\n\"Sunset over the fishing grounds\""
+            },
 
-			InscriptionEmblem: {
-				DisplayName: Inscription Emblem
-				Tooltip:
-					'''
-					```
-					Re-rolls all equipped accessories with this item's modifiers.
-					<right> Teleport to your last death point.
-					```
-					'''
-			}
+            InscriptionEmblem: {
+                DisplayName: "Inscribed Emblem",
+                Tooltip: "Reforges all equipped accessories to this item's modifiers\n<right>Teleport to last death point"
+            },
 
-			DryadsBlessingPotion: {
-				DisplayName: Dryad's Blessing
-				Tooltip: Grants the benefits of being in a Leaf Zone.
-			}
+            DryadsBlessingPotion: {
+                DisplayName: "Dryad's Blessing",
+                Tooltip: "Grants the benefits of the Leaf Crystal"
+            },
 
-			Cake: {
-				DisplayName: Cake
-				Tooltip: Grants Heart Lamp, Campfire, Honey, Banners, and Cake Block effects.
-			}
+            MiracleCake: {
+                DisplayName: "Miracle Cake",
+                Tooltip: "Grants all vanilla buffs from:\nCampfire, Heart Lantern, Honey, Crystal Ball, Ammo Box, Cake Block, Star in a Bottle, War Table, Buster Statue"
+            },
 
-			SummonBloodNautilus: {
-				DisplayName: Bleeding Shell
-				Tooltip:
-					'''
-					```
-					Summons the Blood Nautilus during a Blood Moon.
-					Non-consumable.
-					```
-					'''
-			}
+            SummonBloodNautilus: {
+                DisplayName: "Bleeding Shell",
+                Tooltip: "Summons the Dreadnautilus during a Blood Moon\nNon-consumable"
+            },
 
-			SummonDukeFishron: {
-				DisplayName: Crimson Truffle Worm
-				Tooltip:
-					'''
-					```
-					Summons Duke Fishron in Ocean biomes.
-					Non-consumable.
-					```
-					'''
-			}
+            SummonDukeFishron: {
+                DisplayName: "Crimson Truffle Worm",
+                Tooltip: "Summons Duke Fishron in the Ocean\nNon-consumable"
+            },
 
-			Bag: {
-				DisplayName: Bag
-				Tooltip: ""
-			}
-		}
+            Bag: {}
+        },
 
-		NPCs: {
-			Tom: {
-				DisplayName: Tom
+        NPCs: {
+            Tom: {
+                DisplayName: "Tom",
+                TownNPCMood: {
+                    Content: "I'm content.",
+                    NoHome: "I hate having no home.",
+                    FarFromHome: "I'm too far from home.",
+                    LoveSpace: "I love having so much space!",
+                    DislikeCrowded: "I don't like being crowded.",
+                    HateCrowded: "I hate being crowded!",
+                    LoveBiome: "I love the {BiomeName}!",
+                    LikeBiome: "I like the {BiomeName}.",
+                    DislikeBiome: "I don't like the {BiomeName}.",
+                    HateBiome: "I hate the {BiomeName}!",
+                    LikeNPC: "I like {NPCName}.",
+                    DislikeNPC: "I don't like {NPCName}.",
+                    LikeNPC_Princess: "I like {NPCName}.",
+                    Princess_LovesNPC: "I adore {NPCName}!"
+                }
+            }
+        },
 
-				TownNPCMood: {
-					Content: I'm content.
-					NoHome: I hate having no home.
-					FarFromHome: I'm too far from home.
-					LoveSpace: I love having so much space!
-					DislikeCrowded: I don't like being crowded.
-					HateCrowded: I hate being crowded!
-					LoveBiome: I absolutely love the {BiomeName}.
-					LikeBiome: I like the {BiomeName}.
-					DislikeBiome: I don't like the {BiomeName}.
-					HateBiome: I hate the {BiomeName}!
-					LikeNPC: I like {NPCName}.
-					DislikeNPC: I don't like {NPCName}.
-					LikeNPC_Princess: I like {NPCName}.
-					Princess_LovesNPC: I adore {NPCName}!
-				}
-			}
-		}
+        Configs: {
+            ClientConfig: {
+                DisplayName: "Client Configuration",
+                Headers: {
+                    Fishing: "Fishing",
+                    Common: "General Settings"
+                },
+                LuresAmount: {
+                    Label: "Number of Fishing Lines"
+                },
+                QuickFishing: {
+                    Label: "Instant Fishing",
+                    Tooltip: "Automatically catches fish when reeling in"
+                },
+                ShowMinion: {
+                    Label: "Show Minion Slot Info"
+                },
+                MinZoom: {
+                    Label: "Minimum Zoom",
+                    Tooltip: "Smaller value allows greater zoom out"
+                },
+                SwitchInventory: {
+                    Label: "Swap Inventory Rows",
+                    Tooltip: "After stacking items into chests, swap first and second inventory rows"
+                },
+                NoSwapDecoration: {
+                    Label: "Don't Swap Vanity Items"
+                }
+            },
 
-		Configs: {
-			ClientConfig: {
-				DisplayName: Client Configuration
-
-				Headers: {
-					Fishing: Fishing
-					Common: General Settings
-				}
-
-				LuresAmount: {
-					Label: Number of Fishing Lures
-					Tooltip: ""
-				}
-
-				QuickFishing: {
-					Label: Quick Fishing
-					Tooltip: Automatically catch fish when reeling in.
-				}
-
-				ShowMinion: {
-					Label: Show Minion Slot Info
-					Tooltip: ""
-				}
-
-				MinZoom: {
-					Label: Minimum Zoom
-					Tooltip: Smaller value = smaller interface zoom.
-				}
-
-				SwitchInventory: {
-					Label: Swap Inventory Rows After Stacking
-					Tooltip: When auto-stacking into nearby chests starts from the second row, enabling this will swap the first and second rows after stacking.
-				}
-
-				NoSwapDecoration: {
-					Label: Don't Swap Accessories When Changing Equipment
-					Tooltip: ""
-				}
-			}
-
-			ServerConfig: {
-				DisplayName: Server Configuration
-
-				SpawnTom: {
-					Label: Spawn Mod NPC
-					Tooltip: ""
-				}
-
-				UnrestrainedPylon: {
-					Label: Unrestricted Teleportation Pylons
-					Tooltip: Allows unlimited pylons and removes placement restrictions. Not recommended if Better Experience mod is installed.
-				}
-
-				ExtraWingSlot: {
-					Label: Extra Wing Accessory Slot
-					Tooltip: ""
-				}
-
-				BossSpawnNotConsumable: {
-					Label: Non-Consumable Boss Summons
-					Tooltip: ""
-				}
-
-				EnableFountain: {
-					Label: Fountains Alter Biomes
-					Tooltip: ""
-				}
-			}
-		}
-	}
+            ServerConfig: {
+                DisplayName: "Server Configuration",
+                SpawnTom: {
+                    Label: "Spawn Modded NPCs"
+                },
+                UnrestrainedPylon: {
+                    Label: "Unrestricted Teleportation Pylons",
+                    Tooltip: "Allows unlimited pylons and removes teleportation restrictions (not recommended if Better Experience is installed)"
+                },
+                ExtraWingSlot: {
+                    Label: "Extra Wing Accessory Slot"
+                },
+                BossSpawnNotConsumable: {
+                    Label: "Boss Summons Not Consumable"
+                },
+                EnableFountain: {
+                    Label: "Fountains Alter Biomes"
+                }
+            }
+        }
+    }
 }

@@ -5,7 +5,7 @@ using Terraria.ModLoader;
 
 namespace YinMu.Content.Items.Misc
 {
-    internal class Cake : ModItem
+    internal class MiracleCake : ModItem
     {
         public override void SetDefaults()
         {
@@ -20,7 +20,7 @@ namespace YinMu.Content.Items.Misc
             Item.consumable = false;
             Item.useAnimation = 17;
             Item.useTime = 17;
-            Item.buffType = ModContent.BuffType<CommonStationBuff>();
+            Item.buffType = ModContent.BuffType<SugarRush>();
             Item.buffTime = 108000;
         }
 
@@ -31,7 +31,6 @@ namespace YinMu.Content.Items.Misc
                 .AddIngredient(ItemID.Campfire, 1)
                 .AddIngredient(ItemID.HeartLantern, 1)
                 .AddIngredient(ItemID.HoneyBucket, 1)
-                .AddIngredient(ItemID.HoneyBucket, 1)
                 .AddIngredient(ItemID.BewitchingTable, 1)
                 .AddIngredient(ItemID.SharpeningStation, 1)
                 .AddIngredient(ItemID.CrystalBall, 1)
@@ -39,7 +38,7 @@ namespace YinMu.Content.Items.Misc
                 .AddIngredient(ItemID.SliceOfCake, 1)
                 .AddIngredient(ItemID.StarinaBottle, 1)
                 .AddIngredient(ItemID.WarTable, 1)
-                .AddIngredient(ItemID.CatBast, 1)//雕像
+                .AddIngredient(ItemID.CatBast, 1)
                 .Register();
         }
     }

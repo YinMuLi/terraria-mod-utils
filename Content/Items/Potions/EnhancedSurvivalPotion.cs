@@ -4,9 +4,6 @@ using Terraria.ModLoader;
 
 namespace YinMu.Content.Items.Potions
 {
-    /// <summary>
-    /// 高级防御药水
-    /// </summary>
     internal class EnhancedSurvivalPotion : ModItem
     {
         public override void SetStaticDefaults()

@@ -5,9 +5,9 @@ using Terraria.ModLoader;
 
 namespace YinMu.Content.Items.Misc
 {
-    internal class StarterBag : ModItem
+    internal class StarterBox : ModItem
     {
-        public override string Texture => $"Terraria/Images/Item_{ItemID.GoodieBag}";
+        //public override string Texture => $"Terraria/Images/Item_{ItemID.GoodieBag}";
 
         public override void SetDefaults()
         {

@@ -26,8 +26,8 @@ namespace YinMu
             {
                 improveGame.Call(
                     "AddStation",
-                    ModContent.ItemType<Cake>(),
-                    ModContent.BuffType<CommonStationBuff>()
+                    ModContent.ItemType<Content.Items.Misc.MiracleCake>(),
+                    ModContent.BuffType<Content.Buffs.SugarRush>()
                 );
             }
             if (ModLoader.TryGetMod("BossChecklist", out Mod bossChecklist))
